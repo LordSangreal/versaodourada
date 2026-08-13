@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -85,14 +85,18 @@ MANIFEST = {
     "api": 2,
     "entry": "main.lua",
     "profile": "content",
-    "category": "LANGUAGE",
-    "language": True,
-    "games": ["gold"],
-    "game_version": ">=0.0.0-dev <1.0.0",
+    # GAMEPLAY, e nao LANGUAGE: nenhum mod instalado usa LANGUAGE, e o
+    # versaovermelha (a outra traducao) usa GAMEPLAY.
+    "category": "GAMEPLAY",
+    # O aplicativo e a versao 1.8.0.  A faixa "<1.0.0" que o versaovermelha
+    # declara o exclui da lista -- ele instala e nunca aparece.  Os mods que
+    # funcionam usam "<2.0.0".
+    "game_version": ">=0.0.0-0 <2.0.0",
     "priority": 100,
     "dependencies": [],
     "optional_dependencies": [],
     "conflicts": [],
+    "github": "LordSangreal/versaodourada",
     "description": ("Portugues brasileiro para Pokemon Gold. Texto extraido da "
                     "traducao de R_Lopes e Night_Shadown. Nomes de golpes ficam "
                     "no original."),
