@@ -15,7 +15,7 @@ import importlib
 import pkgutil
 import os
 
-LOTES = ["sistema", "interface", "itens", "dialogo_01", "dialogo_02", "dialogo_03", "dialogo_04"]
+LOTES = ["sistema", "interface", "itens", "dialogo_01", "dialogo_02", "dialogo_03", "dialogo_04", "dialogo_05a"]
 
 
 def carregar():

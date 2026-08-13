@@ -1,23 +1,21 @@
 # Changelog
 
-## 0.12.0
+## 0.13.0
 
-**Lote 4: Azalea Town, Slowpoke Well, Ilex Forest, o KURT e o GINASIO do
-BUGSY** -- 65 falas traduzidas do ingles original. Inclui o primeiro
-confronto com a TEAM ROCKET e a HIVEBADGE.
+**Lote 5a: Goldenrod City, o GINASIO da WHITNEY e a DEPT.STORE** -- 43
+falas traduzidas do ingles original, com a PLAINBADGE e os primeiros
+membros da TEAM ROCKET rondando a torre de radio.
 
-Este lote deu 32 problemas no `conferir.py`, contra 0 nos lotes 2 e 3. A
-ferramenta nao piorou -- eu escrevi rapido demais tentando cobrir mais
-chao. Todos corrigidos antes de publicar.
+Goldenrod tem 126 falas, o dobro de qualquer regiao anterior. Dividi em
+duas metades de proposito: o lote 4 saiu com 32 erros justamente por eu
+ter tentado cobrir chao demais numa passada so. Esta metade passou no
+`conferir.py` sem nenhum problema.
 
-Um deles vale registrar: ao encurtar "KURT: Oi, {PLAYER}!" para caber em
-17 colunas eu escrevi "KURT: Oi!", jogando fora o token do nome. O KURT
-deixaria de chamar o jogador pelo nome, e nenhum teste de largura pegaria
-isso -- so a checagem de token pegou.
+A torre de radio, as rotas 34 e 35 e o National Park ficam para o 5b.
 
-Progresso: **265** de 2245 falas ja sao nossas.
+Progresso: **308** de 2245 falas ja sao nossas.
 
-## 0.12.0
+## 0.13.0
 
-- Primeira versao: 1975 falas em portugues.
+- Primeira versao: 1977 falas em portugues.
 - Nomes de golpes mantidos no original.

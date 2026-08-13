@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.12.0"
+VERSION = "0.13.0"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
