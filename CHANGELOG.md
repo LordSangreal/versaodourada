@@ -7,6 +7,20 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.25.0
+
+- **Lote 24** -- varridas dos bancos 40-4c (140 falas): TEAM ROCKET e a
+  RADIO TOWER de GOLDENROD com o diretor no topo, a SPROUT TOWER com o
+  ELDER e os aprendizes, a VICTORY ROAD com os guardioes, e pescadores
+  e treinadores de passagem pelas rotas.
+- 1564 falas proprias; 2803 publicadas.
+- Revisao antes de publicar: cinco erros de sentido que o conferidor
+  aprovou (ele valida forma, nao significado).  "POKéMON e seus
+  treinador fica forte" sem concordancia, "Sou o conhecido como",
+  "Vou ter que esforcar mais" sem o pronome, "Perdi para um {RIVAL}"
+  com artigo indefinido antes de nome proprio, e "estou para qualquer
+  um!" com o verbo faltando.
+
 ## 0.24.0
 
 - **Lote 23** -- bancos 45 e 46 (49 falas): o esconderijo ninja do

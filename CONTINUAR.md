@@ -709,12 +709,12 @@ python conferir.py                    # 3. ate dar zero
 
 ## 11. Estado atual
 
-Versao publicada: **0.24.0**.
+Versao publicada: **0.25.0**.
 
 | | |
 |---|---|
-| Falas publicadas | 2663 |
-| Falas **nossas** | 1424 |
+| Falas publicadas | 2803 |
+| Falas **nossas** | 1564 |
 | Falas ainda derivadas | 1239 |
 | Rotulos de menu e batalha | 265 |
 | Nomes de item | ficam em ingles (0.17.0) |
@@ -750,6 +750,7 @@ Lotes prontos:
 | 21 | Banco 5b: o FAST SHIP inteiro | 67 |
 | 22 | Banco 44: RUINS, MT.MORTAR, SLOWPOKE WELL, LIGHTHOUSE | 69 |
 | 23 | Bancos 45/46: esconderijo ninja, senhas, subterraneo | 49 |
+| 24 | Varridas dos bancos 40-4c: RADIO TOWER, SPROUT TOWER, VICTORY ROAD, passagem | 140 |
 
 Alem do dialogo: `pt/sistema.py` e `pt/sistema2.py` cobrem 265 rotulos
 do motor -- menus, batalha (`%s usou\n%s!`), PC, loja, GAME CORNER e a
@@ -780,28 +781,31 @@ edite no scratchpad e copie, nunca o contrario.
 
 Falta trabalho de duas naturezas bem diferentes.
 
-**1. As varridas -- 285 falas, sem traducao nenhuma hoje.**
+**1. As varridas -- 145 falas, sem traducao nenhuma hoje.**
 
 Sao as que a varredura da 0.16.0 achou e nenhum lote cobriu.  Hoje
 aparecem **em ingles** na tela.  Prioridade, portanto.
 
+O lote 24 (0.25.0) zerou as varridas dos bancos 40-4c; resta:
+
 ```bash
-python pendentes.py 43        # e assim por diante
+python pendentes.py 52        # e assim por diante
 ```
 
 | Banco | Faltam | O que e |
 |---|---|---|
-| 43 | 47 | NATIONAL PARK, portoes, Concurso |
-| 4a | 43 | rotas 30-33 |
 | 52 | 22 | interiores de Johto |
 | 57 | 20 | Goldenrod: lojas, ginasio, torre |
-| 42 | 17 | BURNED/TIN TOWER, ICE PATH |
 | 51 | 17 | casas de Ecruteak e Olivine |
 | 53 | 16 | casas de Mahogany e Blackthorn |
 | 55 | 14 | Azalea: centro, loja, KURT |
-| 5d, 5e | 26 | Cianwood, Blackthorn, a Liga |
-| 49, 59 | 22 | cidades e o resto |
-| outros | 41 | 40, 41, 46, 47, 48, 4b, 4c, 54, 56, 5a, 5b |
+| 5d | 13 | Cianwood e arredores |
+| 5e | 13 | Blackthorn e a Liga |
+| 59 | 11 | cidades |
+| 54 | 8 | outros |
+| 56 | 4 | outros |
+| 5b | 4 | outros |
+| 5a | 3 | outros |
 
 **2. As derivadas -- 1239 falas.**
 
@@ -829,7 +833,7 @@ Depois trate como lote normal: `esqueleto.py` da chave, escreva com
 e o ponto inteiro do exercicio.  `conferir.py` compara so com o ingles
 justamente para isso.
 
-**Ordem sugerida:** as 285 varridas primeiro (o jogador ve ingles
+**Ordem sugerida:** as 145 varridas primeiro (o jogador ve ingles
 agora), depois as derivadas por regiao.
 
 ---
