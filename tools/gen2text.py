@@ -11,9 +11,17 @@ BR_ACCENTS = {
     0xBA: "á", 0xBB: "â", 0xBC: "ã", 0xBD: "à", 0xBE: "ê", 0xBF: "í",
     0xC0: "ó", 0xC1: "ô", 0xC2: "õ", 0xC3: "ú", 0xC4: "ç", 0xEA: "é",
     0xCB: "Á", 0xCD: "Í", 0xCE: "Â", 0xD0: "Ê", 0xD5: "Ã", 0xD6: "Õ",
-    0xD7: "É",
-    # ligaduras: dois caracteres num tile so, para caber nas 18 colunas
-    0x5C: "TA",
+    0xD7: "É", 0xCC: "Ó",
+    # Macros e ligaduras que a traducao BR redefiniu para caber nas 18
+    # colunas.  Nao sao glifos: cada byte expande para varios caracteres.
+    # Cada um foi deduzido cruzando o ingles alinhado com o portugues:
+    0x5C: "TA",        # RO+TA, BICICLE+TA, FLORES+TA
+    0x5B: "ÃO",        # GR+AO / GR+AO+S, onde o ingles diz BERRY
+    0x5D: "POKéMON",   # "CENTRO _", "GINASIO _", "seus _S"
+    0x70: "Q",         # _+U+EM, PSI+_+U+ICO, E+_+U+IPE
+    0x71: "U",
+    0xE1: "D",         # GYARA+D+O+S, "LABORATORIO D+O PROFESSOR"
+    0xE2: "O",
 }
 BR_CHARMAP = dict(CHARMAP)
 BR_CHARMAP.update(BR_ACCENTS)
