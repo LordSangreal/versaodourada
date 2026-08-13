@@ -7,6 +7,22 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.21.0
+
+Lote maior por pedido do usuario: quatro bancos inteiros numa versao so,
+em vez de publicar a cada trinta falas.
+
+- **Lote 16** -- banco 4c (72 falas): as gemeas ANN e ANNE, os nadadores
+  entre OLIVINE e CIANWOOD, os POKé FANS, e as conversas sobre as WHIRL
+  ISLANDS e o POKéMON de asas prateadas.
+- **Lote 17** -- banco 4d (67 falas): as rotas do norte ate BLACKTHORN,
+  os HIKERS, os sabios, e quem fala de ARTICUNO, ZAPDOS e MOLTRES.
+- **Lote 18** -- banco 4e (39 falas): o mar de Kanto, o casal que nada
+  ate FUCHSIA, e os motoqueiros da CYCLING ROAD.
+- **Lote 19** -- banco 4f (54 falas): as rotas de Kanto, os professores,
+  a gangue do PIKACHU, os pescadores e os videntes.
+- 1175 falas proprias; 2414 publicadas.  Passou de mil.
+
 ## 0.20.0
 
 - **Lotes 15b e 15c** -- o banco 4b inteiro fechado (51 falas): os
