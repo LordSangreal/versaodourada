@@ -12,6 +12,12 @@ BR_ACCENTS = {
     0xC0: "ó", 0xC1: "ô", 0xC2: "õ", 0xC3: "ú", 0xC4: "ç", 0xEA: "é",
     0xCB: "Á", 0xCD: "Í", 0xCE: "Â", 0xD0: "Ê", 0xD5: "Ã", 0xD6: "Õ",
     0xD7: "É", 0xCC: "Ó",
+    # Mais tres que a traducao BR tomou de ligaduras inglesas pouco uteis em
+    # portugues.  Deduzidos por contexto, com o validador de 18 colunas
+    # apontando as palavras quebradas:
+    0xD4: "Ç",   # era "'s".  COMUNICA+C+OES, ESTA+C+AO, DAN+C+A, CABE+C+ADA
+    0xD1: "Ô",   # era "'l".  M+O+NICA
+    0xC5: "º",   # era "ü".   4+o+ ANDAR, {STRBUF}+o+ premio
     # Macros e ligaduras que a traducao BR redefiniu para caber nas 18
     # colunas.  Nao sao glifos: cada byte expande para varios caracteres.
     # Cada um foi deduzido cruzando o ingles alinhado com o portugues:

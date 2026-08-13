@@ -25,6 +25,29 @@ def unescape(s):
     return "".join(out)
 
 
+# Um token nao ocupa em tela o tamanho que ocupa no arquivo: "{PLAYER}" sao
+# 8 caracteres no texto e rende o nome do jogador, ate 7.  Medir pelo literal
+# acusava 40 estouros que nao existem, e um validador que grita errado deixa
+# de ser lido -- e ai o estouro de verdade passa.  Cada token conta pelo
+# maior tamanho que pode render.
+LARGURA_TOKEN = {
+    "{PLAYER}": 7,    # nome do jogador, limite da tela de nomes
+    "{RIVAL}": 7,
+    "{MOM}": 4,
+    "{STRBUF}": 10,   # nome de POKeMON / item posto em runtime
+    "{TRAINER}": 8,
+    "{NUM}": 5,
+}
+TOKEN = re.compile(r"\{[A-Z_]+\}")
+
+
+def largura(linha):
+    """Quantas colunas a linha ocupa em tela, no pior caso."""
+    def troca(m):
+        return "#" * LARGURA_TOKEN.get(m.group(0), 8)
+    return len(TOKEN.sub(troca, linha))
+
+
 over, empty = [], 0
 widths = []
 for k, v in entries:
@@ -32,8 +55,9 @@ for k, v in entries:
     if not txt.strip():
         empty += 1
     for line in txt.split("\n"):
-        widths.append(len(line))
-        if len(line) > 18:
+        w = largura(line)
+        widths.append(w)
+        if w > 18:
             over.append((k, line))
 
 print("linhas de texto:", len(widths))
