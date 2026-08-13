@@ -1,20 +1,21 @@
 # Changelog
 
-## 0.8.2
+## 0.9.0
 
-Conserta uma regressao silenciosa: o README voltava sozinho para o texto
-da 0.3.0.
+**Lote 2: Rota 29, Cherrygrove City e Rota 30** -- 56 falas traduzidas do
+ingles original. E o caminho que voce faz logo depois do laboratorio, com
+o guia da cidade, o primeiro encontro com o rival e a TUSCANY de terca.
 
-Ele morava DENTRO do `build_mod.py`, como uma string gigante, entao todo
-build reescrevia o arquivo do repositorio com a versao congelada no codigo.
-Eu atualizei a pagina na 0.8.0 e a publicacao da 0.8.1 a desfez, sem erro
-nenhum.
+Passou no `conferir.py` **na primeira tentativa**, contra 26 problemas no
+lote 1. A diferenca e que agora a ferramenta ja conhece as tres restricoes
+reais: 18 colunas, 17 na ultima linha da pagina, e os codigos de controle.
 
-Agora o README e um arquivo de verdade (`tools/README_mod.md`) e o build so
-o copia para dentro do pacote. Se ele sumir, o build avisa em vez de gerar
-um mod sem README.
+Cinco chaves do trecho ficaram de fora por serem lixo do extrator -- kana
+solto ou fragmento que comeca no meio de outra fala. Continuam em ingles.
 
-## 0.8.2
+Progresso: **143** de 2245 falas ja sao nossas.
 
-- Primeira versao: 1972 falas em portugues.
+## 0.9.0
+
+- Primeira versao: 1973 falas em portugues.
 - Nomes de golpes mantidos no original.
