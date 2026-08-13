@@ -7,6 +7,21 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.19.0
+
+- **Lote 14b** -- o resto do telefone (33 falas): as saudacoes que cada
+  treinador faz ao ligar, os convites para revanche, os avisos de
+  "apareceu um monte de {POKéMON} perto de {LUGAR}", o trote da AUDREY
+  procurando o KAZ, e o PROF.ELM em panico quando roubam o laboratorio.
+- **Lote 15a** -- os treinadores das rotas (27 falas): pescadores, o
+  pessoal do mato, a moca que atende o telefone no meio da batalha.  E o
+  texto de cada batalha aleatoria do caminho.
+- Nove chaves do banco 41 ficaram de fora por serem cauda de falas que o
+  lote 14a ja cobria.  O filtro automatico nao as pegou: assim que a
+  fala-mae e traduzida ela sai da lista de pendentes, e a cauda fica sem
+  par para comparar.  Conferi a olho.
+- 892 falas proprias; 2131 publicadas.
+
 ## 0.18.0
 
 Primeira leva tirada da varredura da 0.16.0.
