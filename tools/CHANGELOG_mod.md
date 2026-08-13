@@ -7,6 +7,22 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.15.0
+
+- Lote 7: os StdScripts do banco 40 (32 falas).  Sao os scripts que todo
+  mapa chama -- a enfermeira, o MART, o telefone, o PC do BILL, o
+  Concurso de Insetos.  E o texto que o jogador mais le.
+- Lote 8a: MAHOGANY TOWN, o ginasio do PRYCE e as rotas 42 e 43 (35).
+- Lote 8b: LAKE OF RAGE, o encontro com o LANCE e a casa do MAGIKARP (27).
+- Lote 8c: a base secreta da TEAM ROCKET, os tres andares (35).
+- `pt/estrutura.py`: a funcao `linhas()` monta a fala com os separadores
+  lidos do INGLES.  Trocar `\n` por `\v` na copia era o erro que sobrava
+  depois do conferidor -- quatro no lote 6b, oito no 7.  Com ela, os tres
+  lotes seguintes passaram limpos de primeira.
+- `tools/fatiar.py`: corta uma planilha grande por mapa e descarta kana,
+  fragmento e vazio.
+- 559 falas proprias de 2245; 1981 publicadas.
+
 ## 0.14.0
 
 - Lote 5b: RADIO TOWER, rotas 34 e 35, NATIONAL PARK (51 falas).
