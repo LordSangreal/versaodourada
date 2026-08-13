@@ -1,21 +1,23 @@
 # Changelog
 
-## 0.9.0
+## 0.10.0
 
-**Lote 2: Rota 29, Cherrygrove City e Rota 30** -- 56 falas traduzidas do
-ingles original. E o caminho que voce faz logo depois do laboratorio, com
-o guia da cidade, o primeiro encontro com o rival e a TUSCANY de terca.
+**Lote 3: Violet City, Sprout Tower, o GINASIO do FALKNER e as rotas 31 e
+32** -- 59 falas traduzidas do ingles original. E a primeira insignia, o
+primeiro ginasio e a torre, ou seja onde a historia comeca de verdade.
 
-Passou no `conferir.py` **na primeira tentativa**, contra 26 problemas no
-lote 1. A diferenca e que agora a ferramenta ja conhece as tres restricoes
-reais: 18 colunas, 17 na ultima linha da pagina, e os codigos de controle.
+Passou no `conferir.py` na primeira tentativa, como o lote 2.
 
-Cinco chaves do trecho ficaram de fora por serem lixo do extrator -- kana
-solto ou fragmento que comeca no meio de outra fala. Continuam em ingles.
+Uma escolha de traducao que vale registrar: o professor da academia de
+Violet fala ingles quebrado no original, de proposito. A traducao mantem
+o jeito torto ("Aqui, professor eu sou") em vez de consertar a gramatica
+dele -- e caracterizacao, nao erro.
 
-Progresso: **143** de 2245 falas ja sao nossas.
+Quinze chaves do trecho ficaram de fora por serem lixo do extrator.
 
-## 0.9.0
+Progresso: **202** de 2245 falas ja sao nossas.
+
+## 0.10.0
 
 - Primeira versao: 1973 falas em portugues.
 - Nomes de golpes mantidos no original.
