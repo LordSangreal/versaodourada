@@ -1,0 +1,20 @@
+{
+  "id": "versaodourada",
+  "name": "VersaoDourada",
+  "version": "0.1.0",
+  "api": 2,
+  "entry": "main.lua",
+  "profile": "content",
+  "category": "LANGUAGE",
+  "language": true,
+  "games": [
+    "gold"
+  ],
+  "game_version": ">=0.0.0-dev <1.0.0",
+  "priority": 100,
+  "dependencies": [],
+  "optional_dependencies": [],
+  "conflicts": [],
+  "description": "Portugues brasileiro para Pokemon Gold. Texto extraido da traducao de R_Lopes e Night_Shadown. Nomes de golpes ficam no original.",
+  "github": "LordSangreal/versaodourada"
+}

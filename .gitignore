@@ -1,0 +1,6 @@
+*.gbc
+*.7z
+*.zip
+dialogo.json
+__pycache__/
+repo/
