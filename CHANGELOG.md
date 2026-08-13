@@ -1,27 +1,23 @@
 # Changelog
 
-## 0.11.0
+## 0.12.0
 
-**A interface do aplicativo volta ao ingles.** Eu tinha traduzido o
-launcher, a importacao de ROM, os espacos de save e o gerenciador de mods
-sem verificar se o layout aguentava -- e nao aguentava. Os botoes tem
-largura fixa, o portugues e mais longo, e o texto saia cortado: "Play Gold
-(Be...", "0 insignias - 0:00 - 0 capturados" quebrando a linha.
+**Lote 4: Azalea Town, Slowpoke Well, Ilex Forest, o KURT e o GINASIO do
+BUGSY** -- 65 falas traduzidas do ingles original. Inclui o primeiro
+confronto com a TEAM ROCKET e a HIVEBADGE.
 
-O filtro e por DIRETORIO DE ORIGEM, nao por lista escrita a mao: qualquer
-chave que apareca em `src/import/`, `LauncherMods`, `ManagerState` ou
-`src/update/` sai do catalogo. 207 removidas; sobram 151, todas da tela do
-jogo, onde a largura e conhecida e eu controlo a quebra de linha.
+Este lote deu 32 problemas no `conferir.py`, contra 0 nos lotes 2 e 3. A
+ferramenta nao piorou -- eu escrevi rapido demais tentando cobrir mais
+chao. Todos corrigidos antes de publicar.
 
-Duas passadas foram precisas para chegar la. Filtrar so o que era
-*exclusivamente* do launcher deixava 31 compartilhadas -- FPS, orientacao,
-vibracao -- que o launcher tambem desenha. E listar arquivo a arquivo
-deixava passar uma mensagem do RomImporter.
+Um deles vale registrar: ao encurtar "KURT: Oi, {PLAYER}!" para caber em
+17 colunas eu escrevi "KURT: Oi!", jogando fora o token do nome. O KURT
+deixaria de chamar o jogador pelo nome, e nenhum teste de largura pegaria
+isso -- so a checagem de token pegou.
 
-Nada muda dentro do jogo: as 202 falas proprias, as 1771 derivadas, os
-itens e os glifos seguem iguais.
+Progresso: **265** de 2245 falas ja sao nossas.
 
-## 0.11.0
+## 0.12.0
 
-- Primeira versao: 1973 falas em portugues.
+- Primeira versao: 1975 falas em portugues.
 - Nomes de golpes mantidos no original.
