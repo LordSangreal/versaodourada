@@ -709,13 +709,13 @@ python conferir.py                    # 3. ate dar zero
 
 ## 11. Estado atual
 
-Versao publicada: **0.27.0**.
+Versao publicada: **0.28.0**.
 
 | | |
 |---|---|
-| Falas publicadas | 2948 |
-| Falas **nossas** | 1709 |
-| Falas ainda derivadas | 1239 |
+| Falas publicadas | 2950 |
+| Falas **nossas** | 1799 |
+| Falas ainda derivadas | 1151 |
 | Rotulos de menu e batalha | 265 |
 | Nomes de item | ficam em ingles (0.17.0) |
 | Glifos acentuados | 25 |
@@ -753,6 +753,7 @@ Lotes prontos:
 | 24 | Varridas dos bancos 40-4c: RADIO TOWER, SPROUT TOWER, VICTORY ROAD, passagem | 140 |
 | 25 | Bancos 51/52/53/55: GINÁSIO de PRYCE e ECRUTEAK, dragões, AZALEA | 69 |
 | 26 | Bancos 57/59/5a/5b/5d/5e/54/56: ultimas varridas | 76 |
+| 27 | Bancos 51/52/53: derivadas -- OLIVINE e MOOMOO FARM, ECRUTEAK e TIN TOWER, o BILL, KIMONO GIRLS, o BLAINE | 90 |
 
 Alem do dialogo: `pt/sistema.py` e `pt/sistema2.py` cobrem 265 rotulos
 do motor -- menus, batalha (`%s usou\n%s!`), PC, loja, GAME CORNER e a
@@ -794,7 +795,7 @@ nao acha mais nada com que trabalhar nesta categoria:
 python progresso.py            # confirmar: varridas = 0
 ```
 
-**2. As derivadas -- 1239 falas.**
+**2. As derivadas -- 1151 falas.**
 
 Estao **em portugues** no jogo, vindas da traducao de R_Lopes e
 Night_Shadown.  Traduzi-las de novo nao muda o que o jogador ve; muda

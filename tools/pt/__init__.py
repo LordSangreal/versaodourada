@@ -15,7 +15,7 @@ import importlib
 import pkgutil
 import os
 
-LOTES = ["sistema", "sistema2", "interface", "itens", "dialogo_01", "dialogo_02", "dialogo_03", "dialogo_04", "dialogo_05a", "dialogo_05b", "dialogo_06a", "dialogo_06b", "dialogo_07", "dialogo_08a", "dialogo_08b", "dialogo_08c", "dialogo_09a", "dialogo_09b", "dialogo_10a", "dialogo_10b", "dialogo_10c", "dialogo_11", "dialogo_12", "dialogo_13", "dialogo_14a", "dialogo_14b", "dialogo_15a", "dialogo_15b", "dialogo_15c", "dialogo_16", "dialogo_17", "dialogo_18", "dialogo_19", "dialogo_20", "dialogo_21", "dialogo_22", "dialogo_23", "dialogo_24", "dialogo_25", "dialogo_26"]
+LOTES = ["sistema", "sistema2", "interface", "itens", "dialogo_01", "dialogo_02", "dialogo_03", "dialogo_04", "dialogo_05a", "dialogo_05b", "dialogo_06a", "dialogo_06b", "dialogo_07", "dialogo_08a", "dialogo_08b", "dialogo_08c", "dialogo_09a", "dialogo_09b", "dialogo_10a", "dialogo_10b", "dialogo_10c", "dialogo_11", "dialogo_12", "dialogo_13", "dialogo_14a", "dialogo_14b", "dialogo_15a", "dialogo_15b", "dialogo_15c", "dialogo_16", "dialogo_17", "dialogo_18", "dialogo_19", "dialogo_20", "dialogo_21", "dialogo_22", "dialogo_23", "dialogo_24", "dialogo_25", "dialogo_26", "dialogo_27"]
 
 
 def carregar():

@@ -7,6 +7,14 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.28.0
+
+- **Lote 27** -- as derivadas dos bancos 51-53 (90 falas): os
+  marinheiros e o farol de OLIVINE e a MOOMOO FARM (51), ECRUTEAK com a
+  TIN TOWER, a palestra do BILL sobre a TIME CAPSULE e as KIMONO GIRLS
+  (52), e o GINÁSIO do BLAINE na caverna de CINNABAR (53).
+- 1799 falas proprias; 2950 publicadas.
+
 ## 0.27.0
 
 - **Lote 26** -- as ultimas varridas (76 falas): o GINÁSIO de pedra de
