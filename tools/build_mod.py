@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.13.0"
+VERSION = "0.14.0"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -350,9 +350,14 @@ if os.path.exists(_readme):
 else:
     print("  AVISO: README_mod.md nao encontrado; o mod vai sem README")
 
-open(os.path.join(OUT, "CHANGELOG.md"), "w", encoding="utf-8").write(
-    "# Changelog\n\n## %s\n\n- Primeira versao: %d falas em portugues.\n"
-    "- Nomes de golpes mantidos no original.\n" % (VERSION, len(kept)))
+# O CHANGELOG tinha o mesmo defeito que o README ate a 0.8.2: era gerado
+# aqui, entao toda versao publicada dizia "Primeira versao" e o historico
+# se apagava a cada build.  Agora e arquivo, e o build so copia.
+_chlog = os.path.join(HERE, "CHANGELOG_mod.md")
+if os.path.exists(_chlog):
+    shutil.copyfile(_chlog, os.path.join(OUT, "CHANGELOG.md"))
+else:
+    print("  AVISO: CHANGELOG_mod.md nao encontrado; o mod vai sem changelog")
 
 # zip para o release
 zp = os.path.join(HERE, "versaodourada-%s.zip" % VERSION)
