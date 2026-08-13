@@ -7,6 +7,14 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.26.0
+
+- **Lote 25** -- interiores de Johto (69 falas): o GINÁSIO de PRYCE com o
+  piso de gelo e as pistas de patinação, a DANCE THEATER e o GINÁSIO de
+  ECRUTEAK com o piso invisível, as varridas do GINÁSIO de dragões de
+  CLAIR, e AZALEA com os bug catchers e as gemias AMY e MAY.
+- 1633 falas proprias; 2872 publicadas.
+
 ## 0.25.0
 
 - **Lote 24** -- varridas dos bancos 40-4c (140 falas): TEAM ROCKET e a

@@ -709,12 +709,12 @@ python conferir.py                    # 3. ate dar zero
 
 ## 11. Estado atual
 
-Versao publicada: **0.25.0**.
+Versao publicada: **0.26.0**.
 
 | | |
 |---|---|
-| Falas publicadas | 2803 |
-| Falas **nossas** | 1564 |
+| Falas publicadas | 2872 |
+| Falas **nossas** | 1633 |
 | Falas ainda derivadas | 1239 |
 | Rotulos de menu e batalha | 265 |
 | Nomes de item | ficam em ingles (0.17.0) |
@@ -751,6 +751,7 @@ Lotes prontos:
 | 22 | Banco 44: RUINS, MT.MORTAR, SLOWPOKE WELL, LIGHTHOUSE | 69 |
 | 23 | Bancos 45/46: esconderijo ninja, senhas, subterraneo | 49 |
 | 24 | Varridas dos bancos 40-4c: RADIO TOWER, SPROUT TOWER, VICTORY ROAD, passagem | 140 |
+| 25 | Bancos 51/52/53/55: GINÁSIO de PRYCE e ECRUTEAK, dragões, AZALEA | 69 |
 
 Alem do dialogo: `pt/sistema.py` e `pt/sistema2.py` cobrem 265 rotulos
 do motor -- menus, batalha (`%s usou\n%s!`), PC, loja, GAME CORNER e a
@@ -781,24 +782,21 @@ edite no scratchpad e copie, nunca o contrario.
 
 Falta trabalho de duas naturezas bem diferentes.
 
-**1. As varridas -- 145 falas, sem traducao nenhuma hoje.**
+**1. As varridas -- 76 falas, sem traducao nenhuma hoje.**
 
 Sao as que a varredura da 0.16.0 achou e nenhum lote cobriu.  Hoje
 aparecem **em ingles** na tela.  Prioridade, portanto.
 
-O lote 24 (0.25.0) zerou as varridas dos bancos 40-4c; resta:
+O lote 24 (0.25.0) zerou os bancos 40-4c e o lote 25 (0.26.0) zerou os
+51, 52, 53 e 55; resta:
 
 ```bash
-python pendentes.py 52        # e assim por diante
+python pendentes.py 57        # e assim por diante
 ```
 
 | Banco | Faltam | O que e |
 |---|---|---|
-| 52 | 22 | interiores de Johto |
 | 57 | 20 | Goldenrod: lojas, ginasio, torre |
-| 51 | 17 | casas de Ecruteak e Olivine |
-| 53 | 16 | casas de Mahogany e Blackthorn |
-| 55 | 14 | Azalea: centro, loja, KURT |
 | 5d | 13 | Cianwood e arredores |
 | 5e | 13 | Blackthorn e a Liga |
 | 59 | 11 | cidades |
@@ -833,7 +831,7 @@ Depois trate como lote normal: `esqueleto.py` da chave, escreva com
 e o ponto inteiro do exercicio.  `conferir.py` compara so com o ingles
 justamente para isso.
 
-**Ordem sugerida:** as 145 varridas primeiro (o jogador ve ingles
+**Ordem sugerida:** as 76 varridas primeiro (o jogador ve ingles
 agora), depois as derivadas por regiao.
 
 ---
