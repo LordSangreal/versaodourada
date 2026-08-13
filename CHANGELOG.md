@@ -7,6 +7,15 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.24.0
+
+- **Lote 23** -- bancos 45 e 46 (49 falas): o esconderijo ninja do
+  GINASIO de ECRUTEAK com os paineis de salto, os ROCKET GRUNTS que
+  guardam a sala do chefe e soltam as senhas quando perdem
+  (SLOWPOKETAIL e RATICATE TAIL), o cientista do sinal de radio, e o
+  GOLDENROD UNDERGROUND com o quebra-cabeca das persianas.
+- 1424 falas proprias; 2663 publicadas.
+
 ## 0.23.0
 
 - **Lote 22** -- banco 44 inteiro (69 falas), que junta quatro lugares:
