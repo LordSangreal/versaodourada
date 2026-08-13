@@ -240,75 +240,484 @@ consultar o charmap.
 
 ---
 
-## 10. Como fazer o proximo lote
+## 10. Como fazer um lote, do zero ao release
 
 Trabalhe **no scratchpad**, nao no repositorio.  A pasta de trabalho e a
 que tem `dialogo.json`, `repo/` (o fonte do gen1recomp) e `br/` (a ROM
 BR).  Nada disso esta no git -- ver secao 11.
 
+### 10.1 Escolher o que traduzir
+
+Dois caminhos.  Use o segundo -- e o que sobrou de trabalho.
+
 ```bash
-python lote.py 08                              # planilha-08.py, o ingles
-python fatiar.py 08 08a MAHOGANY_TOWN ROUTE_42 # fatia por mapa, tira lixo
-python esqueleto.py planilha-08a.py            # a estrutura, linha a linha
+python lote.py 08              # POR REGIAO: planilha-08.py (mapas de lote.py)
+python pendentes.py 4c 4d      # POR BANCO: planilha-pend-4c-4d.py
 ```
 
-1. Leia o esqueleto.  Cada linha vem com o limite de coluna ja calculado.
-2. Escreva `tools/pt/dialogo_08a.py` com `linhas()` -- ver secao 9.
-3. Registre o lote em `tools/pt/__init__.py`, na lista `LOTES`.
-4. `python conferir.py` ate dar **0 problemas**.
-5. `python build_mod.py` (suba o `VERSION` no topo do arquivo).
-6. Acrescente a entrada no `tools/CHANGELOG_mod.md`.
-7. Copie para o repositorio, commit, push, `gh release create v0.X.0`
-   com o zip, e `python tools/gerar_indice.py` + commit do feed.
+`pendentes.py` e o certo hoje.  Ele lista o que falta num banco e ja
+descarta cauda, marcador, kana e fala curta demais -- ver 10.5.  Rode
+sem medo: ele nunca escreve no catalogo, so gera a planilha.
 
-### Ao copiar para o repositorio, cuidado com dois arquivos
+Para saber onde ainda ha trabalho:
 
-`cp *.py tools/` **nao serve**: leva junto as `planilha-*.py`, que sao
-texto de ROM em ingles e nao podem ir para o git (ja estao no
-`.gitignore`, mas `git add -A` depois de um `cp` cru as pega).
+```bash
+python progresso.py            # quanto e nosso, quanto e derivado
+python pendentes.py 42 43 47   # quantas faltam nesses bancos
+```
 
-`README_mod.md` e `CHANGELOG_mod.md` moram nos **dois** lugares.  Eu ja
-sobrescrevi a versao boa do README copiando a antiga do scratchpad por
-cima.  Sincronize na direcao certa antes de copiar.
+### 10.2 Ler o esqueleto ANTES de escrever
 
-### Tamanho do lote importa
+```bash
+python esqueleto.py planilha-pend-4c.py     # o lote inteiro
+python esqueleto.py 56:4634                 # uma chave so
+```
 
-Lotes 2, 3, 5a, 5b, 6a, 7, 8a, 8b e 8c (27 a 59 falas) passaram com zero
-ou pouquissimos problemas.  O lote 4 (65 falas, escrito com pressa) deu
-**32**.  Goldenrod tem 126 e foi dividido em duas metades por isso; o
-lote 8, com 139, virou tres.
+A saida diz, linha a linha, o separador que vem depois dela e o limite
+de coluna daquela linha:
 
-**Ate ~50 falas por lote.**  Passar disso nao acelera, so gera retrabalho.
+```
+# 40:4664
+  P1 \n [18] |Good evening!|
+  P1 \f [17] |You're out late.|
+  P2 \n [18] |Welcome to our|
+  P2    [17] |POKéMON CENTER.|
+```
 
-### O que descartar
+Ler isso e obrigatorio.  **A saida do terminal corta linhas longas** --
+se a fala for grande, o esqueleto pode aparecer truncado na tela e voce
+vai contar linhas a menos.  Aconteceu comigo em `41:5484`: li 7 linhas,
+o ingles tinha 21.
 
-`fatiar.py` ja faz isso sozinho, mas saiba o porque:
+### 10.3 Escrever com `linhas()`
 
-- **kana solto** -- ponteiro mal alinhado, o texto decodificado e lixo
-- **fragmento** -- comeca no meio de uma palavra; e continuacao de um
-  `TX_FAR`, e o pedaco que aparece em tela vem da fala inteira, que esta
-  em outro ponteiro.  Traduzir o fragmento nao muda nada na tela
-- **vazio** e `'Object event.'` -- sobra do extrator
-- **identico ao ingles** -- placas que so tem nome proprio ("ROUTE 42 /
-  ECRUTEAK CITY - MAHOGANY TOWN").  Nao inflam o catalogo a toa
+Um arquivo por lote, em `pt/dialogo_NN.py`:
 
-O filtro de fragmento de `fatiar.py` e heuristico e deixa alguns passar.
-Confira o esqueleto: se a primeira linha comeca no meio de uma palavra,
-pule a chave.
+```python
+# -*- coding: utf-8 -*-
+"""Lote NN -- descreva o escopo em uma linha.
+
+Ficam no original: liste aqui os nomes proprios que voce nao traduziu.
+"""
+from pt.estrutura import linhas as L
+
+DIALOGO = {
+    "40:4664": L("40:4664",
+                 "Boa noite!",
+                 "Saiu tarde, hein?",
+                 "Bem-vindo ao nosso",
+                 "CENTRO POKéMON."),
+}
+```
+
+So o texto de cada linha.  Os separadores vem do ingles.  **Nunca**
+escreva `\n`, `\v` ou `\f` a mao num lote novo.
+
+### 10.4 Conferir antes de tudo
+
+```bash
+# 1) contagem de linha -- pega o erro que quebra o import
+python -c "
+import json,re,io
+d=json.load(open('dialogo.json',encoding='utf-8'))
+src=io.open('pt/dialogo_NN.py',encoding='utf-8').read()
+for m in re.finditer(r'L\(\"([0-9a-f:]+)\",(.*?)\),\n', src, re.S):
+    k=m.group(1); n=len(re.findall(r'\"[^\"]*\"', m.group(2)))
+    e=len(re.split(r'[\n\v\f]', d[k][0]))
+    if n!=e: print('%s ingles %d, meu %d'%(k,e,n))
+"
+
+# 2) registre em pt/__init__.py, na lista LOTES
+# 3) conferidor ate dar ZERO
+python conferir.py
+```
+
+O passo 1 vale a pena porque `linhas()` estoura no **primeiro** erro e
+voce descobre um por vez; o script acha todos de uma vez.
+
+### 10.5 O que NAO traduzir
+
+`pendentes.py` ja filtra, mas saiba o porque -- o filtro e heuristico e
+deixa passar:
+
+| Fica fora | Por que |
+|---|---|
+| **cauda** | o texto e o fim de outra fala; o jogo mostra a fala inteira a partir do ponteiro de cima, entao traduzir a cauda nao muda nada na tela |
+| **`<TARGET>` `<USER>` `<ENEMY>`** | nao sao texto, sao bytes que o motor troca em execucao.  O override publica o texto como esta, entao o marcador apareceria **literal** na tela |
+| **kana solto** | ponteiro mal alinhado; o texto decodificado e lixo |
+| **fragmento** | comeca no meio de uma palavra (continuacao de `TX_FAR`) |
+| **identico ao ingles** | placas que so tem nome proprio ("ROUTE 42 / ECRUTEAK CITY - MAHOGANY TOWN") |
+
+Se a primeira linha do esqueleto comeca no meio de uma palavra, pule a
+chave.
+
+### 10.6 Publicar
+
+```bash
+# no scratchpad
+#   suba VERSION no topo de build_mod.py
+#   acrescente a entrada em CHANGELOG_mod.md
+#   atualize os numeros em README_mod.md
+python build_mod.py
+cp -r versaodourada/. "D:/pokemon gold traducao/versaodourada/"
+cp build_mod.py CHANGELOG_mod.md README_mod.md "D:/.../tools/"
+cp pt/dialogo_NN.py pt/__init__.py "D:/.../tools/pt/"
+
+# no repositorio
+git add -A && git commit && git push
+gh release create v0.X.0 <caminho do zip> --title "..." --notes "..."
+python tools/gerar_indice.py
+git add -A && git commit -m "Feed 0.X.0" && git push
+```
+
+**Cuidado com dois arquivos.**  `cp *.py tools/` **nao serve**: leva
+junto as `planilha-*.py`, que sao texto de ROM em ingles e nao podem ir
+para o git.  E `README_mod.md`/`CHANGELOG_mod.md` moram nos **dois**
+lugares -- eu ja sobrescrevi a versao boa do README copiando a antiga do
+scratchpad por cima.
+
+### 10.7 Tamanho do lote
+
+Ate a 0.20.0 a regra era ~50 falas.  O usuario pediu lotes maiores para
+economizar tempo, e a partir da 0.21.0 os lotes sao de banco inteiro
+(70-120 falas).
+
+Isso funciona, **com uma ressalva medida**: lote grande nao erra mais
+por fala -- erra a mesma proporcao, so que tudo de uma vez.  Nos lotes
+20 e 21 juntos foram 3 reprovacoes de contagem e 29 estouros de coluna,
+todos pegos pelas ferramentas.
+
+O que o lote grande esconde e o **erro de sentido**, que nenhuma
+ferramenta pega.  Ver 10.8.
+
+### 10.8 Reler antes de publicar -- o passo que nao tem ferramenta
+
+`conferir.py` valida forma: largura, codigo de controle, token, glifo.
+Ele aprova frase sem sentido sem piscar.  Estes foram publicados ou
+quase publicados:
+
+| O que saiu | O que era |
+|---|---|
+| "Somos as estrelas destral estrada!" | erro de digitacao puro |
+| "Parece que ele vai engolir." | faltou o objeto ("te engolir") |
+| "Minha aula favorita e a de ed. fi" | cortada no meio |
+| "cortando as cauda dos SLOWPOKE" | concordancia |
+| "E aqui que nos marinheiros ralam" | concordancia |
+| "Voce removing aquela arvore?" | meio traduzido (foi da outra sessao) |
+
+Depois do conferidor dar zero, rode isto e **leia**:
+
+```bash
+python -c "
+import sys,re; sys.path.insert(0,'.')
+sys.stdout.reconfigure(encoding='utf-8',errors='replace')
+import pt
+from pt.dialogo_NN import DIALOGO
+_s,n=pt.carregar()
+for k in DIALOGO: print(k,'|',' | '.join(re.split(r'[\n\v\f]', n[k])))
+"
+```
+
+Procure por: palavra cortada no fim, verbo sem sujeito, concordancia,
+palavra em ingles que sobrou, frase que termina em virgula.
+
+### 10.9 Dois atalhos que NAO funcionam
+
+**`"texto"[:18]`** para forcar largura -- corta palavra no meio e vira
+"marinheiros ralamo".  Escreva a linha mais curta de verdade.
+
+**Heredoc de bash com `\n` ou `\v` dentro** -- o shell come o escape e
+corrompe o arquivo.  Ja destruiu `build_mod.py`, `dialogo_01.py` e
+`lote.py`.  Use a ferramenta de escrita/edicao, ou um `.py` separado.
+Se precisar de heredoc, use `<<'PY'` com aspas e sem escapes no texto.
+
+---
+
+## 10-A. O oficio: como traduzir para caber em 18 colunas
+
+Esta secao e a diferenca entre uma traducao que passa no conferidor e
+uma que se le bem.  Nao pule.
+
+### O problema de fundo
+
+O portugues ocupa cerca de **20 a 30% mais espaco** que o ingles.  Cada
+linha tem 18 colunas (17 na ultima de cada pagina).  Isso significa que
+traduzir palavra por palavra **nunca** cabe.  A traducao boa aqui e a
+que corta o supérfluo e mantem o que a frase faz.
+
+### Regra 1 -- traduza a INTENCAO, nao as palavras
+
+O NPC nao precisa dizer a mesma coisa; precisa **fazer a mesma coisa**
+(informar, ameacar, se gabar, se desculpar).
+
+| Ingles | Literal (nao cabe) | Publicado |
+|---|---|---|
+| "I have no regrets." | "Sem arrependimentos" (19) | "Nada a lamentar." (16) |
+| "You looked strong." | "Voce parecia forte" (18, ultima) | "Voce parecia bom." (17) |
+| "That's my fashion policy." | "Essa e minha politica de moda" | "E a minha regra de moda." |
+| "Reckless driving causes accidents!" | ... | "Direcao imprudente causa acidente!" |
+
+### Regra 2 -- a ordem de encurtamento
+
+Quando uma linha estoura, tente **nesta ordem**.  Pare no primeiro que
+funcionar:
+
+1. **Corte o supérfluo.**  "Eu vou ganhar" -> "Vou ganhar".  Sujeito
+   pronominal em portugues quase sempre pode sair.
+2. **Troque por sinonimo curto.**  "impressionante" -> "incrivel",
+   "adversario" -> "rival", "consegue" -> "da".
+3. **Reorganize a frase.**  "Nao ha nada aqui" -> "Nada aqui".
+4. **Mova palavra para a linha seguinte** -- so se a linha seguinte tem
+   folga E o sentido nao quebra.
+5. **Hifenize** -- ultimo recurso, e so com as regras da Regra 3.
+6. **Corte informacao secundaria** -- so quando nada mais serve, e nunca
+   um nome proprio, numero ou instrucao de jogo.
+
+O que **nunca** se corta: nome de POKéMON, de lugar, de item, de golpe,
+numero, direcao ("norte", "leste"), nome de botao.  Se a fala diz "va
+para o norte ate LAKE OF RAGE", o jogador precisa dos dois.
+
+### Regra 3 -- hifenizacao
+
+O jogo original hifeniza muito ("differ-/ent", "POKé-/MON").  Voce pode
+fazer o mesmo, mas em portugues:
+
+- **Separe por silaba.**  "impres-/sionado", "trei-/nador",
+  "experi-/mento".  Nunca "impressio-/nado" cortando no meio da silaba
+  se puder evitar, e **nunca** corte deixando uma letra sozinha.
+- **Nao hifenize nome proprio** se puder evitar.  "SLOW-/POKETAIL" foi
+  aceito porque nao cabia de outro jeito; "POKé-/MON" e o padrao do
+  proprio jogo e esta ok.
+- Se a hifenizacao ficar feia, **prefira reescrever**.  "Nos HIKERS
+  somos melhores nas montanhas" cabe sem hifen nenhum.
+
+### Regra 4 -- a ultima linha da pagina tem 17, nao 18
+
+Esse e o erro mais comum de todos.  A seta ▼ de "aperte A" ocupa a
+coluna 18 sempre que a caixa **para e espera**: no fim de cada pagina
+(antes de `\f`) e no fim do texto.
+
+O esqueleto ja mostra `[17]` nessas linhas.  Leia o numero, nao chute.
+
+### Regra 5 -- registro e tom
+
+O jogo e de 1999 e fala com crianca.  A traducao acompanha:
+
+- **Voce**, nunca "tu".  Nunca mesoclise, nunca "vos".
+- **Informal mas nao girio demais.**  "Que legal!" sim; "Que massa,
+  mano!" nao.  A excecao sao personagens que ja sao girios em ingles
+  (os motoqueiros da CYCLING ROAD, os ROCKET GRUNTS).
+- **Interjeicao traduz-se por interjeicao equivalente**, nao pela
+  transliteracao: "Whoa!" -> "Uau!", "Yikes!" -> "Eita!", "Darn!" ->
+  "Droga!", "Hmmm…" -> "Hmmm…", "Wahahah!" -> "Uahahah!".
+- **Ameaca de vilao soa ameacadora**, nao burocratica: "Get lost!" ->
+  "Some!" e nao "Por favor retire-se".
+- **NPC idoso fala como idoso**, crianca como crianca.  O KURT diz
+  "Escute aqui"; o menino diz "Ei, escuta!".
+
+### Regra 6 -- consistencia de termo
+
+Antes de inventar uma traducao, **procure se ja existe**:
+
+```bash
+grep -rn "GINASIO\|LIDER\|CENTRO POK" pt/*.py | head
+```
+
+Termos ja fixados (ver tambem `GLOSSARIO.md`):
+
+| Ingles | Portugues | Observacao |
+|---|---|---|
+| GYM | GINÁSIO | oficial pt-BR |
+| GYM LEADER | LÍDER de GINÁSIO | |
+| POKéMON CENTER | CENTRO POKéMON | |
+| POKéMON MART | LOJA POKéMON | mudou na 0.17.0 |
+| trainer | treinador | |
+| BADGE | BADGE | fica em ingles |
+| CHAMP | CAMPEÃO | |
+| PACK | BOLSA | oficial (nao "mochila") |
+| HP | PS | o glossario troca sozinho |
+| move / golpe | movimento | o glossario troca **se couber** |
+| MOM | MÃE | |
+| BOX | BOX | interface ja usa "BOX %d" |
+
+**Cuidado com o glossario automatico.**  `glossario.py` troca "golpe"
+por "movimento" **so quando cabe** na linha.  Isso pode deixar duas
+falas vizinhas usando palavras diferentes.  E o comportamento desenhado
+(cabimento vence purismo), mas se incomodar, escreva "movimento" direto
+quando couber.
+
+### Regra 7 -- os tokens sao sagrados
+
+`{PLAYER}`, `{RIVAL}`, `{STRBUF}`, `{NUM}`, `{MOM}`, `{TRAINER}` sao
+substituidos em execucao.  Regras:
+
+- **Numero e ordem** tem de bater com o ingles.  Se a fala tem dois
+  `{STRBUF}`, a sua tambem tem dois, **na mesma ordem** -- o motor
+  preenche pela posicao.  Inverter troca o nome do POKéMON pelo do
+  lugar.
+- Eles ocupam largura: `{PLAYER}`=7, `{RIVAL}`=7, `{STRBUF}`=10,
+  `{NUM}`=5, `{TRAINER}`=8, `{MOM}`=4.  O conferidor ja conta assim.
+- **Nunca corte um token para caber.**  Encurtar `KURT: Oi, {PLAYER}!`
+  para `KURT: Oi!` faz o KURT parar de chamar o jogador pelo nome.
+- Reordenar a frase em portugues e permitido **se houver so um token**:
+  "{STRBUF}'s number." -> "{STRBUF}." funciona.
+
+### Regra 8 -- quebrar a frase entre linhas
+
+A quebra tem de cair onde a leitura respira:
+
+- **Bom:** depois de virgula, antes de conjuncao, entre sujeito e verbo.
+- **Ruim:** entre artigo e substantivo ("a / casa"), entre preposicao e
+  o que ela rege ("de / POKéMON"), deixando uma palavra sozinha na
+  ultima linha.
+- **Pessimo:** terminar uma pagina com virgula e comecar a proxima com
+  minuscula sem que a frase continue de fato.
+
+Quando a fala cruza `\f` (pagina nova), a frase **pode** continuar -- o
+ingles faz isso o tempo todo.  So confira que continua fazendo sentido.
+
+### Regra 9 -- o que fica em ingles (decisao do usuario)
+
+Ver secao 6 para a lista completa.  Resumo pratico: **nome proprio de
+qualquer natureza fica**.  POKéMON, golpe, item, cidade, rota,
+personagem, TM/HM, estabelecimento com nome proprio (DEPT.STORE, GAME
+CORNER, DAY-CARE, FAST SHIP, MAGNET TRAIN).
+
+O que **e** traduzido: tudo que e substantivo comum ou fala corrente,
+mais os termos de categoria que tem forma oficial em pt-BR (GINÁSIO,
+LÍDER, CENTRO POKéMON, LOJA POKéMON, CAMPEÃO).
+
+### Regra 10 -- acentue sempre
+
+Desde a 0.6.0 o mod carrega uma pagina com 25 glifos acentuados.
+Escreva `não`, `você`, `POKéMON`, `três`, `história`.  Acento **nao**
+muda a largura -- um caractere continua sendo um caractere.
+
+Glifos disponiveis: á â ã à ê í ó ô õ ú ç é Á Í Â Ê Ã Õ É Ó Ô Ç e mais.
+O conferidor acusa se voce usar um que nao existe.  `…` (reticencias
+unicas) existe na fonte da ROM e deve ser usado no lugar de "...".
+
+### Regra 11 -- o travessao do ingles
+
+`--` no ingles e travessao, marca de pausa.  Em portugues vira
+**virgula**, e o `glossario.py` ja faz isso sozinho.
+
+Nao use reticencias no lugar: `…` em portugues significa frase que se
+perde no ar, que e outra coisa.  Isso ja foi publicado errado e o
+usuario reclamou (0.10.1).
+
+---
+
+## 10-B. O que a outra sessao errou, e como consertar
+
+Uma sessao paralela escreveu os lotes 09a, 09b, 10a, 10b, 10c, 11 e um
+`dialogo_ginasio_goldenrod.py` -- 200 falas.  Todas precisaram de
+conserto.  O catalogo abaixo serve de checklist: **se voce for aquela
+sessao, evite isto; se for a proxima, procure por isto.**
+
+### Erro 1 -- escreveu tudo sem acento (200 de 200 falas)
+
+"nao", "voce", "POKeMON", "tambem", "nivel".  Zero acentos em 200 falas.
+
+Isso era a regra **ate a 0.5.0**, quando a fonte da ROM so tinha `é` e o
+build dobrava tudo para ASCII.  Desde a **0.6.0** a pagina de glifos
+entrou e `DOBRA` esta vazio.  Escrever sem acento agora e so erro de
+portugues na tela.
+
+**Conserto:** `tools/acentuar.py`.  Ele tem um mapa de ~250 palavras sem
+ambiguidade e so mexe dentro de literais de aspas duplas.
+
+```bash
+python acentuar.py             # aplica
+python acentuar.py --ambiguas  # lista onde estao e/esta/pode/para
+```
+
+Duas armadilhas que **ja morderam** e estao consertadas no script:
+
+- A **chave** tambem e um literal: `"43:63ce"` tem letras, e a primeira
+  versao trocou o "ce" -- a chave deixou de existir no jogo.  Ha um
+  filtro `_PONTEIRO` para isso.
+- O regex excluia `\\`, e por isso **pulava toda fala escrita com `\n`
+  embutido**.  Ficaram 34 palavras sem acento sem eu perceber.
+
+O que o script **nao** faz, de proposito: `e`/`é`, `esta`/`está`,
+`a`/`à`, `pode`/`pôde`, `para`/`pára`.  As duas formas existem; so o
+contexto decide.  Essas vao a mao.
+
+### Erro 2 -- 42 linhas estourando a caixa
+
+Linhas de 19 e ate 22 colunas.  Na tela isso corta a palavra no meio.
+A causa foi nao ler o `[17]`/`[18]` do esqueleto.
+
+**Conserto:** `tools/patch_lotes_09_11.py` documenta as 60 trocas que
+fiz.  O metodo esta na Regra 2 acima.
+
+### Erro 3 -- ingles solto no meio da traducao
+
+`"Você removing aquela árvore?"` -- meio traduzido, meio nao.
+Nenhuma ferramenta pega isso: a largura estava certa.
+
+**Conserto:** so releitura (10.8).  Procure palavra em ingles no meio de
+frase portuguesa.
+
+### Erro 4 -- frase gramaticalmente quebrada
+
+`"Seus status podem parecidos inicio."` -- sem verbo, sem sentido.
+Provavelmente foi encurtamento as pressas para caber.
+
+**Licao:** quando a linha nao cabe, **reescreva a frase inteira**, nao
+arranque palavras dela.
+
+### Erro 5 -- retraduziu o que ja estava pronto, e pior
+
+`dialogo_ginasio_goldenrod.py` tinha 12 falas.  **Todas as 12** ja
+estavam no lote 5a, conferidas e publicadas.  Como o arquivo vinha
+depois na lista `LOTES`, ele **sobrescrevia** a versao boa por uma com
+estouro de coluna.
+
+**Antes de criar um lote, confira se a chave ja existe:**
+
+```bash
+python -c "
+import sys; sys.path.insert(0,'.')
+import pt
+_s,n=pt.carregar()
+print('57:4122' in n)   # True = ja traduzida, nao mexa
+"
+```
+
+`pendentes.py` ja exclui o que esta traduzido -- e mais um motivo para
+usa-lo em vez de montar a lista a mao.
+
+### Erro 6 -- deixou arquivos de rascunho no repositorio
+
+`temp_analyze.py`, `temp_check.py`, `temp_fix.py`, `temp_width.py`,
+`_find_falkner.py` foram commitados.  Rascunho fica no scratchpad.
+(Ja ha `temp_*.py` no `.gitignore`.)
+
+### Resumo do conserto, em ordem
+
+```bash
+python acentuar.py                    # 1. acentos
+python conferir.py                    # 2. ver o que estoura
+#    corrigir as linhas uma a uma, pela Regra 2
+python conferir.py                    # 3. ate dar zero
+#    4. RELER tudo (10.8) procurando erro de sentido
+```
 
 ---
 
 ## 11. Estado atual
 
-Versao publicada: **0.15.0**.
+Versao publicada: **0.24.0**.
 
 | | |
 |---|---|
-| Falas publicadas | 1981 |
-| Falas **nossas** | 559 |
-| Falas ainda derivadas | 1422 |
-| Rotulos de menu (tela do jogo) | 151 |
-| Nomes de item | 68 |
+| Falas publicadas | 2663 |
+| Falas **nossas** | 1424 |
+| Falas ainda derivadas | 1239 |
+| Rotulos de menu e batalha | 265 |
+| Nomes de item | ficam em ingles (0.17.0) |
 | Glifos acentuados | 25 |
 
 Lotes prontos:
@@ -327,6 +736,24 @@ Lotes prontos:
 | 8a | Mahogany, PRYCE, rotas 42/43 | 35 |
 | 8b | LAKE OF RAGE, o LANCE, casa do MAGIKARP | 27 |
 | 8c | Base da TEAM ROCKET, tres andares | 35 |
+| 09a-11 | RADIO TOWER, RUINS, rota 36, Concurso *(outra sessao, revisado)* | 200 |
+| 12 | Ginasio do FALKNER -- as falas que a varredura achou | 5 |
+| 13 | Resto do banco 40: GAME CORNER, telefone, batalha | 44 |
+| 14a | Telefone: a MÃE, o armazenamento, o BILL, o ELM | 36 |
+| 14b | Telefone: saudacoes, revanches, avistamentos | 33 |
+| 15a-c | Banco 4b: pescadores, HIKERS, DAY-CARE, as irmas | 78 |
+| 16 | Banco 4c: gemeas, nadadores, WHIRL ISLANDS | 72 |
+| 17 | Banco 4d: rotas do norte, os passaros lendarios | 67 |
+| 18 | Banco 4e: mar de Kanto, CYCLING ROAD | 39 |
+| 19 | Banco 4f: rotas de Kanto, professores, videntes | 54 |
+| 20 | Banco 50: ROCK TUNNEL, os seis, POWER PLANT | 64 |
+| 21 | Banco 5b: o FAST SHIP inteiro | 67 |
+| 22 | Banco 44: RUINS, MT.MORTAR, SLOWPOKE WELL, LIGHTHOUSE | 69 |
+| 23 | Bancos 45/46: esconderijo ninja, senhas, subterraneo | 49 |
+
+Alem do dialogo: `pt/sistema.py` e `pt/sistema2.py` cobrem 265 rotulos
+do motor -- menus, batalha (`%s usou\n%s!`), PC, loja, GAME CORNER e a
+fala de abertura do PROF.OAK.
 
 ### A pasta de trabalho nao e o repositorio
 
@@ -351,21 +778,59 @@ edite no scratchpad e copie, nunca o contrario.
 
 ### Proximo passo
 
-Sobram **1496 falas limpas** (fora kana e vazias):
+Falta trabalho de duas naturezas bem diferentes.
 
-- **394 sem mapa atribuido** -- espalhadas pelos bancos 43-5e.  Sao
-  falas de treinador (ver/vencer/perder) e scripts cujo ponto de entrada
-  o `onde.py` nao conseguiu ligar a um mapa.  Curtas e repetitivas.
-- **460 em Johto** -- Blackthorn e o ginasio da CLAIR, Dragon's Den,
-  ROUTE 36/44/45, os portoes do NATIONAL PARK, Ruins of Alph, o
-  GOLDENROD UNDERGROUND, a tomada da RADIO TOWER (lote 09, ja definido
-  em `lote.py`), Victory Road e a Liga.
-- **642 em Kanto** -- as nove cidades, o navio, o trem magnetico, a
-  POWER PLANT, a casa do BILL, o laboratorio do OAK.
+**1. As varridas -- 285 falas, sem traducao nenhuma hoje.**
 
-Ordem sugerida: termine Johto na ordem da historia (o lote 09 esta
-pronto para extrair), depois as 394 sem mapa, depois Kanto.  As sem mapa
-podem vir antes se quiser impacto rapido -- elas aparecem em todo lugar.
+Sao as que a varredura da 0.16.0 achou e nenhum lote cobriu.  Hoje
+aparecem **em ingles** na tela.  Prioridade, portanto.
+
+```bash
+python pendentes.py 43        # e assim por diante
+```
+
+| Banco | Faltam | O que e |
+|---|---|---|
+| 43 | 47 | NATIONAL PARK, portoes, Concurso |
+| 4a | 43 | rotas 30-33 |
+| 52 | 22 | interiores de Johto |
+| 57 | 20 | Goldenrod: lojas, ginasio, torre |
+| 42 | 17 | BURNED/TIN TOWER, ICE PATH |
+| 51 | 17 | casas de Ecruteak e Olivine |
+| 53 | 16 | casas de Mahogany e Blackthorn |
+| 55 | 14 | Azalea: centro, loja, KURT |
+| 5d, 5e | 26 | Cianwood, Blackthorn, a Liga |
+| 49, 59 | 22 | cidades e o resto |
+| outros | 41 | 40, 41, 46, 47, 48, 4b, 4c, 54, 56, 5a, 5b |
+
+**2. As derivadas -- 1239 falas.**
+
+Estao **em portugues** no jogo, vindas da traducao de R_Lopes e
+Night_Shadown.  Traduzi-las de novo nao muda o que o jogador ve; muda
+a **procedencia**.  E o que falta para `progresso.py` zerar e a
+atribuicao poder virar agradecimento (secao 5).
+
+Para achar uma fala derivada e reescreve-la do ingles:
+
+```bash
+python -c "
+import json,sys; sys.path.insert(0,'.')
+sys.stdout.reconfigure(encoding='utf-8',errors='replace')
+import pt
+_s,n=pt.carregar()
+d=json.load(open('dialogo.json',encoding='utf-8'))
+alvo=[k for k,(en,br) in d.items() if br.strip() and k not in n and k.startswith('55:')]
+print(len(alvo)); print(alvo[:10])
+"
+```
+
+Depois trate como lote normal: `esqueleto.py` da chave, escreva com
+`linhas()`, confira.  **Traduza do ingles**, nao do portugues deles --
+e o ponto inteiro do exercicio.  `conferir.py` compara so com o ingles
+justamente para isso.
+
+**Ordem sugerida:** as 285 varridas primeiro (o jogador ve ingles
+agora), depois as derivadas por regiao.
 
 ---
 
@@ -381,6 +846,75 @@ podem vir antes se quiser impacto rapido -- elas aparecem em todo lugar.
   nao decifrado.  Recuperaveis com mais deducao de charmap.
 - **391 rotulos de `strings`** nao traduzidos, quase todos mensagens longas
   de erro do launcher -- que, por decisao, nao entram mesmo.
+
+---
+
+## 12-A. Um lote completo, do comeco ao fim
+
+Exemplo real (lote 22), para copiar o ritmo.
+
+```bash
+cd <scratchpad>
+
+# 1. o que falta no banco 44
+python pendentes.py 44
+#    69 falas -> planilha-pend-44.py
+#    fora: {'ja tem derivada': 125}
+
+# 2. ler a estrutura -- em DUAS partes, porque a saida e longa
+python esqueleto.py planilha-pend-44.py | head -175
+python esqueleto.py planilha-pend-44.py | sed -n '175,420p'
+
+# 3. escrever pt/dialogo_22.py com linhas()
+
+# 4. contagem de linha ANTES de registrar
+python -c "...script da secao 10.4..."
+
+# 5. registrar em pt/__init__.py
+python -c "
+p='pt/__init__.py'; s=open(p,encoding='utf-8').read()
+s=s.replace('\"dialogo_21\"]','\"dialogo_21\", \"dialogo_22\"]')
+open(p,'w',encoding='utf-8').write(s)
+"
+
+# 6. conferir ate zero
+python conferir.py
+#    6 problemas -> corrigir -> 0 problemas
+
+# 7. RELER as falas corrigidas (10.8)
+#    achei 'cortando as cauda' -- concordancia, o conferidor aprovou
+
+# 8. versao, changelog, README
+# 9. build, copia, commit, release, feed
+```
+
+Tempo tipico: a leitura do esqueleto e a escrita levam a maior parte.
+O conferidor costuma acusar entre 5 e 30 linhas num lote de 70 -- isso
+e normal, nao e sinal de que o lote esta ruim.
+
+---
+
+## 12-B. Se voce estiver retomando com o contexto zerado
+
+Ordem de leitura:
+
+1. Esta secao e a **2** (as tres restricoes).
+2. Secao **10** inteira (o processo) e **10-A** (o oficio).
+3. Secao **11** (estado) para saber onde parar.
+4. `tools/CHANGELOG_mod.md` -- cada versao diz o que entrou e por que.
+
+Comandos para se situar em um minuto:
+
+```bash
+python progresso.py            # quanto e nosso
+python conferir.py             # o catalogo esta limpo?
+git -C "D:/pokemon gold traducao/versaodourada" log --oneline -5
+```
+
+Se `conferir.py` acusar problema **sem voce ter mexido em nada**, e
+porque o `dialogo.json` do scratchpad esta desatualizado em relacao aos
+lotes -- rode `python -c "import varrer; varrer.gravar()"` para repor as
+1032 falas da varredura.
 
 ---
 
