@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.1.5"
+VERSION = "0.1.6"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -44,8 +44,14 @@ def dobrar(s):
     return "".join(DOBRA.get(c, c) for c in s)
 
 
+import glossario
+
+
 def clean(pt):
-    # a ROM BR enche de espaco a direita para preencher a caixa
+    # 1) glossario: terminologia pt-BR atual, sem estourar as 18 colunas
+    # 2) dobra de acentos, ate a pagina de glifos entrar
+    # 3) a ROM BR enche de espaco a direita para preencher a caixa
+    pt = glossario.aplicar(pt, re)
     return "\n".join(line.rstrip() for line in dobrar(pt).split("\n"))
 
 
