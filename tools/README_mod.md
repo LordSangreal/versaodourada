@@ -10,7 +10,7 @@ Pokemon Gold para o aplicativo importar.
 
 | | |
 |---|---|
-| Falas do jogo | 1991 |
+| Falas do jogo | 2071 |
 | Rotulos de menu e batalha | 265 |
 | Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
@@ -56,7 +56,7 @@ ingles original, lote a lote:
 
 | | |
 |---|---|
-| Falas ja nossas | 752 |
+| Falas ja nossas | 832 |
 | Falas ainda derivadas | 1239 |
 
 Os rotulos de menu e os glifos ja sao 100% nossos.

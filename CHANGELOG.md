@@ -7,6 +7,25 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.18.0
+
+Primeira leva tirada da varredura da 0.16.0.
+
+- **Lote 13** -- o resto do banco 40 (44 falas): GAME CORNER, telefone,
+  felicidade do POKéMON, o JURAMENTO ROCKET, placas e mensagens de
+  batalha.  O lote 7 tinha coberto 32 falas deste banco; a varredura
+  achou mais 52.
+- **Lote 14a** -- o telefone (36 falas): a MÃE perguntando onde voce
+  esta e se quer guardar dinheiro, o SISTEMA DE ARMAZENAMENTO avisando
+  que a BOX encheu, o BILL, e as ligacoes do PROF.ELM sobre o EGG e o
+  POKéRUS.  E texto que chega pela POKéGEAR o jogo inteiro.
+- Ficam de fora as chaves com `<TARGET>`, `<USER>`, `<ENEMY>`: esses
+  marcadores nao sao texto, sao bytes que o motor troca em tempo de
+  execucao.  O override publica o texto como esta, entao o marcador
+  apareceria literal na tela.  Mesmo motivo pelo qual `build_mod.py` ja
+  descartava essas chaves na traducao derivada.
+- 832 falas proprias; 2071 publicadas.
+
 ## 0.17.0
 
 - **Nome de item volta todo para o ingles.**  Decisao do usuario depois
