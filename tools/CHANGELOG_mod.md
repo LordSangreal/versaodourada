@@ -7,6 +7,23 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.22.0
+
+- **Lote 20** -- banco 50 (64 falas): o caminho do ROCK TUNNEL, os
+  ecologistas, os seis desafiantes em fila e o trapaceiro que espera no
+  fim, a KANTO POKéMON FEDERATION, o MAGNET TRAIN e a POWER PLANT.
+- **Lote 21** -- banco 5b (67 falas): o FAST SHIP entre OLIVINE e
+  VERMILION -- marinheiros, criancas em excursao, as senhoras e o
+  cavalheiro de coracao partido.
+- 1306 falas proprias; 2545 publicadas.
+
+Nota de metodo: nestes dois lotes o `linhas()` reprovou tres falas por
+contagem de linha e o conferidor pegou vinte e nove estouros de coluna.
+Lote grande nao erra mais por fala -- erra a mesma proporcao, so que de
+uma vez.  O que ele esconde e o erro de SENTIDO, que nenhuma das duas
+ferramentas pega: "marinheiros ralam" com "nós" antes, "Meu coração
+chora" cortado.  Esses so a releitura acha.
+
 ## 0.21.0
 
 Lote maior por pedido do usuario: quatro bancos inteiros numa versao so,
