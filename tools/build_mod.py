@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -97,7 +97,21 @@ for k in frag:
     kept.pop(k, None)
 dropped["fragmento"] = len(frag)
 
+# Precedencia: traducao nossa na frente da derivada.  Enquanto os lotes nao
+# cobrem tudo, o mod mistura as duas -- e por isso a atribuicao continua.
+# Quando `derivadas` chegar a zero, ela pode sair.
+import pt as _pt
+_, _NOSSAS = _pt.carregar()
+nossas = 0
+for k, v in _NOSSAS.items():
+    if v and v.strip():
+        kept[k] = clean(v)
+        nossas += 1
+derivadas = len(kept) - nossas
+
 print("falas mantidas:", len(kept))
+print("  nossas   :", nossas)
+print("  derivadas:", derivadas)
 print("descartadas:", dropped)
 
 # ------------------------------------------------------------ arquivos
@@ -139,9 +153,9 @@ MANIFEST = {
     "optional_dependencies": [],
     "conflicts": [],
     "github": "LordSangreal/versaodourada",
-    "description": ("Portugues brasileiro para Pokemon Gold. Texto extraido da "
-                    "traducao de R_Lopes e Night_Shadown. Nomes de golpes ficam "
-                    "no original."),
+    "description": ("Portugues brasileiro para Pokemon Gold. Traducao propria em "
+                    "construcao; parte do texto ainda vem da traducao de R_Lopes e "
+                    "Night_Shadown. Golpes, Pokemon, TM e HM ficam no original."),
 }
 json.dump(MANIFEST, open(os.path.join(OUT, "manifest.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=2)
@@ -251,7 +265,8 @@ end
 open(os.path.join(OUT, "main.lua"), "w", encoding="utf-8").write(MAIN)
 
 # catalogos vazios, prontos para preencher
-from traducoes_strings import STRINGS
+import pt
+STRINGS, _NOSSO_DIALOGO = pt.carregar()
 with open(os.path.join(OUT, "lang", "strings.lua"), "w", encoding="utf-8") as f:
     f.write("-- Texto do motor: batalha, menus, opcoes.\n")
     f.write("-- Chave = a string em ingles exatamente como o codigo a escreve.\n")

@@ -2,14 +2,31 @@
 
 Pokemon Gold em portugues brasileiro.
 
-A traducao do texto e trabalho de **R_Lopes** e **Night_Shadown**, publicada
-originalmente como patch de ROM no PO.B.R.E / romhackers.org. Este mod porta
-aquele texto para o formato de mod do gen1recomp, para rodar sem ROM
-modificada -- o importador rejeita qualquer ROM patcheada por SHA-1.
+**1689 falas** traduzidas, mais 114 rotulos de menu e batalha. O que ainda
+nao foi traduzido aparece em ingles, entao o jogo e sempre jogavel.
 
-**Nomes de golpes e de Pokemon ficam no original em ingles**, de proposito.
+## O que fica no original, de proposito
 
-Cobertura parcial e crescendo. O que ainda nao foi traduzido aparece em
-ingles, entao o jogo e sempre jogavel.
+Nomes de **golpes**, de **Pokemon**, de **personagens e cidades**, e as
+siglas **TM/HM** -- estas vem coladas aos nomes dos golpes que ensinam.
 
-Nenhum byte de ROM acompanha este mod.
+A terminologia segue a localizacao oficial em portugues do Brasil: Ginasio,
+Lider de Ginasio, Treinador, Insignia, Centro Pokemon.
+
+## Creditos
+
+Parte do texto vem da traducao de **R_Lopes** e **Night_Shadown**, publicada
+nos anos 2000 como patch de ROM. Este mod a porta para o formato do
+gen1recomp, para rodar sem ROM modificada.
+
+Esse texto esta sendo substituido por traducao propria, feita a partir do
+ingles original, lote a lote. Enquanto houver uma unica fala derivada, este
+credito fica.
+
+Nao foi possivel localizar os autores. Se voce e um deles e quer o mod fora
+do ar, abra uma issue.
+
+## Aviso
+
+Nenhum byte de ROM acompanha este mod. Voce precisa da sua propria copia de
+Pokemon Gold.
