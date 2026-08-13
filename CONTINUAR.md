@@ -169,7 +169,10 @@ tools/walk.py        percorre os scripts das duas ROMs em passo travado
 tools/entradas.py    pontos de entrada, respeitando o que NAO e bytecode
 tools/gen2text.py    decodificador de texto Gen 2 + charmap da traducao BR
 tools/lote.py        extrai o ingles de uma regiao para traduzir
+tools/fatiar.py      corta uma planilha grande por mapa e joga fora o lixo
+tools/esqueleto.py   imprime pagina, linha, separador e limite de coluna
 tools/pt/            a traducao propria, um arquivo por lote
+tools/pt/estrutura.py  `linhas()` -- monta a fala com os separadores do ingles
 tools/conferir.py    compara a traducao propria com o ingles
 tools/validar.py     QA do catalogo publicado
 tools/glossario.py   terminologia, sem estourar as 18 colunas
@@ -178,6 +181,35 @@ tools/progresso.py   quanto ja e nosso, quanto ainda e derivado
 tools/build_mod.py   monta o mod
 tools/gerar_indice.py  gera o feed do catalogo
 ```
+
+### O erro que `linhas()` existe para impedir
+
+Copiar a sequencia de `\n` `\v` `\f` a mao **nao funciona**.  Eu errei
+quatro vezes no lote 6b e oito no lote 7, sempre do mesmo jeito: na
+planilha o separador aparece **depois** da linha a que pertence, e a
+leitura natural e como se viesse antes.  O resultado e uma caixa que
+rola quando devia virar pagina.
+
+`pt/estrutura.py` resolve isso de vez.  Escreva so o texto:
+
+```python
+from pt.estrutura import linhas as L
+
+DIALOGO = {
+    "40:4615": L("40:4615",
+                 "Bom dia!",
+                 "Bem-vindo ao nosso",
+                 "CENTRO POKéMON."),
+}
+```
+
+Os separadores vem do ingles.  Se a contagem de linhas nao bater, estoura
+no import com a chave no erro, em vez de virar bug no aparelho.  Os tres
+lotes escritos assim (8a, 8b, 8c) passaram limpos **de primeira**.
+
+**Use `linhas()` em todo lote novo.**  Os lotes 1 a 6b sao anteriores a
+ela e usam string crua; nao ha motivo para converte-los, ja estao
+conferidos.
 
 ### Dois detalhes que ja morderam
 
@@ -210,55 +242,130 @@ consultar o charmap.
 
 ## 10. Como fazer o proximo lote
 
+Trabalhe **no scratchpad**, nao no repositorio.  A pasta de trabalho e a
+que tem `dialogo.json`, `repo/` (o fonte do gen1recomp) e `br/` (a ROM
+BR).  Nada disso esta no git -- ver secao 11.
+
 ```bash
-cd tools
-python lote.py 05          # escreve planilha-05.py com o ingles
+python lote.py 08                              # planilha-08.py, o ingles
+python fatiar.py 08 08a MAHOGANY_TOWN ROUTE_42 # fatia por mapa, tira lixo
+python esqueleto.py planilha-08a.py            # a estrutura, linha a linha
 ```
 
-1. Leia a planilha.  Ela mostra os codigos de controle explicitos (`repr`).
-2. Escreva `tools/pt/dialogo_05b.py` com um dict `DIALOGO`.
+1. Leia o esqueleto.  Cada linha vem com o limite de coluna ja calculado.
+2. Escreva `tools/pt/dialogo_08a.py` com `linhas()` -- ver secao 9.
 3. Registre o lote em `tools/pt/__init__.py`, na lista `LOTES`.
 4. `python conferir.py` ate dar **0 problemas**.
-5. `python build_mod.py`
-6. Atualize os numeros em `tools/README_mod.md` e o `CHANGELOG.md`.
-7. Commit, push, `gh release create`, e `python gerar_indice.py`.
+5. `python build_mod.py` (suba o `VERSION` no topo do arquivo).
+6. Acrescente a entrada no `tools/CHANGELOG_mod.md`.
+7. Copie para o repositorio, commit, push, `gh release create v0.X.0`
+   com o zip, e `python tools/gerar_indice.py` + commit do feed.
+
+### Ao copiar para o repositorio, cuidado com dois arquivos
+
+`cp *.py tools/` **nao serve**: leva junto as `planilha-*.py`, que sao
+texto de ROM em ingles e nao podem ir para o git (ja estao no
+`.gitignore`, mas `git add -A` depois de um `cp` cru as pega).
+
+`README_mod.md` e `CHANGELOG_mod.md` moram nos **dois** lugares.  Eu ja
+sobrescrevi a versao boa do README copiando a antiga do scratchpad por
+cima.  Sincronize na direcao certa antes de copiar.
 
 ### Tamanho do lote importa
 
-Lotes 2, 3 e 5a (56, 59 e 43 falas) passaram com **zero** problemas.  O
-lote 4 (65 falas, escrito com pressa) deu **32**.  Goldenrod tem 126 e foi
-dividido em duas metades por isso.
+Lotes 2, 3, 5a, 5b, 6a, 7, 8a, 8b e 8c (27 a 59 falas) passaram com zero
+ou pouquissimos problemas.  O lote 4 (65 falas, escrito com pressa) deu
+**32**.  Goldenrod tem 126 e foi dividido em duas metades por isso; o
+lote 8, com 139, virou tres.
 
-**Ate ~60 falas por lote.**  Passar disso nao acelera, so gera retrabalho.
+**Ate ~50 falas por lote.**  Passar disso nao acelera, so gera retrabalho.
 
 ### O que descartar
 
-Kana solto, fragmentos que comecam no meio de outra fala, strings vazias e
-`'Object event.'` sao lixo do extrator, nao texto de jogo.  Deixe em
-ingles em vez de publicar sujeira.
+`fatiar.py` ja faz isso sozinho, mas saiba o porque:
+
+- **kana solto** -- ponteiro mal alinhado, o texto decodificado e lixo
+- **fragmento** -- comeca no meio de uma palavra; e continuacao de um
+  `TX_FAR`, e o pedaco que aparece em tela vem da fala inteira, que esta
+  em outro ponteiro.  Traduzir o fragmento nao muda nada na tela
+- **vazio** e `'Object event.'` -- sobra do extrator
+- **identico ao ingles** -- placas que so tem nome proprio ("ROUTE 42 /
+  ECRUTEAK CITY - MAHOGANY TOWN").  Nao inflam o catalogo a toa
+
+O filtro de fragmento de `fatiar.py` e heuristico e deixa alguns passar.
+Confira o esqueleto: se a primeira linha comeca no meio de uma palavra,
+pule a chave.
 
 ---
 
 ## 11. Estado atual
 
+Versao publicada: **0.15.0**.
+
 | | |
 |---|---|
-| Falas publicadas | 1977 |
-| Falas **nossas** | 308 |
-| Falas ainda derivadas | 1669 |
+| Falas publicadas | 1981 |
+| Falas **nossas** | 559 |
+| Falas ainda derivadas | 1422 |
 | Rotulos de menu (tela do jogo) | 151 |
 | Nomes de item | 68 |
 | Glifos acentuados | 25 |
 
-Lotes prontos: 1 (New Bark), 2 (Cherrygrove), 3 (Violet), 4 (Azalea),
-5a (Goldenrod cidade).
+Lotes prontos:
 
-**Proximo:** lote 5b -- torre de radio, rotas 34 e 35, National Park.
-Cerca de 77 falas; divida se achar melhor.
+| Lote | Escopo | Falas |
+|---|---|---|
+| 1 | New Bark, casa, laboratorio do ELM | 87 |
+| 2 | Rota 29, Cherrygrove, rota 30 | 56 |
+| 3 | Violet, Sprout Tower, ginasio do FALKNER | 59 |
+| 4 | Azalea, Slowpoke Well, Ilex, KURT, BUGSY | 65 |
+| 5a | Goldenrod cidade, WHITNEY, DEPT.STORE | 43 |
+| 5b | RADIO TOWER, rotas 34/35, NATIONAL PARK | 51 |
+| 6a | Ecruteak, MORTY, BURNED/TIN TOWER, rotas 38/39 | 31 |
+| 6b | Olivine, JASMINE, LIGHTHOUSE, Cianwood, CHUCK | 40 |
+| 7 | StdScripts do banco 40 (comuns a todo mapa) | 32 |
+| 8a | Mahogany, PRYCE, rotas 42/43 | 35 |
+| 8b | LAKE OF RAGE, o LANCE, casa do MAGIKARP | 27 |
+| 8c | Base da TEAM ROCKET, tres andares | 35 |
 
-Depois: lote 6 (Ecruteak, Olivine, Cianwood) ja esta definido em
-`lote.py`.  Faltam ainda as regioes do norte de Johto, a Liga e Kanto --
-crie os lotes 7+ no mesmo formato.
+### A pasta de trabalho nao e o repositorio
+
+O trabalho acontece num **scratchpad**, fora do git.  Nesta maquina:
+
+```
+C:\Users\Usuario\AppData\Local\Temp\claude\D--pokemon-gold-tradu--o\<sessao>\scratchpad
+```
+
+La ficam tres coisas que **nao estao no repositorio** e sem as quais
+nenhuma ferramenta roda:
+
+- `dialogo.json` -- 2245 falas, ingles + BR, gerado por `walk.py`
+- `repo/` -- o fonte do gen1recomp, de onde saem opcodes e o manifest
+  de mapas (`repo/tools/rom_manifest_gold.json`)
+- `br/` -- a ROM brasileira, usada so para conferencia
+
+A ROM USA fica em `D:\pokemon gold traducao\`.  Se o scratchpad sumir,
+`walk.py` reconstroi `dialogo.json` a partir das duas ROMs mais o
+`repo/`.  O `tools/` do repositorio e uma **copia** do scratchpad --
+edite no scratchpad e copie, nunca o contrario.
+
+### Proximo passo
+
+Sobram **1496 falas limpas** (fora kana e vazias):
+
+- **394 sem mapa atribuido** -- espalhadas pelos bancos 43-5e.  Sao
+  falas de treinador (ver/vencer/perder) e scripts cujo ponto de entrada
+  o `onde.py` nao conseguiu ligar a um mapa.  Curtas e repetitivas.
+- **460 em Johto** -- Blackthorn e o ginasio da CLAIR, Dragon's Den,
+  ROUTE 36/44/45, os portoes do NATIONAL PARK, Ruins of Alph, o
+  GOLDENROD UNDERGROUND, a tomada da RADIO TOWER (lote 09, ja definido
+  em `lote.py`), Victory Road e a Liga.
+- **642 em Kanto** -- as nove cidades, o navio, o trem magnetico, a
+  POWER PLANT, a casa do BILL, o laboratorio do OAK.
+
+Ordem sugerida: termine Johto na ordem da historia (o lote 09 esta
+pronto para extrair), depois as 394 sem mapa, depois Kanto.  As sem mapa
+podem vir antes se quiser impacto rapido -- elas aparecem em todo lugar.
 
 ---
 

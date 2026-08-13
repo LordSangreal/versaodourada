@@ -14,9 +14,14 @@ os separadores vem do ingles.  A versao anterior deste arquivo, escrita a
 mao, saiu com oito trocas de `\\n` por `\\v` -- ver pt/estrutura.py.
 
 Termos conforme GLOSSARIO.md: PACK -> BOLSA, POKéMON CENTER -> CENTRO
-POKéMON, POKéMON GYM -> GINÁSIO POKéMON.  POKéMON MART fica no original,
-como DEPT.STORE: e nome de estabelecimento, e nao ha termo oficial em
-pt-BR para ele.  BOX tambem fica, porque interface.py ja usa "BOX %d".
+POKéMON, POKéMON GYM -> GINÁSIO POKéMON, POKéMON MART -> LOJA POKéMON.
+BOX fica no original, porque interface.py ja usa "BOX %d".
+
+(Ate a 0.15.0 o MART ficava em ingles com a justificativa de ser nome de
+estabelecimento.  O usuario pediu o padrao pt-BR, e "Loja" e o termo que
+a localizacao oficial usa -- na mesma leva em que as Balls passaram a ser
+traduzidas.  DEPT.STORE continua no original: e nome proprio da loja de
+Goldenrod, nao a categoria.)
 """
 from pt.estrutura import linhas as L
 
@@ -86,7 +91,7 @@ DIALOGO = {
     "40:4a43": L("40:4a43",
                  "Tudo Que Seu",
                  "POKéMON Precisa",
-                 "POKéMON MART"),
+                 "LOJA POKéMON"),
     "40:4e96": L("40:4e96",
                  "{STRBUF}",
                  "GINÁSIO POKéMON"),

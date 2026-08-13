@@ -5,3 +5,4 @@ dialogo.json
 __pycache__/
 repo/
 tools/planilha-*.py
+temp_*.py

@@ -7,6 +7,38 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.16.0
+
+O usuario jogou e mandou captura de tela.  Quase tudo desta versao saiu
+disso.
+
+- **Texto de batalha traduzido.**  114 strings do motor que tinham ficado
+  de fora, entre elas `%s used\n%s!` -- a linha que aparece em todo turno
+  de toda batalha.  Tambem: trocar de POKéMON, evolucao, PC, loja, GAME
+  CORNER, bicicleta, salvar, e a fala de abertura do PROF.OAK.
+- **As Balls agora sao traduzidas**, no padrao pt-BR oficial: POKé BOLA,
+  GRANDE BOLA, ULTRA BOLA, BOLA MESTRA.  Ate aqui ficavam em ingles com a
+  justificativa de "nome da franquia", o que estava errado -- a
+  localizacao oficial traduz.  POKéMON MART virou LOJA POKéMON.  Mais 71
+  nomes de item ao todo (68 -> 139).
+- **`tools/varrer.py`**: acha falas que o percurso de scripts nao
+  alcanca.  O usuario viu um treinador do ginasio do FALKNER falando
+  ingles; a fala nao estava no `dialogo.json` porque `walk.py` so
+  encontra o que algum script referencia, e falas de treinador ficam em
+  structs.  A varredura achou **1032 falas** que faltavam: o catalogo
+  conhecido foi de 2245 para 3277.
+- Lote 12: as cinco falas do ginasio do FALKNER que faltavam.
+- Lotes 09a-11 (RADIO TOWER, RUINS OF ALPH, rota 36, Concurso de
+  Insetos), escritos em outra sessao, revisados: 300 palavras
+  reacentuadas, 42 linhas que estouravam a caixa encurtadas, e um
+  "Você removing aquela árvore?" que tinha ficado meio em ingles.
+- Removido `dialogo_ginasio_goldenrod.py`: as 12 falas dele ja estavam no
+  lote 5a, conferidas, e a copia mais nova as substituia por versoes
+  piores.
+- `tools/acentuar.py` e `tools/patch_lotes_09_11.py` documentam os dois
+  consertos acima.
+- 752 falas proprias; 1991 publicadas; 265 rotulos de menu; 139 itens.
+
 ## 0.15.0
 
 - Lote 7: os StdScripts do banco 40 (32 falas).  Sao os scripts que todo
