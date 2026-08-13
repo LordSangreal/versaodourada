@@ -7,9 +7,21 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.30.0
+
+- **Lote 29** -- as 93 derivadas do banco 57: a bicicletaria de
+  GOLDENROD, a casa do BILL, a MOM do BILL, a loja da ovolo (S.S. AQUA),
+  o trem e a estacao para SAFFRON, o PRESIDENTE, o MAGNET TRAIN e a
+  ILEX FOREST.
+- 1993 falas proprias; 957 derivadas.
+
 ## 0.29.0
 
-- **Lote 28** -- as 101 derivadas do banco 5e: a CELADON DEPT.\n  STORE, o GAME CORNER, a CELADON MANSION (GAME FREAK), o\n  GINASIO da ERIKA, o EATATHON CONTEST e a CYCLING ROAD.\n  1900 falas proprias; 1050 derivadas.\n
+- **Lote 28** -- as 101 derivadas do banco 5e: a CELADON DEPT. STORE, o
+  GAME CORNER, a CELADON MANSION (GAME FREAK), o GINASIO da ERIKA, o
+  EATATHON CONTEST e a CYCLING ROAD.
+- 1900 falas proprias; 1050 derivadas.
+
 ## 0.28.0
 
 - **Lote 27** -- as derivadas dos bancos 51-53 (90 falas): os
