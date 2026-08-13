@@ -7,6 +7,18 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.27.0
+
+- **Lote 26** -- as ultimas varridas (76 falas): o GINÁSIO de pedra de
+  BROCK (5a), os nadadores de Cianwood (54), a GOLDENROD dos
+  treinadores, da bike e do SWEET HONEY (57), o GINÁSIO elétrico do
+  LT.SURGE (59), as RUÍNAS DE ALPH (5b), os artistas marciais (5d), as
+  meninas da ERIKA (5e) e o CONCURSO DE CAPTURA (56).
+- **Marco: as varridas zeraram.** Nao sobra fala que aparecia **em
+  ingles** na tela; a parte em ingles agora e so a derivada da traducao
+  de terceiros, que sera reescrita lote a lote.
+- 1709 falas proprias; 2948 publicadas.
+
 ## 0.26.0
 
 - **Lote 25** -- interiores de Johto (69 falas): o GINÁSIO de PRYCE com o
