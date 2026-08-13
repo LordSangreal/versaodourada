@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -85,13 +85,14 @@ MANIFEST = {
     "api": 2,
     "entry": "main.lua",
     "profile": "content",
-    # GAMEPLAY, e nao LANGUAGE: nenhum mod instalado usa LANGUAGE, e o
-    # versaovermelha (a outra traducao) usa GAMEPLAY.
-    "category": "GAMEPLAY",
-    # O aplicativo e a versao 1.8.0.  A faixa "<1.0.0" que o versaovermelha
-    # declara o exclui da lista -- ele instala e nunca aparece.  Os mods que
-    # funcionam usam "<2.0.0".
+    "category": "LANGUAGE",
+    # Sem `games`, o manifest significa "Gen 1 apenas" e um boot de Gold pula
+    # o mod (MK400).  E o campo que rende o selo de geracao na lista.
+    "games": ["gold"],
+    # O aplicativo e a versao 1.8.0.  A faixa "<1.0.0", herdada do
+    # versaovermelha, o excluia da lista -- instalava e nunca aparecia.
     "game_version": ">=0.0.0-0 <2.0.0",
+    "language": True,
     "priority": 100,
     "dependencies": [],
     "optional_dependencies": [],

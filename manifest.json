@@ -1,12 +1,16 @@
 {
   "id": "versaodourada",
   "name": "VersaoDourada",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
-  "category": "GAMEPLAY",
+  "category": "LANGUAGE",
+  "games": [
+    "gold"
+  ],
   "game_version": ">=0.0.0-0 <2.0.0",
+  "language": true,
   "priority": 100,
   "dependencies": [],
   "optional_dependencies": [],
