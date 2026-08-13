@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.16.0"
+VERSION = "0.17.0"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -322,7 +322,8 @@ for _k, _v in [(k, v) for k, v in ITENS.items() if len(dobrar(v)) > MAX_NOME]:
 
 with open(os.path.join(OUT, "lang", "item_names.lua"), "w", encoding="utf-8") as f:
     f.write("-- Nomes de itens.  Chave = id do item.\n")
-    f.write("-- Balls, TM e HM ficam no original, por decisao do projeto.\n")
+    f.write("-- TODO nome de item fica no original em ingles, por decisao do\n")
+    f.write("-- usuario na 0.17.0.  Tabela vazia = o jogo usa o nome da ROM.\n")
     f.write("return {\n")
     for k in sorted(ITENS):
         f.write("  [%s] = %s,\n" % (lua_str(k), lua_str(dobrar(ITENS[k]))))

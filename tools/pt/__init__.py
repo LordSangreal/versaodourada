@@ -15,7 +15,7 @@ import importlib
 import pkgutil
 import os
 
-LOTES = ["sistema", "sistema2", "interface", "itens", "itens2", "dialogo_01", "dialogo_02", "dialogo_03", "dialogo_04", "dialogo_05a", "dialogo_05b", "dialogo_06a", "dialogo_06b", "dialogo_07", "dialogo_08a", "dialogo_08b", "dialogo_08c", "dialogo_09a", "dialogo_09b", "dialogo_10a", "dialogo_10b", "dialogo_10c", "dialogo_11", "dialogo_12"]
+LOTES = ["sistema", "sistema2", "interface", "itens", "dialogo_01", "dialogo_02", "dialogo_03", "dialogo_04", "dialogo_05a", "dialogo_05b", "dialogo_06a", "dialogo_06b", "dialogo_07", "dialogo_08a", "dialogo_08b", "dialogo_08c", "dialogo_09a", "dialogo_09b", "dialogo_10a", "dialogo_10b", "dialogo_10c", "dialogo_11", "dialogo_12"]
 
 
 def carregar():

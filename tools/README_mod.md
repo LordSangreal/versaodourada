@@ -10,9 +10,9 @@ Pokemon Gold para o aplicativo importar.
 
 | | |
 |---|---|
-| Falas do jogo | 1972 |
-| Rotulos de menu e batalha | 151 |
-| Nomes de item | 68 |
+| Falas do jogo | 1991 |
+| Rotulos de menu e batalha | 265 |
+| Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
 
 O que ainda nao foi traduzido aparece em ingles, entao o jogo e sempre
@@ -32,7 +32,9 @@ Por decisao do projeto, e nao por falta de traducao:
   franquia, lida sem pensar em qualquer idioma, numa caixinha de tres
   caracteres. O que informa de fato e a mensagem na caixa de texto, e
   essa esta em portugues
-- **As Balls** (POKe BALL, GREAT BALL, MASTER BALL...)
+- **Todos os nomes de item** (POKe BALL, POTION, BERRY, REPEL...) --
+  decisao do usuario na 0.17.0, depois de ver em jogo a versao
+  traduzida. Item entra na mesma regra dos golpes e dos Pokemon
 - **A interface do aplicativo** (launcher, importacao de ROM, espacos de
   save, gerenciador de mods) -- ela tem botoes de largura fixa e o
   portugues, mais longo, estourava e saia cortado. So a tela do jogo e
@@ -54,10 +56,10 @@ ingles original, lote a lote:
 
 | | |
 |---|---|
-| Falas ja nossas | 308 |
-| Falas ainda derivadas | 1667 |
+| Falas ja nossas | 752 |
+| Falas ainda derivadas | 1239 |
 
-Os rotulos de menu, os nomes de item e os glifos ja sao 100% nossos.
+Os rotulos de menu e os glifos ja sao 100% nossos.
 
 Enquanto houver **uma unica** fala derivada no pacote, este credito fica.
 `tools/progresso.py` transforma "ja da para tirar?" numa pergunta com

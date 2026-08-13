@@ -7,6 +7,21 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.17.0
+
+- **Nome de item volta todo para o ingles.**  Decisao do usuario depois
+  de ver a versao traduzida rodando: POKé BALL, POTION, BERRY, REPEL --
+  todos no original.  O catalogo de itens fica vazio, e vazio significa
+  "usa o nome da ROM".
+- Isso desfaz a mudanca da 0.16.0, que tinha levado os itens de 68 para
+  139 seguindo a localizacao oficial pt-BR.  A localizacao oficial de
+  fato traduz as Balls -- mas quem decide o mod e o usuario, e a regra
+  agora e uma so: item entra junto com golpe, POKéMON, TM e HM no que
+  fica em ingles.
+- A linha do Concurso de Insetos volta a dizer "PARK BALLS" em vez de
+  "BOLAS", para a fala do NPC combinar com o nome na bolsa.
+- Numeros do README atualizados: 1991 falas, 265 rotulos, 752 proprias.
+
 ## 0.16.0
 
 O usuario jogou e mandou captura de tela.  Quase tudo desta versao saiu

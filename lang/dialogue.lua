@@ -1243,7 +1243,7 @@ return {
   ["56:69c0"] = "Hoje é {STRBUF}.\nIsso quer dizer\fo Concurso de\nCaptura Insetos\fé hoje.\nAs regras são\fsimples.\nUse um dos seus\fPOKéMON, capture\num POKéMON inseto\fpara ser julgado.\nVocê quer tentar?",
   ["56:6a70"] = "Aqui estão as\nPARK BALLS para\vo Concurso.",
   ["56:6a9a"] = "{PLAYER} recebeu\n20 PARK BALLS.",
-  ["56:6ab5"] = "A pessoa que\ncapturar o\vPOKéMON inseto\vmais forte é a\fvencedora.\nVocê tem 20\fminutos.\nSe ficar sem\vBOLAS, acabou.\fVocê pode ficar\ncom o último\vPOKéMON que\fcapturar.\nVa e capture o\fPOKéMON inseto\nmais forte!",
+  ["56:6ab5"] = "A pessoa que\ncapturar o\vPOKéMON inseto\vmais forte é a\fvencedora.\nVocê tem 20\fminutos.\nSe ficar sem PARK\vBALLS, acabou.\fVocê pode ficar\ncom o último\vPOKéMON que\fcapturar.\nVá e capture o\fPOKéMON inseto\nmais forte!",
   ["56:6b99"] = "Opa…\fVocê tem mais de\num POKéMON.\fVocê terá que usar\n{STRBUF}, o\fprimeiro POKéMON\nna sua equipe.\fEsta tudo bem\ncom você?",
   ["56:6c0a"] = "Tudo bem. Vamos\nguardar os outros\vdurante o teste.",
   ["56:6c3e"] = "POKéMON de\n{PLAYER} ficaram\vcom o HELPER.",
