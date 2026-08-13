@@ -1,30 +1,22 @@
 # Changelog
 
-## 0.8.0
+## 0.8.1
 
-**Comeca a traducao propria do dialogo.** Lote 1: as 87 falas de New Bark
-Town, da casa do jogador, do laboratorio e da casa do Elm -- traduzidas a
-partir do ingles original, nao adaptadas de ninguem.
+Corrige o texto cortado na ultima linha da caixa, e os tracos duplos.
 
-`tools/conferir.py` confere cada uma contra o ingles e reprova o que quebra
-a caixa de texto em silencio:
+**A seta ▼ de "aperte A" ocupa a ultima coluna.** Ela e desenhada no canto
+inferior direito quando a caixa para e espera, ou seja no fim de cada
+pagina e no fim do texto. Nessas linhas cabem **17** caracteres, nao 18 --
+foi o que comeu o "m" de "bem" na fala da esposa do Elm. `conferir.py`
+agora sabe disso e reprovou 19 linhas minhas.
 
-- a sequencia de `
-` / `` / `` tem de ser identica em ordem e
-  quantidade -- sao quebra de linha, rolagem e quebra de pagina;
-- os tokens ({PLAYER}, {RIVAL}, {STRBUF}) idem;
-- nenhuma linha acima de 18 colunas, medindo os tokens pelo que rendem;
-- nenhum caractere sem glifo.
+**Os `--` do ingles sao travessao.** Ficavam estranhos em portugues;
+viraram reticencias.
 
-Na primeira passada ele acusou 26 problemas nas minhas proprias traducoes:
-12 sequencias de controle que eu tinha alterado sem perceber e 13 linhas de
-19 colunas. Todas corrigidas -- a versao publicada passa limpa.
+Duas concordancias tambem sairam: encurtar frase a martelo tinha deixado
+"uma grande achado" e "alguem tinha roubou".
 
-Progresso: 87 de 2245 falas ja sao nossas. A atribuicao continua obrigatoria
-enquanto houver uma unica fala derivada, e `tools/progresso.py` diz quantas
-sao.
-
-## 0.8.0
+## 0.8.1
 
 - Primeira versao: 1972 falas em portugues.
 - Nomes de golpes mantidos no original.

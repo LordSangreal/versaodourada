@@ -61,10 +61,22 @@ def main():
         if ta != tb:
             print("  [%s] tokens diferem: ingles %s, meu %s" % (k, ta, tb))
             problemas += 1
-        for linha in re.split(r"[\n\v\f]", meu):
-            if largura(linha) > MAX_COLS:
-                print("  [%s] linha de %d colunas: %r" % (k, largura(linha), linha))
-                problemas += 1
+        # A seta ▼ de "aperte A" e desenhada no canto inferior direito da
+        # caixa e ocupa a ultima coluna.  Ela aparece quando a caixa PARA e
+        # espera: no fim de cada pagina (antes de \f) e no fim do texto.
+        # Nessas linhas cabem 17, nao 18 -- foi o que comeu o "m" de "bem"
+        # na fala da esposa do Elm.
+        paginas = meu.split("\f")
+        for ip, pagina in enumerate(paginas):
+            linhas = re.split(r"[\n\v]", pagina)
+            for il, linha in enumerate(linhas):
+                ultima = (il == len(linhas) - 1)
+                limite = MAX_COLS - 1 if ultima else MAX_COLS
+                if largura(linha) > limite:
+                    print("  [%s] %d colunas (limite %d%s): %r"
+                          % (k, largura(linha), limite,
+                             ", a seta ocupa a ultima" if ultima else "", linha))
+                    problemas += 1
         for c in meu:
             if ord(c) > 127 and c not in ACENTOS_OK and c != "é":
                 print("  [%s] caractere sem glifo: %r" % (k, c))
