@@ -1,22 +1,20 @@
 # Changelog
 
-## 0.8.1
+## 0.8.2
 
-Corrige o texto cortado na ultima linha da caixa, e os tracos duplos.
+Conserta uma regressao silenciosa: o README voltava sozinho para o texto
+da 0.3.0.
 
-**A seta ▼ de "aperte A" ocupa a ultima coluna.** Ela e desenhada no canto
-inferior direito quando a caixa para e espera, ou seja no fim de cada
-pagina e no fim do texto. Nessas linhas cabem **17** caracteres, nao 18 --
-foi o que comeu o "m" de "bem" na fala da esposa do Elm. `conferir.py`
-agora sabe disso e reprovou 19 linhas minhas.
+Ele morava DENTRO do `build_mod.py`, como uma string gigante, entao todo
+build reescrevia o arquivo do repositorio com a versao congelada no codigo.
+Eu atualizei a pagina na 0.8.0 e a publicacao da 0.8.1 a desfez, sem erro
+nenhum.
 
-**Os `--` do ingles sao travessao.** Ficavam estranhos em portugues;
-viraram reticencias.
+Agora o README e um arquivo de verdade (`tools/README_mod.md`) e o build so
+o copia para dentro do pacote. Se ele sumir, o build avisa em vez de gerar
+um mod sem README.
 
-Duas concordancias tambem sairam: encurtar frase a martelo tinha deixado
-"uma grande achado" e "alguem tinha roubou".
-
-## 0.8.1
+## 0.8.2
 
 - Primeira versao: 1972 falas em portugues.
 - Nomes de golpes mantidos no original.

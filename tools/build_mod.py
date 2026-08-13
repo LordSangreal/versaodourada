@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.8.1"
+VERSION = "0.8.2"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -295,49 +295,18 @@ with open(os.path.join(OUT, "lang", "status_labels.lua"), "w", encoding="utf-8")
     f.write("}\n")
 print("itens:", len(ITENS), "| status:", len(STATUS))
 
-README = '''# VersaoDourada
-
-Pokemon Gold em portugues brasileiro para o [gen1recomp](https://github.com/bryanthaboi/gen1recomp).
-
-## Creditos
-
-A traducao do texto e trabalho de **R_Lopes** e **Night_Shadown**, publicada
-originalmente como patch de ROM no PO.B.R.E / romhackers.org. Este mod nao
-traduz nada por conta propria: ele porta aquele texto para o formato de mod do
-gen1recomp, para que rode sem precisar de ROM modificada.
-
-Se voce e um dos autores e quer que este mod saia do ar, e so abrir uma issue.
-
-O motor e a plataforma de mods sao de bryanthaboi e dos contribuidores do
-gen1recomp.
-
-## O que este mod faz
-
-- Traduz as falas do jogo para portugues, com acentuacao completa.
-- **Nomes de golpes ficam no original em ingles**, de proposito.
-- Nomes de Pokemon ficam no original (sao os nomes oficiais).
-
-Cobertura e parcial e cresce a cada versao. O que ainda nao foi traduzido
-aparece em ingles, entao o jogo e sempre jogavel.
-
-## Instalacao
-
-O mod precisa da versao atual do gen1recomp com Gold importado (Gold e beta).
-Instale pelo gerenciador de mods do proprio aplicativo, ou solte a pasta em:
-
-- Windows: `%APPDATA%\\LOVE\\pokemon-love2d\\mods\\versaodourada\\`
-- Linux: `~/.local/share/love/pokemon-love2d/mods/versaodourada/`
-- macOS: `~/Library/Application Support/LOVE/pokemon-love2d/mods/versaodourada/`
-
-Abra o gerenciador de mods (F10) e confirme que aparece habilitado. Se
-aparecer `ENABLED (NOT THIS GAME)`, voce nao esta num boot de Gold.
-
-## Aviso
-
-Nenhum byte de ROM acompanha este mod. Voce precisa da sua propria copia
-legitima de Pokemon Gold para o gen1recomp importar.
-'''
-open(os.path.join(OUT, "README.md"), "w", encoding="utf-8").write(README)
+# O README e um ARQUIVO, nao um texto embutido aqui.
+#
+# Ele morava dentro deste script como uma string gigante, e por isso todo
+# build reescrevia o README do repositorio com a versao congelada no codigo.
+# Foi assim que a pagina atualizada na 0.8.0 voltou sozinha para o texto da
+# 0.3.0 quando publiquei a 0.8.1.  Agora o arquivo manda, e o build so o
+# copia para dentro do pacote.
+_readme = os.path.join(HERE, "README_mod.md")
+if os.path.exists(_readme):
+    shutil.copyfile(_readme, os.path.join(OUT, "README.md"))
+else:
+    print("  AVISO: README_mod.md nao encontrado; o mod vai sem README")
 
 open(os.path.join(OUT, "CHANGELOG.md"), "w", encoding="utf-8").write(
     "# Changelog\n\n## %s\n\n- Primeira versao: %d falas em portugues.\n"
