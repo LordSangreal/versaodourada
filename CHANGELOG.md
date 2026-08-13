@@ -1,22 +1,22 @@
 # Changelog
 
-## 0.3.2
+## 0.3.3
 
-Tres codigos corrigidos, achados pelo validador depois de ele passar a medir
-os tokens pelo tamanho que rendem em tela em vez do tamanho no arquivo:
+Corrige a placa de New Bark, que saia "CI...... NEW BARK".
 
-| byte | era | e na verdade | evidencia |
-|---|---|---|---|
-| `0xD4` | `'s` | `C` cedilha | COMUNICA_OES, ESTA_AO, DAN_A |
-| `0xD1` | `'l` | `O` circunflexo | M_NICA |
-| `0xC5` | `ü` | `o` ordinal | 4_ ANDAR |
+Dois problemas no mesmo ponto:
 
-A traducao BR tomou tres ligaduras inglesas pouco uteis em portugues e as
-reaproveitou. Palavras como PRODU_AO e CABE_ADA sairam quebradas ate agora.
+- `0x56` (era o byte das reticencias animadas) foi reaproveitado pela
+  traducao BR como a ligadura `DADE` -- "CI+DADE NEW BARK". As reticencias
+  de verdade no texto BR usam `0x75`, entao o byte estava mesmo livre.
+- O decodificador tinha um caso especial que forcava `0x56` a virar
+  reticencias **antes** de consultar o mapa BR. Qualquer byte reaproveitado
+  que caisse na cadeia de casos especiais teria o mesmo destino. Agora o
+  mapa BR tem precedencia sobre todos eles.
 
-Estouros de 18 colunas: 40 -> 23, e os que restam sao reais.
+O segundo era o bug de verdade: o primeiro so aparecia por causa dele.
 
-## 0.3.2
+## 0.3.3
 
 - Primeira versao: 1968 falas em portugues.
 - Nomes de golpes mantidos no original.

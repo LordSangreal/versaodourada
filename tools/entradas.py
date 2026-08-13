@@ -21,7 +21,16 @@ def ok(bank, addr):
     return addr is not None and addr != 0 and (addr >= 0x4000 or bank == 0)
 
 
-def coletar(usa, br, groups):
+def coletar(usa, br, groups, somente=None):
+    """`somente` = (grupo, indice) restringe a um unico mapa.
+
+    Sem isso, pedir um mapa varre todos os indices do grupo ate ele, e a
+    contagem por local sai inflada com o que veio dos vizinhos.
+    """
+    return _coletar(usa, br, groups, somente)
+
+
+def _coletar(usa, br, groups, somente=None):
     """-> (starts, textos)
 
     starts : [(bank, addr)]              scripts para andar
@@ -38,6 +47,8 @@ def coletar(usa, br, groups):
         if gp is None:
             continue
         for mi in range(1, nmaps + 1):
+            if somente and (group, mi) != somente:
+                continue
             entry = gp + (mi - 1) * MAP_LENGTH
             ab, aa = usa.byte(PB, entry), usa.word(PB, entry + 3)
             if not ab or not aa or aa < 0x4000:

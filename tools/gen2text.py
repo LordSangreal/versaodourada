@@ -28,6 +28,7 @@ BR_ACCENTS = {
     # valia dois glifos, e que a traducao BR reaproveitou:
     0x4A: "DO",        # era <PK><MN>.  GYARA+DO+S, "LABORATORIO DO PROFESSOR"
     0x24: "QU",        # era <PO><KE>.  +QU+EM, PSI+QU+ICO, E+QU+IPE
+    0x56: "DADE",      # era <……>.  CI+DADE NEW BARK, na placa da cidade
     # NAO mapear 0xE1/0xE2 (<PK>/<MN>) nem 0x70/0x71 (<PO>/<KE>): sao glifos
     # legitimos e distintos.  Quem aparece no texto BR e a ligadura acima.
 }
@@ -49,6 +50,15 @@ def decode(rom, bank, address, br=False):
         b = rom.byte(bank, address + i)
         if b is None:
             return "".join(out), False
+        # Um byte que a traducao BR reaproveitou vale mais que qualquer caso
+        # especial daqui de baixo.  Sem esta precedencia, a cadeia de elifs
+        # atropelava o mapa BR: 0x56 virava reticencias antes de alguem
+        # perguntar ao charmap, e a placa de New Bark saia "CI...... NEW BARK"
+        # em vez de "CIDADE NEW BARK".
+        if br and b in BR_ACCENTS:
+            out.append(BR_ACCENTS[b])
+            i += 1
+            continue
         if b == 0x50:
             if not in_string:
                 break
