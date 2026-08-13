@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-13T04:55:11Z",
+  "count": 1,
+  "categories": [
+    "LANGUAGE"
+  ],
+  "mods": [
+    {
+      "folder": "LordSangreal@versaodourada",
+      "id": "versaodourada",
+      "title": "VersaoDourada",
+      "author": "LordSangreal",
+      "version": "0.1.2",
+      "categories": [
+        "LANGUAGE"
+      ],
+      "repo": "https://github.com/LordSangreal/versaodourada",
+      "summary": "Pokemon Gold em portugues brasileiro. Traducao de R_Lopes e Night_Shadown; nomes de golpes no original.",
+      "tags": [
+        "portuguese",
+        "brazilian",
+        "translation",
+        "gold",
+        "gen2"
+      ],
+      "github": "LordSangreal/versaodourada",
+      "permissions": [],
+      "api": 2,
+      "profile": "content",
+      "games": [
+        "gold"
+      ],
+      "description_url": "data/mods/LordSangreal@versaodourada/description.md",
+      "latest": {
+        "version": "0.1.2",
+        "tag": "v0.1.2",
+        "name": "VersaoDourada 0.1.2",
+        "prerelease": false,
+        "published_at": "2026-08-13T04:52:19Z",
+        "zip": {
+          "name": "versaodourada-0.1.2.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.1.2/versaodourada-0.1.2.zip",
+          "size": 41182
+        }
+      },
+      "update_check": "ok"
+    }
+  ]
+}
