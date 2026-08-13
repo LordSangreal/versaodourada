@@ -1,26 +1,26 @@
 # Changelog
 
-## 0.5.0
+## 0.6.0
 
-**68 nomes de item** traduzidos: curas, pedras de evolucao, vitaminas,
-itens de batalha, varas de pesca, itens-chave.
+**Os acentos voltaram.** 884 `~a`, 845 `a` agudo, 1417 `e` agudo, 234 cedilha
+-- antes tudo isso virava ASCII ("mae", "coracao") porque a fonte da ROM so
+tem tres caracteres acentuados.
 
-Ficam no original, de proposito: as Balls, TM e HM, e os **rotulos de
-status**. PSN, BRN, PAR, SLP e FRZ sao sigla padrao da franquia, lidas sem
-pensar por quem joga em qualquer idioma, e vivem numa caixinha de tres
-caracteres. O que importa ali e a mensagem na caixa de texto, e essa ja
-esta em portugues.
+`assets/font/latin.png` acrescenta 25 glifos na base `0x100`, que e espaco
+livre acima das paginas da ROM: o alfabeto e ADICIONADO, nada e substituido.
+Desenhados do zero em `tools/glifos.py`, em arte ASCII legivel -- as regras
+do gen1recomp proibem distribuir arte derivada de ROM, entao extrair os
+tiles da traducao BR estava fora de questao.
 
-Nome de item cabe em 12 caracteres. O build reprova o que passar disso e
-deixa em ingles, em vez de publicar truncado.
+Minusculas ocupam as linhas 3-7 e deixam as duas de cima para o acento.
+Maiusculas foram comprimidas em 6 linhas, que e o unico jeito de um A com
+til caber numa celula de 8 pixels.
 
-Corrige tambem `main.lua`, que gerava `status_labels.lua` mas nunca o
-aplicava -- o catalogo sairia e seria ignorado em silencio.
+**Se algo der errado:** se os acentuados aparecerem em branco, a pagina nao
+carregou. Reponha o mapa `DOBRA` em `tools/build_mod.py` -- e uma linha, e
+volta ao comportamento da 0.5.0.
 
-Removido o bloco de diagnostico da 0.1.3: ele ja disse o que precisava e
-hoje so percorre 1968 chaves no boot para encher o log.
-
-## 0.5.0
+## 0.6.0
 
 - Primeira versao: 1968 falas em portugues.
 - Nomes de golpes mantidos no original.

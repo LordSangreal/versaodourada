@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.5.0"
+VERSION = "0.6.0"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -32,12 +32,13 @@ def suspect_marker(en, pt):
 # caractere simplesmente nao desenha e a palavra sai com um buraco
 # ("mae" em vez de "m e").  Quando a pagina de glifos entrar, e so
 # esvaziar este mapa e os acentos voltam sozinhos.
-DOBRA = {
-    "á": "a", "â": "a", "ã": "a", "à": "a",
-    "ê": "e", "í": "i", "ó": "o", "ô": "o", "õ": "o", "ú": "u", "ç": "c",
-    "Á": "A", "Â": "A", "Ã": "A", "À": "A", "É": "E", "Ê": "E",
-    "Í": "I", "Ó": "O", "Ô": "O", "Õ": "O", "Ú": "U", "Ç": "C",
-}
+# A pagina de glifos em assets/font/latin.png cobre os acentos, entao a dobra
+# para ASCII foi desligada: DOBRA vazio faz `dobrar` virar identidade.
+#
+# Se por algum motivo a pagina nao carregar, cada acentuado desenha em branco
+# e a palavra sai com buraco ("m e" no lugar de "mae").  O conserto e repor
+# aqui o mapa de dobra -- e uma linha, e volta ao comportamento da 0.5.0.
+DOBRA = {}
 
 
 def dobrar(s):
@@ -195,10 +196,21 @@ return function(mod)
     return n
   end
 
-  -- NAO registrar a fonte TTF aqui.  Na 0.1.2 isso deixou a tela de mods
-  -- ilegivel (tudo claro), e o versaovermelha mantem a mesma chamada
-  -- comentada pelo mesmo motivo.  Sem acentos proprios por enquanto: o
-  -- texto usa a fonte da ROM ate a pagina de glifos entrar.
+  -- ---- glifos -------------------------------------------------------
+  -- Registrar ANTES de qualquer coisa pedir um glifo.  O caminho da imagem
+  -- vai direto para love.graphics.newImage, que resolve contra a raiz do
+  -- jogo e nao contra o mod -- sem `mod.assets:path` a pagina carrega vazia
+  -- e todo acentuado desenha em branco.
+  for id, page in pairs(catalog("font")) do
+    if type(page) == "table" and type(page.image) == "string"
+        and mod:read(page.image) then
+      page.image = mod.assets:path(page.image)
+    end
+    mod.content.font:register(id, page)
+  end
+  for seq, code in pairs(catalog("charmap")) do
+    mod.content.font:register("charmap:" .. seq, { seq = seq, code = code })
+  end
 
   -- ---- aplicacao -----------------------------------------------------
   local n = 0
@@ -239,6 +251,24 @@ with open(os.path.join(OUT, "lang", "strings.lua"), "w", encoding="utf-8") as f:
         f.write("  [%s] = %s,\n" % (lua_str(k), lua_str(dobrar(STRINGS[k]))))
     f.write("}\n")
 print("strings de menu:", len(STRINGS))
+
+# ---- pagina de glifos acentuados -------------------------------------
+import glifos
+_w, _h = glifos.gerar(os.path.join(OUT, "assets", "font", "latin.png"))
+with open(os.path.join(OUT, "lang", "font.lua"), "w", encoding="utf-8") as f:
+    f.write("-- Pagina de glifos que este mod acrescenta.\n")
+    f.write("-- base 0x100 e espaco livre acima das paginas $60/$80 da ROM,\n")
+    f.write("-- entao isto ADICIONA um alfabeto em vez de trocar o existente.\n")
+    f.write("return {\n  latin = {\n")
+    f.write('    image = "assets/font/latin.png",\n')
+    f.write("    base = 0x100,\n    glyphsPerRow = 16,\n  },\n}\n")
+with open(os.path.join(OUT, "lang", "charmap.lua"), "w", encoding="utf-8") as f:
+    f.write("-- Que sequencia de bytes desenha qual glifo da pagina acima.\n")
+    f.write("return {\n")
+    for _ch, _code in sorted(glifos.charmap().items(), key=lambda x: x[1]):
+        f.write("  [%s] = 0x%X,\n" % (lua_str(_ch), _code))
+    f.write("}\n")
+print("glifos:", len(glifos.PAGINA), "(%dx%d)" % (_w, _h))
 
 ITENS, STATUS = pt.catalogos()
 

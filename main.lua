@@ -33,10 +33,21 @@ return function(mod)
     return n
   end
 
-  -- NAO registrar a fonte TTF aqui.  Na 0.1.2 isso deixou a tela de mods
-  -- ilegivel (tudo claro), e o versaovermelha mantem a mesma chamada
-  -- comentada pelo mesmo motivo.  Sem acentos proprios por enquanto: o
-  -- texto usa a fonte da ROM ate a pagina de glifos entrar.
+  -- ---- glifos -------------------------------------------------------
+  -- Registrar ANTES de qualquer coisa pedir um glifo.  O caminho da imagem
+  -- vai direto para love.graphics.newImage, que resolve contra a raiz do
+  -- jogo e nao contra o mod -- sem `mod.assets:path` a pagina carrega vazia
+  -- e todo acentuado desenha em branco.
+  for id, page in pairs(catalog("font")) do
+    if type(page) == "table" and type(page.image) == "string"
+        and mod:read(page.image) then
+      page.image = mod.assets:path(page.image)
+    end
+    mod.content.font:register(id, page)
+  end
+  for seq, code in pairs(catalog("charmap")) do
+    mod.content.font:register("charmap:" .. seq, { seq = seq, code = code })
+  end
 
   -- ---- aplicacao -----------------------------------------------------
   local n = 0
