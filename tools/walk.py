@@ -9,6 +9,7 @@ import re, os, sys, json, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from gen2text import decode, is_texty, key as _k
+import entradas
 
 REPO = os.path.join(HERE, "repo")
 USA_PATH = r"D:\pokemon gold tradução\Pokemon - Gold Version (USA, Europe) (SGB Enhanced).gbc"
@@ -59,83 +60,6 @@ class Rom:
 
 def ok_addr(bank, addr):
     return addr is not None and (addr >= 0x4000 or bank == 0) and addr != 0
-
-
-# ---------------------------------------------------------------- entradas
-def entry_points(rom, groups):
-    """Todos os pontos de entrada de script, a partir dos cabecalhos de mapa."""
-    PB, PA = 37, 0x40ED
-    starts, texts = [], []
-    for group, nmaps in sorted(groups.items()):
-        gp = rom.word(PB, PA + (group - 1) * 2)
-        if gp is None:
-            continue
-        for mi in range(1, nmaps + 1):
-            entry = gp + (mi - 1) * MAP_LENGTH
-            ab = rom.byte(PB, entry)
-            aa = rom.word(PB, entry + 3)
-            if not ab or not aa or aa < 0x4000:
-                continue
-            eb = rom.byte(ab, aa + 6)
-            sa = rom.word(ab, aa + 7)
-            ea = rom.word(ab, aa + 9)
-            if not eb or eb == 0:
-                continue
-            # cabecalho de scripts: db cenas; {dw script, dw filler} xN; db cbs; {db tipo, dw script} xM
-            if sa and sa >= 0x4000:
-                n = rom.byte(eb, sa)
-                if n is not None and n < 32:
-                    for si in range(n):
-                        s = rom.word(eb, sa + 1 + si * 4)
-                        if ok_addr(eb, s):
-                            starts.append((eb, s))
-                    cb = sa + 1 + n * 4
-                    m = rom.byte(eb, cb)
-                    if m is not None and m < 32:
-                        for ci in range(m):
-                            s = rom.word(eb, cb + 1 + ci * 3 + 1)
-                            if ok_addr(eb, s):
-                                starts.append((eb, s))
-            # eventos do mapa
-            if ea and ea >= 0x4000:
-                c = ea + 2
-                nw = rom.byte(eb, c) or 0
-                c += 1 + nw * WARP_LENGTH
-                nc = rom.byte(eb, c) or 0
-                c += 1
-                for i in range(nc):
-                    s = rom.word(eb, c + 4)
-                    if ok_addr(eb, s):
-                        starts.append((eb, s))
-                    c += COORD_LENGTH
-                nb = rom.byte(eb, c) or 0
-                c += 1
-                for i in range(nb):
-                    kind = rom.byte(eb, c + 2)
-                    ptr = rom.word(eb, c + 3)
-                    if kind in (5, 6) and ptr and ptr >= 0x4000:
-                        s = rom.word(eb, ptr + 2)
-                        if ok_addr(eb, s):
-                            starts.append((eb, s))
-                    elif kind == 0 and ptr:          # BGEVENT_READ -> texto
-                        if ok_addr(eb, ptr):
-                            texts.append((eb, ptr))
-                    elif ptr and ok_addr(eb, ptr):
-                        starts.append((eb, ptr))
-                    c += BG_LENGTH
-                no = rom.byte(eb, c) or 0
-                c += 1
-                for i in range(no):
-                    s = rom.word(eb, c + 9)
-                    if ok_addr(eb, s):
-                        starts.append((eb, s))
-                    c += OBJECT_LENGTH
-    # StdScripts (bank 64) -- tabela de ponteiros
-    for i in range(64):
-        s = rom.word(64, 0x4000 + i * 2)
-        if ok_addr(64, s):
-            starts.append((64, s))
-    return starts, texts
 
 
 # ---------------------------------------------------------------- percurso
@@ -214,27 +138,16 @@ if __name__ == "__main__":
     groups = collections.defaultdict(int)
     for m in mf["maps"].values():
         groups[m["group"]] = max(groups[m["group"]], m["map"])
-    print("grupos de mapa:", len(groups), "| mapas:", sum(groups.values()))
-    starts, bgtexts = entry_points(usa, groups)
-    print("pontos de entrada de script:", len(starts), "| textos BGEVENT:", len(bgtexts))
+    starts, textos = entradas.coletar(usa, br, groups)
+    print("pontos de entrada:", len(starts), "| textos diretos:", len(textos))
     out, st = walk(usa, br, starts)
-    # textos de placa (BGEVENT_READ) apontam direto para texto
-    for eb, ptr in bgtexts:
-        record(out, st, usa, br, eb, ptr, eb, br.word(eb, 0) if False else ptr)
+    for bank, a_u, a_b in textos:
+        record(out, st, usa, br, bank, a_u, bank, a_b)
     print("estatisticas:", dict(st))
     print("FALAS CASADAS:", len(out))
     same = sum(1 for en, pt in out.values() if en == pt)
-    acc = sum(1 for en, pt in out.values() if any(c in pt for c in "áâãàêíóôõúçéÁÍÂÊÃÕ"))
-    print(f"  traduzidas: {len(out)-same} | iguais ao ingles: {same} | com acento: {acc}")
+    acc = sum(1 for en, pt in out.values() if any(c in pt for c in "áãçéê"))
+    print(f"  traduzidas: {len(out)-same} | iguais: {same} | com acento: {acc}")
     json.dump({k: list(v) for k, v in out.items()},
               open(os.path.join(HERE, "dialogo.json"), "w", encoding="utf-8"),
               ensure_ascii=False, indent=0)
-    print()
-    n = 0
-    for k, (en, pt) in out.items():
-        if en != pt and 15 < len(en) < 60 and any(c in pt for c in "áãçéê"):
-            print(f"  [{k}]  EN {en[:56]!r}")
-            print(f"           PT {pt[:56]!r}")
-            n += 1
-            if n >= 6:
-                break
