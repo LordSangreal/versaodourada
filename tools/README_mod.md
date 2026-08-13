@@ -90,6 +90,11 @@ Confira no gerenciador de mods que ele aparece habilitado. Se aparecer
 
 ## Para quem for mexer
 
+Leia **`CONTINUAR.md`** primeiro. E o documento de passagem de bastao:
+as tres restricoes que mandam no projeto, as armadilhas do manifest, os
+bytes que a traducao BR reaproveitou, e o passo a passo do proximo lote.
+
+
 ```
 lang/dialogue.lua   gerado; chave = ponteiro da ROM USA ("bb:aaaa")
 lang/strings.lua    gerado; chave = a string em ingles do motor
