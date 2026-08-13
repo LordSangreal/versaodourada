@@ -11,7 +11,7 @@ Pokemon Gold para o aplicativo importar.
 | | |
 |---|---|
 | Falas do jogo | 1972 |
-| Rotulos de menu, batalha e launcher | 358 de 647 |
+| Rotulos de menu e batalha | 151 |
 | Nomes de item | 68 |
 | Glifos acentuados | 25 |
 
@@ -33,6 +33,10 @@ Por decisao do projeto, e nao por falta de traducao:
   caracteres. O que informa de fato e a mensagem na caixa de texto, e
   essa esta em portugues
 - **As Balls** (POKe BALL, GREAT BALL, MASTER BALL...)
+- **A interface do aplicativo** (launcher, importacao de ROM, espacos de
+  save, gerenciador de mods) -- ela tem botoes de largura fixa e o
+  portugues, mais longo, estourava e saia cortado. So a tela do jogo e
+  traduzida, porque ali a largura e conhecida e eu controlo a quebra
 
 A terminologia segue a localizacao oficial em portugues do Brasil: Ginasio,
 Lider de Ginasio, Treinador, Insignia, Centro Pokemon. Ver `GLOSSARIO.md`,

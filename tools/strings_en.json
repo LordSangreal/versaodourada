@@ -1,0 +1,3417 @@
+{
+ "keys": [
+  "Enemy %s",
+  "ATTACK",
+  "DEFENSE",
+  "SPEED",
+  "SPECIAL",
+  "%s wants\nto fight!",
+  "The GHOST\nappeared!",
+  "SILPH SCOPE\nunveiled the\u000bGHOST's identity!",
+  "OLD MAN",
+  "Go! %s!",
+  "Do it! %s!",
+  "Get'm! %s!",
+  "%s is out of\nuseable POKéMON!",
+  "%s blacked\nout!",
+  "%s sent\nout %s!",
+  "FOE",
+  "PA: You're out of\nSAFARI BALLs!\nGame over!",
+  "%s is too\nscared to move!",
+  "%s has no\nmoves left!",
+  "POKé BALL",
+  "%s used\nPOKé BALL!",
+  "All right!\n%s was\ncaught!",
+  "GHOST: Get out...\nGet out...",
+  "%s with-\ndrew %s!",
+  "%s\nis storing energy!",
+  "%s\nfainted!",
+  "%s grew\nto level %d!",
+  "%s is\nabout to use\u000b%s!",
+  "Will %s\nchange POKéMON?",
+  "{RIVAL}: Yeah! Am\nI great or what?",
+  "Use next POKéMON?",
+  "%s used\nSAFARI BALL!",
+  "No! There's no\nrunning from a\u000btrainer battle!",
+  "You missed the\nPOKéMON!",
+  "Darn! The POKéMON\nbroke free!",
+  "NICKNAME?",
+  "New POKéDEX data\nwill be added for\n%s!",
+  "someone's PC",
+  "%s was\ntransferred to\n%s!",
+  "But every BOX\nis full!",
+  "It dodged the\nthrown BALL!",
+  "This POKéMON\ncan't be caught!",
+  "%s is\nalready out!",
+  "battle|FIGHT",
+  "battle|ITEM",
+  "battle|RUN",
+  "BALLx",
+  "BAIT",
+  "THROW ROCK",
+  "disabled!",
+  "TYPE/",
+  "%s is\nprotected by MIST!",
+  "%s's\n%s\ngreatly rose!",
+  "%s's\n%s rose!",
+  "%s's\n%s fell!",
+  "%s's\n%s\ngreatly fell!",
+  "%s\nwas afflicted\nby %s!",
+  "%s's\nprotected against\nstat changes!",
+  "RUN",
+  "FIGHT",
+  "ITEM",
+  "What will",
+  " do?",
+  "%s\nused %s!",
+  "But nothing\nhappened.",
+  "In battle",
+  "Wild battle",
+  "Trainer battle",
+  "Link battle",
+  "Title screen",
+  "You don't have a\n#MON!",
+  "An item in your\nPACK may be\fregistered for use\non SELECT Button.",
+  "OAK: {PLAYER}!\nThis isn't the\u000btime to use that!",
+  "The REPEL used\nearlier is still\u000bin effect.",
+  "{PLAYER} used the\n%s.",
+  "There was a trophy\ninside!\fThe trophy was\nsent home.",
+  "But, it failed!",
+  "Wild %s\nappeared!",
+  "options.musicFilter|OFF",
+  "TEXT SPEED",
+  "BATTLE ANIMATION",
+  "BATTLE STYLE",
+  "BATTLE LAYOUT",
+  "BATTLE SIZE",
+  "BATTLE BG",
+  "UI LAYOUT",
+  "MUSIC VOL",
+  "SFX VOL",
+  "MUSIC FILTER",
+  "PERFORMANCE",
+  "COLORS",
+  "TILT",
+  "GBC FX",
+  "VOID FILL",
+  "VIDEO MODE",
+  "ORIENTATION",
+  "FAITHFUL RATIO",
+  "MAX FPS",
+  "OVERWORLD SPEED",
+  "BATTLE SPEED",
+  "MENU SPEED",
+  "TOUCH PAD",
+  "ON",
+  "OFF",
+  "VIBRATION",
+  "TOUCH CONTROLS",
+  "Edit",
+  "RESET REBINDS",
+  "Reset",
+  "RESET DEFAULTS",
+  "BATTLE SCENE",
+  "SOUND",
+  "PRINT",
+  "MENU ACCOUNT",
+  "FRAME",
+  "COLOR",
+  "GAME SPEED",
+  "OPTIONS",
+  "Ready",
+  "Conflict",
+  "Not for this game",
+  "Incompatible",
+  "Show for:",
+  "All games",
+  "Not installable from this index",
+  "Install",
+  "Update",
+  "Reinstall",
+  "Sure?",
+  "Delete",
+  "RED",
+  "BLUE",
+  "YELLOW",
+  "GOLD",
+  "MODS",
+  "FIND MODS",
+  "Checking...",
+  "Updating %d%%",
+  "Update v",
+  "Restart to update",
+  "Open releases",
+  "Check for updates",
+  "Scan again",
+  "Import ROM",
+  "Not supported yet",
+  "Support for this game is on the way.",
+  "Import unavailable",
+  "Copy the .gb/.gbc via MTP into imports/.",
+  "Or copy the .gb/.gbc into baseroms/.",
+  "Copy the .gb/.gbc via USB.",
+  "Or drop the .gb/.gbc file here.",
+  "Importing",
+  "Import failed",
+  "That ROM could not be imported.",
+  "Re-import ROM",
+  "No ROM imported",
+  "Compatible ROM found",
+  "Found in baseroms/: %s",
+  "Import detected ROM",
+  "Checking baseroms...",
+  "Looking for compatible Red, Blue, and Yellow ROMs.",
+  "Update required",
+  "This build needs a few more things from your ",
+  " ROM. Re-import to continue.",
+  "The ROM is verified before any files are created. ",
+  "Export",
+  "Rename",
+  "SAVE SLOT",
+  "Import save",
+  "1 slot",
+  "%d slots",
+  "No saves yet - start a new game or import one.",
+  "NEW GAME",
+  "LOADED",
+  "%d badges - %s - %d caught",
+  "empty slot",
+  "Open folder",
+  "+ New save slot",
+  "GOOD TO GO",
+  "ROM FOUND",
+  "COMING SOON",
+  "ROM REQUIRED",
+  "Play ",
+  "Name",
+  "Popularity",
+  "Release date",
+  "Last updated",
+  "Disable all",
+  "Enable all",
+  "Sort",
+  "v%s available",
+  "up to date",
+  "check failed",
+  "No mod index added",
+  "Add an index to browse mods. An index is a published list; paste its URL or its owner/repo.",
+  "Add an index",
+  "Indexes",
+  "Filter",
+  "Search mods",
+  "This index lists no mods yet.",
+  "No mods match that search.",
+  "Save",
+  "Cancel",
+  "Paste",
+  "Confirm",
+  "OK",
+  "Close",
+  "Other versions: ",
+  "Installed: v",
+  "Up to date",
+  " (installed)",
+  "Read more",
+  "Sort by",
+  "All",
+  "Filter by category",
+  "Mod indexes",
+  "No index added yet.",
+  "Remove",
+  "Add index",
+  "Refresh all",
+  "Check again",
+  "Versions",
+  "Details",
+  "Source",
+  "The ROM for this game is imported and verified.",
+  "Manage ",
+  "Settings",
+  "Saved to your options file; the game applies these on its next start.",
+  "Run",
+  "Enter to save - Esc to cancel",
+  "Name save slot",
+  "Enter to save - Esc to cancel - empty clears",
+  "Add a mod index",
+  "Paste the index URL, or its owner/repo.",
+  "Add",
+  "Enter to add - Esc to cancel",
+  "(No release notes.)",
+  " notes",
+  "(No description.)",
+  "Working",
+  "Loading mod index",
+  "Copy your .gb/.gbc into:",
+  "%s/imports/\nDBI MTP → 1: SD Card/%simports/",
+  "Copy your .zip into:\n%s/imports/mods/\nDBI MTP → 1: SD Card/%simports/mods/",
+  "Copy your %s .sav into:\n%s/%s/\nDBI MTP → 1: SD Card/%s%s/",
+  "%s\n(%d failed: %s)",
+  "%s (%s tab)",
+  "Imported %d saves into %s. Active: %s.",
+  "%s\n(%d already imported, skipped)",
+  "Already imported — %d file(s) skipped. Check SAVE SLOT.",
+  "No new ROM found.",
+  "No matching ROM found.",
+  "Choose a mod .zip",
+  "Choose a .sav save file",
+  "Exported to %s\nDBI MTP → 1: SD Card/%s%s/",
+  "Every mod is already enabled.",
+  "Every mod is already disabled.",
+  "Enabled %d mods.",
+  "Disabled %d mods.",
+  "Loading versions",
+  "Checking for updates",
+  "Downloading %s",
+  "Installing %s",
+  "Import mod .zip",
+  "Or copy a mod .zip via USB.",
+  "Or drop a mod .zip onto the window.",
+  "Import or export a .sav with the system file picker.",
+  "Import a .sav to a new slot, or export the active slot.",
+  "No mods installed - drop a mod .zip here to add one.",
+  "Fetching mod index",
+  "%d indexes",
+  "Refreshed - %d mods listed",
+  "Added %s",
+  "Index removed",
+  "%s's\nhits will never\nmiss!",
+  "%s's %s\nrose!",
+  "%s used\n%s!",
+  "Link battle needs\nthe same version\nand mods.",
+  "Your %s can't\nbattle on the\nother game.",
+  "Their %s isn't\nin this game.\n(%s)",
+  "%s wants\nto battle!",
+  "Link desync!\n%s differs.\fAre both games\nthe same version\nand mods?",
+  "%s ran from\nthe battle!",
+  "There's no will\nto fight!",
+  "Items can't be\nused in a link\nbattle!",
+  "%s is out of\nPOKéMON!\f%s wins!",
+  "%s left the\nbattle.",
+  "%s ran out of\ntime!",
+  "Time's up! You\nforfeit the match.",
+  "%s's %s can't\nbattle on this\ngame.",
+  "%s's %s can't\nbattle on this\ngame.\n(%s)",
+  "%s vs %s!",
+  "Link error:\n%s",
+  "Online play runs\nvanilla for both\nplayers.\fTurn off %s\nand restart?",
+  "The link was\nbroken.",
+  "Link battle\ncan't start.",
+  "The trade stopped:\n%s.",
+  "The trade was\ncancelled.",
+  "Trade completed!\f%s received\n%s!",
+  "LINK CABLE (LAN)",
+  "ONLINE MATCH",
+  "TOURNAMENT",
+  "HOST A GAME",
+  "JOIN A GAME",
+  "UDP port %s",
+  "HOST ONLINE",
+  "JOIN ONLINE",
+  "Tell your friend",
+  "the code:",
+  "Waiting for join...",
+  "A: connect  B: back",
+  "Calling...",
+  "Friend joins at:",
+  "Port: %s",
+  "TRADE",
+  "BATTLE",
+  "LEVELS:",
+  "A: continue  B: back",
+  "Checking the",
+  "other game...",
+  "Waiting for the",
+  "host to choose...",
+  "A: trade anyway",
+  "YOURS",
+  "THEIRS",
+  "X: not on theirs",
+  "A: trade  B: cancel",
+  "Exchanging data...",
+  "can't reach relay %s:%d\n(%s)",
+  "Couldn't join:\n%s",
+  "no answer from\n%s",
+  "Can't host:\nneed %d Pokemon\nLv %s-%s.",
+  "Couldn't host\nthat tournament.",
+  "Your party needs\n%d Pokemon, Lv\n%s-%s.",
+  "Couldn't join\nthat tournament.",
+  "Link error:\nversion mismatch\nwith opponent.",
+  "The tournament\nconnection was\nlost.",
+  "Can't watch this\nmatch.",
+  "HOST",
+  "JOIN",
+  "START: create",
+  "A: join  B: back",
+  "B: cancel",
+  "TOURNAMENT %s",
+  "ROUND %d",
+  "%s (bye)",
+  "%s%s vs %s%s",
+  "(organizing --",
+  "not playing)",
+  "Waiting for",
+  "players to join:",
+  "A: START  B: cancel",
+  "%s is the",
+  "champion!",
+  "A: continue",
+  "NO MODS INSTALLED",
+  "SAVE CURRENT AS..",
+  "EXPORT..",
+  "IMPORT..",
+  "OPTIONS..",
+  "PERMISSIONS..",
+  "DON'T TRY HERE",
+  "TRY HERE ANYWAY",
+  "VIEW ERROR..",
+  "BACK",
+  "APPLY & RESTART",
+  "DISCARD CHANGES",
+  "DATA & API ONLY",
+  "DISABLE BOTH?",
+  "PROFILE NAME?",
+  "RENAME?",
+  "NO CHANGES",
+  "YES",
+  "NO",
+  "A:OK",
+  "B:DONE (NO RESTART)",
+  "MOD MANAGER",
+  "%s downloads across all releases",
+  "Released %s  -  Updated %s",
+  "Level %d",
+  "Congratulations!\nYour %s\nevolved into\n%s!",
+  "You can't carry\nany more items!",
+  "{PLAYER} got\n%s!",
+  "Do you want to\ngive a nickname\nto %s?",
+  "There's no more\nroom for POKéMON!\u000b%s was\u000bsent to POKéMON\u000bBOX %s on PC!",
+  "contribution is not a table",
+  " [%s %s.%s]",
+  "{PLAYER} received\n%s.",
+  "{PLAYER} put the\n%s in\nthe %s.",
+  "The %s\nis full…",
+  "It's a fruit-\nbearing tree.",
+  "There's nothing\nhere…",
+  "Hey! It's\n%s!",
+  "But the PACK is\nfull…",
+  "Obtained\n%s!",
+  "Click!",
+  "You can't get off\nhere.",
+  "%s got off\nthe BICYCLE.",
+  "%s got on\nthe BICYCLE!",
+  "No cycling\nallowed here.",
+  "No good! It's not\neven near water.",
+  "OAK: %s!\nThis isn't the\ntime to use that!",
+  "%s learned\n%s!",
+  "The TOWN MAP is\nunreadable here.",
+  "Yes! ITEMFINDER\nindicates there's\nan item nearby.",
+  "Nope! ITEMFINDER\nisn't responding.",
+  "Booted up a TM!",
+  "It contained\n%s!",
+  "USE",
+  "TOSS",
+  "That's too impor-\ntant to toss!",
+  "Threw away\n%s.",
+  "SELECT:CLEAR ROW\nSTART:RESET ALL",
+  "RESET ALL BINDINGS?",
+  "PRESS A BUTTON",
+  "RELEASE TO SET",
+  "ESC/2ND CANCELS",
+  "%s :L%d",
+  "STATS",
+  "CANCEL",
+  "What? There are\nno POKéMON here!",
+  "You can't take\nany more POKéMON.\fDeposit POKéMON\nfirst.",
+  "BOX %d (WITHDRAW)",
+  "%s is\ntaken out.\u000bGot %s.",
+  "You can't deposit\nthe last POKéMON!",
+  "Oops! This Box is\nfull of POKéMON.",
+  "You need at least\none POKéMON!",
+  "BOX %d is full!",
+  "%s was\nstored in Box %s.",
+  "BOX %d (RELEASE)",
+  "Once released,\n%s is\ngone forever. OK?",
+  "%s was\nreleased outside.\fBye %s!",
+  "%sBOX %2d",
+  "When you change a\nPOKéMON BOX, data\nwill be saved. OK?",
+  "What?",
+  "BOX No.",
+  "BOX No.%d",
+  "Empty.",
+  ":L%d No.%03d",
+  "Printed BOX %d!\fSaved as\n%s\u000bin the save\nfolder.",
+  "Printer error!\n%s",
+  "WITHDRAW <PK><MN>",
+  "DEPOSIT <PK><MN>",
+  "RELEASE <PK><MN>",
+  "CHANGE BOX",
+  "PRINT BOX",
+  "SEE YA!",
+  "GAME FREAK",
+  "Nintendo",
+  "Creatures inc.",
+  "GAME FREAK inc.",
+  "T H E  E N D",
+  "No.",
+  "GR. %.1fm",
+  "GEW. %.1fkg",
+  "HT %d′%02d″",
+  "WT %.1flb",
+  "Data unknown.",
+  "<Diploma>",
+  "Player",
+  "evolving!",
+  "POKéDEX   Seen:{NUM:wDexRatingNumMonsSeen, 1, 3}\n         Owned:{NUM:wDexRatingNumMonsOwned, 1, 3}",
+  "POKéDEX Rating{COLON}",
+  "Keep it up!",
+  "LEVEL/",
+  "TYPE1/",
+  "TYPE2/",
+  "HALL OF FAME",
+  "PLAY TIME",
+  "MONEY",
+  "GENGAR VS NIDORINO",
+  "Nothing here.",
+  "Which move should",
+  "be forgotten?",
+  "YOUR NAME?",
+  "NEW NAME",
+  "HIS NAME?",
+  "_OakSpeechText2A",
+  "SET",
+  "SHIFT",
+  "WIDE",
+  "OG",
+  "FILL",
+  "FIXED",
+  "BLACK",
+  "WORLD",
+  "WHITE",
+  "DYNAMIC",
+  "CENTERED",
+  "RULESET",
+  "PIKACHU VOL",
+  "ZOOM",
+  "%d INSTALLED",
+  "CONTROLS",
+  "DATE FORMAT",
+  "TIME FORMAT",
+  "A blinding FLASH\nlights the area!",
+  "No SURFing here!",
+  "Nothing to CUT!",
+  "{RAM:wNameBuffer} used\nSTRENGTH.",
+  "{RAM:wNameBuffer} can\nmove boulders.",
+  "It won't have\nany effect.",
+  "%s's HP\nwas restored!",
+  "SWITCH",
+  "FLY",
+  "FLASH",
+  "CUT",
+  "SURF",
+  "STRENGTH",
+  "SOFTBOILED",
+  "TELEPORT",
+  "DIG",
+  "Use TM on which\nPOKéMON?",
+  "Bring out which\nPOKéMON?",
+  "Choose a POKéMON.",
+  "No POKéMON!",
+  "ABLE",
+  "NOT ABLE",
+  "FNT",
+  "Move to where?",
+  "Use on which one?",
+  "How many?",
+  "You can't carry\nany more items.",
+  "Withdrew\n%s.",
+  "No room left to\nstore items.",
+  "%s was\nstored via PC.",
+  "Toss %s?",
+  "Threw away %s.",
+  "WITHDRAW ITEM",
+  "DEPOSIT ITEM",
+  "TOSS ITEM",
+  "LOG OFF",
+  "SEEN %3d  OWN %3d",
+  "DATA",
+  "CRY",
+  "AREA",
+  "PRNT",
+  "Printed %s's\ndata!\fSaved as\n%s\u000bin the save\nfolder.",
+  "QUIT",
+  "%s (%s)",
+  "%s x%d",
+  "%s to box %d",
+  "LOAD REPORT",
+  "A:CONTINUE",
+  "You don't have\nenough money.",
+  "%s?\nThat will be\n¥%d. OK?",
+  "Here you are!\nThank you!",
+  "I can't put a\nprice on that.",
+  "I can pay you\n¥%d for that.",
+  "BUY",
+  "SELL",
+  "%s lined up!\nScored %d coins!",
+  "Darn!\nRan out of coins!",
+  "Not enough\ncoins!",
+  "SLOT MACHINE",
+  "COINS %4d",
+  "POKéDEX",
+  "POKéMON",
+  "SAVE",
+  "PLAYER %s\nBADGES    %d\nPOKéDEX %3d\nTIME %6d:%02d",
+  "\fWould you like to\nSAVE the game?",
+  "Now saving...",
+  "%s saved\nthe game!",
+  "OPTION",
+  "LINK",
+  "RETURN TO MAIN\nMENU?",
+  "BALL",
+  "STATUS/",
+  "OT/",
+  "EXP POINTS",
+  "LEVEL UP",
+  "PP",
+  "SCORE %d",
+  "New record!",
+  "HI    %d",
+  "A: done",
+  "PLAYER",
+  "BADGES",
+  "TIME",
+  "CONTINUE",
+  "EXIT GAME",
+  "POKéMON RED",
+  "OT/%s",
+  "NAME/%s",
+  "Hello! Sorry to\nkeep you waiting!\fWelcome to the\nworld of POKéMON!\fMy name is OAK.\fPeople call me the\nPOKéMON PROF.",
+  "This world is in-\nhabited by crea-\u000btures that we call\u000bPOKéMON.",
+  "People and POKéMON\nlive together by\fsupporting each\nother.\fSome people play\nwith POKéMON, some\u000bbattle with them.",
+  "But we don't know\neverything about\u000bPOKéMON yet.\fThere are still\nmany mysteries to\u000bsolve.\fThat's why I study\nPOKéMON every day.",
+  "Now, what did you\nsay your name was?",
+  "{PLAYER}, are you\nready?\fYour very own\nPOKéMON story is\u000babout to unfold.\fYou'll face fun\ntimes and tough\u000bchallenges.\fA world of dreams\nand adventures\fwith POKéMON\nawaits! Let's go!\fI'll be seeing you\nlater!",
+  "{PLAYER} used the",
+  "Registered the",
+  "You can't register",
+  "that item.",
+  "№.",
+  "<LV>",
+  "HP",
+  "♂",
+  "♀",
+  "⁂",
+  "/",
+  "<ID>№",
+  "MOVE",
+  "Crammed full of\nPOKéMON books!",
+  "There's a slew of\nPOKéMON stuff!",
+  "An elevator!",
+  "POKéMON LEAGUE HQ",
+  "%s found\n%s!",
+  "%s found\n%d coins!",
+  "{RAM}\nPOKéMON GYM\nLEADER: {RAM}",
+  "Bingo!",
+  "Hey! There's a\nswitch under the\ntrash!\fThe 1st electric\nlock opened!",
+  "The 2nd electric\nlock opened!\fThe motorized door\nopened!",
+  "Nope! There's\nonly trash here.\fHey! The electric\nlocks were reset!",
+  "{PLAYER} initiated\nTELEPORTER's Cell\nSeparator!",
+  "BILL's favorite\nPOKéMON list!",
+  "{PLAYER} got on\n{RAM:wNameBuffer}!",
+  "{RAM:wNameBuffer} hacked\naway with CUT!",
+  "Gyaoo!",
+  "SOMEONE'S PC",
+  "PROF.OAK's PC",
+  "Accessed PROF.\nOAK's PC.\fAccessed POKéDEX\nRating System.",
+  "Want to get your\nPOKéDEX rated?",
+  "Closed link to\nPROF.OAK's PC.",
+  "POKéDEX comp-\nletion is:\f{NUM:hDexRatingNumMonsSeen} POKéMON seen\n{NUM:hDexRatingNumMonsOwned} POKéMON owned\fPROF.OAK's\nRating:",
+  "Welcome to our\nPOKéMON CENTER!",
+  "Shall we heal your\nPOKéMON?",
+  "OK. We'll need\nyour POKéMON.",
+  "Your POKéMON are\nfighting fit!",
+  "I like shorts!\nThey're comfy and\neasy to wear!",
+  "%s received\nthe %s!",
+  "%s received\n%s!",
+  "Go right ahead!",
+  "You don't have the\nBOULDERBADGE yet!",
+  "Oh! That is the\n{RAM}!",
+  "You don't have the\n{RAM} yet!",
+  "You need a\nBICYCLE for the\nCycling Road!",
+  "The boulder fell\nthrough the hole!",
+  "PA: You're out of\nSAFARI BALLs!",
+  "Gold cache incomplete:\n%s",
+  "Font load failed:\n%s",
+  "%s is missing.\nRe-import the Gold ROM.",
+  "Failed to boot %s:\n%s",
+  "REPEL's effect\nwore off.",
+  "You have no more\nPOKéMON that can\\011fight!",
+  "%s came\nout of its EGG!",
+  "Give a nickname to\n%s?"
+ ],
+ "text": {
+  "Enemy %s": "Enemy %s",
+  "ATTACK": "ATTACK",
+  "DEFENSE": "DEFENSE",
+  "SPEED": "SPEED",
+  "SPECIAL": "SPECIAL",
+  "%s wants\nto fight!": "%s wants\nto fight!",
+  "The GHOST\nappeared!": "The GHOST\nappeared!",
+  "SILPH SCOPE\nunveiled the\u000bGHOST's identity!": "SILPH SCOPE\nunveiled the\u000bGHOST's identity!",
+  "OLD MAN": "OLD MAN",
+  "Go! %s!": "Go! %s!",
+  "Do it! %s!": "Do it! %s!",
+  "Get'm! %s!": "Get'm! %s!",
+  "%s is out of\nuseable POKéMON!": "%s is out of\nuseable POKéMON!",
+  "%s blacked\nout!": "%s blacked\nout!",
+  "%s sent\nout %s!": "%s sent\nout %s!",
+  "FOE": "FOE",
+  "PA: You're out of\nSAFARI BALLs!\nGame over!": "PA: You're out of\nSAFARI BALLs!\nGame over!",
+  "%s is too\nscared to move!": "%s is too\nscared to move!",
+  "%s has no\nmoves left!": "%s has no\nmoves left!",
+  "POKé BALL": "POKé BALL",
+  "%s used\nPOKé BALL!": "%s used\nPOKé BALL!",
+  "All right!\n%s was\ncaught!": "All right!\n%s was\ncaught!",
+  "GHOST: Get out...\nGet out...": "GHOST: Get out...\nGet out...",
+  "%s with-\ndrew %s!": "%s with-\ndrew %s!",
+  "%s\nis storing energy!": "%s\nis storing energy!",
+  "%s\nfainted!": "%s\nfainted!",
+  "%s grew\nto level %d!": "%s grew\nto level %d!",
+  "%s is\nabout to use\u000b%s!": "%s is\nabout to use\u000b%s!",
+  "Will %s\nchange POKéMON?": "Will %s\nchange POKéMON?",
+  "{RIVAL}: Yeah! Am\nI great or what?": "{RIVAL}: Yeah! Am\nI great or what?",
+  "Use next POKéMON?": "Use next POKéMON?",
+  "%s used\nSAFARI BALL!": "%s used\nSAFARI BALL!",
+  "No! There's no\nrunning from a\u000btrainer battle!": "No! There's no\nrunning from a\u000btrainer battle!",
+  "You missed the\nPOKéMON!": "You missed the\nPOKéMON!",
+  "Darn! The POKéMON\nbroke free!": "Darn! The POKéMON\nbroke free!",
+  "NICKNAME?": "NICKNAME?",
+  "New POKéDEX data\nwill be added for\n%s!": "New POKéDEX data\nwill be added for\n%s!",
+  "someone's PC": "someone's PC",
+  "%s was\ntransferred to\n%s!": "%s was\ntransferred to\n%s!",
+  "But every BOX\nis full!": "But every BOX\nis full!",
+  "It dodged the\nthrown BALL!": "It dodged the\nthrown BALL!",
+  "This POKéMON\ncan't be caught!": "This POKéMON\ncan't be caught!",
+  "%s is\nalready out!": "%s is\nalready out!",
+  "battle|FIGHT": "FIGHT",
+  "battle|ITEM": "ITEM",
+  "battle|RUN": "RUN",
+  "BALLx": "BALLx",
+  "BAIT": "BAIT",
+  "THROW ROCK": "THROW ROCK",
+  "disabled!": "disabled!",
+  "TYPE/": "TYPE/",
+  "%s is\nprotected by MIST!": "%s is\nprotected by MIST!",
+  "%s's\n%s\ngreatly rose!": "%s's\n%s\ngreatly rose!",
+  "%s's\n%s rose!": "%s's\n%s rose!",
+  "%s's\n%s fell!": "%s's\n%s fell!",
+  "%s's\n%s\ngreatly fell!": "%s's\n%s\ngreatly fell!",
+  "%s\nwas afflicted\nby %s!": "%s\nwas afflicted\nby %s!",
+  "%s's\nprotected against\nstat changes!": "%s's\nprotected against\nstat changes!",
+  "RUN": "RUN",
+  "FIGHT": "FIGHT",
+  "ITEM": "ITEM",
+  "What will": "What will",
+  " do?": " do?",
+  "%s\nused %s!": "%s\nused %s!",
+  "But nothing\nhappened.": "But nothing\nhappened.",
+  "In battle": "In battle",
+  "Wild battle": "Wild battle",
+  "Trainer battle": "Trainer battle",
+  "Link battle": "Link battle",
+  "Title screen": "Title screen",
+  "You don't have a\n#MON!": "You don't have a\n#MON!",
+  "An item in your\nPACK may be\fregistered for use\non SELECT Button.": "An item in your\nPACK may be\fregistered for use\non SELECT Button.",
+  "OAK: {PLAYER}!\nThis isn't the\u000btime to use that!": "OAK: {PLAYER}!\nThis isn't the\u000btime to use that!",
+  "The REPEL used\nearlier is still\u000bin effect.": "The REPEL used\nearlier is still\u000bin effect.",
+  "{PLAYER} used the\n%s.": "{PLAYER} used the\n%s.",
+  "There was a trophy\ninside!\fThe trophy was\nsent home.": "There was a trophy\ninside!\fThe trophy was\nsent home.",
+  "But, it failed!": "But, it failed!",
+  "Wild %s\nappeared!": "Wild %s\nappeared!",
+  "options.musicFilter|OFF": "OFF",
+  "TEXT SPEED": "TEXT SPEED",
+  "BATTLE ANIMATION": "BATTLE ANIMATION",
+  "BATTLE STYLE": "BATTLE STYLE",
+  "BATTLE LAYOUT": "BATTLE LAYOUT",
+  "BATTLE SIZE": "BATTLE SIZE",
+  "BATTLE BG": "BATTLE BG",
+  "UI LAYOUT": "UI LAYOUT",
+  "MUSIC VOL": "MUSIC VOL",
+  "SFX VOL": "SFX VOL",
+  "MUSIC FILTER": "MUSIC FILTER",
+  "PERFORMANCE": "PERFORMANCE",
+  "COLORS": "COLORS",
+  "TILT": "TILT",
+  "GBC FX": "GBC FX",
+  "VOID FILL": "VOID FILL",
+  "VIDEO MODE": "VIDEO MODE",
+  "ORIENTATION": "ORIENTATION",
+  "FAITHFUL RATIO": "FAITHFUL RATIO",
+  "MAX FPS": "MAX FPS",
+  "OVERWORLD SPEED": "OVERWORLD SPEED",
+  "BATTLE SPEED": "BATTLE SPEED",
+  "MENU SPEED": "MENU SPEED",
+  "TOUCH PAD": "TOUCH PAD",
+  "ON": "ON",
+  "OFF": "OFF",
+  "VIBRATION": "VIBRATION",
+  "TOUCH CONTROLS": "TOUCH CONTROLS",
+  "Edit": "Edit",
+  "RESET REBINDS": "RESET REBINDS",
+  "Reset": "Reset",
+  "RESET DEFAULTS": "RESET DEFAULTS",
+  "BATTLE SCENE": "BATTLE SCENE",
+  "SOUND": "SOUND",
+  "PRINT": "PRINT",
+  "MENU ACCOUNT": "MENU ACCOUNT",
+  "FRAME": "FRAME",
+  "COLOR": "COLOR",
+  "GAME SPEED": "GAME SPEED",
+  "OPTIONS": "OPTIONS",
+  "Ready": "Ready",
+  "Conflict": "Conflict",
+  "Not for this game": "Not for this game",
+  "Incompatible": "Incompatible",
+  "Show for:": "Show for:",
+  "All games": "All games",
+  "Not installable from this index": "Not installable from this index",
+  "Install": "Install",
+  "Update": "Update",
+  "Reinstall": "Reinstall",
+  "Sure?": "Sure?",
+  "Delete": "Delete",
+  "RED": "RED",
+  "BLUE": "BLUE",
+  "YELLOW": "YELLOW",
+  "GOLD": "GOLD",
+  "MODS": "MODS",
+  "FIND MODS": "FIND MODS",
+  "Checking...": "Checking...",
+  "Updating %d%%": "Updating %d%%",
+  "Update v": "Update v",
+  "Restart to update": "Restart to update",
+  "Open releases": "Open releases",
+  "Check for updates": "Check for updates",
+  "Scan again": "Scan again",
+  "Import ROM": "Import ROM",
+  "Not supported yet": "Not supported yet",
+  "Support for this game is on the way.": "Support for this game is on the way.",
+  "Import unavailable": "Import unavailable",
+  "Copy the .gb/.gbc via MTP into imports/.": "Copy the .gb/.gbc via MTP into imports/.",
+  "Or copy the .gb/.gbc into baseroms/.": "Or copy the .gb/.gbc into baseroms/.",
+  "Copy the .gb/.gbc via USB.": "Copy the .gb/.gbc via USB.",
+  "Or drop the .gb/.gbc file here.": "Or drop the .gb/.gbc file here.",
+  "Importing": "Importing",
+  "Import failed": "Import failed",
+  "That ROM could not be imported.": "That ROM could not be imported.",
+  "Re-import ROM": "Re-import ROM",
+  "No ROM imported": "No ROM imported",
+  "Compatible ROM found": "Compatible ROM found",
+  "Found in baseroms/: %s": "Found in baseroms/: %s",
+  "Import detected ROM": "Import detected ROM",
+  "Checking baseroms...": "Checking baseroms...",
+  "Looking for compatible Red, Blue, and Yellow ROMs.": "Looking for compatible Red, Blue, and Yellow ROMs.",
+  "Update required": "Update required",
+  "This build needs a few more things from your ": "This build needs a few more things from your ",
+  " ROM. Re-import to continue.": " ROM. Re-import to continue.",
+  "The ROM is verified before any files are created. ": "The ROM is verified before any files are created. ",
+  "Export": "Export",
+  "Rename": "Rename",
+  "SAVE SLOT": "SAVE SLOT",
+  "Import save": "Import save",
+  "1 slot": "1 slot",
+  "%d slots": "%d slots",
+  "No saves yet - start a new game or import one.": "No saves yet - start a new game or import one.",
+  "NEW GAME": "NEW GAME",
+  "LOADED": "LOADED",
+  "%d badges - %s - %d caught": "%d badges - %s - %d caught",
+  "empty slot": "empty slot",
+  "Open folder": "Open folder",
+  "+ New save slot": "+ New save slot",
+  "GOOD TO GO": "GOOD TO GO",
+  "ROM FOUND": "ROM FOUND",
+  "COMING SOON": "COMING SOON",
+  "ROM REQUIRED": "ROM REQUIRED",
+  "Play ": "Play ",
+  "Name": "Name",
+  "Popularity": "Popularity",
+  "Release date": "Release date",
+  "Last updated": "Last updated",
+  "Disable all": "Disable all",
+  "Enable all": "Enable all",
+  "Sort": "Sort",
+  "v%s available": "v%s available",
+  "up to date": "up to date",
+  "check failed": "check failed",
+  "No mod index added": "No mod index added",
+  "Add an index to browse mods. An index is a published list; paste its URL or its owner/repo.": "Add an index to browse mods. An index is a published list; paste its URL or its owner/repo.",
+  "Add an index": "Add an index",
+  "Indexes": "Indexes",
+  "Filter": "Filter",
+  "Search mods": "Search mods",
+  "This index lists no mods yet.": "This index lists no mods yet.",
+  "No mods match that search.": "No mods match that search.",
+  "Save": "Save",
+  "Cancel": "Cancel",
+  "Paste": "Paste",
+  "Confirm": "Confirm",
+  "OK": "OK",
+  "Close": "Close",
+  "Other versions: ": "Other versions: ",
+  "Installed: v": "Installed: v",
+  "Up to date": "Up to date",
+  " (installed)": " (installed)",
+  "Read more": "Read more",
+  "Sort by": "Sort by",
+  "All": "All",
+  "Filter by category": "Filter by category",
+  "Mod indexes": "Mod indexes",
+  "No index added yet.": "No index added yet.",
+  "Remove": "Remove",
+  "Add index": "Add index",
+  "Refresh all": "Refresh all",
+  "Check again": "Check again",
+  "Versions": "Versions",
+  "Details": "Details",
+  "Source": "Source",
+  "The ROM for this game is imported and verified.": "The ROM for this game is imported and verified.",
+  "Manage ": "Manage ",
+  "Settings": "Settings",
+  "Saved to your options file; the game applies these on its next start.": "Saved to your options file; the game applies these on its next start.",
+  "Run": "Run",
+  "Enter to save - Esc to cancel": "Enter to save - Esc to cancel",
+  "Name save slot": "Name save slot",
+  "Enter to save - Esc to cancel - empty clears": "Enter to save - Esc to cancel - empty clears",
+  "Add a mod index": "Add a mod index",
+  "Paste the index URL, or its owner/repo.": "Paste the index URL, or its owner/repo.",
+  "Add": "Add",
+  "Enter to add - Esc to cancel": "Enter to add - Esc to cancel",
+  "(No release notes.)": "(No release notes.)",
+  " notes": " notes",
+  "(No description.)": "(No description.)",
+  "Working": "Working",
+  "Loading mod index": "Loading mod index",
+  "Copy your .gb/.gbc into:": "Copy your .gb/.gbc into:",
+  "%s/imports/\nDBI MTP → 1: SD Card/%simports/": "%s/imports/\nDBI MTP → 1: SD Card/%simports/",
+  "Copy your .zip into:\n%s/imports/mods/\nDBI MTP → 1: SD Card/%simports/mods/": "Copy your .zip into:\n%s/imports/mods/\nDBI MTP → 1: SD Card/%simports/mods/",
+  "Copy your %s .sav into:\n%s/%s/\nDBI MTP → 1: SD Card/%s%s/": "Copy your %s .sav into:\n%s/%s/\nDBI MTP → 1: SD Card/%s%s/",
+  "%s\n(%d failed: %s)": "%s\n(%d failed: %s)",
+  "%s (%s tab)": "%s (%s tab)",
+  "Imported %d saves into %s. Active: %s.": "Imported %d saves into %s. Active: %s.",
+  "%s\n(%d already imported, skipped)": "%s\n(%d already imported, skipped)",
+  "Already imported — %d file(s) skipped. Check SAVE SLOT.": "Already imported — %d file(s) skipped. Check SAVE SLOT.",
+  "No new ROM found.": "No new ROM found.",
+  "No matching ROM found.": "No matching ROM found.",
+  "Choose a mod .zip": "Choose a mod .zip",
+  "Choose a .sav save file": "Choose a .sav save file",
+  "Exported to %s\nDBI MTP → 1: SD Card/%s%s/": "Exported to %s\nDBI MTP → 1: SD Card/%s%s/",
+  "Every mod is already enabled.": "Every mod is already enabled.",
+  "Every mod is already disabled.": "Every mod is already disabled.",
+  "Enabled %d mods.": "Enabled %d mods.",
+  "Disabled %d mods.": "Disabled %d mods.",
+  "Loading versions": "Loading versions",
+  "Checking for updates": "Checking for updates",
+  "Downloading %s": "Downloading %s",
+  "Installing %s": "Installing %s",
+  "Import mod .zip": "Import mod .zip",
+  "Or copy a mod .zip via USB.": "Or copy a mod .zip via USB.",
+  "Or drop a mod .zip onto the window.": "Or drop a mod .zip onto the window.",
+  "Import or export a .sav with the system file picker.": "Import or export a .sav with the system file picker.",
+  "Import a .sav to a new slot, or export the active slot.": "Import a .sav to a new slot, or export the active slot.",
+  "No mods installed - drop a mod .zip here to add one.": "No mods installed - drop a mod .zip here to add one.",
+  "Fetching mod index": "Fetching mod index",
+  "%d indexes": "%d indexes",
+  "Refreshed - %d mods listed": "Refreshed - %d mods listed",
+  "Added %s": "Added %s",
+  "Index removed": "Index removed",
+  "%s's\nhits will never\nmiss!": "%s's\nhits will never\nmiss!",
+  "%s's %s\nrose!": "%s's %s\nrose!",
+  "%s used\n%s!": "%s used\n%s!",
+  "Link battle needs\nthe same version\nand mods.": "Link battle needs\nthe same version\nand mods.",
+  "Your %s can't\nbattle on the\nother game.": "Your %s can't\nbattle on the\nother game.",
+  "Their %s isn't\nin this game.\n(%s)": "Their %s isn't\nin this game.\n(%s)",
+  "%s wants\nto battle!": "%s wants\nto battle!",
+  "Link desync!\n%s differs.\fAre both games\nthe same version\nand mods?": "Link desync!\n%s differs.\fAre both games\nthe same version\nand mods?",
+  "%s ran from\nthe battle!": "%s ran from\nthe battle!",
+  "There's no will\nto fight!": "There's no will\nto fight!",
+  "Items can't be\nused in a link\nbattle!": "Items can't be\nused in a link\nbattle!",
+  "%s is out of\nPOKéMON!\f%s wins!": "%s is out of\nPOKéMON!\f%s wins!",
+  "%s left the\nbattle.": "%s left the\nbattle.",
+  "%s ran out of\ntime!": "%s ran out of\ntime!",
+  "Time's up! You\nforfeit the match.": "Time's up! You\nforfeit the match.",
+  "%s's %s can't\nbattle on this\ngame.": "%s's %s can't\nbattle on this\ngame.",
+  "%s's %s can't\nbattle on this\ngame.\n(%s)": "%s's %s can't\nbattle on this\ngame.\n(%s)",
+  "%s vs %s!": "%s vs %s!",
+  "Link error:\n%s": "Link error:\n%s",
+  "Online play runs\nvanilla for both\nplayers.\fTurn off %s\nand restart?": "Online play runs\nvanilla for both\nplayers.\fTurn off %s\nand restart?",
+  "The link was\nbroken.": "The link was\nbroken.",
+  "Link battle\ncan't start.": "Link battle\ncan't start.",
+  "The trade stopped:\n%s.": "The trade stopped:\n%s.",
+  "The trade was\ncancelled.": "The trade was\ncancelled.",
+  "Trade completed!\f%s received\n%s!": "Trade completed!\f%s received\n%s!",
+  "LINK CABLE (LAN)": "LINK CABLE (LAN)",
+  "ONLINE MATCH": "ONLINE MATCH",
+  "TOURNAMENT": "TOURNAMENT",
+  "HOST A GAME": "HOST A GAME",
+  "JOIN A GAME": "JOIN A GAME",
+  "UDP port %s": "UDP port %s",
+  "HOST ONLINE": "HOST ONLINE",
+  "JOIN ONLINE": "JOIN ONLINE",
+  "Tell your friend": "Tell your friend",
+  "the code:": "the code:",
+  "Waiting for join...": "Waiting for join...",
+  "A: connect  B: back": "A: connect  B: back",
+  "Calling...": "Calling...",
+  "Friend joins at:": "Friend joins at:",
+  "Port: %s": "Port: %s",
+  "TRADE": "TRADE",
+  "BATTLE": "BATTLE",
+  "LEVELS:": "LEVELS:",
+  "A: continue  B: back": "A: continue  B: back",
+  "Checking the": "Checking the",
+  "other game...": "other game...",
+  "Waiting for the": "Waiting for the",
+  "host to choose...": "host to choose...",
+  "A: trade anyway": "A: trade anyway",
+  "YOURS": "YOURS",
+  "THEIRS": "THEIRS",
+  "X: not on theirs": "X: not on theirs",
+  "A: trade  B: cancel": "A: trade  B: cancel",
+  "Exchanging data...": "Exchanging data...",
+  "can't reach relay %s:%d\n(%s)": "can't reach relay %s:%d\n(%s)",
+  "Couldn't join:\n%s": "Couldn't join:\n%s",
+  "no answer from\n%s": "no answer from\n%s",
+  "Can't host:\nneed %d Pokemon\nLv %s-%s.": "Can't host:\nneed %d Pokemon\nLv %s-%s.",
+  "Couldn't host\nthat tournament.": "Couldn't host\nthat tournament.",
+  "Your party needs\n%d Pokemon, Lv\n%s-%s.": "Your party needs\n%d Pokemon, Lv\n%s-%s.",
+  "Couldn't join\nthat tournament.": "Couldn't join\nthat tournament.",
+  "Link error:\nversion mismatch\nwith opponent.": "Link error:\nversion mismatch\nwith opponent.",
+  "The tournament\nconnection was\nlost.": "The tournament\nconnection was\nlost.",
+  "Can't watch this\nmatch.": "Can't watch this\nmatch.",
+  "HOST": "HOST",
+  "JOIN": "JOIN",
+  "START: create": "START: create",
+  "A: join  B: back": "A: join  B: back",
+  "B: cancel": "B: cancel",
+  "TOURNAMENT %s": "TOURNAMENT %s",
+  "ROUND %d": "ROUND %d",
+  "%s (bye)": "%s (bye)",
+  "%s%s vs %s%s": "%s%s vs %s%s",
+  "(organizing --": "(organizing --",
+  "not playing)": "not playing)",
+  "Waiting for": "Waiting for",
+  "players to join:": "players to join:",
+  "A: START  B: cancel": "A: START  B: cancel",
+  "%s is the": "%s is the",
+  "champion!": "champion!",
+  "A: continue": "A: continue",
+  "NO MODS INSTALLED": "NO MODS INSTALLED",
+  "SAVE CURRENT AS..": "SAVE CURRENT AS..",
+  "EXPORT..": "EXPORT..",
+  "IMPORT..": "IMPORT..",
+  "OPTIONS..": "OPTIONS..",
+  "PERMISSIONS..": "PERMISSIONS..",
+  "DON'T TRY HERE": "DON'T TRY HERE",
+  "TRY HERE ANYWAY": "TRY HERE ANYWAY",
+  "VIEW ERROR..": "VIEW ERROR..",
+  "BACK": "BACK",
+  "APPLY & RESTART": "APPLY & RESTART",
+  "DISCARD CHANGES": "DISCARD CHANGES",
+  "DATA & API ONLY": "DATA & API ONLY",
+  "DISABLE BOTH?": "DISABLE BOTH?",
+  "PROFILE NAME?": "PROFILE NAME?",
+  "RENAME?": "RENAME?",
+  "NO CHANGES": "NO CHANGES",
+  "YES": "YES",
+  "NO": "NO",
+  "A:OK": "A:OK",
+  "B:DONE (NO RESTART)": "B:DONE (NO RESTART)",
+  "MOD MANAGER": "MOD MANAGER",
+  "%s downloads across all releases": "%s downloads across all releases",
+  "Released %s  -  Updated %s": "Released %s  -  Updated %s",
+  "Level %d": "Level %d",
+  "Congratulations!\nYour %s\nevolved into\n%s!": "Congratulations!\nYour %s\nevolved into\n%s!",
+  "You can't carry\nany more items!": "You can't carry\nany more items!",
+  "{PLAYER} got\n%s!": "{PLAYER} got\n%s!",
+  "Do you want to\ngive a nickname\nto %s?": "Do you want to\ngive a nickname\nto %s?",
+  "There's no more\nroom for POKéMON!\u000b%s was\u000bsent to POKéMON\u000bBOX %s on PC!": "There's no more\nroom for POKéMON!\u000b%s was\u000bsent to POKéMON\u000bBOX %s on PC!",
+  "contribution is not a table": "contribution is not a table",
+  " [%s %s.%s]": " [%s %s.%s]",
+  "{PLAYER} received\n%s.": "{PLAYER} received\n%s.",
+  "{PLAYER} put the\n%s in\nthe %s.": "{PLAYER} put the\n%s in\nthe %s.",
+  "The %s\nis full…": "The %s\nis full…",
+  "It's a fruit-\nbearing tree.": "It's a fruit-\nbearing tree.",
+  "There's nothing\nhere…": "There's nothing\nhere…",
+  "Hey! It's\n%s!": "Hey! It's\n%s!",
+  "But the PACK is\nfull…": "But the PACK is\nfull…",
+  "Obtained\n%s!": "Obtained\n%s!",
+  "Click!": "Click!",
+  "You can't get off\nhere.": "You can't get off\nhere.",
+  "%s got off\nthe BICYCLE.": "%s got off\nthe BICYCLE.",
+  "%s got on\nthe BICYCLE!": "%s got on\nthe BICYCLE!",
+  "No cycling\nallowed here.": "No cycling\nallowed here.",
+  "No good! It's not\neven near water.": "No good! It's not\neven near water.",
+  "OAK: %s!\nThis isn't the\ntime to use that!": "OAK: %s!\nThis isn't the\ntime to use that!",
+  "%s learned\n%s!": "%s learned\n%s!",
+  "The TOWN MAP is\nunreadable here.": "The TOWN MAP is\nunreadable here.",
+  "Yes! ITEMFINDER\nindicates there's\nan item nearby.": "Yes! ITEMFINDER\nindicates there's\nan item nearby.",
+  "Nope! ITEMFINDER\nisn't responding.": "Nope! ITEMFINDER\nisn't responding.",
+  "Booted up a TM!": "Booted up a TM!",
+  "It contained\n%s!": "It contained\n%s!",
+  "USE": "USE",
+  "TOSS": "TOSS",
+  "That's too impor-\ntant to toss!": "That's too impor-\ntant to toss!",
+  "Threw away\n%s.": "Threw away\n%s.",
+  "SELECT:CLEAR ROW\nSTART:RESET ALL": "SELECT:CLEAR ROW\nSTART:RESET ALL",
+  "RESET ALL BINDINGS?": "RESET ALL BINDINGS?",
+  "PRESS A BUTTON": "PRESS A BUTTON",
+  "RELEASE TO SET": "RELEASE TO SET",
+  "ESC/2ND CANCELS": "ESC/2ND CANCELS",
+  "%s :L%d": "%s :L%d",
+  "STATS": "STATS",
+  "CANCEL": "CANCEL",
+  "What? There are\nno POKéMON here!": "What? There are\nno POKéMON here!",
+  "You can't take\nany more POKéMON.\fDeposit POKéMON\nfirst.": "You can't take\nany more POKéMON.\fDeposit POKéMON\nfirst.",
+  "BOX %d (WITHDRAW)": "BOX %d (WITHDRAW)",
+  "%s is\ntaken out.\u000bGot %s.": "%s is\ntaken out.\u000bGot %s.",
+  "You can't deposit\nthe last POKéMON!": "You can't deposit\nthe last POKéMON!",
+  "Oops! This Box is\nfull of POKéMON.": "Oops! This Box is\nfull of POKéMON.",
+  "You need at least\none POKéMON!": "You need at least\none POKéMON!",
+  "BOX %d is full!": "BOX %d is full!",
+  "%s was\nstored in Box %s.": "%s was\nstored in Box %s.",
+  "BOX %d (RELEASE)": "BOX %d (RELEASE)",
+  "Once released,\n%s is\ngone forever. OK?": "Once released,\n%s is\ngone forever. OK?",
+  "%s was\nreleased outside.\fBye %s!": "%s was\nreleased outside.\fBye %s!",
+  "%sBOX %2d": "%sBOX %2d",
+  "When you change a\nPOKéMON BOX, data\nwill be saved. OK?": "When you change a\nPOKéMON BOX, data\nwill be saved. OK?",
+  "What?": "What?",
+  "BOX No.": "BOX No.",
+  "BOX No.%d": "BOX No.%d",
+  "Empty.": "Empty.",
+  ":L%d No.%03d": ":L%d No.%03d",
+  "Printed BOX %d!\fSaved as\n%s\u000bin the save\nfolder.": "Printed BOX %d!\fSaved as\n%s\u000bin the save\nfolder.",
+  "Printer error!\n%s": "Printer error!\n%s",
+  "WITHDRAW <PK><MN>": "WITHDRAW <PK><MN>",
+  "DEPOSIT <PK><MN>": "DEPOSIT <PK><MN>",
+  "RELEASE <PK><MN>": "RELEASE <PK><MN>",
+  "CHANGE BOX": "CHANGE BOX",
+  "PRINT BOX": "PRINT BOX",
+  "SEE YA!": "SEE YA!",
+  "GAME FREAK": "GAME FREAK",
+  "Nintendo": "Nintendo",
+  "Creatures inc.": "Creatures inc.",
+  "GAME FREAK inc.": "GAME FREAK inc.",
+  "T H E  E N D": "T H E  E N D",
+  "No.": "No.",
+  "GR. %.1fm": "GR. %.1fm",
+  "GEW. %.1fkg": "GEW. %.1fkg",
+  "HT %d′%02d″": "HT %d′%02d″",
+  "WT %.1flb": "WT %.1flb",
+  "Data unknown.": "Data unknown.",
+  "<Diploma>": "<Diploma>",
+  "Player": "Player",
+  "evolving!": "evolving!",
+  "POKéDEX   Seen:{NUM:wDexRatingNumMonsSeen, 1, 3}\n         Owned:{NUM:wDexRatingNumMonsOwned, 1, 3}": "POKéDEX   Seen:{NUM:wDexRatingNumMonsSeen, 1, 3}\n         Owned:{NUM:wDexRatingNumMonsOwned, 1, 3}",
+  "POKéDEX Rating{COLON}": "POKéDEX Rating{COLON}",
+  "Keep it up!": "Keep it up!",
+  "LEVEL/": "LEVEL/",
+  "TYPE1/": "TYPE1/",
+  "TYPE2/": "TYPE2/",
+  "HALL OF FAME": "HALL OF FAME",
+  "PLAY TIME": "PLAY TIME",
+  "MONEY": "MONEY",
+  "GENGAR VS NIDORINO": "GENGAR VS NIDORINO",
+  "Nothing here.": "Nothing here.",
+  "Which move should": "Which move should",
+  "be forgotten?": "be forgotten?",
+  "YOUR NAME?": "YOUR NAME?",
+  "NEW NAME": "NEW NAME",
+  "HIS NAME?": "HIS NAME?",
+  "_OakSpeechText2A": "_OakSpeechText2A",
+  "SET": "SET",
+  "SHIFT": "SHIFT",
+  "WIDE": "WIDE",
+  "OG": "OG",
+  "FILL": "FILL",
+  "FIXED": "FIXED",
+  "BLACK": "BLACK",
+  "WORLD": "WORLD",
+  "WHITE": "WHITE",
+  "DYNAMIC": "DYNAMIC",
+  "CENTERED": "CENTERED",
+  "RULESET": "RULESET",
+  "PIKACHU VOL": "PIKACHU VOL",
+  "ZOOM": "ZOOM",
+  "%d INSTALLED": "%d INSTALLED",
+  "CONTROLS": "CONTROLS",
+  "DATE FORMAT": "DATE FORMAT",
+  "TIME FORMAT": "TIME FORMAT",
+  "A blinding FLASH\nlights the area!": "A blinding FLASH\nlights the area!",
+  "No SURFing here!": "No SURFing here!",
+  "Nothing to CUT!": "Nothing to CUT!",
+  "{RAM:wNameBuffer} used\nSTRENGTH.": "{RAM:wNameBuffer} used\nSTRENGTH.",
+  "{RAM:wNameBuffer} can\nmove boulders.": "{RAM:wNameBuffer} can\nmove boulders.",
+  "It won't have\nany effect.": "It won't have\nany effect.",
+  "%s's HP\nwas restored!": "%s's HP\nwas restored!",
+  "SWITCH": "SWITCH",
+  "FLY": "FLY",
+  "FLASH": "FLASH",
+  "CUT": "CUT",
+  "SURF": "SURF",
+  "STRENGTH": "STRENGTH",
+  "SOFTBOILED": "SOFTBOILED",
+  "TELEPORT": "TELEPORT",
+  "DIG": "DIG",
+  "Use TM on which\nPOKéMON?": "Use TM on which\nPOKéMON?",
+  "Bring out which\nPOKéMON?": "Bring out which\nPOKéMON?",
+  "Choose a POKéMON.": "Choose a POKéMON.",
+  "No POKéMON!": "No POKéMON!",
+  "ABLE": "ABLE",
+  "NOT ABLE": "NOT ABLE",
+  "FNT": "FNT",
+  "Move to where?": "Move to where?",
+  "Use on which one?": "Use on which one?",
+  "How many?": "How many?",
+  "You can't carry\nany more items.": "You can't carry\nany more items.",
+  "Withdrew\n%s.": "Withdrew\n%s.",
+  "No room left to\nstore items.": "No room left to\nstore items.",
+  "%s was\nstored via PC.": "%s was\nstored via PC.",
+  "Toss %s?": "Toss %s?",
+  "Threw away %s.": "Threw away %s.",
+  "WITHDRAW ITEM": "WITHDRAW ITEM",
+  "DEPOSIT ITEM": "DEPOSIT ITEM",
+  "TOSS ITEM": "TOSS ITEM",
+  "LOG OFF": "LOG OFF",
+  "SEEN %3d  OWN %3d": "SEEN %3d  OWN %3d",
+  "DATA": "DATA",
+  "CRY": "CRY",
+  "AREA": "AREA",
+  "PRNT": "PRNT",
+  "Printed %s's\ndata!\fSaved as\n%s\u000bin the save\nfolder.": "Printed %s's\ndata!\fSaved as\n%s\u000bin the save\nfolder.",
+  "QUIT": "QUIT",
+  "%s (%s)": "%s (%s)",
+  "%s x%d": "%s x%d",
+  "%s to box %d": "%s to box %d",
+  "LOAD REPORT": "LOAD REPORT",
+  "A:CONTINUE": "A:CONTINUE",
+  "You don't have\nenough money.": "You don't have\nenough money.",
+  "%s?\nThat will be\n¥%d. OK?": "%s?\nThat will be\n¥%d. OK?",
+  "Here you are!\nThank you!": "Here you are!\nThank you!",
+  "I can't put a\nprice on that.": "I can't put a\nprice on that.",
+  "I can pay you\n¥%d for that.": "I can pay you\n¥%d for that.",
+  "BUY": "BUY",
+  "SELL": "SELL",
+  "%s lined up!\nScored %d coins!": "%s lined up!\nScored %d coins!",
+  "Darn!\nRan out of coins!": "Darn!\nRan out of coins!",
+  "Not enough\ncoins!": "Not enough\ncoins!",
+  "SLOT MACHINE": "SLOT MACHINE",
+  "COINS %4d": "COINS %4d",
+  "POKéDEX": "POKéDEX",
+  "POKéMON": "POKéMON",
+  "SAVE": "SAVE",
+  "PLAYER %s\nBADGES    %d\nPOKéDEX %3d\nTIME %6d:%02d": "PLAYER %s\nBADGES    %d\nPOKéDEX %3d\nTIME %6d:%02d",
+  "\fWould you like to\nSAVE the game?": "\fWould you like to\nSAVE the game?",
+  "Now saving...": "Now saving...",
+  "%s saved\nthe game!": "%s saved\nthe game!",
+  "OPTION": "OPTION",
+  "LINK": "LINK",
+  "RETURN TO MAIN\nMENU?": "RETURN TO MAIN\nMENU?",
+  "BALL": "BALL",
+  "STATUS/": "STATUS/",
+  "OT/": "OT/",
+  "EXP POINTS": "EXP POINTS",
+  "LEVEL UP": "LEVEL UP",
+  "PP": "PP",
+  "SCORE %d": "SCORE %d",
+  "New record!": "New record!",
+  "HI    %d": "HI    %d",
+  "A: done": "A: done",
+  "PLAYER": "PLAYER",
+  "BADGES": "BADGES",
+  "TIME": "TIME",
+  "CONTINUE": "CONTINUE",
+  "EXIT GAME": "EXIT GAME",
+  "POKéMON RED": "POKéMON RED",
+  "OT/%s": "OT/%s",
+  "NAME/%s": "NAME/%s",
+  "Hello! Sorry to\nkeep you waiting!\fWelcome to the\nworld of POKéMON!\fMy name is OAK.\fPeople call me the\nPOKéMON PROF.": "Hello! Sorry to\nkeep you waiting!\fWelcome to the\nworld of POKéMON!\fMy name is OAK.\fPeople call me the\nPOKéMON PROF.",
+  "This world is in-\nhabited by crea-\u000btures that we call\u000bPOKéMON.": "This world is in-\nhabited by crea-\u000btures that we call\u000bPOKéMON.",
+  "People and POKéMON\nlive together by\fsupporting each\nother.\fSome people play\nwith POKéMON, some\u000bbattle with them.": "People and POKéMON\nlive together by\fsupporting each\nother.\fSome people play\nwith POKéMON, some\u000bbattle with them.",
+  "But we don't know\neverything about\u000bPOKéMON yet.\fThere are still\nmany mysteries to\u000bsolve.\fThat's why I study\nPOKéMON every day.": "But we don't know\neverything about\u000bPOKéMON yet.\fThere are still\nmany mysteries to\u000bsolve.\fThat's why I study\nPOKéMON every day.",
+  "Now, what did you\nsay your name was?": "Now, what did you\nsay your name was?",
+  "{PLAYER}, are you\nready?\fYour very own\nPOKéMON story is\u000babout to unfold.\fYou'll face fun\ntimes and tough\u000bchallenges.\fA world of dreams\nand adventures\fwith POKéMON\nawaits! Let's go!\fI'll be seeing you\nlater!": "{PLAYER}, are you\nready?\fYour very own\nPOKéMON story is\u000babout to unfold.\fYou'll face fun\ntimes and tough\u000bchallenges.\fA world of dreams\nand adventures\fwith POKéMON\nawaits! Let's go!\fI'll be seeing you\nlater!",
+  "{PLAYER} used the": "{PLAYER} used the",
+  "Registered the": "Registered the",
+  "You can't register": "You can't register",
+  "that item.": "that item.",
+  "№.": "№.",
+  "<LV>": "<LV>",
+  "HP": "HP",
+  "♂": "♂",
+  "♀": "♀",
+  "⁂": "⁂",
+  "/": "/",
+  "<ID>№": "<ID>№",
+  "MOVE": "MOVE",
+  "Crammed full of\nPOKéMON books!": "Crammed full of\nPOKéMON books!",
+  "There's a slew of\nPOKéMON stuff!": "There's a slew of\nPOKéMON stuff!",
+  "An elevator!": "An elevator!",
+  "POKéMON LEAGUE HQ": "POKéMON LEAGUE HQ",
+  "%s found\n%s!": "%s found\n%s!",
+  "%s found\n%d coins!": "%s found\n%d coins!",
+  "{RAM}\nPOKéMON GYM\nLEADER: {RAM}": "{RAM}\nPOKéMON GYM\nLEADER: {RAM}",
+  "Bingo!": "Bingo!",
+  "Hey! There's a\nswitch under the\ntrash!\fThe 1st electric\nlock opened!": "Hey! There's a\nswitch under the\ntrash!\fThe 1st electric\nlock opened!",
+  "The 2nd electric\nlock opened!\fThe motorized door\nopened!": "The 2nd electric\nlock opened!\fThe motorized door\nopened!",
+  "Nope! There's\nonly trash here.\fHey! The electric\nlocks were reset!": "Nope! There's\nonly trash here.\fHey! The electric\nlocks were reset!",
+  "{PLAYER} initiated\nTELEPORTER's Cell\nSeparator!": "{PLAYER} initiated\nTELEPORTER's Cell\nSeparator!",
+  "BILL's favorite\nPOKéMON list!": "BILL's favorite\nPOKéMON list!",
+  "{PLAYER} got on\n{RAM:wNameBuffer}!": "{PLAYER} got on\n{RAM:wNameBuffer}!",
+  "{RAM:wNameBuffer} hacked\naway with CUT!": "{RAM:wNameBuffer} hacked\naway with CUT!",
+  "Gyaoo!": "Gyaoo!",
+  "SOMEONE'S PC": "SOMEONE'S PC",
+  "PROF.OAK's PC": "PROF.OAK's PC",
+  "Accessed PROF.\nOAK's PC.\fAccessed POKéDEX\nRating System.": "Accessed PROF.\nOAK's PC.\fAccessed POKéDEX\nRating System.",
+  "Want to get your\nPOKéDEX rated?": "Want to get your\nPOKéDEX rated?",
+  "Closed link to\nPROF.OAK's PC.": "Closed link to\nPROF.OAK's PC.",
+  "POKéDEX comp-\nletion is:\f{NUM:hDexRatingNumMonsSeen} POKéMON seen\n{NUM:hDexRatingNumMonsOwned} POKéMON owned\fPROF.OAK's\nRating:": "POKéDEX comp-\nletion is:\f{NUM:hDexRatingNumMonsSeen} POKéMON seen\n{NUM:hDexRatingNumMonsOwned} POKéMON owned\fPROF.OAK's\nRating:",
+  "Welcome to our\nPOKéMON CENTER!": "Welcome to our\nPOKéMON CENTER!",
+  "Shall we heal your\nPOKéMON?": "Shall we heal your\nPOKéMON?",
+  "OK. We'll need\nyour POKéMON.": "OK. We'll need\nyour POKéMON.",
+  "Your POKéMON are\nfighting fit!": "Your POKéMON are\nfighting fit!",
+  "I like shorts!\nThey're comfy and\neasy to wear!": "I like shorts!\nThey're comfy and\neasy to wear!",
+  "%s received\nthe %s!": "%s received\nthe %s!",
+  "%s received\n%s!": "%s received\n%s!",
+  "Go right ahead!": "Go right ahead!",
+  "You don't have the\nBOULDERBADGE yet!": "You don't have the\nBOULDERBADGE yet!",
+  "Oh! That is the\n{RAM}!": "Oh! That is the\n{RAM}!",
+  "You don't have the\n{RAM} yet!": "You don't have the\n{RAM} yet!",
+  "You need a\nBICYCLE for the\nCycling Road!": "You need a\nBICYCLE for the\nCycling Road!",
+  "The boulder fell\nthrough the hole!": "The boulder fell\nthrough the hole!",
+  "PA: You're out of\nSAFARI BALLs!": "PA: You're out of\nSAFARI BALLs!",
+  "Gold cache incomplete:\n%s": "Gold cache incomplete:\n%s",
+  "Font load failed:\n%s": "Font load failed:\n%s",
+  "%s is missing.\nRe-import the Gold ROM.": "%s is missing.\nRe-import the Gold ROM.",
+  "Failed to boot %s:\n%s": "Failed to boot %s:\n%s",
+  "REPEL's effect\nwore off.": "REPEL's effect\nwore off.",
+  "You have no more\nPOKéMON that can\\011fight!": "You have no more\nPOKéMON that can\\011fight!",
+  "%s came\nout of its EGG!": "%s came\nout of its EGG!",
+  "Give a nickname to\n%s?": "Give a nickname to\n%s?"
+ },
+ "where": {
+  "Enemy %s": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua",
+   "src/battle/EffectRegistry.lua"
+  ],
+  "ATTACK": [
+   "src/battle/BattleState.lua"
+  ],
+  "DEFENSE": [
+   "src/battle/BattleState.lua"
+  ],
+  "SPEED": [
+   "src/battle/BattleState.lua"
+  ],
+  "SPECIAL": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s wants\nto fight!": [
+   "src/battle/BattleState.lua"
+  ],
+  "The GHOST\nappeared!": [
+   "src/battle/BattleState.lua"
+  ],
+  "SILPH SCOPE\nunveiled the\u000bGHOST's identity!": [
+   "src/battle/BattleState.lua"
+  ],
+  "OLD MAN": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "Go! %s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "Do it! %s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "Get'm! %s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s is out of\nuseable POKéMON!": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "%s blacked\nout!": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua",
+   "src/world/OverworldController.lua"
+  ],
+  "%s sent\nout %s!": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "FOE": [
+   "src/battle/BattleState.lua"
+  ],
+  "PA: You're out of\nSAFARI BALLs!\nGame over!": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s is too\nscared to move!": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s has no\nmoves left!": [
+   "src/battle/BattleState.lua"
+  ],
+  "POKé BALL": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s used\nPOKé BALL!": [
+   "src/battle/BattleState.lua"
+  ],
+  "All right!\n%s was\ncaught!": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "GHOST: Get out...\nGet out...": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s with-\ndrew %s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s\nis storing energy!": [
+   "src/battle/BattleState.lua",
+   "src/battle/MoveEffects.lua"
+  ],
+  "%s\nfainted!": [
+   "src/battle/BattleState.lua",
+   "src/world/OverworldController.lua",
+   "src/world/gen2/World.lua"
+  ],
+  "%s grew\nto level %d!": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s is\nabout to use\u000b%s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "Will %s\nchange POKéMON?": [
+   "src/battle/BattleState.lua"
+  ],
+  "{RIVAL}: Yeah! Am\nI great or what?": [
+   "src/battle/BattleState.lua"
+  ],
+  "Use next POKéMON?": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s used\nSAFARI BALL!": [
+   "src/battle/BattleState.lua"
+  ],
+  "No! There's no\nrunning from a\u000btrainer battle!": [
+   "src/battle/BattleState.lua"
+  ],
+  "You missed the\nPOKéMON!": [
+   "src/battle/BattleState.lua"
+  ],
+  "Darn! The POKéMON\nbroke free!": [
+   "src/battle/BattleState.lua"
+  ],
+  "NICKNAME?": [
+   "src/battle/BattleState.lua",
+   "src/script/Commands.lua"
+  ],
+  "New POKéDEX data\nwill be added for\n%s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "someone's PC": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s was\ntransferred to\n%s!": [
+   "src/battle/BattleState.lua"
+  ],
+  "But every BOX\nis full!": [
+   "src/battle/BattleState.lua"
+  ],
+  "It dodged the\nthrown BALL!": [
+   "src/battle/BattleState.lua"
+  ],
+  "This POKéMON\ncan't be caught!": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s is\nalready out!": [
+   "src/battle/BattleState.lua",
+   "src/link/LinkBattle.lua"
+  ],
+  "battle|FIGHT": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "battle|ITEM": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "battle|RUN": [
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua",
+   "src/battle/BattleState.lua"
+  ],
+  "BALLx": [
+   "src/battle/BattleState.lua",
+   "src/battle/WideBattle.lua"
+  ],
+  "BAIT": [
+   "src/battle/BattleState.lua",
+   "src/battle/WideBattle.lua"
+  ],
+  "THROW ROCK": [
+   "src/battle/BattleState.lua",
+   "src/battle/WideBattle.lua"
+  ],
+  "disabled!": [
+   "src/battle/BattleState.lua"
+  ],
+  "TYPE/": [
+   "src/battle/BattleState.lua"
+  ],
+  "%s is\nprotected by MIST!": [
+   "src/battle/MoveEffects.lua"
+  ],
+  "%s's\n%s\ngreatly rose!": [
+   "src/battle/MoveEffects.lua"
+  ],
+  "%s's\n%s rose!": [
+   "src/battle/MoveEffects.lua",
+   "src/battle/TrainerAI.lua",
+   "src/inventory/ItemEffects.lua"
+  ],
+  "%s's\n%s fell!": [
+   "src/battle/MoveEffects.lua"
+  ],
+  "%s's\n%s\ngreatly fell!": [
+   "src/battle/MoveEffects.lua"
+  ],
+  "%s\nwas afflicted\nby %s!": [
+   "src/battle/StatusRegistry.lua"
+  ],
+  "%s's\nprotected against\nstat changes!": [
+   "src/battle/TrainerAI.lua",
+   "src/inventory/ItemEffects.lua"
+  ],
+  "RUN": [
+   "src/battle/WideBattle.lua",
+   "src/battle/WideBattle.lua",
+   "src/battle/WideBattle.lua"
+  ],
+  "FIGHT": [
+   "src/battle/WideBattle.lua",
+   "src/battle/WideBattle.lua"
+  ],
+  "ITEM": [
+   "src/battle/WideBattle.lua",
+   "src/battle/WideBattle.lua",
+   "src/ui/StartMenu.lua"
+  ],
+  "What will": [
+   "src/battle/WideBattle.lua"
+  ],
+  " do?": [
+   "src/battle/WideBattle.lua"
+  ],
+  "%s\nused %s!": [
+   "src/battle/gen2/Battle.lua"
+  ],
+  "But nothing\nhappened.": [
+   "src/battle/gen2/Battle.lua"
+  ],
+  "In battle": [
+   "src/core/DiscordPresence.lua",
+   "src/core/DiscordPresence.lua"
+  ],
+  "Wild battle": [
+   "src/core/DiscordPresence.lua"
+  ],
+  "Trainer battle": [
+   "src/core/DiscordPresence.lua"
+  ],
+  "Link battle": [
+   "src/core/DiscordPresence.lua"
+  ],
+  "Title screen": [
+   "src/core/DiscordPresence.lua"
+  ],
+  "You don't have a\n#MON!": [
+   "src/core/Game2.lua"
+  ],
+  "An item in your\nPACK may be\fregistered for use\non SELECT Button.": [
+   "src/core/Game2.lua"
+  ],
+  "OAK: {PLAYER}!\nThis isn't the\u000btime to use that!": [
+   "src/core/Game2.lua"
+  ],
+  "The REPEL used\nearlier is still\u000bin effect.": [
+   "src/core/Game2.lua"
+  ],
+  "{PLAYER} used the\n%s.": [
+   "src/core/Game2.lua"
+  ],
+  "There was a trophy\ninside!\fThe trophy was\nsent home.": [
+   "src/core/Game2.lua"
+  ],
+  "But, it failed!": [
+   "src/core/Strings.lua"
+  ],
+  "Wild %s\nappeared!": [
+   "src/core/Strings.lua"
+  ],
+  "options.musicFilter|OFF": [
+   "src/core/Strings.lua"
+  ],
+  "TEXT SPEED": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BATTLE ANIMATION": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BATTLE STYLE": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BATTLE LAYOUT": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BATTLE SIZE": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BATTLE BG": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "UI LAYOUT": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "MUSIC VOL": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "SFX VOL": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "MUSIC FILTER": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "PERFORMANCE": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "COLORS": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "TILT": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "GBC FX": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "VOID FILL": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "VIDEO MODE": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "ORIENTATION": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "FAITHFUL RATIO": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "MAX FPS": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "OVERWORLD SPEED": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BATTLE SPEED": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "MENU SPEED": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "TOUCH PAD": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "ON": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "OFF": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "VIBRATION": [
+   "src/import/LauncherSettings.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "TOUCH CONTROLS": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "Edit": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "RESET REBINDS": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "Reset": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "RESET DEFAULTS": [
+   "src/import/LauncherSettings.lua",
+   "src/mods/ManagerState.lua"
+  ],
+  "BATTLE SCENE": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "SOUND": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "PRINT": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "MENU ACCOUNT": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "FRAME": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "COLOR": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "GAME SPEED": [
+   "src/import/LauncherSettings.lua"
+  ],
+  "OPTIONS": [
+   "src/import/LauncherSettings.lua",
+   "src/import/LauncherSettings.lua"
+  ],
+  "Ready": [
+   "src/import/LauncherView.lua"
+  ],
+  "Conflict": [
+   "src/import/LauncherView.lua"
+  ],
+  "Not for this game": [
+   "src/import/LauncherView.lua"
+  ],
+  "Incompatible": [
+   "src/import/LauncherView.lua"
+  ],
+  "Show for:": [
+   "src/import/LauncherView.lua"
+  ],
+  "All games": [
+   "src/import/LauncherView.lua"
+  ],
+  "Not installable from this index": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Install": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Update": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Reinstall": [
+   "src/import/LauncherView.lua"
+  ],
+  "Sure?": [
+   "src/import/LauncherView.lua"
+  ],
+  "Delete": [
+   "src/import/LauncherView.lua"
+  ],
+  "RED": [
+   "src/import/LauncherView.lua"
+  ],
+  "BLUE": [
+   "src/import/LauncherView.lua"
+  ],
+  "YELLOW": [
+   "src/import/LauncherView.lua"
+  ],
+  "GOLD": [
+   "src/import/LauncherView.lua"
+  ],
+  "MODS": [
+   "src/import/LauncherView.lua",
+   "src/ui/OptionsMenu.lua",
+   "src/ui/StartMenu.lua"
+  ],
+  "FIND MODS": [
+   "src/import/LauncherView.lua"
+  ],
+  "Checking...": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Updating %d%%": [
+   "src/import/LauncherView.lua"
+  ],
+  "Update v": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Restart to update": [
+   "src/import/LauncherView.lua"
+  ],
+  "Open releases": [
+   "src/import/LauncherView.lua"
+  ],
+  "Check for updates": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Scan again": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/RomImporter.lua"
+  ],
+  "Import ROM": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Not supported yet": [
+   "src/import/LauncherView.lua"
+  ],
+  "Support for this game is on the way.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Import unavailable": [
+   "src/import/LauncherView.lua"
+  ],
+  "Copy the .gb/.gbc via MTP into imports/.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Or copy the .gb/.gbc into baseroms/.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Copy the .gb/.gbc via USB.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Or drop the .gb/.gbc file here.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Importing": [
+   "src/import/LauncherView.lua"
+  ],
+  "Import failed": [
+   "src/import/LauncherView.lua"
+  ],
+  "That ROM could not be imported.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Re-import ROM": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "No ROM imported": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Compatible ROM found": [
+   "src/import/LauncherView.lua"
+  ],
+  "Found in baseroms/: %s": [
+   "src/import/LauncherView.lua"
+  ],
+  "Import detected ROM": [
+   "src/import/LauncherView.lua"
+  ],
+  "Checking baseroms...": [
+   "src/import/LauncherView.lua"
+  ],
+  "Looking for compatible Red, Blue, and Yellow ROMs.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Update required": [
+   "src/import/LauncherView.lua"
+  ],
+  "This build needs a few more things from your ": [
+   "src/import/LauncherView.lua"
+  ],
+  " ROM. Re-import to continue.": [
+   "src/import/LauncherView.lua"
+  ],
+  "The ROM is verified before any files are created. ": [
+   "src/import/LauncherView.lua"
+  ],
+  "Export": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Rename": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "SAVE SLOT": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Import save": [
+   "src/import/LauncherView.lua"
+  ],
+  "1 slot": [
+   "src/import/LauncherView.lua"
+  ],
+  "%d slots": [
+   "src/import/LauncherView.lua"
+  ],
+  "No saves yet - start a new game or import one.": [
+   "src/import/LauncherView.lua"
+  ],
+  "NEW GAME": [
+   "src/import/LauncherView.lua",
+   "src/ui/TitleState.lua"
+  ],
+  "LOADED": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "%d badges - %s - %d caught": [
+   "src/import/LauncherView.lua"
+  ],
+  "empty slot": [
+   "src/import/LauncherView.lua"
+  ],
+  "Open folder": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "+ New save slot": [
+   "src/import/LauncherView.lua"
+  ],
+  "GOOD TO GO": [
+   "src/import/LauncherView.lua"
+  ],
+  "ROM FOUND": [
+   "src/import/LauncherView.lua"
+  ],
+  "COMING SOON": [
+   "src/import/LauncherView.lua"
+  ],
+  "ROM REQUIRED": [
+   "src/import/LauncherView.lua"
+  ],
+  "Play ": [
+   "src/import/LauncherView.lua"
+  ],
+  "Name": [
+   "src/import/LauncherView.lua"
+  ],
+  "Popularity": [
+   "src/import/LauncherView.lua"
+  ],
+  "Release date": [
+   "src/import/LauncherView.lua"
+  ],
+  "Last updated": [
+   "src/import/LauncherView.lua"
+  ],
+  "Disable all": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Enable all": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Sort": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "v%s available": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "up to date": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "check failed": [
+   "src/import/LauncherView.lua"
+  ],
+  "No mod index added": [
+   "src/import/LauncherView.lua"
+  ],
+  "Add an index to browse mods. An index is a published list; paste its URL or its owner/repo.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Add an index": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Indexes": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Filter": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Search mods": [
+   "src/import/LauncherView.lua"
+  ],
+  "This index lists no mods yet.": [
+   "src/import/LauncherView.lua"
+  ],
+  "No mods match that search.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Save": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Cancel": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Paste": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Confirm": [
+   "src/import/LauncherView.lua"
+  ],
+  "OK": [
+   "src/import/LauncherView.lua"
+  ],
+  "Close": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Other versions: ": [
+   "src/import/LauncherView.lua"
+  ],
+  "Installed: v": [
+   "src/import/LauncherView.lua"
+  ],
+  "Up to date": [
+   "src/import/LauncherView.lua"
+  ],
+  " (installed)": [
+   "src/import/LauncherView.lua"
+  ],
+  "Read more": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Sort by": [
+   "src/import/LauncherView.lua"
+  ],
+  "All": [
+   "src/import/LauncherView.lua"
+  ],
+  "Filter by category": [
+   "src/import/LauncherView.lua"
+  ],
+  "Mod indexes": [
+   "src/import/LauncherView.lua"
+  ],
+  "No index added yet.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Remove": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Add index": [
+   "src/import/LauncherView.lua"
+  ],
+  "Refresh all": [
+   "src/import/LauncherView.lua"
+  ],
+  "Check again": [
+   "src/import/LauncherView.lua"
+  ],
+  "Versions": [
+   "src/import/LauncherView.lua"
+  ],
+  "Details": [
+   "src/import/LauncherView.lua"
+  ],
+  "Source": [
+   "src/import/LauncherView.lua"
+  ],
+  "The ROM for this game is imported and verified.": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Manage ": [
+   "src/import/LauncherView.lua"
+  ],
+  "Settings": [
+   "src/import/LauncherView.lua"
+  ],
+  "Saved to your options file; the game applies these on its next start.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Run": [
+   "src/import/LauncherView.lua",
+   "src/import/LauncherView.lua"
+  ],
+  "Enter to save - Esc to cancel": [
+   "src/import/LauncherView.lua"
+  ],
+  "Name save slot": [
+   "src/import/LauncherView.lua"
+  ],
+  "Enter to save - Esc to cancel - empty clears": [
+   "src/import/LauncherView.lua"
+  ],
+  "Add a mod index": [
+   "src/import/LauncherView.lua"
+  ],
+  "Paste the index URL, or its owner/repo.": [
+   "src/import/LauncherView.lua"
+  ],
+  "Add": [
+   "src/import/LauncherView.lua"
+  ],
+  "Enter to add - Esc to cancel": [
+   "src/import/LauncherView.lua"
+  ],
+  "(No release notes.)": [
+   "src/import/LauncherView.lua"
+  ],
+  " notes": [
+   "src/import/LauncherView.lua"
+  ],
+  "(No description.)": [
+   "src/import/LauncherView.lua"
+  ],
+  "Working": [
+   "src/import/LauncherView.lua"
+  ],
+  "Loading mod index": [
+   "src/import/LauncherView.lua"
+  ],
+  "Copy your .gb/.gbc into:": [
+   "src/import/RomImporter.lua"
+  ],
+  "%s/imports/\nDBI MTP → 1: SD Card/%simports/": [
+   "src/import/RomImporter.lua"
+  ],
+  "Copy your .zip into:\n%s/imports/mods/\nDBI MTP → 1: SD Card/%simports/mods/": [
+   "src/import/RomImporter.lua"
+  ],
+  "Copy your %s .sav into:\n%s/%s/\nDBI MTP → 1: SD Card/%s%s/": [
+   "src/import/RomImporter.lua"
+  ],
+  "%s\n(%d failed: %s)": [
+   "src/import/RomImporter.lua",
+   "src/import/RomImporter.lua"
+  ],
+  "%s (%s tab)": [
+   "src/import/RomImporter.lua"
+  ],
+  "Imported %d saves into %s. Active: %s.": [
+   "src/import/RomImporter.lua"
+  ],
+  "%s\n(%d already imported, skipped)": [
+   "src/import/RomImporter.lua"
+  ],
+  "Already imported — %d file(s) skipped. Check SAVE SLOT.": [
+   "src/import/RomImporter.lua"
+  ],
+  "No new ROM found.": [
+   "src/import/RomImporter.lua"
+  ],
+  "No matching ROM found.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Choose a mod .zip": [
+   "src/import/RomImporter.lua"
+  ],
+  "Choose a .sav save file": [
+   "src/import/RomImporter.lua"
+  ],
+  "Exported to %s\nDBI MTP → 1: SD Card/%s%s/": [
+   "src/import/RomImporter.lua"
+  ],
+  "Every mod is already enabled.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Every mod is already disabled.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Enabled %d mods.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Disabled %d mods.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Loading versions": [
+   "src/import/RomImporter.lua"
+  ],
+  "Checking for updates": [
+   "src/import/RomImporter.lua"
+  ],
+  "Downloading %s": [
+   "src/import/RomImporter.lua"
+  ],
+  "Installing %s": [
+   "src/import/RomImporter.lua"
+  ],
+  "Import mod .zip": [
+   "src/import/RomImporter.lua"
+  ],
+  "Or copy a mod .zip via USB.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Or drop a mod .zip onto the window.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Import or export a .sav with the system file picker.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Import a .sav to a new slot, or export the active slot.": [
+   "src/import/RomImporter.lua"
+  ],
+  "No mods installed - drop a mod .zip here to add one.": [
+   "src/import/RomImporter.lua"
+  ],
+  "Fetching mod index": [
+   "src/import/RomImporter.lua"
+  ],
+  "%d indexes": [
+   "src/import/RomImporter.lua"
+  ],
+  "Refreshed - %d mods listed": [
+   "src/import/RomImporter.lua"
+  ],
+  "Added %s": [
+   "src/import/RomImporter.lua"
+  ],
+  "Index removed": [
+   "src/import/RomImporter.lua"
+  ],
+  "%s's\nhits will never\nmiss!": [
+   "src/inventory/ItemEffects.lua"
+  ],
+  "%s's %s\nrose!": [
+   "src/inventory/ItemEffects.lua"
+  ],
+  "%s used\n%s!": [
+   "src/inventory/ItemEffects.lua"
+  ],
+  "Link battle needs\nthe same version\nand mods.": [
+   "src/link/LinkBattle.lua",
+   "src/link/LinkBattle.lua"
+  ],
+  "Your %s can't\nbattle on the\nother game.": [
+   "src/link/LinkBattle.lua"
+  ],
+  "Their %s isn't\nin this game.\n(%s)": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s wants\nto battle!": [
+   "src/link/LinkBattle.lua"
+  ],
+  "Link desync!\n%s differs.\fAre both games\nthe same version\nand mods?": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s ran from\nthe battle!": [
+   "src/link/LinkBattle.lua"
+  ],
+  "There's no will\nto fight!": [
+   "src/link/LinkBattle.lua"
+  ],
+  "Items can't be\nused in a link\nbattle!": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s is out of\nPOKéMON!\f%s wins!": [
+   "src/link/LinkBattle.lua",
+   "src/link/LinkBattle.lua",
+   "src/link/LinkBattle.lua"
+  ],
+  "%s left the\nbattle.": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s ran out of\ntime!": [
+   "src/link/LinkBattle.lua"
+  ],
+  "Time's up! You\nforfeit the match.": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s's %s can't\nbattle on this\ngame.": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s's %s can't\nbattle on this\ngame.\n(%s)": [
+   "src/link/LinkBattle.lua"
+  ],
+  "%s vs %s!": [
+   "src/link/LinkBattle.lua"
+  ],
+  "Link error:\n%s": [
+   "src/link/LinkState.lua",
+   "src/link/LinkState.lua",
+   "src/link/LinkState.lua"
+  ],
+  "Online play runs\nvanilla for both\nplayers.\fTurn off %s\nand restart?": [
+   "src/link/LinkState.lua"
+  ],
+  "The link was\nbroken.": [
+   "src/link/LinkState.lua"
+  ],
+  "Link battle\ncan't start.": [
+   "src/link/LinkState.lua",
+   "src/link/Tournament.lua"
+  ],
+  "The trade stopped:\n%s.": [
+   "src/link/LinkState.lua"
+  ],
+  "The trade was\ncancelled.": [
+   "src/link/LinkState.lua",
+   "src/link/LinkState.lua"
+  ],
+  "Trade completed!\f%s received\n%s!": [
+   "src/link/LinkState.lua"
+  ],
+  "LINK CABLE (LAN)": [
+   "src/link/LinkState.lua"
+  ],
+  "ONLINE MATCH": [
+   "src/link/LinkState.lua"
+  ],
+  "TOURNAMENT": [
+   "src/link/LinkState.lua"
+  ],
+  "HOST A GAME": [
+   "src/link/LinkState.lua"
+  ],
+  "JOIN A GAME": [
+   "src/link/LinkState.lua"
+  ],
+  "UDP port %s": [
+   "src/link/LinkState.lua"
+  ],
+  "HOST ONLINE": [
+   "src/link/LinkState.lua"
+  ],
+  "JOIN ONLINE": [
+   "src/link/LinkState.lua"
+  ],
+  "Tell your friend": [
+   "src/link/LinkState.lua"
+  ],
+  "the code:": [
+   "src/link/LinkState.lua"
+  ],
+  "Waiting for join...": [
+   "src/link/LinkState.lua",
+   "src/link/LinkState.lua"
+  ],
+  "A: connect  B: back": [
+   "src/link/LinkState.lua",
+   "src/link/LinkState.lua"
+  ],
+  "Calling...": [
+   "src/link/LinkState.lua",
+   "src/link/LinkState.lua"
+  ],
+  "Friend joins at:": [
+   "src/link/LinkState.lua"
+  ],
+  "Port: %s": [
+   "src/link/LinkState.lua"
+  ],
+  "TRADE": [
+   "src/link/LinkState.lua"
+  ],
+  "BATTLE": [
+   "src/link/LinkState.lua"
+  ],
+  "LEVELS:": [
+   "src/link/LinkState.lua"
+  ],
+  "A: continue  B: back": [
+   "src/link/LinkState.lua"
+  ],
+  "Checking the": [
+   "src/link/LinkState.lua"
+  ],
+  "other game...": [
+   "src/link/LinkState.lua"
+  ],
+  "Waiting for the": [
+   "src/link/LinkState.lua"
+  ],
+  "host to choose...": [
+   "src/link/LinkState.lua"
+  ],
+  "A: trade anyway": [
+   "src/link/LinkState.lua"
+  ],
+  "YOURS": [
+   "src/link/LinkState.lua"
+  ],
+  "THEIRS": [
+   "src/link/LinkState.lua"
+  ],
+  "X: not on theirs": [
+   "src/link/LinkState.lua"
+  ],
+  "A: trade  B: cancel": [
+   "src/link/LinkState.lua"
+  ],
+  "Exchanging data...": [
+   "src/link/LinkState.lua"
+  ],
+  "can't reach relay %s:%d\n(%s)": [
+   "src/link/Net.lua"
+  ],
+  "Couldn't join:\n%s": [
+   "src/link/Net.lua"
+  ],
+  "no answer from\n%s": [
+   "src/link/Net.lua",
+   "src/link/Net.lua",
+   "src/link/Net.lua"
+  ],
+  "Can't host:\nneed %d Pokemon\nLv %s-%s.": [
+   "src/link/Tournament.lua"
+  ],
+  "Couldn't host\nthat tournament.": [
+   "src/link/Tournament.lua"
+  ],
+  "Your party needs\n%d Pokemon, Lv\n%s-%s.": [
+   "src/link/Tournament.lua"
+  ],
+  "Couldn't join\nthat tournament.": [
+   "src/link/Tournament.lua"
+  ],
+  "Link error:\nversion mismatch\nwith opponent.": [
+   "src/link/Tournament.lua"
+  ],
+  "The tournament\nconnection was\nlost.": [
+   "src/link/Tournament.lua"
+  ],
+  "Can't watch this\nmatch.": [
+   "src/link/Tournament.lua"
+  ],
+  "HOST": [
+   "src/link/Tournament.lua"
+  ],
+  "JOIN": [
+   "src/link/Tournament.lua"
+  ],
+  "START: create": [
+   "src/link/Tournament.lua"
+  ],
+  "A: join  B: back": [
+   "src/link/Tournament.lua"
+  ],
+  "B: cancel": [
+   "src/link/Tournament.lua",
+   "src/link/Tournament.lua"
+  ],
+  "TOURNAMENT %s": [
+   "src/link/Tournament.lua"
+  ],
+  "ROUND %d": [
+   "src/link/Tournament.lua"
+  ],
+  "%s (bye)": [
+   "src/link/Tournament.lua"
+  ],
+  "%s%s vs %s%s": [
+   "src/link/Tournament.lua"
+  ],
+  "(organizing --": [
+   "src/link/Tournament.lua"
+  ],
+  "not playing)": [
+   "src/link/Tournament.lua"
+  ],
+  "Waiting for": [
+   "src/link/Tournament.lua"
+  ],
+  "players to join:": [
+   "src/link/Tournament.lua"
+  ],
+  "A: START  B: cancel": [
+   "src/link/Tournament.lua"
+  ],
+  "%s is the": [
+   "src/link/Tournament.lua"
+  ],
+  "champion!": [
+   "src/link/Tournament.lua"
+  ],
+  "A: continue": [
+   "src/link/Tournament.lua"
+  ],
+  "NO MODS INSTALLED": [
+   "src/mods/ManagerState.lua"
+  ],
+  "SAVE CURRENT AS..": [
+   "src/mods/ManagerState.lua"
+  ],
+  "EXPORT..": [
+   "src/mods/ManagerState.lua"
+  ],
+  "IMPORT..": [
+   "src/mods/ManagerState.lua"
+  ],
+  "OPTIONS..": [
+   "src/mods/ManagerState.lua"
+  ],
+  "PERMISSIONS..": [
+   "src/mods/ManagerState.lua"
+  ],
+  "DON'T TRY HERE": [
+   "src/mods/ManagerState.lua"
+  ],
+  "TRY HERE ANYWAY": [
+   "src/mods/ManagerState.lua"
+  ],
+  "VIEW ERROR..": [
+   "src/mods/ManagerState.lua"
+  ],
+  "BACK": [
+   "src/mods/ManagerState.lua",
+   "src/mods/ManagerState.lua"
+  ],
+  "APPLY & RESTART": [
+   "src/mods/ManagerState.lua"
+  ],
+  "DISCARD CHANGES": [
+   "src/mods/ManagerState.lua"
+  ],
+  "DATA & API ONLY": [
+   "src/mods/ManagerState.lua"
+  ],
+  "DISABLE BOTH?": [
+   "src/mods/ManagerState.lua"
+  ],
+  "PROFILE NAME?": [
+   "src/mods/ManagerState.lua"
+  ],
+  "RENAME?": [
+   "src/mods/ManagerState.lua"
+  ],
+  "NO CHANGES": [
+   "src/mods/ManagerState.lua"
+  ],
+  "YES": [
+   "src/mods/ManagerState.lua",
+   "src/ui/ChoiceBox.lua",
+   "src/ui/SlotMachine.lua"
+  ],
+  "NO": [
+   "src/mods/ManagerState.lua",
+   "src/ui/ChoiceBox.lua",
+   "src/ui/SlotMachine.lua"
+  ],
+  "A:OK": [
+   "src/mods/ManagerState.lua"
+  ],
+  "B:DONE (NO RESTART)": [
+   "src/mods/ManagerState.lua"
+  ],
+  "MOD MANAGER": [
+   "src/mods/ManagerState.lua"
+  ],
+  "%s downloads across all releases": [
+   "src/mods/ModUpdate.lua"
+  ],
+  "Released %s  -  Updated %s": [
+   "src/mods/ModUpdate.lua"
+  ],
+  "Level %d": [
+   "src/pokemon/Evolution.lua"
+  ],
+  "Congratulations!\nYour %s\nevolved into\n%s!": [
+   "src/pokemon/Evolution.lua",
+   "src/ui/EvolutionState.lua"
+  ],
+  "You can't carry\nany more items!": [
+   "src/script/Commands.lua"
+  ],
+  "{PLAYER} got\n%s!": [
+   "src/script/Commands.lua"
+  ],
+  "Do you want to\ngive a nickname\nto %s?": [
+   "src/script/Commands.lua"
+  ],
+  "There's no more\nroom for POKéMON!\u000b%s was\u000bsent to POKéMON\u000bBOX %s on PC!": [
+   "src/script/Commands.lua"
+  ],
+  "contribution is not a table": [
+   "src/script/MapScripts.lua"
+  ],
+  " [%s %s.%s]": [
+   "src/script/ScriptRunner.lua"
+  ],
+  "{PLAYER} received\n%s.": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "{PLAYER} put the\n%s in\nthe %s.": [
+   "src/script/gen2/Vm.lua",
+   "src/script/gen2/Vm.lua",
+   "src/script/gen2/Vm.lua"
+  ],
+  "The %s\nis full…": [
+   "src/script/gen2/Vm.lua",
+   "src/script/gen2/Vm.lua"
+  ],
+  "It's a fruit-\nbearing tree.": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "There's nothing\nhere…": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "Hey! It's\n%s!": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "But the PACK is\nfull…": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "Obtained\n%s!": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "Click!": [
+   "src/script/gen2/Vm.lua"
+  ],
+  "You can't get off\nhere.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "%s got off\nthe BICYCLE.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "%s got on\nthe BICYCLE!": [
+   "src/ui/BagMenu.lua"
+  ],
+  "No cycling\nallowed here.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "No good! It's not\neven near water.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "OAK: %s!\nThis isn't the\ntime to use that!": [
+   "src/ui/BagMenu.lua",
+   "src/ui/BagMenu.lua"
+  ],
+  "%s learned\n%s!": [
+   "src/ui/BagMenu.lua",
+   "src/ui/BagMenu.lua"
+  ],
+  "The TOWN MAP is\nunreadable here.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "Yes! ITEMFINDER\nindicates there's\nan item nearby.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "Nope! ITEMFINDER\nisn't responding.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "Booted up a TM!": [
+   "src/ui/BagMenu.lua"
+  ],
+  "It contained\n%s!": [
+   "src/ui/BagMenu.lua"
+  ],
+  "USE": [
+   "src/ui/BagMenu.lua"
+  ],
+  "TOSS": [
+   "src/ui/BagMenu.lua"
+  ],
+  "That's too impor-\ntant to toss!": [
+   "src/ui/BagMenu.lua",
+   "src/ui/PlayerPC.lua"
+  ],
+  "Threw away\n%s.": [
+   "src/ui/BagMenu.lua"
+  ],
+  "SELECT:CLEAR ROW\nSTART:RESET ALL": [
+   "src/ui/BindingsMenu.lua"
+  ],
+  "RESET ALL BINDINGS?": [
+   "src/ui/BindingsMenu.lua"
+  ],
+  "PRESS A BUTTON": [
+   "src/ui/BindingsMenu.lua"
+  ],
+  "RELEASE TO SET": [
+   "src/ui/BindingsMenu.lua"
+  ],
+  "ESC/2ND CANCELS": [
+   "src/ui/BindingsMenu.lua"
+  ],
+  "%s :L%d": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "STATS": [
+   "src/ui/BoxMenu.lua",
+   "src/ui/PartyMenu.lua",
+   "src/ui/PartyMenu.lua"
+  ],
+  "CANCEL": [
+   "src/ui/BoxMenu.lua",
+   "src/ui/MoveLearnMenu.lua",
+   "src/ui/OptionsMenu.lua"
+  ],
+  "What? There are\nno POKéMON here!": [
+   "src/ui/BoxMenu.lua",
+   "src/ui/BoxMenu.lua"
+  ],
+  "You can't take\nany more POKéMON.\fDeposit POKéMON\nfirst.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "BOX %d (WITHDRAW)": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "%s is\ntaken out.\u000bGot %s.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "You can't deposit\nthe last POKéMON!": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "Oops! This Box is\nfull of POKéMON.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "You need at least\none POKéMON!": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "BOX %d is full!": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "%s was\nstored in Box %s.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "BOX %d (RELEASE)": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "Once released,\n%s is\ngone forever. OK?": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "%s was\nreleased outside.\fBye %s!": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "%sBOX %2d": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "When you change a\nPOKéMON BOX, data\nwill be saved. OK?": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "What?": [
+   "src/ui/BoxMenu.lua",
+   "src/ui/EvolutionState.lua"
+  ],
+  "BOX No.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "BOX No.%d": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "Empty.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  ":L%d No.%03d": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "Printed BOX %d!\fSaved as\n%s\u000bin the save\nfolder.": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "Printer error!\n%s": [
+   "src/ui/BoxMenu.lua",
+   "src/ui/PokedexMenu.lua",
+   "src/ui/gen2/PokedexMenu.lua"
+  ],
+  "WITHDRAW <PK><MN>": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "DEPOSIT <PK><MN>": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "RELEASE <PK><MN>": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "CHANGE BOX": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "PRINT BOX": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "SEE YA!": [
+   "src/ui/BoxMenu.lua"
+  ],
+  "GAME FREAK": [
+   "src/ui/Credits.lua",
+   "src/ui/Diploma.lua"
+  ],
+  "Nintendo": [
+   "src/ui/Credits.lua",
+   "src/ui/IntroMovie.lua"
+  ],
+  "Creatures inc.": [
+   "src/ui/Credits.lua",
+   "src/ui/IntroMovie.lua"
+  ],
+  "GAME FREAK inc.": [
+   "src/ui/Credits.lua",
+   "src/ui/IntroMovie.lua",
+   "src/ui/TitleState.lua"
+  ],
+  "T H E  E N D": [
+   "src/ui/Credits.lua"
+  ],
+  "No.": [
+   "src/ui/DexEntryMenu.lua"
+  ],
+  "GR. %.1fm": [
+   "src/ui/DexEntryMenu.lua"
+  ],
+  "GEW. %.1fkg": [
+   "src/ui/DexEntryMenu.lua"
+  ],
+  "HT %d′%02d″": [
+   "src/ui/DexEntryMenu.lua"
+  ],
+  "WT %.1flb": [
+   "src/ui/DexEntryMenu.lua"
+  ],
+  "Data unknown.": [
+   "src/ui/DexEntryMenu.lua"
+  ],
+  "<Diploma>": [
+   "src/ui/Diploma.lua"
+  ],
+  "Player": [
+   "src/ui/Diploma.lua"
+  ],
+  "evolving!": [
+   "src/ui/EvolutionState.lua"
+  ],
+  "POKéDEX   Seen:{NUM:wDexRatingNumMonsSeen, 1, 3}\n         Owned:{NUM:wDexRatingNumMonsOwned, 1, 3}": [
+   "src/ui/HallOfFame.lua"
+  ],
+  "POKéDEX Rating{COLON}": [
+   "src/ui/HallOfFame.lua"
+  ],
+  "Keep it up!": [
+   "src/ui/HallOfFame.lua",
+   "src/world/OverworldController.lua"
+  ],
+  "LEVEL/": [
+   "src/ui/HallOfFame.lua"
+  ],
+  "TYPE1/": [
+   "src/ui/HallOfFame.lua",
+   "src/ui/SummaryMenu.lua"
+  ],
+  "TYPE2/": [
+   "src/ui/HallOfFame.lua",
+   "src/ui/SummaryMenu.lua"
+  ],
+  "HALL OF FAME": [
+   "src/ui/HallOfFame.lua"
+  ],
+  "PLAY TIME": [
+   "src/ui/HallOfFame.lua"
+  ],
+  "MONEY": [
+   "src/ui/HallOfFame.lua"
+  ],
+  "GENGAR VS NIDORINO": [
+   "src/ui/IntroMovie.lua"
+  ],
+  "Nothing here.": [
+   "src/ui/ListMenu.lua"
+  ],
+  "Which move should": [
+   "src/ui/MoveLearnMenu.lua"
+  ],
+  "be forgotten?": [
+   "src/ui/MoveLearnMenu.lua"
+  ],
+  "YOUR NAME?": [
+   "src/ui/NamingScreen.lua",
+   "src/ui/OakSpeech.lua",
+   "src/ui/OakSpeech.lua"
+  ],
+  "NEW NAME": [
+   "src/ui/NamingScreen.lua"
+  ],
+  "HIS NAME?": [
+   "src/ui/OakSpeech.lua"
+  ],
+  "_OakSpeechText2A": [
+   "src/ui/OakSpeech.lua"
+  ],
+  "SET": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "SHIFT": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "WIDE": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "OG": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "FILL": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "FIXED": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "BLACK": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "WORLD": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "WHITE": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "DYNAMIC": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "CENTERED": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "RULESET": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "PIKACHU VOL": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "ZOOM": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "%d INSTALLED": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "CONTROLS": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "DATE FORMAT": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "TIME FORMAT": [
+   "src/ui/OptionsMenu.lua"
+  ],
+  "A blinding FLASH\nlights the area!": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "No SURFing here!": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "Nothing to CUT!": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "{RAM:wNameBuffer} used\nSTRENGTH.": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "{RAM:wNameBuffer} can\nmove boulders.": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "It won't have\nany effect.": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "%s's HP\nwas restored!": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "SWITCH": [
+   "src/ui/PartyMenu.lua",
+   "src/ui/PartyMenu.lua"
+  ],
+  "FLY": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "FLASH": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "CUT": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "SURF": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "STRENGTH": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "SOFTBOILED": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "TELEPORT": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "DIG": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "Use TM on which\nPOKéMON?": [
+   "src/ui/PartyMenu.lua",
+   "src/ui/PartyMenu.lua"
+  ],
+  "Bring out which\nPOKéMON?": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "Choose a POKéMON.": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "No POKéMON!": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "ABLE": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "NOT ABLE": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "FNT": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "Move to where?": [
+   "src/ui/PartyMenu.lua"
+  ],
+  "Use on which one?": [
+   "src/ui/PartyMenu.lua",
+   "src/ui/PartyMenu.lua"
+  ],
+  "How many?": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "You can't carry\nany more items.": [
+   "src/ui/PlayerPC.lua",
+   "src/ui/ShopMenu.lua"
+  ],
+  "Withdrew\n%s.": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "No room left to\nstore items.": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "%s was\nstored via PC.": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "Toss %s?": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "Threw away %s.": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "WITHDRAW ITEM": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "DEPOSIT ITEM": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "TOSS ITEM": [
+   "src/ui/PlayerPC.lua"
+  ],
+  "LOG OFF": [
+   "src/ui/PlayerPC.lua",
+   "src/world/OverworldController.lua"
+  ],
+  "SEEN %3d  OWN %3d": [
+   "src/ui/PokedexMenu.lua"
+  ],
+  "DATA": [
+   "src/ui/PokedexMenu.lua"
+  ],
+  "CRY": [
+   "src/ui/PokedexMenu.lua"
+  ],
+  "AREA": [
+   "src/ui/PokedexMenu.lua"
+  ],
+  "PRNT": [
+   "src/ui/PokedexMenu.lua"
+  ],
+  "Printed %s's\ndata!\fSaved as\n%s\u000bin the save\nfolder.": [
+   "src/ui/PokedexMenu.lua",
+   "src/ui/gen2/PokedexMenu.lua"
+  ],
+  "QUIT": [
+   "src/ui/PokedexMenu.lua",
+   "src/ui/ShopMenu.lua",
+   "src/ui/StartMenu.lua"
+  ],
+  "%s (%s)": [
+   "src/ui/QuarantineReport.lua",
+   "src/ui/QuarantineReport.lua"
+  ],
+  "%s x%d": [
+   "src/ui/QuarantineReport.lua",
+   "src/ui/QuarantineReport.lua"
+  ],
+  "%s to box %d": [
+   "src/ui/QuarantineReport.lua"
+  ],
+  "LOAD REPORT": [
+   "src/ui/QuarantineReport.lua"
+  ],
+  "A:CONTINUE": [
+   "src/ui/QuarantineReport.lua"
+  ],
+  "You don't have\nenough money.": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "%s?\nThat will be\n¥%d. OK?": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "Here you are!\nThank you!": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "I can't put a\nprice on that.": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "I can pay you\n¥%d for that.": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "BUY": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "SELL": [
+   "src/ui/ShopMenu.lua"
+  ],
+  "%s lined up!\nScored %d coins!": [
+   "src/ui/SlotMachine.lua"
+  ],
+  "Darn!\nRan out of coins!": [
+   "src/ui/SlotMachine.lua"
+  ],
+  "Not enough\ncoins!": [
+   "src/ui/SlotMachine.lua"
+  ],
+  "SLOT MACHINE": [
+   "src/ui/SlotMachine.lua"
+  ],
+  "COINS %4d": [
+   "src/ui/SlotMachine.lua"
+  ],
+  "POKéDEX": [
+   "src/ui/StartMenu.lua",
+   "src/ui/TitleState.lua"
+  ],
+  "POKéMON": [
+   "src/ui/StartMenu.lua"
+  ],
+  "SAVE": [
+   "src/ui/StartMenu.lua"
+  ],
+  "PLAYER %s\nBADGES    %d\nPOKéDEX %3d\nTIME %6d:%02d": [
+   "src/ui/StartMenu.lua"
+  ],
+  "\fWould you like to\nSAVE the game?": [
+   "src/ui/StartMenu.lua"
+  ],
+  "Now saving...": [
+   "src/ui/StartMenu.lua"
+  ],
+  "%s saved\nthe game!": [
+   "src/ui/StartMenu.lua"
+  ],
+  "OPTION": [
+   "src/ui/StartMenu.lua",
+   "src/ui/TitleState.lua"
+  ],
+  "LINK": [
+   "src/ui/StartMenu.lua"
+  ],
+  "RETURN TO MAIN\nMENU?": [
+   "src/ui/StartMenu.lua"
+  ],
+  "BALL": [
+   "src/ui/StartMenu.lua"
+  ],
+  "STATUS/": [
+   "src/ui/SummaryMenu.lua"
+  ],
+  "OT/": [
+   "src/ui/SummaryMenu.lua",
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "EXP POINTS": [
+   "src/ui/SummaryMenu.lua"
+  ],
+  "LEVEL UP": [
+   "src/ui/SummaryMenu.lua"
+  ],
+  "PP": [
+   "src/ui/SummaryMenu.lua"
+  ],
+  "SCORE %d": [
+   "src/ui/SurfingMinigame.lua",
+   "src/ui/SurfingMinigame.lua"
+  ],
+  "New record!": [
+   "src/ui/SurfingMinigame.lua"
+  ],
+  "HI    %d": [
+   "src/ui/SurfingMinigame.lua"
+  ],
+  "A: done": [
+   "src/ui/SurfingMinigame.lua"
+  ],
+  "PLAYER": [
+   "src/ui/TitleState.lua",
+   "src/ui/gen2/Diploma.lua"
+  ],
+  "BADGES": [
+   "src/ui/TitleState.lua",
+   "src/ui/TrainerCard.lua"
+  ],
+  "TIME": [
+   "src/ui/TitleState.lua"
+  ],
+  "CONTINUE": [
+   "src/ui/TitleState.lua"
+  ],
+  "EXIT GAME": [
+   "src/ui/TitleState.lua"
+  ],
+  "POKéMON RED": [
+   "src/ui/TitleState.lua"
+  ],
+  "OT/%s": [
+   "src/ui/TradeAnim.lua"
+  ],
+  "NAME/%s": [
+   "src/ui/TrainerCard.lua"
+  ],
+  "Hello! Sorry to\nkeep you waiting!\fWelcome to the\nworld of POKéMON!\fMy name is OAK.\fPeople call me the\nPOKéMON PROF.": [
+   "src/ui/gen2/OakSpeech.lua"
+  ],
+  "This world is in-\nhabited by crea-\u000btures that we call\u000bPOKéMON.": [
+   "src/ui/gen2/OakSpeech.lua"
+  ],
+  "People and POKéMON\nlive together by\fsupporting each\nother.\fSome people play\nwith POKéMON, some\u000bbattle with them.": [
+   "src/ui/gen2/OakSpeech.lua"
+  ],
+  "But we don't know\neverything about\u000bPOKéMON yet.\fThere are still\nmany mysteries to\u000bsolve.\fThat's why I study\nPOKéMON every day.": [
+   "src/ui/gen2/OakSpeech.lua"
+  ],
+  "Now, what did you\nsay your name was?": [
+   "src/ui/gen2/OakSpeech.lua"
+  ],
+  "{PLAYER}, are you\nready?\fYour very own\nPOKéMON story is\u000babout to unfold.\fYou'll face fun\ntimes and tough\u000bchallenges.\fA world of dreams\nand adventures\fwith POKéMON\nawaits! Let's go!\fI'll be seeing you\nlater!": [
+   "src/ui/gen2/OakSpeech.lua"
+  ],
+  "{PLAYER} used the": [
+   "src/ui/gen2/PackMenu.lua"
+  ],
+  "Registered the": [
+   "src/ui/gen2/PackMenu.lua"
+  ],
+  "You can't register": [
+   "src/ui/gen2/PackMenu.lua"
+  ],
+  "that item.": [
+   "src/ui/gen2/PackMenu.lua"
+  ],
+  "№.": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "<LV>": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "HP": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "♂": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "♀": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "⁂": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "/": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "<ID>№": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "MOVE": [
+   "src/ui/gen2/PhotoStudio.lua"
+  ],
+  "Crammed full of\nPOKéMON books!": [
+   "src/world/OverworldController.lua"
+  ],
+  "There's a slew of\nPOKéMON stuff!": [
+   "src/world/OverworldController.lua"
+  ],
+  "An elevator!": [
+   "src/world/OverworldController.lua"
+  ],
+  "POKéMON LEAGUE HQ": [
+   "src/world/OverworldController.lua"
+  ],
+  "%s found\n%s!": [
+   "src/world/OverworldController.lua",
+   "src/world/OverworldController.lua",
+   "src/world/OverworldController.lua"
+  ],
+  "%s found\n%d coins!": [
+   "src/world/OverworldController.lua"
+  ],
+  "{RAM}\nPOKéMON GYM\nLEADER: {RAM}": [
+   "src/world/OverworldController.lua"
+  ],
+  "Bingo!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Hey! There's a\nswitch under the\ntrash!\fThe 1st electric\nlock opened!": [
+   "src/world/OverworldController.lua"
+  ],
+  "The 2nd electric\nlock opened!\fThe motorized door\nopened!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Nope! There's\nonly trash here.\fHey! The electric\nlocks were reset!": [
+   "src/world/OverworldController.lua"
+  ],
+  "{PLAYER} initiated\nTELEPORTER's Cell\nSeparator!": [
+   "src/world/OverworldController.lua"
+  ],
+  "BILL's favorite\nPOKéMON list!": [
+   "src/world/OverworldController.lua"
+  ],
+  "{PLAYER} got on\n{RAM:wNameBuffer}!": [
+   "src/world/OverworldController.lua"
+  ],
+  "{RAM:wNameBuffer} hacked\naway with CUT!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Gyaoo!": [
+   "src/world/OverworldController.lua"
+  ],
+  "SOMEONE'S PC": [
+   "src/world/OverworldController.lua"
+  ],
+  "PROF.OAK's PC": [
+   "src/world/OverworldController.lua"
+  ],
+  "Accessed PROF.\nOAK's PC.\fAccessed POKéDEX\nRating System.": [
+   "src/world/OverworldController.lua"
+  ],
+  "Want to get your\nPOKéDEX rated?": [
+   "src/world/OverworldController.lua"
+  ],
+  "Closed link to\nPROF.OAK's PC.": [
+   "src/world/OverworldController.lua"
+  ],
+  "POKéDEX comp-\nletion is:\f{NUM:hDexRatingNumMonsSeen} POKéMON seen\n{NUM:hDexRatingNumMonsOwned} POKéMON owned\fPROF.OAK's\nRating:": [
+   "src/world/OverworldController.lua"
+  ],
+  "Welcome to our\nPOKéMON CENTER!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Shall we heal your\nPOKéMON?": [
+   "src/world/OverworldController.lua"
+  ],
+  "OK. We'll need\nyour POKéMON.": [
+   "src/world/OverworldController.lua"
+  ],
+  "Your POKéMON are\nfighting fit!": [
+   "src/world/OverworldController.lua"
+  ],
+  "I like shorts!\nThey're comfy and\neasy to wear!": [
+   "src/world/OverworldController.lua"
+  ],
+  "%s received\nthe %s!": [
+   "src/world/OverworldController.lua"
+  ],
+  "%s received\n%s!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Go right ahead!": [
+   "src/world/OverworldController.lua"
+  ],
+  "You don't have the\nBOULDERBADGE yet!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Oh! That is the\n{RAM}!": [
+   "src/world/OverworldController.lua"
+  ],
+  "You don't have the\n{RAM} yet!": [
+   "src/world/OverworldController.lua"
+  ],
+  "You need a\nBICYCLE for the\nCycling Road!": [
+   "src/world/OverworldController.lua"
+  ],
+  "The boulder fell\nthrough the hole!": [
+   "src/world/OverworldController.lua"
+  ],
+  "PA: You're out of\nSAFARI BALLs!": [
+   "src/world/OverworldController.lua"
+  ],
+  "Gold cache incomplete:\n%s": [
+   "src/world/gen2/World.lua"
+  ],
+  "Font load failed:\n%s": [
+   "src/world/gen2/World.lua"
+  ],
+  "%s is missing.\nRe-import the Gold ROM.": [
+   "src/world/gen2/World.lua"
+  ],
+  "Failed to boot %s:\n%s": [
+   "src/world/gen2/World.lua"
+  ],
+  "REPEL's effect\nwore off.": [
+   "src/world/gen2/World.lua"
+  ],
+  "You have no more\nPOKéMON that can\\011fight!": [
+   "src/world/gen2/World.lua"
+  ],
+  "%s came\nout of its EGG!": [
+   "src/world/gen2/World.lua"
+  ],
+  "Give a nickname to\n%s?": [
+   "src/world/gen2/World.lua"
+  ]
+ }
+}

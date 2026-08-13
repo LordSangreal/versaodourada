@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.10.1"
+VERSION = "0.11.0"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -241,6 +241,48 @@ open(os.path.join(OUT, "main.lua"), "w", encoding="utf-8").write(MAIN)
 # catalogos vazios, prontos para preencher
 import pt
 STRINGS, _NOSSO_DIALOGO = pt.carregar()
+
+# ---- o launcher NAO e traduzido, de proposito -------------------------
+#
+# A tela do jogo tem 18 colunas e eu controlo a quebra de linha.  O launcher
+# nao: e a interface do aplicativo, com botoes de largura fixa.  O portugues
+# e mais longo que o ingles, entao rotulo traduzido estoura e sai cortado --
+# "Play Gold (Be...", "0 insignias - 0:00 - 0 capturados" quebrando a linha.
+#
+# O filtro e por ARQUIVO DE ORIGEM, nao por lista de chaves escrita a mao:
+# uma chave que so aparece em LauncherView / LauncherSettings / LauncherMods
+# / ManagerState / update e do aplicativo, e sai.  Assim um lote futuro nao
+# reintroduz isto por descuido.
+# `src/import/` INTEIRO, nao arquivo a arquivo: e a camada do aplicativo,
+# do launcher ao importador de ROM.  Listar arquivo a arquivo deixou passar
+# uma mensagem do RomImporter, que aparece na tela do aplicativo do mesmo
+# jeito.  Diretorio inteiro nao tem esse buraco.
+_LAUNCHER = ("src/import/", "src/mods/LauncherMods", "src/mods/ManagerState",
+             "src/update/")
+_onde = {}
+_f = os.path.join(HERE, "strings_en.json")
+if os.path.exists(_f):
+    _onde = json.load(open(_f, encoding="utf-8")).get("where", {})
+
+
+def _so_do_launcher(chave):
+    """BASTA aparecer numa tela do aplicativo para a chave sair.
+
+    A primeira versao disto so removia a chave se TODAS as origens fossem do
+    launcher.  Sobravam 31 compartilhadas -- FPS, orientacao, vibracao,
+    toque -- que sao ajuste de aparelho e o launcher desenha em botao de
+    largura fixa.  Traduzidas, estouravam la.
+
+    Perder essas no jogo custa pouco: o Gold desenha as proprias telas em
+    src/ui/gen2/, entao boa parte nem aparece num boot de Gold.
+    """
+    return any(any(p in a for p in _LAUNCHER) for a in _onde.get(chave, []))
+
+
+_fora = [k for k in STRINGS if _so_do_launcher(k)]
+for k in _fora:
+    STRINGS.pop(k)
+print("strings do launcher removidas:", len(_fora))
 with open(os.path.join(OUT, "lang", "strings.lua"), "w", encoding="utf-8") as f:
     f.write("-- Texto do motor: batalha, menus, opcoes.\n")
     f.write("-- Chave = a string em ingles exatamente como o codigo a escreve.\n")
