@@ -31,6 +31,15 @@ TERMOS = [
     # Consistencia de acentuacao e forma
     (r"\bPOKEMON\b", "POKéMON"),
     (r"\bPokemon\b", "POKéMON"),
+
+    # O "--" do ingles e travessao: marca uma pausa dentro da frase.  Em
+    # portugues nao se escreve assim -- vira virgula.  Mesma largura (dois
+    # caracteres viram dois), entao nenhuma linha muda de tamanho.
+    #
+    # Reticencias NAO servem aqui: dizem que a fala se perdeu no ar, que e
+    # outra coisa.  Foi o que eu tinha feito antes, e ficou estranho na tela.
+    (r"(\w)--(\w)", r"\1, \2"),
+    (r"--", ", "),
 ]
 
 # Termos que a base ja acerta e que NAO devem ser mexidos, documentados aqui

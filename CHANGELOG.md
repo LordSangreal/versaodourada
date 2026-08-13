@@ -1,23 +1,19 @@
 # Changelog
 
-## 0.10.0
+## 0.10.1
 
-**Lote 3: Violet City, Sprout Tower, o GINASIO do FALKNER e as rotas 31 e
-32** -- 59 falas traduzidas do ingles original. E a primeira insignia, o
-primeiro ginasio e a torre, ou seja onde a historia comeca de verdade.
+Corrige a pontuacao dos travessoes.
 
-Passou no `conferir.py` na primeira tentativa, como o lote 2.
+O `--` do ingles marca uma **pausa** dentro da frase. Eu tinha trocado por
+reticencias, mas em portugues reticencias dizem outra coisa: que a fala se
+perdeu no ar. Agora vira **virgula**, que diz o mesmo que o original.
 
-Uma escolha de traducao que vale registrar: o professor da academia de
-Violet fala ingles quebrado no original, de proposito. A traducao mantem
-o jeito torto ("Aqui, professor eu sou") em vez de consertar a gramatica
-dele -- e caracterizacao, nao erro.
+A regra entrou no `glossario.py` e vale para o texto todo, nao so para a
+fala onde o problema apareceu: 17 ocorrencias no catalogo viraram 0. A
+troca tem a mesma largura (dois caracteres viram dois), entao nenhuma linha
+mudou de tamanho.
 
-Quinze chaves do trecho ficaram de fora por serem lixo do extrator.
-
-Progresso: **202** de 2245 falas ja sao nossas.
-
-## 0.10.0
+## 0.10.1
 
 - Primeira versao: 1973 falas em portugues.
 - Nomes de golpes mantidos no original.

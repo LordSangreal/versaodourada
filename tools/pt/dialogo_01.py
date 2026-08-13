@@ -107,7 +107,9 @@ DIALOGO = {
     "60:5cbc": "POKéMON!\nCANAL POKéMON…",
 
     # ---------------- Casa do Elm ----------------
-    "60:5eb8": "Oi, {PLAYER}! Meu\nmarido vive tão\focupado… espero\nque ele fique bem\fQuando mergulha na\npesquisa POKéMON,\fele até esquece\nde comer.",
+    # o "--" do ingles e travessao: marca pausa, nao fala que se perde no
+    # ar.  Reticencias em portugues dizem outra coisa; virgula diz a mesma.
+    "60:5eb8": "Oi, {PLAYER}! Meu\nmarido vive tão\focupado, e espero\nque ele fique bem\fQuando mergulha na\npesquisa POKéMON,\fele até esquece\nde comer.",
     "60:5f2c": "Quando eu crescer,\nvou ajudar o meu\vpai!\fVou ser um grande\nprofessor\vPOKéMON!",
     "60:5fdc": "POKéMON. De onde\neles vêm?\fPara onde eles\nvão?\fPor que ninguém\nnunca viu um\vPOKéMON nascer?\fQuero saber! Vou\ndedicar a vida\fao estudo dos\nPOKéMON!\f…\fFaz parte dos\nartigos de\vpesquisa do ELM.",
 }
