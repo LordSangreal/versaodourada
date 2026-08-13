@@ -18,10 +18,12 @@ BR_ACCENTS = {
     0x5C: "TA",        # RO+TA, BICICLE+TA, FLORES+TA
     0x5B: "ÃO",        # GR+AO / GR+AO+S, onde o ingles diz BERRY
     0x5D: "POKéMON",   # "CENTRO _", "GINASIO _", "seus _S"
-    0x70: "Q",         # _+U+EM, PSI+_+U+ICO, E+_+U+IPE
-    0x71: "U",
-    0xE1: "D",         # GYARA+D+O+S, "LABORATORIO D+O PROFESSOR"
-    0xE2: "O",
+    # Os dois bytes de LIGADURA do charmap original -- um byte so que ja
+    # valia dois glifos, e que a traducao BR reaproveitou:
+    0x4A: "DO",        # era <PK><MN>.  GYARA+DO+S, "LABORATORIO DO PROFESSOR"
+    0x24: "QU",        # era <PO><KE>.  +QU+EM, PSI+QU+ICO, E+QU+IPE
+    # NAO mapear 0xE1/0xE2 (<PK>/<MN>) nem 0x70/0x71 (<PO>/<KE>): sao glifos
+    # legitimos e distintos.  Quem aparece no texto BR e a ligadura acima.
 }
 BR_CHARMAP = dict(CHARMAP)
 BR_CHARMAP.update(BR_ACCENTS)

@@ -1,17 +1,21 @@
 # Changelog
 
-## 0.3.0
+## 0.3.1
 
-- Pagina do mod reescrita: estado da traducao, o que fica no original e por
-  que, e a transicao para traducao propria dita de forma explicita.
-- `tools/pt/` -- catalogos de traducao propria, por lote. O build da
-  precedencia a eles sobre o texto derivado.
-- `tools/progresso.py` -- quanto ja e nosso e quanto ainda e derivado. A
-  atribuicao so pode sair quando esse numero chegar a zero.
-- Lote 0: 114 rotulos de menu, batalha e launcher traduzidos do zero
-  (eram 97).
+**1968 falas** (eram 1689). Os codigos que faltavam eram os dois bytes de
+LIGADURA do charmap original -- um byte so que ja valia dois glifos:
 
-## 0.3.0
+| byte | era | a traducao BR reusou como |
+|---|---|---|
+| `0x4A` | `<PK><MN>` | `DO` (GYARA+DO+S) |
+| `0x24` | `<PO><KE>` | `QU` (E+QU+IPE, PSI+QU+ICO) |
 
-- Primeira versao: 1689 falas em portugues.
+Eu vinha mapeando `0xE1`/`0xE2` e `0x70`/`0x71`, que sao glifos legitimos e
+distintos -- errado, e com risco de corromper texto. Revertido.
+
+Descartes por marcador: 296 -> 12.
+
+## 0.3.1
+
+- Primeira versao: 1968 falas em portugues.
 - Nomes de golpes mantidos no original.
