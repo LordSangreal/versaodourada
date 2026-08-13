@@ -12,13 +12,11 @@ descartada -- o termo curto antigo fica.  Cabimento vence purismo.
 # (o que procurar, com o que trocar).  Ordem importa: mais especifico antes.
 # Confianca alta: terminologia oficial ou consolidada.
 TERMOS = [
-    # Maquinas: oficialmente Maquina Tecnica / Maquina Oculta.
-    (r"\bTM(\d+)\b", r"MT\1"),
-    (r"\bHM(\d+)\b", r"MO\1"),
-    (r"\bTMs\b", "MTs"),
-    (r"\bHMs\b", "MOs"),
-    (r"\bTM\b", "MT"),
-    (r"\bHM\b", "MO"),
+    # TM e HM FICAM NO ORIGINAL, por decisao do projeto: eles vem colados aos
+    # nomes dos golpes que ensinam, e os nomes de golpes ficam em ingles.
+    # Traduzir a sigla e deixar o golpe em ingles produziria "MT29 contem o
+    # PSYCHIC", que mistura as duas linguas no mesmo item.  Nao adicionar
+    # regra de TM/HM aqui.
 
     # PS (Pontos de Saude) e a sigla oficial em pt-BR; HP e do ingles.
     (r"\bHP\b", "PS"),

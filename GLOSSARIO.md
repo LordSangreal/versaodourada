@@ -19,8 +19,6 @@ Por isso `golpe` -> `movimento` entra em algumas linhas e nao em outras.
 
 | Antigo | Atual | Observacao |
 |---|---|---|
-| `TM`, `TM##` | `MT`, `MT##` | Maquina Tecnica |
-| `HM`, `HM##` | `MO`, `MO##` | Maquina Oculta |
 | `HP` | `PS` | Pontos de Saude |
 | `golpe` | `movimento` | so onde couber nas 18 colunas |
 | `POKEMON`, `Pokemon` | `POKéMON` | consistencia de forma |
@@ -39,6 +37,9 @@ Estao aqui para ninguem "corrigir" por engano:
 ## Fora do alcance do glossario
 
 - **Nomes de golpes**: ficam no original em ingles, por decisao do projeto.
+- **TM e HM**: ficam no original. Vem colados aos nomes dos golpes que
+  ensinam, e traduzir so a sigla produziria "MT29 contem o PSYCHIC" --
+  as duas linguas no mesmo item.
 - **Nomes de Pokemon**: ficam no original, sao os nomes oficiais no mundo
   todo.
 - **Nomes de cidades e personagens**: ficam no original.
