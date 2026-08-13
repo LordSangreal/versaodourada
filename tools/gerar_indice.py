@@ -56,7 +56,31 @@ def latest_block():
     }, downloads
 
 
-latest, _dl = latest_block()
+def latest_confirmado(esperado, tentativas=6, espera=5):
+    """A API do GitHub leva alguns segundos para listar um release recem-criado.
+
+    Publicar o feed nesse intervalo grava um bloco `latest` apontando para a
+    versao ANTERIOR -- foi o que aconteceu na 0.1.4: o feed dizia
+    version 0.1.4 e latest.tag v0.1.3, entao o aplicativo comparava com o
+    bloco `latest`, via 0.1.3 e concluia que nao havia atualizacao.
+    Espera a API alcancar o manifest em vez de gravar o que vier.
+    """
+    import time
+    for n in range(tentativas):
+        bloco, _ = latest_block()
+        if bloco and bloco["version"] == esperado:
+            return bloco
+        if n < tentativas - 1:
+            print("  API ainda em %s, esperando %ss..."
+                  % (bloco["version"] if bloco else "nada", espera))
+            time.sleep(espera)
+    raise SystemExit(
+        "ABORTADO: o manifest diz %s mas o release mais novo na API e %s.\n"
+        "Publique o release dessa versao antes de gerar o feed."
+        % (esperado, bloco["version"] if bloco else "nenhum"))
+
+
+latest = latest_confirmado(manifest["version"])
 
 entry = {
     "folder": FOLDER,
