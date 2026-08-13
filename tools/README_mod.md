@@ -56,8 +56,8 @@ ingles original, lote a lote:
 
 | | |
 |---|---|
-| Falas ja nossas | 1799 |
-| Falas ainda derivadas | 1151 |
+| Falas ja nossas | 1900 |
+| Falas ainda derivadas | 1050 |
 
 Os rotulos de menu e os glifos ja sao 100% nossos.
 

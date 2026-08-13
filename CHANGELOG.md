@@ -7,6 +7,9 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.29.0
+
+- **Lote 28** -- as 101 derivadas do banco 5e: a CELADON DEPT.\n  STORE, o GAME CORNER, a CELADON MANSION (GAME FREAK), o\n  GINASIO da ERIKA, o EATATHON CONTEST e a CYCLING ROAD.\n  1900 falas proprias; 1050 derivadas.\n
 ## 0.28.0
 
 - **Lote 27** -- as derivadas dos bancos 51-53 (90 falas): os
