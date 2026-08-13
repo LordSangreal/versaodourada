@@ -1,9 +1,9 @@
 """Monta o mod versaodourada a partir do dialogo extraido."""
-import json, os, re, shutil, zipfile
+import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -28,9 +28,25 @@ def suspect_marker(en, pt):
     return bool(a - b)
 
 
+# A fonte do Gold so tem é, ü e Ü.  Todo o resto vira ASCII, senao o
+# caractere simplesmente nao desenha e a palavra sai com um buraco
+# ("mae" em vez de "m e").  Quando a pagina de glifos entrar, e so
+# esvaziar este mapa e os acentos voltam sozinhos.
+DOBRA = {
+    "á": "a", "â": "a", "ã": "a", "à": "a",
+    "ê": "e", "í": "i", "ó": "o", "ô": "o", "õ": "o", "ú": "u", "ç": "c",
+    "Á": "A", "Â": "A", "Ã": "A", "À": "A", "É": "E", "Ê": "E",
+    "Í": "I", "Ó": "O", "Ô": "O", "Õ": "O", "Ú": "U", "Ç": "C",
+}
+
+
+def dobrar(s):
+    return "".join(DOBRA.get(c, c) for c in s)
+
+
 def clean(pt):
-    # a ROM BR enche de espaco a direita para preencher a caixa; sobra visual
-    return "\n".join(line.rstrip() for line in pt.split("\n"))
+    # a ROM BR enche de espaco a direita para preencher a caixa
+    return "\n".join(line.rstrip() for line in dobrar(pt).split("\n"))
 
 
 kept, dropped = {}, {"kana": 0, "marcador": 0, "vazio": 0, "token": 0, "igual": 0}
@@ -44,7 +60,7 @@ for k, (en, pt) in dial.items():
     if boxy(pt):
         dropped["moldura"] = dropped.get("moldura", 0) + 1
         continue
-    if suspect_marker(en, pt):
+    if "<" in pt or "<" in en:
         dropped["marcador"] += 1
         continue
     # os tokens de runtime tem que sobreviver identicos
@@ -55,6 +71,25 @@ for k, (en, pt) in dial.items():
         dropped["igual"] += 1
         continue
     kept[k] = clean(pt)
+
+# Varias chaves caem dentro da MESMA string, em enderecos deslocados (a fala
+# da vizinha aparecia em 60:5eb2/5eb5/5eb8).  A mais longa e a string inteira;
+# as outras comecam no meio dela.  Fica so a inteira.
+porbanco = collections.defaultdict(list)
+for k in kept:
+    b, a = k.split(":")
+    porbanco[b].append((int(a, 16), k))
+frag = set()
+for b, rows in porbanco.items():
+    rows.sort()
+    for i, (a, k) in enumerate(rows):
+        for a2, k2 in rows[max(0, i - 4):i]:
+            if a - a2 <= 24 and kept[k] and kept[k2].endswith(kept[k]):
+                frag.add(k)
+                break
+for k in frag:
+    kept.pop(k, None)
+dropped["fragmento"] = len(frag)
 
 print("falas mantidas:", len(kept))
 print("descartadas:", dropped)
@@ -210,8 +245,17 @@ end
 open(os.path.join(OUT, "main.lua"), "w", encoding="utf-8").write(MAIN)
 
 # catalogos vazios, prontos para preencher
-for name, note in (("strings", "Texto do motor: batalha, menus, opcoes. Chave = o ingles original."),
-                   ("item_names", "Nomes de itens. Chave = id do item."),
+from traducoes_strings import STRINGS
+with open(os.path.join(OUT, "lang", "strings.lua"), "w", encoding="utf-8") as f:
+    f.write("-- Texto do motor: batalha, menus, opcoes.\n")
+    f.write("-- Chave = a string em ingles exatamente como o codigo a escreve.\n")
+    f.write("return {\n")
+    for k in sorted(STRINGS):
+        f.write("  [%s] = %s,\n" % (lua_str(k), lua_str(dobrar(STRINGS[k]))))
+    f.write("}\n")
+print("strings de menu:", len(STRINGS))
+
+for name, note in (("item_names", "Nomes de itens. Chave = id do item."),
                    ("status_labels", "Rotulos de status (PAR, SLP...).")):
     with open(os.path.join(OUT, "lang", name + ".lua"), "w", encoding="utf-8") as f:
         f.write("-- %s\n-- Vazio = cai em ingles.\nreturn {\n}\n" % note)

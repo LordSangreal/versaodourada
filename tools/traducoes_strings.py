@@ -1,0 +1,120 @@
+# -*- coding: utf-8 -*-
+"""Traducoes pt-BR do registro `strings` (texto do motor).
+Chave = a string em ingles exatamente como aparece no codigo-fonte.
+Escrever com acento normal: o build dobra o que a fonte ainda nao tem.
+Nomes de golpes e de Pokemon ficam no original, por decisao do projeto.
+"""
+STRINGS = {
+    # ---- menu de batalha
+    "battle|FIGHT": "LUTAR",
+    "battle|ITEM": "ITENS",
+    "battle|RUN": "FUGIR",
+    "FIGHT": "LUTAR",
+    "ITEM": "ITENS",
+    "RUN": "FUGIR",
+    "BALLx": "BOLAx",
+    "BAIT": "ISCA",
+    "THROW ROCK": "JOGAR PEDRA",
+    "TYPE/": "TIPO/",
+    "disabled!": "desabilitado!",
+    "What will": "O que",
+    " do?": " vai fazer?",
+    "FOE": "INIMIGO",
+    "OLD MAN": "VELHO",
+    "POKé BALL": "POKé BALL",
+    "Use next POKéMON?": "Usar outro POKéMON?",
+    "NICKNAME?": "APELIDO?",
+    "someone's PC": "o PC de alguém",
+
+    # ---- estatisticas
+    "ATTACK": "ATAQUE",
+    "DEFENSE": "DEFESA",
+    "SPEED": "VELOCIDADE",
+    "SPECIAL": "ESPECIAL",
+
+    # ---- contextos de batalha
+    "In battle": "Em batalha",
+    "Wild battle": "Batalha selvagem",
+    "Trainer battle": "Batalha de treinador",
+    "Link battle": "Batalha por link",
+    "Title screen": "Tela de título",
+    "But, it failed!": "Mas falhou!",
+
+    # ---- opcoes do jogo
+    "TEXT SPEED": "VEL. DO TEXTO",
+    "BATTLE ANIMATION": "ANIMAÇÃO",
+    "BATTLE STYLE": "ESTILO DE LUTA",
+    "BATTLE LAYOUT": "LAYOUT DE LUTA",
+    "BATTLE SIZE": "TAMANHO DA LUTA",
+    "BATTLE BG": "FUNDO DE LUTA",
+    "BATTLE SCENE": "CENA DE LUTA",
+    "UI LAYOUT": "LAYOUT DA TELA",
+    "GAME SPEED": "VEL. DO JOGO",
+    "OVERWORLD SPEED": "VEL. NO MAPA",
+    "BATTLE SPEED": "VEL. NA LUTA",
+    "MENU SPEED": "VEL. DOS MENUS",
+    "OPTIONS": "OPÇÕES",
+    "SOUND": "SOM",
+    "PRINT": "IMPRIMIR",
+    "MENU ACCOUNT": "CONTA NO MENU",
+    "FRAME": "MOLDURA",
+    "COLOR": "COR",
+    "COLORS": "CORES",
+
+    # ---- audio e video
+    "MUSIC VOL": "VOL. MÚSICA",
+    "SFX VOL": "VOL. EFEITOS",
+    "MUSIC FILTER": "FILTRO DE SOM",
+    "PERFORMANCE": "DESEMPENHO",
+    "VIDEO MODE": "MODO DE VÍDEO",
+    "ORIENTATION": "ORIENTAÇÃO",
+    "FAITHFUL RATIO": "PROPORÇÃO FIEL",
+    "MAX FPS": "FPS MÁXIMO",
+    "GBC FX": "EFEITOS GBC",
+    "VOID FILL": "PREENCHIMENTO",
+    "TILT": "INCLINAÇÃO",
+
+    # ---- controles
+    "TOUCH PAD": "TOQUE",
+    "TOUCH CONTROLS": "CONTROLES DE TOQUE",
+    "VIBRATION": "VIBRAÇÃO",
+    "RESET REBINDS": "LIMPAR TECLAS",
+    "RESET DEFAULTS": "RESTAURAR PADRÃO",
+    "Edit": "Editar",
+    "Reset": "Restaurar",
+    "ON": "LIG",
+    "OFF": "DESL",
+
+    # ---- gerenciador de mods
+    "MODS": "MODS",
+    "FIND MODS": "BUSCAR MODS",
+    "Ready": "Pronto",
+    "Conflict": "Conflito",
+    "Not for this game": "Não é deste jogo",
+    "Incompatible": "Incompatível",
+    "Show for:": "Mostrar para:",
+    "All games": "Todos os jogos",
+    "Install": "Instalar",
+    "Update": "Atualizar",
+    "Reinstall": "Reinstalar",
+    "Delete": "Excluir",
+    "Sure?": "Tem certeza?",
+    "Checking...": "Verificando...",
+    "Restart to update": "Reinicie para atualizar",
+    "Open releases": "Abrir releases",
+    "Check for updates": "Procurar atualizações",
+    "Mod indexes": "Índices de mod",
+    "Add index": "Adicionar índice",
+    "Refresh all": "Atualizar tudo",
+    "No index added yet.": "Nenhum índice adicionado.",
+    "Remove": "Remover",
+    "Close": "Fechar",
+    "Enable all": "Ligar todos",
+    "Disable all": "Desligar todos",
+
+    # ---- nomes das versoes
+    "RED": "RED",
+    "BLUE": "BLUE",
+    "YELLOW": "YELLOW",
+    "GOLD": "GOLD",
+}
