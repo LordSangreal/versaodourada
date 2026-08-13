@@ -1,22 +1,20 @@
 # Changelog
 
-## 0.3.3
+## 0.4.0
 
-Corrige a placa de New Bark, que saia "CI...... NEW BARK".
+**256 rotulos de menu, batalha e launcher** traduzidos, contra 114 antes.
+Tudo escrito do zero a partir do ingles: e texto nosso, sem derivacao.
 
-Dois problemas no mesmo ponto:
+Corrige tambem uma regressao da 0.3.0: ao criar `tools/pt/` eu nao levei
+junto os 97 rotulos que ja existiam, e LUTAR, ITENS, OPCOES e ATAQUE tinham
+voltado para o ingles sem que ninguem percebesse. Os catalogos agora estao
+unificados num lugar so.
 
-- `0x56` (era o byte das reticencias animadas) foi reaproveitado pela
-  traducao BR como a ligadura `DADE` -- "CI+DADE NEW BARK". As reticencias
-  de verdade no texto BR usam `0x75`, entao o byte estava mesmo livre.
-- O decodificador tinha um caso especial que forcava `0x56` a virar
-  reticencias **antes** de consultar o mapa BR. Qualquer byte reaproveitado
-  que caisse na cadeia de casos especiais teria o mesmo destino. Agora o
-  mapa BR tem precedencia sobre todos eles.
+Cobertos nesta versao: menu e mensagens de batalha, mudancas de atributo,
+captura, todas as opcoes do jogo, audio e video, controles, importacao de
+ROM, espacos de save e o gerenciador de mods inteiro.
 
-O segundo era o bug de verdade: o primeiro so aparecia por causa dele.
-
-## 0.3.3
+## 0.4.0
 
 - Primeira versao: 1968 falas em portugues.
 - Nomes de golpes mantidos no original.
