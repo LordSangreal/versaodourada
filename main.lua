@@ -38,53 +38,11 @@ return function(mod)
   -- comentada pelo mesmo motivo.  Sem acentos proprios por enquanto: o
   -- texto usa a fonte da ROM ate a pagina de glifos entrar.
 
-  local dialogue = catalog("dialogue")
-
-  -- ---- diagnostico ---------------------------------------------------
-  -- O texto continuou em ingles na 0.1.2, entao antes de aplicar seja la o
-  -- que for, medir: quantas das minhas chaves o jogo realmente conhece.
-  local reg = mod.content.text
-  local mine, hit = 0, 0
-  for _ in pairs(dialogue) do mine = mine + 1 end
-  if reg and reg.has then
-    for k in pairs(dialogue) do
-      local ok, yes = pcall(function() return reg:has(k) end)
-      if ok and yes then hit = hit + 1 end
-    end
-  end
-  mod.log:info("DIAG chaves minhas=%d  reconhecidas=%d", mine, hit)
-
-  -- Uma amostra das chaves que o jogo tem de verdade, para comparar com o
-  -- formato das minhas.
-  if reg and reg.each then
-    local shown = 0
-    pcall(function()
-      for id in reg:each() do
-        mod.log:info("DIAG chave real: %s", tostring(id))
-        shown = shown + 1
-        if shown >= 8 then break end
-      end
-    end)
-    if shown == 0 then mod.log:info("DIAG registro text vazio ou nao iteravel") end
-  else
-    mod.log:info("DIAG registro text sem :each()")
-  end
-  for _, path in ipairs({ "gen2Text", "text" }) do
-    pcall(function()
-      local d = mod.game and mod.game.data and mod.game.data[path]
-      if type(d) == "table" then
-        local c, sample = 0, nil
-        for id in pairs(d) do c = c + 1; sample = sample or id end
-        mod.log:info("DIAG data.%s tem %d chaves, ex: %s", path, c, tostring(sample))
-      end
-    end)
-  end
-
   -- ---- aplicacao -----------------------------------------------------
   local n = 0
-  for k, v in pairs(dialogue) do
+  for k, v in pairs(catalog("dialogue")) do
     if type(v) == "string" and v ~= "" then
-      reg:override(k, v)
+      mod.content.text:override(k, v)
       n = n + 1
     end
   end
@@ -93,6 +51,12 @@ return function(mod)
   end)
   n = n + each("item_names", function(id, value)
     mod.content.items:patch(id, { name = value })
+  end)
+  -- O status tem dois rotulos: o do texto e o de tres letras que cabe na
+  -- caixinha ao lado da barra de vida.  Trocar so o primeiro deixaria o HUD
+  -- em ingles, que e justamente onde o rotulo mais aparece.
+  n = n + each("status_labels", function(id, value)
+    mod.content.statuses:patch(id, { label = value, hudLabel = value })
   end)
 
   mod.events:on("game.ready", function()

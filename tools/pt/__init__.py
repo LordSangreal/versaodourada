@@ -15,7 +15,7 @@ import importlib
 import pkgutil
 import os
 
-LOTES = ["sistema"]
+LOTES = ["sistema", "itens"]
 
 
 def carregar():
@@ -26,3 +26,13 @@ def carregar():
         sistema.update(getattr(mod, "SISTEMA", {}))
         dialogo.update(getattr(mod, "DIALOGO", {}))
     return sistema, dialogo
+
+
+def catalogos():
+    """-> (itens, status) dos lotes que os definem."""
+    itens, status = {}, {}
+    for nome in LOTES:
+        mod = importlib.import_module("pt." + nome)
+        itens.update(getattr(mod, "ITENS", {}))
+        status.update(getattr(mod, "STATUS", {}))
+    return itens, status

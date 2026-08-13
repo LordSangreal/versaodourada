@@ -1,20 +1,26 @@
 # Changelog
 
-## 0.4.0
+## 0.5.0
 
-**256 rotulos de menu, batalha e launcher** traduzidos, contra 114 antes.
-Tudo escrito do zero a partir do ingles: e texto nosso, sem derivacao.
+**68 nomes de item** traduzidos: curas, pedras de evolucao, vitaminas,
+itens de batalha, varas de pesca, itens-chave.
 
-Corrige tambem uma regressao da 0.3.0: ao criar `tools/pt/` eu nao levei
-junto os 97 rotulos que ja existiam, e LUTAR, ITENS, OPCOES e ATAQUE tinham
-voltado para o ingles sem que ninguem percebesse. Os catalogos agora estao
-unificados num lugar so.
+Ficam no original, de proposito: as Balls, TM e HM, e os **rotulos de
+status**. PSN, BRN, PAR, SLP e FRZ sao sigla padrao da franquia, lidas sem
+pensar por quem joga em qualquer idioma, e vivem numa caixinha de tres
+caracteres. O que importa ali e a mensagem na caixa de texto, e essa ja
+esta em portugues.
 
-Cobertos nesta versao: menu e mensagens de batalha, mudancas de atributo,
-captura, todas as opcoes do jogo, audio e video, controles, importacao de
-ROM, espacos de save e o gerenciador de mods inteiro.
+Nome de item cabe em 12 caracteres. O build reprova o que passar disso e
+deixa em ingles, em vez de publicar truncado.
 
-## 0.4.0
+Corrige tambem `main.lua`, que gerava `status_labels.lua` mas nunca o
+aplicava -- o catalogo sairia e seria ignorado em silencio.
+
+Removido o bloco de diagnostico da 0.1.3: ele ja disse o que precisava e
+hoje so percorre 1968 chaves no boot para encher o log.
+
+## 0.5.0
 
 - Primeira versao: 1968 falas em portugues.
 - Nomes de golpes mantidos no original.
