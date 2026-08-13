@@ -3,7 +3,7 @@ import json, os, re, shutil, zipfile, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "versaodourada")
-VERSION = "0.6.0"
+VERSION = "0.6.1"
 
 dial = json.load(open(os.path.join(HERE, "dialogo.json"), encoding="utf-8"))
 
@@ -28,16 +28,14 @@ def suspect_marker(en, pt):
     return bool(a - b)
 
 
-# A fonte do Gold so tem é, ü e Ü.  Todo o resto vira ASCII, senao o
-# caractere simplesmente nao desenha e a palavra sai com um buraco
-# ("mae" em vez de "m e").  Quando a pagina de glifos entrar, e so
-# esvaziar este mapa e os acentos voltam sozinhos.
-# A pagina de glifos em assets/font/latin.png cobre os acentos, entao a dobra
-# para ASCII foi desligada: DOBRA vazio faz `dobrar` virar identidade.
+# A fonte da ROM so tem é, ü e Ü.  Ate a 0.5.0 todo o resto era dobrado para
+# ASCII ("mae", "coracao"), porque um caractere sem glifo nao desenha nada.
 #
-# Se por algum motivo a pagina nao carregar, cada acentuado desenha em branco
-# e a palavra sai com buraco ("m e" no lugar de "mae").  O conserto e repor
-# aqui o mapa de dobra -- e uma linha, e volta ao comportamento da 0.5.0.
+# A pagina em assets/font/latin.png cobre os acentos desde a 0.6.0, entao a
+# dobra esta desligada: DOBRA vazio faz `dobrar` virar identidade.
+#
+# Para reverter, se a pagina der problema: reponha aqui o mapa de dobra
+# (á->a, ã->a, ç->c, ...) e o comportamento volta ao da 0.5.0.
 DOBRA = {}
 
 

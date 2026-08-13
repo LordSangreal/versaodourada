@@ -1,26 +1,21 @@
 # Changelog
 
-## 0.6.0
+## 0.6.1
 
-**Os acentos voltaram.** 884 `~a`, 845 `a` agudo, 1417 `e` agudo, 234 cedilha
--- antes tudo isso virava ASCII ("mae", "coracao") porque a fonte da ROM so
-tem tres caracteres acentuados.
+Corrige os blocos pretos no lugar dos acentos, que a 0.6.0 causou.
 
-`assets/font/latin.png` acrescenta 25 glifos na base `0x100`, que e espaco
-livre acima das paginas da ROM: o alfabeto e ADICIONADO, nada e substituido.
-Desenhados do zero em `tools/glifos.py`, em arte ASCII legivel -- as regras
-do gen1recomp proibem distribuir arte derivada de ROM, entao extrair os
-tiles da traducao BR estava fora de questao.
+O motor decide o que e tinta pelo **canal alfa**, nao pela luminancia. Eu
+gerei a pagina com fundo branco OPACO, entao a celula inteira contava como
+tinta e cada acentuado saia como um quadrado preto solido.
 
-Minusculas ocupam as linhas 3-7 e deixam as duas de cima para o acento.
-Maiusculas foram comprimidas em 6 linhas, que e o unico jeito de um A com
-til caber numa celula de 8 pixels.
+A documentacao diz "preto no branco", e foi o que segui. A pagina que
+funciona no jogo e preto no **transparente** -- so apareceu comparando os
+pixels da minha com a do versaovermelha, que ja rodava.
 
-**Se algo der errado:** se os acentuados aparecerem em branco, a pagina nao
-carregou. Reponha o mapa `DOBRA` em `tools/build_mod.py` -- e uma linha, e
-volta ao comportamento da 0.5.0.
+Fundo agora e (0,0,0,0). A distribuicao de cores da minha pagina bate com a
+da referencia.
 
-## 0.6.0
+## 0.6.1
 
 - Primeira versao: 1968 falas em portugues.
 - Nomes de golpes mantidos no original.

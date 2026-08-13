@@ -177,8 +177,14 @@ def png(path, largura, altura, pixels):
 def gerar(destino):
     linhas_de_glifo = (len(PAGINA) + POR_LINHA - 1) // POR_LINHA
     largura, altura = POR_LINHA * 8, linhas_de_glifo * 8
-    branco, preto = (255, 255, 255, 255), (0, 0, 0, 255)
-    px = [[branco] * largura for _ in range(altura)]
+    # O fundo tem de ser TRANSPARENTE, nao branco.  O motor decide o que e
+    # tinta pelo canal alfa, nao pela luminancia: com fundo branco opaco a
+    # celula inteira conta como tinta e a letra sai como um bloco preto
+    # solido.  A documentacao fala em "preto no branco", mas a pagina que
+    # funciona no jogo e preto no transparente -- foi so comparando os
+    # pixels das duas que isto apareceu.
+    vazio, preto = (0, 0, 0, 0), (0, 0, 0, 255)
+    px = [[vazio] * largura for _ in range(altura)]
     for i, (_ch, arte) in enumerate(PAGINA):
         cx, cy = (i % POR_LINHA) * 8, (i // POR_LINHA) * 8
         assert len(arte) == 8, "%s: %d linhas" % (_ch, len(arte))
