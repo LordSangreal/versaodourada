@@ -7,6 +7,19 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.20.0
+
+- **Lotes 15b e 15c** -- o banco 4b inteiro fechado (51 falas): os
+  HIKERS, os colegiais que querem virar LÍDER, o pessoal do DAY-CARE, as
+  tres irmas da praia, os casais, e quem caça inseto para o Concurso.
+- **`tools/pendentes.py`** substitui o filtro de cauda que eu vinha
+  reescrevendo a cada lote.  O antigo comparava cada fala pendente
+  contra as OUTRAS PENDENTES, e por isso ia piorando: assim que a fala
+  inteira era traduzida ela saia da lista e a cauda dela ficava sem par.
+  Nove passaram por essa fresta no lote 14b.  Agora a comparacao e
+  contra o `dialogo.json` inteiro, traduzido ou nao.
+- 943 falas proprias; 2182 publicadas.
+
 ## 0.19.0
 
 - **Lote 14b** -- o resto do telefone (33 falas): as saudacoes que cada
