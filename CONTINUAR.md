@@ -894,14 +894,97 @@ e normal, nao e sinal de que o lote esta ruim.
 
 ---
 
+## 12-AA. PRIMEIRO DE TUDO: montar a pasta de trabalho
+
+**Leia isto antes de qualquer coisa.**  O scratchpad e por sessao: uma
+sessao nova recebe uma pasta VAZIA, e sem os arquivos abaixo nenhuma
+ferramenta roda.  Nao adianta tentar traduzir antes de resolver isto.
+
+Faltam tres coisas, nenhuma no git:
+
+| Arquivo | O que e | Tamanho |
+|---|---|---|
+| `dialogo.json` | 3277 falas, ingles + BR | ~610 KB |
+| `repo/` | fonte do gen1recomp (opcodes, manifest de mapas) | pasta |
+| `br/*.gbc` | a ROM brasileira, so para conferencia | 2 MB |
+
+### Caminho 1 -- copiar do scratchpad antigo (rapido)
+
+O scratchpad da sessao anterior costuma continuar no disco.  Procure:
+
+```bash
+ls -d "C:/Users/Usuario/AppData/Local/Temp/claude/D--pokemon-gold-tradu--o"/*/scratchpad
+```
+
+Achando, copie o que importa para o scratchpad novo:
+
+```bash
+VELHO="<o caminho que apareceu>"
+NOVO="<seu scratchpad>"
+cp "$VELHO/dialogo.json" "$NOVO/"
+cp -r "$VELHO/repo" "$VELHO/br" "$NOVO/"
+cp "$VELHO"/*.py "$NOVO/"
+cp -r "$VELHO/pt" "$NOVO/"
+```
+
+Se o `pt/` do scratchpad antigo estiver mais velho que o do
+repositorio, prefira o do repositorio -- ele e a fonte publicada:
+
+```bash
+cp -r "D:/pokemon gold traducao/versaodourada/tools/"*.py "$NOVO/"
+cp -r "D:/pokemon gold traducao/versaodourada/tools/pt" "$NOVO/"
+```
+
+### Caminho 2 -- reconstruir do zero
+
+Se nao houver scratchpad antigo:
+
+1. As ferramentas estao todas no repositorio, em `tools/`.  Copie
+   `tools/*.py` e `tools/pt/` para o scratchpad novo.
+2. Clone o gen1recomp em `<scratchpad>/repo`:
+   `git clone https://github.com/bryanthaboi/gen1recomp repo`
+3. A ROM BR precisa estar em `<scratchpad>/br/`.  O usuario tem o
+   arquivo (`Pokemon - Gold Version (BR) (www.romsportugues.com).7z`).
+   **Sem ela o `walk.py` nao roda** -- ele percorre as duas ROMs em
+   passo travado.
+4. Gere o `dialogo.json`:
+
+```bash
+python walk.py                              # 2245 falas
+python -c "import varrer; varrer.gravar()"  # +1032 = 3277
+```
+
+A ROM USA fica em `D:\pokemon gold traducao\` e o caminho esta fixo no
+topo de `walk.py` (`USA_PATH`).  Se o usuario mover a pasta, corrija
+ali.
+
+### Conferir que deu certo
+
+```bash
+python -c "
+import json; d=json.load(open('dialogo.json',encoding='utf-8'))
+print(len(d), 'falas')                      # esperado: 3277
+print('56:4634' in d)                       # True (veio da varredura)
+"
+python conferir.py                          # esperado: 0 problemas
+python progresso.py
+```
+
+Se `conferir.py` acusar "chave nao existe no jogo", o `dialogo.json`
+esta com 2245 e falta rodar `varrer.gravar()`.
+
+---
+
 ## 12-B. Se voce estiver retomando com o contexto zerado
 
 Ordem de leitura:
 
-1. Esta secao e a **2** (as tres restricoes).
+0. **Secao 12-AA** -- montar a pasta de trabalho.  Sem isso nada roda.
+1. Secao **2** (as tres restricoes que mandam em tudo).
 2. Secao **10** inteira (o processo) e **10-A** (o oficio).
-3. Secao **11** (estado) para saber onde parar.
-4. `tools/CHANGELOG_mod.md` -- cada versao diz o que entrou e por que.
+3. Secao **10-B** (o que ja deu errado) antes de escrever a primeira fala.
+4. Secao **11** (estado) para saber onde parar.
+5. `tools/CHANGELOG_mod.md` -- cada versao diz o que entrou e por que.
 
 Comandos para se situar em um minuto:
 
