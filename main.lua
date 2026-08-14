@@ -69,6 +69,21 @@ return function(mod)
   n = n + each("status_labels", function(id, value)
     mod.content.statuses:patch(id, { label = value, hudLabel = value })
   end)
+  -- Descricao de item.  `description` nao esta declarado no schema, mas o
+  -- registro de topo e extensivel e quem desenha le `def.description`
+  -- (ui/gen2/PackMenu.lua:823).  O pcall isola: se a rota nao existir, o
+  -- mod segue funcionando e o aviso aparece no log em vez de derrubar tudo.
+  local descOk, descErro = 0, nil
+  each("item_descriptions", function(id, value)
+    local ok, err = pcall(function()
+      mod.content.items:patch(id, { description = value })
+    end)
+    if ok then descOk = descOk + 1 elseif not descErro then descErro = err end
+  end)
+  n = n + descOk
+  if descErro then
+    mod.log:warn("descricao de item nao aplicada: %s", tostring(descErro))
+  end
 
   mod.events:on("game.ready", function()
     mod.log:info("VersaoDourada: %d textos aplicados", n)

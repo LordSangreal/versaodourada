@@ -7,6 +7,34 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.42.0
+
+**As descricoes de ITEM entram: 161 traduzidas.**  E a primeira categoria
+nova desde os rotulos de menu -- ate aqui a bolsa e o MART mostravam tudo em
+ingles.
+
+- Rota: `mod.content.items:patch(id, { description = ... })`.  O campo
+  `description` nao esta declarado no schema de `items`, mas o registro de
+  topo e extensivel (Schemas.lua:177-181 preserva chave desconhecida) e quem
+  desenha le `def.description` do alvo mesclado (PackMenu.lua:823,
+  MartMenu.lua:880, ItemPcMenu.lua:531).
+- O `main.lua` aplica cada uma dentro de `pcall` e escreve um aviso no log
+  se a rota nao existir, em vez de derrubar o mod.  **Se as descricoes
+  aparecerem em ingles no aparelho, o log diz por que.**
+- Formato: duas linhas de ate 18 colunas, que e o limite medido no ingles
+  (180 das 507 descricoes usam exatamente 18).
+- TM e HM ficam de fora de proposito: na bolsa e no MART o jogo mostra a
+  descricao do GOLPE que a maquina ensina, nao a do item
+  (PackMenu.lua:810).
+- `(HOLD)` virou `(SEGURA)` e `(1 BTL)` virou `(1 BAT)`: sao descritores,
+  nao nomes.  ATTACK, DEFENSE, SPEED, SPECIAL, PP e EXP. ficam no original,
+  porque e assim que aparecem na tela de status.
+
+Extracao nova: `extrair_descricoes.py` le pela TABELA DE PONTEIROS do banco
+(dois bytes por indice), como o extrator do motor faz, em vez de varrer
+terminadores -- so assim da para saber de QUEM e cada descricao.
+`extrair_nomes.py` traz o nome de cada golpe e item para formar o id.
+
 ## 0.41.0
 
 **ZERO FALAS DERIVADAS.  O credito virou agradecimento.**
