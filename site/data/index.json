@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-14T13:10:57Z",
+  "generated_at": "2026-08-14T13:18:50Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "VersaoDourada",
       "author": "LordSangreal",
-      "version": "0.39.1",
+      "version": "0.40.0",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.39.1",
-        "tag": "v0.39.1",
-        "name": "VersaoDourada 0.39.1",
+        "version": "0.40.0",
+        "tag": "v0.40.0",
+        "name": "VersaoDourada 0.40.0",
         "prerelease": false,
-        "published_at": "2026-08-14T13:10:58Z",
+        "published_at": "2026-08-14T13:18:51Z",
         "zip": {
-          "name": "versaodourada-0.39.1.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.39.1/versaodourada-0.39.1.zip",
-          "size": 134280
+          "name": "versaodourada-0.40.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.40.0/versaodourada-0.40.0.zip",
+          "size": 134671
         }
       },
       "update_check": "ok"
