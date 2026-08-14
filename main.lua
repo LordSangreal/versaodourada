@@ -84,6 +84,20 @@ return function(mod)
   if descErro then
     mod.log:warn("descricao de item nao aplicada: %s", tostring(descErro))
   end
+  -- Descricao de golpe.  Aparece na tela de resumo do POKéMON
+  -- (ui/gen2/SummaryMenu.lua:604) e na bolsa quando o item e uma TM ou HM
+  -- (ui/gen2/PackMenu.lua:820) -- ali o jogo mostra a descricao do GOLPE.
+  local mvOk, mvErro = 0, nil
+  each("move_descriptions", function(id, value)
+    local ok, err = pcall(function()
+      mod.content.moves:patch(id, { description = value })
+    end)
+    if ok then mvOk = mvOk + 1 elseif not mvErro then mvErro = err end
+  end)
+  n = n + mvOk
+  if mvErro then
+    mod.log:warn("descricao de golpe nao aplicada: %s", tostring(mvErro))
+  end
 
   mod.events:on("game.ready", function()
     mod.log:info("VersaoDourada: %d textos aplicados", n)

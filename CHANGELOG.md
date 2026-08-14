@@ -7,6 +7,29 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.43.0
+
+**As 251 descricoes de GOLPE, todas traduzidas.**  Com as 161 de item da
+0.42.0, as duas categorias de descricao estao completas.
+
+- Aparecem na tela de resumo do POKéMON (SummaryMenu.lua:604) e na bolsa
+  quando o item e uma TM ou HM -- ali o jogo mostra a descricao do GOLPE,
+  nao a do item (PackMenu.lua:820).  Por isso as 57 TM/HM ficaram de fora
+  do catalogo de item: ja sao cobertas por aqui.
+- Rota: `mod.content.moves:patch(id, { description = ... })`, dentro de
+  `pcall` com aviso no log, igual as de item.
+- Onze estouraram 18 colunas ou 2 linhas e foram REESCRITAS, nao amputadas.
+  "Sobe muito o SPCL.DEF de quem usa" virou "SPCL.DEF proprio"; o
+  "Pode falhar" do PROTECT e do DETECT saiu, porque nao cabia em duas
+  linhas e nao muda o que o jogador precisa saber.
+- Os rotulos de atributo ficam no original -- ATTACK, DEFENSE, SPEED,
+  SPECIAL, SPCL.ATK, SPCL.DEF -- porque e assim que aparecem na tela de
+  status.  HP vira PS; PP fica.
+
+Extracao: a tabela de ponteiros de golpe fica em 6d:4000 e a de item em
+6e:4000, ambas com dois bytes por indice.  Os nomes, que viram o id, estao
+em 6c:5574 (golpes) e 6c:4000 (itens).
+
 ## 0.42.0
 
 **As descricoes de ITEM entram: 161 traduzidas.**  E a primeira categoria

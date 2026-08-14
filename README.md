@@ -13,6 +13,7 @@ Pokemon Gold para o aplicativo importar.
 | Falas do jogo | 2809 |
 | Rotulos de menu e batalha | 454 |
 | Descricoes de item | 161 |
+| Descricoes de golpe | 251 |
 | Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
 
