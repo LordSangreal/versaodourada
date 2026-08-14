@@ -7,6 +7,33 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.33.0
+
+Com esta versao, **nenhum texto que o Gold desenha fica em ingles por falta
+de traducao.** O que sobra em ingles e so o que fica no original de
+proposito (golpes, POKéMON, itens, personagens, cidades) e as 109 frases
+cravadas no codigo do motor, que registro de mod nenhum alcanca.
+
+- **103 textos do motor**, o resto das chaves `Strings.source` que o
+  coletor so passou a enxergar na 0.32.0: o MOVE DELETER, o NAME RATER, o
+  Concurso de Insetos inteiro, o DAY-CARE, as 20 falas de avaliacao da
+  #DEX pelo PROF.OAK, a MOM guardando dinheiro, o estudio de fotos, as
+  trocas com NPC e a animacao delas, o aviso de esquecer golpe, o diploma
+  e a impressora.
+- **Lote 33 -- 14 falas dos bancos 60 e 61.** A varredura do projeto
+  rodava `range(0x40, 0x60)` e parava ali, entao estas nunca entraram no
+  catalogo e apareceram em ingles desde a primeira versao: o laboratorio
+  do PROF.ELM, os psiquicos do GINASIO de SAFFRON e o FIGHTING DOJO ao
+  lado, com o KARATE KING arrasado pela SABRINA.
+- Ficam de fora, de proposito, 18 rotulos de largura fixa (os carimbos do
+  estudio de fotos e as dicas de botao da impressora do UNOWN):
+  "A▶IMPRIMIR" nao cabe onde "A▶PRINT" cabe, e simbolo de genero nao e
+  palavra. Mesma regra que ja mantem PSN/BRN/PAR em ingles.
+- Rotulos de menu e batalha: 351 -> 454. Falas: 2951 -> 2965.
+- Quatro falas do lote 33 tropecaram na regra das 17 colunas na ultima
+  linha da pagina (a seta ▼ ocupa a coluna 18) e foram reescritas antes de
+  publicar.
+
 ## 0.32.0
 
 - **86 textos do motor que estavam em ingles desde a 0.1.0** -- e nao por
