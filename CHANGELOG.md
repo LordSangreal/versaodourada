@@ -7,6 +7,43 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.39.0
+
+**Lote 40 -- as ULTIMAS derivadas traduziveis.** Com esta versao nao sobra
+nenhuma fala de terceiros que se possa traduzir.
+
+- **TRAINER HOUSE de VIRIDIAN (14)** -- a casa de batalha de treino, uma
+  por dia, e o memo ilegivel que "parece rastro de ONIX".
+- **A casa do SANDSTORM na ROUTE 27 (4)** -- a TM37 e a confianca do
+  POKéMON: "Confianca e o laco que une POKéMON e treinadores."
+- **A ESTACAO do MAGNET TRAIN (6)**, a **SILPH CO. (3)**, os **IRMAOS DOS
+  DIAS DA SEMANA (3)** com a carta da MONICA e a lista dos sete, e a
+  **ROUTE 5 com o CLEANSE TAG (3)**.
+- Mais o FIGHTING DOJO, o NUGGET da ROUTE 2, o AIDE do PROF.OAK, o
+  POKéMON CHANNEL com a DJ MARY, a casa da vizinha e a casa de cura.
+- Derivadas: 191 -> 133. Falas nossas: 2775 -> 2833.
+
+### O que sao as 133 que sobraram
+
+**Nenhuma e traduzivel.** Todas sao ponteiro desalinhado:
+
+    82  endereco fora da janela 4000-7FFF de um banco
+    39  o ingles decodifica comecando no meio de uma frase
+     6  o primeiro segmento e um pedaco de palavra ("S?", "RGE",
+        "AFOAM IS-", "POKeMON")
+     4  menos de 12 letras
+     2  vazia
+
+A ROM brasileira reapontou o texto, entao o mesmo endereco nas duas ROMs
+nao e a mesma fala: o portugues publicado nessas chaves pode nem pertencer
+aquele lugar. Nao da para traduzir meia palavra.
+
+**A partir daqui o numero so cai por decisao, nao por traducao.** Ou essas
+133 chaves saem do pacote -- e a fala cai em ingles, que e o comportamento
+normal do mod para o que nao foi traduzido -- ou ficam, e o credito a
+R_Lopes e Night_Shadown fica junto. `_triagem.py` faz a separacao e agora
+reconhece tambem o primeiro segmento truncado.
+
 ## 0.38.0
 
 **Lote 39 -- 57 falas**, a periferia de KANTO e as casas de fala de JOHTO.
