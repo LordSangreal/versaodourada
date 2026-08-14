@@ -7,6 +7,24 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.43.1
+
+README refeito.  Nenhuma mudanca no texto do jogo.
+
+- A secao "o que fica no original" agora explica o PORQUE de cada decisao,
+  uma a uma: nomes de POKéMON e de golpe, nomes de item (decisao tomada em
+  jogo na 0.17.0), TM e HM ("MT29 contem o PSYCHIC" mistura duas linguas no
+  mesmo item), os rotulos de status de tres caracteres, os rotulos de
+  atributo, e a interface do aplicativo (largura fixa de botao).
+- Secao NOVA separando **decisao** de **limite**: a POKéDEX e as 109 frases
+  cravadas no motor nao sao escolha nossa, sao coisas que registro de mod
+  nenhum alcanca.  Com a nota de que na primeira geracao a POKéDEX E
+  traduzivel, e por que.
+- A lista de arquivos agora traz a contagem de cada catalogo e explica que
+  **catalogo vazio nao e catalogo faltando** -- e a decisao registrada de
+  deixar aquilo no original.
+- Terminologia oficial pt-BR listada em bloco proprio.
+
 ## 0.43.0
 
 **As 251 descricoes de GOLPE, todas traduzidas.**  Com as 161 de item da
