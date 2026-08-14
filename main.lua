@@ -57,6 +57,14 @@ return function(mod)
       n = n + 1
     end
   end
+  -- Mesmas falas de dialogue.lua, sob as chaves que o Gen2Recomped usa
+  -- (rotulo nomeado ou TEXT_S<banco>_<endereco>) em vez do ponteiro
+  -- "banco:endereco" do gen1recomp.  Chave que o motor rodando nao
+  -- reconhece fica parada no registro, sem custo -- por isso um catalogo
+  -- so serve os dois motores sem precisar de mod separado.
+  n = n + each("dialogue_gen2recomped", function(k, v)
+    mod.content.text:override(k, v)
+  end)
   n = n + each("strings", function(src, value)
     mod.content.strings:override(src, value)
   end)

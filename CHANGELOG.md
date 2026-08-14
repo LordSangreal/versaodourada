@@ -7,6 +7,64 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.44.0
+
+**O mod passa a rodar em dois motores a partir de um unico download:**
+o `gen1recomp` oficial e o [Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped),
+fork de UNDERdecodedHD com suporte a Gen 2 mais maduro. Nao e um mod
+separado -- e o mesmo `main.lua`/`manifest.json`, so com um catalogo a mais.
+
+- **Novo `lang/dialogue_gen2recomped.lua` (3217 chaves).** O Gen2Recomped
+  indexa dialogo por rotulo nomeado (`AbraText`) ou, quando nao resolve
+  rotulo, por `TEXT_S<banco>_<endereco>` -- formato diferente do ponteiro
+  `"banco:endereco"` que o `gen1recomp` usa em `lang/dialogue.lua`. O
+  `Registry:override` do motor (`src/mods/Registry.lua`) aceita qualquer
+  chave sem validar, entao a chave que o motor rodando nao reconhece so
+  fica parada, sem custo -- e o catalogo extra serve o Gen2Recomped sem
+  atrapalhar o `gen1recomp`.
+  Gerado cruzando os `data/generated/text.lua` reais dos dois motores para
+  a mesma ROM (80,7% bate direto por `TEXT_S<banco>_<endereco>`, o resto
+  por texto em ingles identico entre os dois caches). 97,4% das falas do
+  `gen1recomp` tem correspondente; as que faltam sao ponteiros que ja nem
+  aparecem na extracao atual da ferramenta, resíduo antigo.
+- Quatro rotulos escritos a mao no fim do arquivo (comentado, fora da
+  parte gerada): a saudacao e o "obrigado" da PokeMart, e as duas falas
+  da arvore de fruta -- esses tres/quatro casos leem `data.text[chave]`
+  direto, sem passar pelo catalogo `Strings`, entao so uma chave exata
+  resolve (`ShopMenu.lua:19-21`, `Gen2Commands.lua:1810,1822`).
+- **CITY, TOWN e ROUTE passam a traduzir a palavra generica, mantendo o
+  nome proprio em ingles:** "VIOLET CITY" -> "CIDADE DE VIOLET"; "ROUTE 30"
+  -> "ROTA 30"; "LAVENDER TOWN" -> "CIDADE DE LAVENDER". Decisao nova,
+  troca a que valia ate a 0.43.1 (nome de lugar todo em ingles). Aplicado
+  em 92 ocorrencias de CITY, ~32 de TOWN e 41 de ROUTE em `dialogue.lua`;
+  boa parte precisou de quebra de linha nova pra caber nas 18 colunas
+  depois que "CIDADE DE" (mais longo que "CITY"/"TOWN") entrou.
+- **65 nomes de rota/cidade do aviso de "entrando na area"** (o quadro que
+  aparece embaixo da tela ao cruzar pra uma rota ou cidade nova) agora em
+  `strings.lua`. Esse aviso nao vem do `dialogue.lua` -- vem de
+  `data.field.townMap.landmarks`, achatado (quebra de linha vira espaco) e
+  passado pra `Strings()` (`OverworldController.lua:606-616` no
+  Gen2Recomped). Ponto de interesse que nao e cidade/rota (SPROUT TOWER,
+  UNION CAVE, LAKE OF RAGE...) fica no original, fora da regra.
+- Corrigido acento sumindo/trocado no Gen2Recomped: `assets/font/latin.png`
+  tinha 16px de altura, e o motor exige minimo de 64px pra aceitar pagina
+  de fonte customizada nao-"extra" (`src/render/Font.lua`). Preenchido
+  com espaco transparente ate 128x64, glifos originais no lugar -- o
+  `gen1recomp` nao tem esse limite, entao o PNG maior nao muda nada la.
+- `["RUN"]` e `["battle|RUN"]` viraram "FUGA" (era "FUGIR"): o menu de
+  batalha desenha a caixa de acao em coordenada fixa, com 32px de sobra
+  pra esse botao -- "FUGIR" estourava a borda.
+- Seis falas novas em `strings.lua`: `BUY`/`SELL`/`QUIT` (loja), `SEEN`/
+  `OWN`/`SEARCH`/`OPTION` (Pokedex e menu inicial), `SOMEONE'S PC`
+  (versao maiuscula que o Gen2Recomped usa, além da minuscula que o
+  `gen1recomp` ja tinha), `TOSS ITEM`, `Take your time.`/`Thank you!`.
+- **Achado, nao corrigido:** a saudacao de abertura do OAK (`_OakText1`
+  a `_OakText7`) so e traduzivel no Gen2Recomped. No `gen1recomp` ela
+  carrega de `data/generated/oak_speech.lua` direto pra um campo privado
+  (`Game2.lua:877`, `self.oakSpeechData`), nunca passa por `self.data` --
+  que e o unico caminho que o registro de mod mescla. Fica documentado
+  como limite do motor.
+
 ## 0.43.1
 
 README refeito.  Nenhuma mudanca no texto do jogo.

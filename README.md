@@ -1,8 +1,10 @@
 # VersaoDourada
 
-**Pokemon Gold em portugues brasileiro** para o
-[gen1recomp](https://github.com/bryanthaboi/gen1recomp), que e uma
-recriacao nativa dos jogos em Lua/LOVE2D -- nao um emulador.
+**Pokemon Gold em portugues brasileiro**, para dois motores a partir de um
+unico download: o [gen1recomp](https://github.com/bryanthaboi/gen1recomp)
+oficial e o [Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped),
+fork de UNDERdecodedHD com suporte a Gen 2 mais maduro. Os dois sao
+recriacoes nativas dos jogos em Lua/LOVE2D -- nao emuladores.
 
 Nao acompanha nenhum byte de ROM. Voce precisa da sua propria copia de
 Pokemon Gold para o aplicativo importar.
@@ -16,8 +18,9 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 
 | O que | Quanto |
 |---|---|
-| Falas do jogo | 2809 |
-| Rotulos de menu e batalha | 454 |
+| Falas do jogo (`gen1recomp`, ponteiro de ROM) | 2815 |
+| Falas do jogo (Gen2Recomped, rotulo nomeado) | 3217 |
+| Rotulos de menu e batalha (inclui 65 de rota/cidade) | 530 |
 | Descricoes de golpe | 251 |
 | Descricoes de item | 161 |
 | Glifos acentuados desenhados | 25 |
@@ -25,6 +28,47 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 O que ainda nao foi traduzido **aparece em ingles**, nunca em branco nem
 cortado: o mod so substitui o que tem traducao pronta, entao o jogo e
 sempre jogavel.
+
+---
+
+## Dois motores, um download
+
+Nao existe um mod "versao gen1recomp" e outro "versao Gen2Recomped" --
+e o mesmo `main.lua`, o mesmo `manifest.json`, a mesma pasta. A unica
+diferenca e um catalogo extra, `lang/dialogue_gen2recomped.lua`, que
+existe porque os dois motores guardam a mesma fala sob chaves diferentes.
+
+**Por que precisa dos dois catalogos.** O `gen1recomp` indexa cada fala
+pelo ponteiro dela na ROM: `"bb:aaaa"` (banco:endereco em hex minusculo,
+calculado em `src/script/gen2/Opcodes.lua`). O Gen2Recomped indexa por
+rotulo nomeado, no estilo da propria desmontagem da pokecrystal
+(`AbraText`, `WantsToBattleText`) ou, quando nao acha rotulo, por um
+formato mecanico `TEXT_S<BANCO>_<ENDERECO>` -- o mesmo ponteiro, so
+reescrito em maiusculo sem os dois-pontos.
+
+**Por que um catalogo so nao quebra o outro motor.** O registro de
+conteudo do mod (`Registry:override`, em `src/mods/Registry.lua` -- codigo
+compartilhado pelos dois projetos) aceita qualquer string como chave, sem
+validar contra nada. Uma chave que o motor rodando nao reconhece fica
+parada na tabela, nunca lida, sem custo nem aviso. Isso significa dar pra
+`lang/dialogue.lua` (ponteiros) e `lang/dialogue_gen2recomped.lua`
+(rotulos) juntos pros dois motores, e cada um so "enxerga" as chaves que
+fazem sentido pra ele.
+
+**Como o catalogo do Gen2Recomped foi gerado.** Com a mesma ROM de Gold
+importada nos dois motores, comparando o `data/generated/text.lua` real
+que cada um extrai: 80,7% das falas bateu direto convertendo o ponteiro
+pro formato `TEXT_S<banco>_<endereco>`; o resto por comparacao de texto em
+ingles identico entre os dois caches (quando um endereco tem rotulo
+proprio, o texto em ingles la e aqui e igual, entao da pra linkar as duas
+chaves). 97,4% das 2815 falas do `gen1recomp` tem correspondente; as ~74
+que faltam ja nao aparecem na extracao atual da ferramenta -- resíduo de
+uma ROM ou versao anterior, nao relacionado ao Gen2Recomped.
+
+`lang/strings.lua` (menus e batalha, indexado pelo texto-fonte em ingles
+literal) e as descricoes de golpe/item (indexadas por ID interno, tipo
+`POTION`) ja funcionam nos dois motores sem precisar de catalogo extra --
+essas chaves nao dependem de como cada extrator numera as falas.
 
 ---
 
@@ -44,9 +88,27 @@ agravante: o nome do golpe aparece em dezenas de lugares (batalha, resumo,
 TM, tutor), e uma traducao inconsistente entre eles seria pior que o
 ingles.
 
-**Nomes de personagem e de lugar.** LANCE, JANINE, GOLDENROD CITY,
-LAKE OF RAGE. Sao topografia e elenco -- e o jogador precisa deles para se
-achar num mapa ou num guia.
+**Nomes de personagem.** LANCE, JANINE, WHITNEY. Sao elenco -- o jogador
+precisa deles pra se achar num guia.
+
+### Cidade, Rota e Vila -- a palavra generica traduz, o nome nao
+
+**VIOLET CITY** vira **CIDADE DE VIOLET**; **ROUTE 30** vira **ROTA 30**;
+**LAVENDER TOWN** vira **CIDADE DE LAVENDER**. A palavra generica (CIDADE,
+ROTA) vem antes do nome, que fica em ingles -- mesma logica dos nomes de
+personagem: o jogador ainda reconhece "VIOLET" num guia ou video, so que
+agora "cidade" e "rota" leem em portugues, que e o que da 90% do sentido
+da frase pro jogador brasileiro.
+
+Essa e uma troca da decisao anterior (ate a 0.43.1, o nome do lugar ficava
+todo em ingles, "GOLDENROD CITY"). "CIDADE DE" e mais longo que "CITY"
+sozinho, entao boa parte das ~165 ocorrencias (92 CITY, ~32 TOWN, 41
+ROUTE) precisou de quebra de linha nova pra caber nas 18 colunas -- a
+caixa aceita, mas so rola se sobrar; nao corta palavra no meio.
+
+Pontos de interesse que nao sao cidade, vila ou rota -- SPROUT TOWER,
+UNION CAVE, LAKE OF RAGE, RADIO TOWER -- ficam inteiros em ingles. A regra
+e so sobre esses tres sufixos.
 
 ### Nomes de item
 
@@ -104,25 +166,65 @@ uma versao futura nao reintroduz o problema por descuido.
 ## O que o motor nao deixa traduzir
 
 Isto **nao e decisao** -- e limite. Fica documentado para ninguem gastar
-tempo tentando.
+tempo tentando. Alguns limites sao dos dois motores; alguns sao so de um,
+porque o Gen2Recomped reescreveu a peca que travava no `gen1recomp`.
 
-**As entradas da POKéDEX (251).** A tela do Gold le
+### Nos dois motores
+
+**As entradas da POKéDEX (251), so no `gen1recomp`.** A tela le
 `data.gen2Pokedex`, uma tabela carregada direto do cache do importador, e
-nenhum registro de mod faz merge nela.
+nenhum registro de mod faz merge nela. **No Gen2Recomped isso ja nao e
+limite** -- ver secao seguinte.
 
-Curiosamente, **na primeira geracao isso funciona**: o extrator do Gen 1
-grava um *rotulo* no campo de texto e a tela o resolve contra o registro
-`text`, que qualquer mod pode sobrescrever. O Gen 2 grava a *string
-literal* dentro da propria tabela -- nao ha chave para sobrescrever. Ha mod
-de Gen 1 que traduz a POKéDEX justamente por essa rota
-([hydhyro/gen1_pt-br_mod](https://github.com/hydhyro/gen1_pt-br_mod)).
+**O prefixo "Enemy " antes do nome do POKéMON adversario.** Cinco lugares
+no Gen2Recomped fazem `"Enemy " .. nome`, concatenacao crua, sem passar
+pelo catalogo `Strings`: `BattleState.lua:452,462`,
+`EffectRegistry.lua:31`, `MoveEffects.lua:25`, `StatusRegistry.lua:15`.
+O `gen1recomp` tem o mesmo problema em Gen 1.
 
-**109 frases da batalha e dos menus.** "A critical hit!", "It's super
-effective!", as mensagens de clima, as de captura, as de usar item. Estao
-escritas direto no codigo do motor, fora de qualquer registro.
+**A barra de baixo da tela de POKéDEX.** `PAGE`/`AREA`/`CRY`/`PRNT`
+(`DexEntryMenu.lua:105`) e `SEL`/`OPTION`/`ST`/`SEARCH` sao tabelas de
+string cru, sem `Strings()` em volta.
 
-Os dois casos sao assunto para o upstream, e estao documentados com os
-caminhos de arquivo para quem quiser abrir a issue.
+**`BILL'S PC`.** Rotulo do PC depois de conhecer o BILL
+(`OverworldController.lua`, os dois motores) -- concatenacao direta, sem
+gancho.
+
+### So no `gen1recomp`
+
+**A saudacao de abertura do OAK** (`_OakText1` a `_OakText7`, a
+primeirissima fala do jogo). Carrega de `data/generated/oak_speech.lua`
+pra um campo privado, `self.oakSpeechData` (`src/core/Game2.lua:877`) --
+nunca passa por `self.data`, que e o unico lugar que o registro de mod
+mescla. Comparar com `self.data.font`, que o proprio codigo do motor
+comenta ser "o alvo do registro `font`, entao um mod que sobrescreve um
+glifo e mesclado ali": o `oakSpeechData` nao tem esse comentario porque
+nao tem esse caminho.
+
+**No Gen2Recomped essas mesmas sete falas ja traduzem** -- o
+`src/ui/OakSpeech.lua` de la le de `game.data.text`, o registro normal.
+`lang/dialogue.lua` ja carrega as sete (chave = rotulo, tipo `_OakText1`,
+nao ponteiro); funcionam nos dois motores quando o motor deixa.
+
+### 109 frases da batalha e dos menus (levantamento do `gen1recomp`)
+
+"A critical hit!", "It's super effective!", as mensagens de clima, as de
+captura, as de usar item. Estao escritas direto no codigo do motor, fora
+de qualquer registro. Nao foi reconferido item por item contra o
+Gen2Recomped -- pode ser que uma parte ja tenha gancho la, do jeito que
+"sent out"/"wants to battle" tem (ver proximo paragrafo) e "Enemy " e
+POKéDEX-menu nao tem.
+
+**Achado interessante:** varias dessas 109 -- "%s sent\nout %s!", "Wild
+%s\nappeared!" -- **ja funcionam no Gen2Recomped**, porque o fork unificou
+o codigo de batalha de Gen 1 e Gen 2 num arquivo so
+(`src/battle/BattleState.lua`), e as falas passam pelo mesmo `Strings()`
+que o Gen 1 sempre teve. No `gen1recomp`, Gen 2 tem arquivo proprio
+(`src/battle/gen2/Battle.lua`) com essas mensagens concatenadas cruas,
+sem gancho nenhum.
+
+Os casos documentados aqui sao assunto para o upstream de cada projeto, e
+estao com os caminhos de arquivo para quem quiser abrir a issue.
 
 ---
 
@@ -133,17 +235,19 @@ aos jogos com Scarlet/Violet:
 
 **Ginasio** (nao "academia") · **Lider de Ginasio** · **Treinador** ·
 **Insignia** (nao "medalha") · **Centro POKéMON** · **Bolsa** (nao
-"mochila") · **PS** para HP
+"mochila") · **PS** para HP · **Cidade de**/**Rota** para CITY/TOWN e
+ROUTE (nome proprio fica em ingles)
 
 ---
 
 ## Instalacao
 
-Precisa da versao atual do gen1recomp com Gold importado. O suporte a Gold
-e beta.
+Precisa da versao atual do `gen1recomp` **ou** do Gen2Recomped, com Gold
+importado. O suporte a Gold e beta nos dois.
 
-**Pelo catalogo do aplicativo** (recomendado -- atualiza sozinho): adicione
-este indice em *Ajustes -> indices de mod*:
+**Pelo catalogo do aplicativo** (recomendado -- atualiza sozinho; so
+funciona no `gen1recomp` por enquanto, o Gen2Recomped nao tem essa tela
+ainda). Em *Ajustes -> indices de mod*, adicione:
 
 ```
 https://raw.githubusercontent.com/LordSangreal/versaodourada/main/site/data/index.json
@@ -152,7 +256,9 @@ https://raw.githubusercontent.com/LordSangreal/versaodourada/main/site/data/inde
 Depois use *Refresh all*. O indice tem cache de 24 horas, entao e o refresh
 que traz uma versao nova na hora.
 
-**Manualmente:** baixe o zip do release e importe por *Import mod .zip*.
+**Manualmente, nos dois motores:** baixe o zip do release e importe pelo
+botao *Import mod .zip* no painel de MODS -- mesma tela, mesmo fluxo, nos
+dois aplicativos (e no desktop e no Android).
 
 Confira no gerenciador de mods que ele aparece habilitado. Se aparecer
 `ENABLED (NOT THIS GAME)`, o boot nao e de Gold.
@@ -178,27 +284,39 @@ obrigado.
 Nao foi possivel localizar os autores. Se voce e um deles e quer que este
 mod saia do ar, abra uma issue -- sai.
 
-O motor e a plataforma de mods sao de **bryanthaboi** e dos contribuidores
-do gen1recomp.
+### Os motores
+
+`gen1recomp` e de **bryanthaboi** e dos contribuidores do projeto.
+Gen2Recomped e o fork de **UNDERdecodedHD**, que trouxe o suporte a Gen 2
+que torna varios dos ganchos deste mod possiveis.
 
 ---
 
 ## Arquivos do pacote
 
 ```
-main.lua                     registra os overrides quando o jogo abre
-manifest.json                quem o mod e e para qual jogo
+main.lua                        registra os overrides quando o jogo abre
+manifest.json                   quem o mod e e para qual jogo
 
-lang/dialogue.lua            2809 falas; chave = ponteiro da ROM USA ("bb:aaaa")
-lang/strings.lua              454 textos do motor: batalha, menus, opcoes
-lang/move_descriptions.lua    251 descricoes de golpe; chave = id do golpe
-lang/item_descriptions.lua    161 descricoes de item; chave = id do item
-lang/font.lua                     a pagina de glifos que o mod acrescenta
-lang/charmap.lua               25 que sequencia de bytes desenha qual glifo
-lang/item_names.lua               vazio: nome de item fica em ingles
-lang/status_labels.lua            vazio: PSN/BRN/PAR/SLP/FRZ ficam
+lang/dialogue.lua               2815 falas; chave = ponteiro da ROM USA ("bb:aaaa"),
+                                 le nos dois motores (gen1recomp por definicao;
+                                 Gen2Recomped so nas poucas chaves nomeadas que
+                                 tambem estao aqui, como as sete do OAK)
+lang/dialogue_gen2recomped.lua  3217 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
+                                 do Gen2Recomped -- gerado, nao editar a mao
+                                 (excecao: a secao curta comentada no fim do arquivo)
+lang/strings.lua                530 textos do motor: batalha, menus, opcoes,
+                                 e os avisos de entrada em rota/cidade
+lang/move_descriptions.lua      251 descricoes de golpe; chave = id do golpe
+lang/item_descriptions.lua      161 descricoes de item; chave = id do item
+lang/font.lua                        a pagina de glifos que o mod acrescenta
+lang/charmap.lua                  25 que sequencia de bytes desenha qual glifo
+lang/item_names.lua                  vazio: nome de item fica em ingles
+lang/status_labels.lua               vazio: PSN/BRN/PAR/SLP/FRZ ficam
 
-assets/font/latin.png             os glifos acentuados, desenhados do zero
+assets/font/latin.png             os glifos acentuados, desenhados do zero;
+                                   128x64 -- a altura extra e so espaco vazio,
+                                   exigencia minima do Gen2Recomped
 ```
 
 Um catalogo vazio nao e um catalogo faltando: e a decisao registrada de
