@@ -7,6 +7,29 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.34.0
+
+Primeiro lote das falas DERIVADAS. Elas ja apareciam em portugues -- so que
+no portugues de R_Lopes e Night_Shadown. Reescreve-las do ingles e o unico
+caminho para a atribuicao do README virar um agradecimento.
+
+- **Lote 34 -- banco 5b (57 falas): o FAST SHIP S.S.AQUA inteiro.** Os dois
+  portos (OLIVINE e VERMILION) com o S.S.TICKET, o navio de ponta a ponta
+  (conves, cabines, porao, refeitorio), o marinheiro que dormia em servico
+  e o colega que pede para acha-lo, o CAPTAIN, o avo que perdeu a neta e a
+  neta que so queria brincar, as passagens dos portos e a placa do
+  MT.MOON SQUARE.
+- Derivadas: 534 -> 477. Falas nossas: 2431 -> 2488.
+- Ficam de fora 10 chaves do banco 5b: sao ponteiros desalinhados, cujo
+  ingles decodifica como pedaco de outra fala ("ll you dis-", "EPEL is a
+  neces-") ou como nada. A ROM brasileira reapontou o texto, entao o mesmo
+  endereco nas duas ROMs nao e a mesma fala, e nao da para traduzir meia
+  palavra.
+- A releitura pegou quatro erros que o conferidor aprovou: dois "Esta e sua
+  cabine" sem o ponto final (cortado para caber nas 17 colunas da ultima
+  linha), uma quebra no meio do sintagma ("a minha / neta") e um
+  "alguem. Aflito..." truncado.
+
 ## 0.33.0
 
 Com esta versao, **nenhum texto que o Gold desenha fica em ingles por falta
