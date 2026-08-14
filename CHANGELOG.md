@@ -7,6 +7,43 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.39.1
+
+Auditoria de sentido sobre as 2833 falas nossas: 22 correcoes.  Nenhuma
+fala nova -- so conserto do que ja estava publicado.
+
+**Seis frases estavam literalmente cortadas no meio**, todas no lote 31.
+O `L()` do `pt/estrutura.py` garante que a CONTAGEM de linhas bata com o
+ingles, entao a linha existia; faltava a palavra dentro dela:
+
+    "hoje nao e / segunda. Que"      -> "segunda. Triste…"
+    "Essas sao as / alegrias de"     -> "Essa e a alegria / de viajar."
+    "KANTO tem bons / programas de"  -> "programa de radio"
+    "CAVERNA do"                     -> "DIGLETT'S CAVE"
+    "vindos! DOJO de"                -> "FIGHTING DOJO"
+    "SILPH CO. / PREDIO da"          -> "PREDIO DA SEDE"
+
+**Uma fala tinha seis erros de uma vez** (53:4525, o RIVAL antes da LIGA):
+"INSIGNIAS", "destino e", "va para", "para le" no lugar de "leste", "A
+rota la e" e "pior por ter perder".
+
+**Acentos**: MUSICA, sabado (quatro vezes), INSIGNIAS (duas), "voce tambem
+e", "esta fechado", "E por que?".
+
+O `conferir.py` tinha aprovado todas: ele valida largura, separador, token
+e glifo -- nao valida se a frase termina.  A auditoria nova
+(`_erros_reais.py`) procura fala que acaba em preposicao ou artigo, que e a
+assinatura da frase cortada.
+
+### Achado que fica em aberto
+
+**26 falas nossas estao em endereco fora da janela 4000-7FFF de um banco** e
+foram publicadas assim.  Sao ponteiros desalinhados, a mesma categoria das
+133 derivadas que sobraram -- so que estas nos traduzimos, em lotes
+anteriores a triagem existir.  Algumas traduzem fragmento: 4d:9549 comeca em
+"AFARI ZONE OFFICE" (pedaco de SAFARI), 4d:d148 e so "OWN" (de TOWN),
+50:8500 traduz "onate." como "ssivo.".  Entram na mesma decisao das 133.
+
 ## 0.39.0
 
 **Lote 40 -- as ULTIMAS derivadas traduziveis.** Com esta versao nao sobra
