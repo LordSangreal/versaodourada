@@ -7,6 +7,40 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.40.0
+
+**A regra da caixa de texto mudou, por decisao do usuario: a frase tem de
+fazer sentido inteira, nem que a caixa role mais -- e palavra nao se parte.**
+
+Ate aqui a traducao tinha de ter o MESMO numero de linhas do ingles.  O
+`pt/estrutura.py` garantia isso, e foi ele que acabou com o erro de
+separador trocado.  Mas o portugues e mais longo que o ingles, e amarrar a
+contagem obrigava a espremer: foi assim que nasceram "alegrias de",
+"programas de" e "CAVERNA do", frases que simplesmente pararam no meio.
+
+O motor sempre permitiu mais: `` acrescenta uma linha na MESMA pagina e a
+caixa rola esperando A/B (`src/render/TextBox.lua:152-155`).  So a quebra de
+PAGINA (``) precisa continuar batendo com o ingles, porque e ela que marca
+a pausa em que o script espera o jogador.
+
+- **159 falas refeitas.**  Nenhuma palavra e mais partida no fim da linha:
+  "POKé-" + "MON" virou "POKéMON", "vanta-" + "gens" virou "vantagens",
+  "treinado-" + "res" virou "treinadores".  O hifen LEXICAL fica
+  ("Bem-vindos" continua "Bem-vindos"), e o "--" do ingles vira virgula.
+- **Palavra partida pela quebra de PAGINA tambem foi resolvida**, e a
+  preposicao que a regia atravessa junto: "Estatua de POKé-" / pagina /
+  "MON…" virou "Estatua" / pagina / "de POKéMON…".
+- **Zero palavras partidas e zero travessoes soltos** no catalogo inteiro.
+- Paginas que terminavam em preposicao caiu de 18 para 17 nas falas
+  refeitas -- o refluxo melhorou o corte em vez de piorar.
+
+O `conferir.py` foi atualizado junto: ele cobrava sequencia de controle
+IDENTICA a do ingles, e agora cobra so as quebras de PAGINA.
+
+A mudanca e reversivel: o texto novo mora em `pt/refluxo.py`, gerado por
+`_gerar_refluxo.py` e carregado por ultimo.  Tirar `refluxo` da lista LOTES
+devolve o texto anterior, inteiro.
+
 ## 0.39.1
 
 Auditoria de sentido sobre as 2833 falas nossas: 22 correcoes.  Nenhuma
