@@ -7,6 +7,28 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.35.0
+
+Dois lotes de derivadas de uma vez, 103 falas. Sobram 374.
+
+- **Lote 35 -- banco 59 (62 falas): VERMILION e o OAK em KANTO.** A cidade
+  inteira, o POKéMON FAN CLUB com o CHAIRMAN e a ladainha do RAPIDASH, o
+  GINASIO do LT.SURGE com a THUNDERBADGE, a casa da DAISY que escova
+  POKéMON, a casa do RED com a mae dele, e o laboratorio do OAK com o
+  e-mail do ELM.
+- **Lote 36 -- banco 5a (41 falas): a ELITE FOUR e o HALL OF FAME.** O
+  GINASIO do BROCK em PEWTER, o INDIGO PLATEAU, os quatro (WILL, KOGA,
+  BRUNO e a KAREN com o discurso sobre POKéMON forte e POKéMON fraco), o
+  LANCE mestre dos dragoes, a MARY e o PROF.OAK depois da vitoria, e o
+  registro no HALL OF FAME.
+- Derivadas: 477 -> 374. Falas nossas: 2488 -> 2591.
+- A releitura pegou onze erros que o conferidor aprovou, e a maioria foi
+  criada por COMPRESSAO DE LARGURA: encurtar a linha para caber nas 17
+  colunas da ultima linha da pagina apagou um pronome ("vai curvar" sem o
+  "se"), um "que a gente" ("nao e sempre recebe um desafio") e um "tao"
+  ("sao fortes quanto"). Quando a linha nao cabe, o certo e reescrever a
+  frase, nao amputar palavra.
+
 ## 0.34.0
 
 Primeiro lote das falas DERIVADAS. Elas ja apareciam em portugues -- so que
