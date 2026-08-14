@@ -7,6 +7,35 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.32.0
+
+- **86 textos do motor que estavam em ingles desde a 0.1.0** -- e nao por
+  falta de traducao, por falta de COLHEITA. O `colher.py` procurava os
+  sitios `Strings("...")` e `S("...")`; o motor marca uma segunda leva com
+  `Strings.source("...")`, funcao identidade que existe so para por no
+  catalogo um literal construido cedo demais para ser traduzido no lugar.
+  O regex exigia parentese logo depois de `Strings`, entao `Strings.source(`
+  nunca casou: 212 chaves ficaram de fora, 184 delas desenhadas por codigo
+  gen2 -- ou seja, em ingles na tela durante 31 versoes.
+- Entraram as de maior frequencia: os golpes de campo (CUT, SURF,
+  WATERFALL, STRENGTH, DIG, WHIRLPOOL e o aviso de INSIGNIA), a pesca
+  ("Fisgou!", "Nem uma mordida!"), o HEADBUTT nas arvores, o SWEET SCENT,
+  **a cura do CENTRO POKéMON**, o premio em dinheiro de cada batalha, o
+  dano de veneno e de queimadura, o acerto do relogio no inicio do jogo,
+  as compras da MOM, as decoracoes do quarto, a bicicleta, os itens
+  escondidos e os pedregulhos.
+- Rotulos de menu e batalha: 265 -> 351.
+- **Lote 32 resgatado.** A traducao das 158 falas do lote 32 foi ao ar na
+  0.31.0 mas nunca foi salva em `tools/pt/`: existiam so `chaves32.json` e
+  `trans32.json`, que sao a planilha em INGLES. Como o carregador de lotes
+  nao le JSON, o catalogo nao tinha essas chaves, e o primeiro rebuild
+  deixava a traducao de terceiros ganhar de novo -- 156 falas nossas
+  sumiriam sem erro nenhum, so um `git diff` denunciava. O texto foi
+  recuperado do proprio `lang/dialogue.lua` publicado e escrito em
+  `pt/dialogo_32.py`, que e onde ele devia estar desde o inicio.
+- Sem regressao: o `dialogue.lua` desta versao e identico ao da 0.31.0,
+  fala por fala. So o `strings.lua` cresceu.
+
 ## 0.31.0
 
 - **Lote 30** -- as 115 sobras dos bancos 00, 42, 43, 44, 46, 47, 49, 4a
