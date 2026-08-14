@@ -7,6 +7,30 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.38.0
+
+**Lote 39 -- 57 falas**, a periferia de KANTO e as casas de fala de JOHTO.
+
+- **A casa do MANIA (10)** -- o RIVAL rouba o POKéMON e o dono pede que voce
+  cuide do que sobrou. "Um cara da sua idade, de olhar duro e cabelo
+  comprido entrou."
+- **O MR.FUJI e a SOUL HOUSE (6)** -- os tumulos dos POKéMON que se foram.
+- **O irmao do FISHING GURU (4)** -- a SUPER ROD.
+- **A SAFARI ZONE fechada (5)** -- o WARDEN que largou tudo e foi viajar.
+- **A celebridade escondida da ROUTE 28 (2)**, o MT.SILVER, o vulcao de
+  CINNABAR, a TIN TOWER, os SLOWPOKE sumidos, a SILPH CO. e as casas de
+  fala de CHERRYGROVE e da ROUTE 30.
+- Derivadas: 248 -> 191. Falas nossas: 2718 -> 2775.
+- Cinco chaves ficaram de fora: a triagem as deixou passar, mas o ingles
+  comeca no meio de uma palavra -- 44:5f00 ("S?"), 4a:5600, 4e:5100
+  ("AFOAM IS-LANDS"), 4e:5f4d e 4f:5700 ("RGE / The Lightning American",
+  pedaco de LT.SURGE).
+- Oito linhas estouravam a caixa. Ao encurta-las eu quebrei tres frases
+  ("REPEL e coisa que voce precisa vai explorar uma caverna", "da sua era"
+  no lugar de "da sua idade", "POKeMON para ir com os do amigo" sem o verbo
+  lutar). A releitura pegou as tres. E o mesmo padrao da 0.35.0: o perigo
+  nao e escrever longo demais, e o conserto apressado depois.
+
 ## 0.37.0
 
 **Lote 38 -- 48 falas, escolhidas por FREQUENCIA.** O CABLE CLUB do segundo
