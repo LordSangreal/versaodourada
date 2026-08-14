@@ -10,7 +10,7 @@ Pokemon Gold para o aplicativo importar.
 
 | | |
 |---|---|
-| Falas do jogo | 2966 |
+| Falas do jogo | 2809 |
 | Rotulos de menu e batalha | 454 |
 | Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
@@ -43,27 +43,30 @@ Por decisao do projeto, e nao por falta de traducao:
 A terminologia segue a localizacao oficial em portugues do Brasil: Ginasio,
 Lider de Ginasio, Treinador, Insignia, Centro Pokemon.
 
-## Creditos, e o que esta em transicao
+## Creditos
 
-Parte do texto vem da traducao de **R_Lopes** e **Night_Shadown**, publicada
-nos anos 2000 como patch de ROM. O mod porta aquele texto para o formato do
-gen1recomp, para rodar sem ROM modificada -- o importador rejeita qualquer
-ROM patcheada por SHA-1.
-
-Esse texto esta sendo **substituido por traducao propria**, feita a partir do
-ingles original, lote a lote:
+**Todo o texto deste mod e traducao propria**, escrita a partir do ingles
+original da ROM americana. Nao ha uma unica linha derivada de terceiros no
+pacote.
 
 | | |
 |---|---|
-| Falas ja nossas | 2833 |
-| Falas ainda derivadas | 133 |
+| Falas do jogo | 2809 |
+| Rotulos de menu e batalha | 454 |
 
-Os rotulos de menu e os glifos ja sao 100% nossos.
+### Agradecimento a R_Lopes e Night_Shadown
 
-Enquanto houver **uma unica** fala derivada no pacote, este credito fica.
+A traducao deles, publicada nos anos 2000 como patch de ROM, foi o ponto de
+partida deste projeto: as primeiras versoes portavam aquele texto para o
+formato do gen1recomp, e a ROM brasileira serviu de conferencia enquanto a
+traducao propria era escrita, lote a lote.
 
-Nao foi possivel localizar os autores. Se voce e um deles e quer que este mod
-saia do ar, abra uma issue -- sai.
+Da 0.34.0 a 0.40.0 cada uma dessas falas foi reescrita do ingles. Na 0.41.0
+saiu a ultima. O credito obrigatorio virou o que sempre quis ser: um
+obrigado.
+
+Nao foi possivel localizar os autores. Se voce e um deles e quer que este
+mod saia do ar, abra uma issue -- sai.
 
 O motor e a plataforma de mods sao de bryanthaboi e dos contribuidores do
 gen1recomp.

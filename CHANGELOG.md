@@ -7,6 +7,35 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.41.0
+
+**ZERO FALAS DERIVADAS.  O credito virou agradecimento.**
+
+Todo o texto do pacote e traducao propria, escrita do ingles original da ROM
+americana.  Nao ha uma unica linha de terceiros.
+
+- **157 chaves de ponteiro desalinhado sairam do pacote.**  Nao eram
+  traduziveis e nunca deveriam ter sido publicadas: 108 com endereco fora da
+  janela 0x4000-0x7FFF de um banco, 39 cujo ingles decodifica comecando no
+  meio de uma frase, 6 com o primeiro segmento truncado, 2 palavras soltas
+  ("Inside", "HBADGE.") e 2 vazias.  Dessas, **26 eram traducao NOSSA** --
+  feitas em lotes anteriores a triagem existir, e traduziam fragmento
+  ("AFARI ZONE OFFICE", "OWN", "onate." -> "ssivo.").
+- Publicar override num ponteiro desses e pior do que nao publicar: sem
+  override o jogo mostra o texto ORIGINAL, que e o comportamento normal do
+  mod para tudo que nao foi traduzido.
+- **As duas ultimas falas de verdade que ainda vinham de terceiros** foram
+  traduzidas: 53:5ce1 ("Obrigado, senhor!") e 5d:51a6 ("Obrigado!").
+- O filtro novo (`ponteiro_ruim` em build_mod.py) aplica o teste da JANELA a
+  todo mundo, mas os testes de FRAGMENTO so a fala derivada.  Numa fala
+  nossa eles dao falso positivo -- "What?", "OK, then!" e "……" sao inicios
+  legitimos e curtos, e a primeira versao do filtro apagou 177 traducoes
+  boas antes de eu perceber.
+- README e manifest reescritos: a secao "Creditos, e o que esta em
+  transicao" virou "Agradecimento a R_Lopes e Night_Shadown".
+
+Falas do pacote: 2809, todas nossas.  Rotulos de menu e batalha: 454.
+
 ## 0.40.0
 
 **A regra da caixa de texto mudou, por decisao do usuario: a frase tem de
