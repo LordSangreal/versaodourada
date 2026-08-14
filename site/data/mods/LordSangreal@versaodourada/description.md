@@ -4,9 +4,9 @@ Pokemon Gold em portugues brasileiro.
 
 | | |
 |---|---|
-| Falas do jogo | 1972 |
-| Menus, batalha e launcher | 358 |
-| Nomes de item | 68 |
+| Falas do jogo | 2951 |
+| Rotulos de menu e batalha | 265 |
+| Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
 
 Acentuacao completa: a fonte da ROM so tem tres caracteres acentuados, entao
@@ -32,7 +32,7 @@ nos anos 2000 como patch de ROM. Este mod a porta para o formato do
 gen1recomp, para rodar sem ROM modificada.
 
 Esse texto esta sendo substituido por traducao propria, feita a partir do
-ingles original, lote a lote -- 87 falas ja sao nossas, 1885 ainda nao.
+ingles original, lote a lote -- 2419 falas ja sao nossas, 532 ainda nao.
 Os menus, os itens e os glifos ja sao 100% proprios. Enquanto houver uma
 unica fala derivada, este credito fica.
 

@@ -10,13 +10,13 @@ Pokemon Gold para o aplicativo importar.
 
 | | |
 |---|---|
-| Falas do jogo | 2950 |
+| Falas do jogo | 2951 |
 | Rotulos de menu e batalha | 265 |
 | Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
 
 O que ainda nao foi traduzido aparece em ingles, entao o jogo e sempre
-jogavel. `python tools/progresso.py` mostra o estado atual.
+jogavel.
 
 ## O que fica no original
 
@@ -41,8 +41,7 @@ Por decisao do projeto, e nao por falta de traducao:
   traduzida, porque ali a largura e conhecida e eu controlo a quebra
 
 A terminologia segue a localizacao oficial em portugues do Brasil: Ginasio,
-Lider de Ginasio, Treinador, Insignia, Centro Pokemon. Ver `GLOSSARIO.md`,
-que tambem registra o que deliberadamente nao muda.
+Lider de Ginasio, Treinador, Insignia, Centro Pokemon.
 
 ## Creditos, e o que esta em transicao
 
@@ -56,14 +55,12 @@ ingles original, lote a lote:
 
 | | |
 |---|---|
-| Falas ja nossas | 1900 |
-| Falas ainda derivadas | 1050 |
+| Falas ja nossas | 2419 |
+| Falas ainda derivadas | 532 |
 
 Os rotulos de menu e os glifos ja sao 100% nossos.
 
 Enquanto houver **uma unica** fala derivada no pacote, este credito fica.
-`tools/progresso.py` transforma "ja da para tirar?" numa pergunta com
-resposta verificavel.
 
 Nao foi possivel localizar os autores. Se voce e um deles e quer que este mod
 saia do ar, abra uma issue -- sai.
@@ -90,38 +87,15 @@ que traz uma versao nova na hora.
 Confira no gerenciador de mods que ele aparece habilitado. Se aparecer
 `ENABLED (NOT THIS GAME)`, o boot nao e de Gold.
 
-## Para quem for mexer
-
-Leia **`CONTINUAR.md`** primeiro. E o documento de passagem de bastao:
-as tres restricoes que mandam no projeto, as armadilhas do manifest, os
-bytes que a traducao BR reaproveitou, e o passo a passo do proximo lote.
-
+## Arquivos do pacote
 
 ```
-lang/dialogue.lua   gerado; chave = ponteiro da ROM USA ("bb:aaaa")
-lang/strings.lua    gerado; chave = a string em ingles do motor
-lang/font.lua       a pagina de glifos que o mod acrescenta
-assets/font/        os glifos acentuados, desenhados do zero
-
-tools/pt/           traducao propria, por lote -- e aqui que se escreve
-tools/glifos.py     desenha a pagina de glifos, em arte ASCII conferivel
-tools/lote.py       extrai o ingles de um lote para traduzir
-tools/conferir.py   compara a traducao propria com o ingles
-tools/validar.py    QA do catalogo publicado
-tools/glossario.py  terminologia, sem estourar as 18 colunas
-tools/progresso.py  quanto ja e nosso
-tools/walk.py       percorre os scripts das duas ROMs em passo travado
-tools/entradas.py   pontos de entrada, respeitando o que nao e bytecode
+main.lua             registra os overrides quando o jogo abre
+manifest.json        quem o mod e e para qual jogo
+lang/dialogue.lua    falas do jogo, chave = ponteiro da ROM USA ("bb:aaaa")
+lang/strings.lua     texto do motor: batalha, menus, opcoes
+lang/font.lua        a pagina de glifos que o mod acrescenta
+lang/item_names.lua  nomes de item (vazio = usa o nome da ROM)
+lang/status_labels.lua  rotulos de status
+assets/font/         os glifos acentuados, desenhados do zero
 ```
-
-Tres restricoes mandam em tudo:
-
-**A caixa tem 18 colunas e 2 linhas.** Uma traducao mais fiel que nao cabe e
-pior que uma mais curta que cabe.
-
-**A ultima linha de cada pagina cabe 17.** A seta de "aperte A" e desenhada
-no canto inferior direito e ocupa a 18a coluna.
-
-**Os codigos de controle sao parte do texto.** `\n`, `\v` e `\f` sao quebra
-de linha, rolagem e quebra de pagina; perder um embaralha a caixa sem dar
-erro nenhum. `tools/conferir.py` existe por causa disso.

@@ -7,6 +7,22 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.31.0
+
+- **Lote 30** -- as 115 sobras dos bancos 00, 42, 43, 44, 46, 47, 49, 4a
+  e 4b: a SPROUT TOWER e o ELDER, o RIVAL no caminho, os caçadores de
+  insetos da rota 36, as RUINS DE ALPH e o UNOWN, o farol do AMPHY com a
+  JASMINE, o RADIO TOWER e o DIRECTOR, o KARATE KING e o TYROGUE, a
+  CLAIR e o RISINGBADGE, o SANTUÁRIO DRAGÃO e os sinais de KANTO/JOHTO.
+- **Lote 31** -- as 153 derivadas dos bancos 4c, 4d, 4e e 4f: o SUNNY e
+  a MONICA e as placas das rotas, PEWTER e VIRIDIAN e o diálogo do BLUE,
+  o GINÁSIO fantasma de VIRIDIAN, o vereador, CINNABAR, a CELADON, e as
+  cidades de Kanto com o LT.SURGE, a MISTY, a SABRINA e a ERIKA.
+- **Lote 32** -- as 158 derivadas dos bancos 50, 53, 54, 55 e 56: falas
+  de KANTO com a MISTY e o EARL, o POWER PLANT, e o Bug-Catching Contest
+  com suas placas e regras.
+- 2419 falas proprias; 532 derivadas.
+
 ## 0.30.0
 
 - **Lote 29** -- as 93 derivadas do banco 57: a bicicletaria de
