@@ -7,6 +7,41 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.37.0
+
+**Lote 38 -- 48 falas, escolhidas por FREQUENCIA.** O CABLE CLUB do segundo
+andar aparece em TODO CENTRO POKéMON das duas regioes: era o texto de maior
+trafego que ainda vinha de terceiros.
+
+- **CABLE CLUB (21)** -- COLOSSEUM, TRADE CENTER e TIME CAPSULE, os avisos
+  de conexao ("A conexao foi fechada por falta de atividade"), as recusas
+  de troca e o presente do balconista.
+- **CIANWOOD (12)** -- a FARMACIA com a SECRETPOTION, que e linha
+  principal: o remedio do POKéMON do LIGHTHOUSE. Mais o estudio de fotos,
+  a casa que fala do LUGIA nas quatro ilhas e o CENTRO.
+- **Centros de KANTO (15)** -- FUCHSIA, LAVENDER, VIRIDIAN e SAFFRON, quase
+  todos comentando a POWER PLANT parada e o ROCK TUNNEL.
+- Derivadas: 296 -> 248. Falas nossas: 2670 -> 2718.
+- A releitura pegou uma que quebrava a frase: "da para ve-la voce tiver uma
+  SILVER WING" tinha perdido o "se" ao caber nas 17 colunas.
+
+### TRIAGEM: quanto falta de verdade
+
+Das 296 derivadas que restavam antes deste lote, so **166 sao
+traduziveis**. As outras 130 sao ponteiro desalinhado:
+
+    82  endereco fora da janela 4000-7FFF de um banco
+    39  o ingles decodifica comecando no meio de uma frase
+     7  menos de 12 letras
+     2  vazia
+
+Nao da para traduzir meia palavra, e a ROM brasileira reapontou o texto, de
+modo que o mesmo endereco nas duas ROMs nao e a mesma fala. **Zerar a
+contagem de derivadas exige uma decisao sobre essas 130**, nao mais
+traducao: ou saem do pacote (e a fala cai em ingles, que e o comportamento
+normal do mod para o que nao foi traduzido), ou ficam e o credito fica
+junto. `_triagem.py` faz essa separacao.
+
 ## 0.36.0
 
 **Lote 37 -- 79 falas escolhidas por MAPA, nao por banco: so linha
