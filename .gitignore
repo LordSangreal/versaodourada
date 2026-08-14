@@ -1,10 +1,2 @@
-*.gbc
-*.7z
 *.zip
-dialogo.json
 __pycache__/
-repo/
-tools/planilha-*.py
-temp_*.py
-tools/versaodourada/
-
