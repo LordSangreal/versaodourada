@@ -7,6 +7,43 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.36.0
+
+**Lote 37 -- 79 falas escolhidas por MAPA, nao por banco: so linha
+principal.** Sao as falas que o jogador nao tem como pular.
+
+- **MR.POKéMON e o PROF.OAK (14)** -- a abertura do jogo. O MYSTERY EGG, o
+  OAK aparecendo na casa do MR.POKéMON, a entrega da POKéDEX, e a troca do
+  GYARADOS vermelho pelo EXP.SHARE.
+- **GINASIO de FUCHSIA (18)** -- a JANINE, as sosias que se passam por ela
+  e a SOULBADGE.
+- **GINASIO de SAFFRON (7)** -- a SABRINA, a visao de tres anos atras e a
+  MARSHBADGE.
+- **GINASIO de VIRIDIAN (7)** -- o BLUE e a EARTHBADGE.
+- **Portao da VICTORY ROAD (5)** -- a conferencia das oito INSIGNIAS.
+- **RADIO TOWER de LAVENDER (8)** -- o EXPN CARD, que so vem depois de
+  resolver a POWER PLANT.
+- **A COPYCAT (13)** -- a POKé DOLL trocada pelo MAGNET TRAIN PASS.
+- **A ESTACAO do MAGNET TRAIN em SAFFRON (7)** -- a SILPH CO., o PASS e a
+  explicacao dos imas.
+- Derivadas: 374 -> 296. Falas nossas: 2591 -> 2670.
+- Catorze linhas estouraram as 17 colunas da ultima linha da pagina e foram
+  REESCRITAS, nao amputadas -- que e a licao da 0.35.0. Ainda assim a
+  releitura pegou duas: um ponto final que cortava a frase no meio ("Muita
+  gente aqui trabalha duro." e a pagina seguinte continuava com "na RADIO
+  TOWER" pendurada) e uma pergunta que perdeu o ponto de interrogacao.
+- Duas falas curtas ("Te enganei! Hahaha!" e "Ooh... Eu perdi...") sairam
+  identicas a versao de terceiros. Nao e copia: a planilha do
+  `derivadas.py` imprime SO o ingles. Em frase curta so existe uma traducao
+  natural, e a convergencia e esperada.
+- As sete falas da ESTACAO vieram de um lote paralelo que outra sessao
+  havia escrito. Das 65 chaves daquele lote, 47 SOBRESCREVIAM traducao
+  nossa ja verificada (abreviando "RADIO TOWER" para "R. TOWER",
+  traduzindo o nome DIRECTOR, perdendo a palavra "senhas"), 10 repetiam
+  este lote e 12 linhas estouravam a caixa; 21 falas usavam "..." em vez do
+  glifo. So oito chaves eram novas, e uma delas era ponteiro desalinhado.
+  As sete restantes foram RETRADUZIDAS do ingles aqui.
+
 ## 0.35.0
 
 Dois lotes de derivadas de uma vez, 103 falas. Sobram 374.
