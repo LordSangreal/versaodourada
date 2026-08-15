@@ -1,13 +1,14 @@
 {
   "id": "versaodourada",
-  "name": "VersaoDourada",
-  "version": "0.44.1",
+  "name": "Versao Dourada/Cristal",
+  "version": "0.45.0",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
   "category": "LANGUAGE",
   "games": [
-    "gold"
+    "gold",
+    "crystal"
   ],
   "game_version": ">=0.0.0-0 <2.0.0",
   "language": true,
@@ -16,5 +17,5 @@
   "optional_dependencies": [],
   "conflicts": [],
   "github": "LordSangreal/versaodourada",
-  "description": "Portugues brasileiro para Pokemon Gold. Traducao propria, escrita do ingles original. Golpes, Pokemon, itens, TM e HM ficam no original."
+  "description": "Portugues brasileiro para Pokemon Gold e Crystal. Traducao propria, escrita do ingles original. Golpes, Pokemon, itens, TM e HM ficam no original."
 }

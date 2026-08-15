@@ -7,6 +7,69 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.45.0
+
+**O Crystal deixa de ser só "roda no mesmo motor" e passa a ter tradução
+própria, completa.** Até a 0.44.1 o `lang/dialogue_gen2recomped.lua` era
+majoritariamente o catálogo do Gold com o crosswalk de rótulo -- servia o
+Crystal só onde o texto batia com o Gold. Esta versão percorre o Crystal
+**na ordem em que o jogador realmente encontra o jogo**, mapa por mapa,
+desde New Bark Town até o Hall of Fame, e resolve o conteúdo que só existe
+no Crystal (ou que diverge do Gold sob o mesmo rótulo).
+
+- **~1400 falas novas em `lang/dialogue_gen2recomped.lua`** (3217 -> 7614
+  chaves), cobrindo:
+  - A campanha inteira do Crystal na ordem do jogo: Cherrygrove, Violet,
+    Union Cave, Azalea/Ilex Forest, Goldenrod, Ecruteak, Olivine, Cianwood,
+    Mahogany/Lake of Rage, Blackthorn/Dragon's Den, Victory Road, Elite
+    Four e Hall of Fame.
+  - A sequência exclusiva do Crystal do BUENA/PASSWORD na Radio Tower, a
+    provação da CLAIR pela RISING BADGE na Dragon Shrine (pergunta do
+    ancião, DRATINI de recompensa -- no Gold ela só entrega a badge), e o
+    arco da lenda do HO-OH/SUICUNE/ENTEI/RAIKOU (Burned Tower, Tin Tower,
+    Wise Trios Room).
+  - **Todas as 170 falas de treinador que faltavam** (antes/depois da
+    batalha, derrota) -- achadas num sistema separado do diálogo por mapa
+    (`trainer_headers.lua`, rótulos `_SEEN`/`_BEATEN`/`_AFTER`), incluindo
+    os guardiões da Wise Trios Room e mais 4 treinadores da Dragon's Den.
+  - Ruins of Alph (quebra-cabeça do UNOWN, as 4 câmaras, Research Center),
+    Day Care/criação de ovos (nunca tinha sido traduzido), Battle Tower,
+    a sub-trama da bola misteriosa do KURT, e o sistema Mobile
+    Adapter/POKéCOM Admin Office.
+  - Onde Gold e Crystal têm conteúdo **diferente** sob o mesmo rótulo
+    (achado em ~4 casos, ex.: os objetos do quarto do jogador), a versão
+    usada agora é sempre a do Crystal -- risco documentado: o Gold pode
+    mostrar, nesses poucos rótulos específicos, texto pensado pro Crystal.
+  - Uma auditoria final (cruzando todo `text_pointers.lua` +
+    `trainer_headers.lua` do Crystal contra o catálogo) fechou em **99,4%
+    de cobertura real** -- o resto é grito de espécie ("MACHOKE: Maaacho!"),
+    texto em bytecode do motor (parte da Day Care) e onomatopeia idêntica
+    em português, que não precisam de chave.
+- **112 textos novos de combate e menu em `lang/strings.lua`** (530 ->
+  645), achados vasculhando todo `Strings("...")` chamado no código-fonte
+  dos dois motores (extraído do `.exe` fundido de cada um): efetividade de
+  tipo, SUBSTITUTE, mensagens de HM de campo, Safari Zone, Slot Machine,
+  Card Flip, PC/Trainer Card/Summary, criação de personagem, Hall of Fame,
+  Cable Club. Ficou de fora de propósito a interface do launcher/mod
+  manager/importador de ROM -- não é o jogo em si -- e nomes de golpe, que
+  seguem a decisão de ficar em inglês.
+- **Rótulos de atributo na tela de status agora traduzem** -- decisão
+  revertida da 0.44.1 (ver seção própria no README). Sugestão de nomenclatura
+  de **Hyd**: ATTACK -> ATAQUE, DEFENSE -> DEFESA, SPCL.ATK -> ESP.ATQ,
+  SPCL.DEF -> ESP.DEF, SPECIAL -> ESP., SPEED -> VELOC. `EXP POINTS` (->
+  PTS. EXP) e `LEVEL UP` (-> PRÓX. NV.) também encurtados: essa tela
+  desenha rótulo e valor em **linhas separadas** (não na mesma linha como
+  parecia à primeira vista), então a folga real é até a borda da tela --
+  9 a 10 caracteres dependendo do local, não os 5-6 que o cálculo errado
+  inicial sugeria. `HP` -> `PS` (sigla oficial pt-BR); `PP` fica.
+- **Corrigido bug crítico de sintaxe** em `dialogue_gen2recomped.lua`:
+  um script de lote anterior (`.replace("}", ...)` num marcador que tinha
+  um `}` dentro de `{RAM:D099}`) deixou uma string sem fechar, quebrando a
+  sintaxe Lua do arquivo a partir daquele ponto -- o motor provavelmente
+  falhava ao carregar o catálogo inteiro. Corrigido e verificado com um
+  validador dedicado (não deixa mais passar aspas sem fechar).
+- `games` no `manifest.json` passa a listar `crystal` além de `gold`.
+
 ## 0.44.1
 
 - `["5e:690a"]` tinha "LAVANDA" em vez de "LAVENDER" -- nome proprio

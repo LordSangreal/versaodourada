@@ -1,13 +1,14 @@
-# VersaoDourada
+# Versao Dourada/Cristal
 
-**Pokemon Gold em portugues brasileiro**, para dois motores a partir de um
-unico download: o [gen1recomp](https://github.com/bryanthaboi/gen1recomp)
-oficial e o [Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped),
-fork de UNDERdecodedHD com suporte a Gen 2 mais maduro. Os dois sao
-recriacoes nativas dos jogos em Lua/LOVE2D -- nao emuladores.
+**Pokemon Gold e Crystal em portugues brasileiro**, para dois motores a
+partir de um unico download: o
+[gen1recomp](https://github.com/bryanthaboi/gen1recomp) oficial (so Gold)
+e o [Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped), fork de
+UNDERdecodedHD com suporte a Gen 2 mais maduro (Gold e Crystal). Os dois
+sao recriacoes nativas dos jogos em Lua/LOVE2D -- nao emuladores.
 
 Nao acompanha nenhum byte de ROM. Voce precisa da sua propria copia de
-Pokemon Gold para o aplicativo importar.
+Pokemon Gold ou Crystal para o aplicativo importar.
 
 **Todo o texto e traducao propria, escrita a partir do ingles original.**
 Nao ha uma unica linha derivada de outra traducao no pacote.
@@ -16,11 +17,28 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 
 ## Estado
 
+Cobertura real (falas com conteudo de fato -- fora placeholder generico do
+motor, grito de especie e afins) por jogo e motor:
+
+| Jogo / motor | Cobertura |
+|---|---|
+| Crystal, Gen2Recomped | **99,4%** |
+| Gold, Gen2Recomped | **99,4%** |
+| Gold, `gen1recomp` | **88,0%** |
+
+O Crystal recebeu uma passada completa "na ordem do jogo" nesta versao
+(0.45.0): do inicio em New Bark Town ate o Hall of Fame, mais Ruins of
+Alph, Day Care, Battle Tower e as 170 falas de treinador que faltavam.
+O `gen1recomp` fica pra tras porque usa um catalogo proprio, indexado por
+ponteiro de ROM (`lang/dialogue.lua`) -- o trabalho desta versao foi todo
+no catalogo do Gen2Recomped (`lang/dialogue_gen2recomped.lua`), que serve
+Gold e Crystal nesse motor mas nao alimenta o `gen1recomp` de volta.
+
 | O que | Quanto |
 |---|---|
 | Falas do jogo (`gen1recomp`, ponteiro de ROM) | 2815 |
-| Falas do jogo (Gen2Recomped, rotulo nomeado) | 3217 |
-| Rotulos de menu e batalha (inclui 65 de rota/cidade) | 530 |
+| Falas do jogo (Gen2Recomped, rotulo nomeado) | 7614 |
+| Rotulos de menu e batalha (inclui 65 de rota/cidade) | 645 |
 | Descricoes de golpe | 251 |
 | Descricoes de item | 161 |
 | Glifos acentuados desenhados | 25 |
@@ -139,10 +157,17 @@ veneno fere BULBASAUR!" -- e essa esta em portugues.
 
 ### Rotulos de atributo
 
-ATTACK, DEFENSE, SPEED, SPECIAL, SPCL.ATK, SPCL.DEF ficam, porque e assim
-que aparecem na tela de status. Traduzir so a descricao do golpe deixaria
-duas linguas na mesma tela: "Ataque que pode baixar o SPCL.DEF" ao lado de
-uma tabela que diz SPCL.DEF.
+**Traduzidos a partir da 0.45.0** (decisao anterior, ate a 0.44.1, era
+manter em ingles). Nomenclatura sugerida por **Hyd**: ATTACK -> ATAQUE,
+DEFENSE -> DEFESA, SPCL.ATK -> ESP.ATQ, SPCL.DEF -> ESP.DEF, SPECIAL ->
+ESP., SPEED -> VELOC.
+
+A tela de status desenha o rotulo e o valor numerico em **linhas
+separadas** (rotulo em cima, valor alinhado a direita 8px abaixo) -- a
+folga real de um rotulo e ate a borda da caixa/tela, no geral 9 a 10
+caracteres, nao os 5-6 que um primeiro calculo (errado) sugeriu. E por
+isso que "VELOCIDADE" por extenso estourava a caixa mas "VELOC." cabe com
+folga.
 
 **HP e a excecao:** vira **PS**, que e a sigla oficial em portugues do
 Brasil. PP fica, porque nao tem sigla consagrada em portugues.
@@ -247,7 +272,8 @@ aos jogos com Scarlet/Violet:
 **Ginasio** (nao "academia") · **Lider de Ginasio** · **Treinador** ·
 **Insignia** (nao "medalha") · **Centro POKéMON** · **Bolsa** (nao
 "mochila") · **PS** para HP · **Cidade de**/**Rota** para CITY/TOWN e
-ROUTE (nome proprio fica em ingles)
+ROUTE (nome proprio fica em ingles) · **Ataque/Defesa/Esp.Atq/Esp.Def/
+Veloc.** para os atributos na tela de status
 
 ---
 
@@ -301,6 +327,11 @@ mod saia do ar, abra uma issue -- sai.
 Gen2Recomped e o fork de **UNDERdecodedHD**, que trouxe o suporte a Gen 2
 que torna varios dos ganchos deste mod possiveis.
 
+### Contribuicoes
+
+**Hyd** sugeriu a nomenclatura dos rotulos de atributo na tela de status
+(ATAQUE, DEFESA, ESP.ATQ, ESP.DEF, VELOC.) que entrou na 0.45.0.
+
 ---
 
 ## Arquivos do pacote
@@ -313,11 +344,13 @@ lang/dialogue.lua               2815 falas; chave = ponteiro da ROM USA ("bb:aaa
                                  le nos dois motores (gen1recomp por definicao;
                                  Gen2Recomped so nas poucas chaves nomeadas que
                                  tambem estao aqui, como as sete do OAK)
-lang/dialogue_gen2recomped.lua  3217 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
+lang/dialogue_gen2recomped.lua  7614 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
                                  do Gen2Recomped -- gerado, nao editar a mao
-                                 (excecao: a secao curta comentada no fim do arquivo)
-lang/strings.lua                530 textos do motor: batalha, menus, opcoes,
-                                 e os avisos de entrada em rota/cidade
+                                 (excecao: as secoes comentadas no fim do arquivo,
+                                 escritas a mao com a passada completa do Crystal)
+lang/strings.lua                645 textos do motor: batalha, menus, opcoes,
+                                 os avisos de entrada em rota/cidade, e os
+                                 rotulos de atributo da tela de status
 lang/move_descriptions.lua      251 descricoes de golpe; chave = id do golpe
 lang/item_descriptions.lua      161 descricoes de item; chave = id do item
 lang/font.lua                        a pagina de glifos que o mod acrescenta
