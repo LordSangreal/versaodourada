@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T20:50:06Z",
+  "generated_at": "2026-08-15T21:13:44Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.46.0",
+      "version": "0.46.1",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.46.0",
-        "tag": "v0.46.0",
-        "name": "Versao Dourada 0.46.0 -- Crystal sai para repositorio proprio",
+        "version": "0.46.1",
+        "tag": "v0.46.1",
+        "name": "Versao Dourada 0.46.1 -- alias de mapa",
         "prerelease": false,
-        "published_at": "2026-08-15T20:50:06Z",
+        "published_at": "2026-08-15T21:13:44Z",
         "zip": {
-          "name": "versaodourada-0.46.0.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.46.0/versaodourada-0.46.0.zip",
-          "size": 420067
+          "name": "versaodourada-0.46.1.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.46.1/versaodourada-0.46.1.zip",
+          "size": 424266
         }
       },
       "update_check": "ok"
