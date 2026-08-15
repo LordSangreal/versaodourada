@@ -7456,4 +7456,20 @@ return {
   ["TEXT_VIRIDIAN_GYM_BG_001"] = "LÍDER: {STRBUF}\fTREINADORES QUE\nVENCERAM: {PLAYER}",
   ["TEXT_VIRIDIAN_GYM_BG_002"] = "LÍDER: {STRBUF}\fTREINADORES QUE\nVENCERAM: {PLAYER}",
   ["TrainerHouseB1FYourOpponentIsText"] = "{STRBUF} é o seu\nadversário hoje.",
+
+  -- Alias TEXT_S<banco>_<endereco>: quando o extrator nao resolve um
+  -- rotulo nomeado pra um ponteiro, ele grava a fala sob essa forma
+  -- mecanica, e Data:resolveText busca por ela.  Sem estas chaves o
+  -- NPC/placa caia no ingles mesmo com a fala traduzida.  Gerado do
+  -- cache DESTE jogo -- o endereco muda entre Gold e Crystal.
+  ["TEXT_S43_44A7"] = "O-o quê?",
+  ["TEXT_S44_4BA0"] = "O POKéDEX de\n{PLAYER} foi\vatualizado.",
+  ["TEXT_S44_64A1"] = "Argh!\nEu perco!",
+  ["TEXT_S4A_4C39"] = "Piu!",
+  ["TEXT_S4A_5B87"] = "Aaaah…",
+  ["TEXT_S4D_52B1"] = "Aaaargh!",
+  ["TEXT_S55_445E"] = "FARFETCH'D: Kwaa!",
+  ["TEXT_S56_6172"] = "POKéMON de\n{PLAYER} ficaram\vcom o HELPER.",
+  ["TEXT_S5B_4310"] = "O FAST SHIP vai\nzarpar segunda.",
+  ["TEXT_S5F_4B57"] = "Eu perdi…\nDroga…",
 }

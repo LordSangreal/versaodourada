@@ -7,6 +7,19 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.46.2
+
+**+10 alias `TEXT_S<banco>_<endereco>`** que faltavam
+(7443 -> 7453 chaves).
+
+Mesma classe de problema descrita na
+[versaocristal-ptbr 0.46.2](https://github.com/LordSangreal/versaocristal-ptbr/blob/main/CHANGELOG.md):
+quando o extrator nao resolve um rotulo nomeado, `Data:resolveText` busca a
+fala pela forma mecanica `TEXT_S<BANCO>_<ENDERECO>`. O catalogo do Gold ja
+tinha 2267 dessas chaves (herdadas do crosswalk da 0.44.0, feito em cima
+dos enderecos do Gold), entao aqui o buraco era pequeno -- no Crystal eram
+2 de 3237.
+
 ## 0.46.1
 
 **Mesma correcao da `versaocristal-ptbr` 0.46.1, do lado do Gold.**

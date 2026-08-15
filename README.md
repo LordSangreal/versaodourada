@@ -32,7 +32,7 @@ motor, grito de especie e afins):
 | O que | Quanto |
 |---|---|
 | Falas do jogo (`gen1recomp`, ponteiro de ROM) | 3074 |
-| Falas do jogo (Gen2Recomped, rotulo nomeado) | 7443 |
+| Falas do jogo (Gen2Recomped, rotulo nomeado) | 7453 |
 | Rotulos de menu e batalha (inclui 65 de rota/cidade) | 645 |
 | Descricoes de golpe | 251 |
 | Descricoes de item | 161 |
@@ -382,7 +382,7 @@ lang/dialogue.lua               3074 falas; chave = ponteiro da ROM USA ("bb:aaa
                                  le nos dois motores (gen1recomp por definicao;
                                  Gen2Recomped so nas poucas chaves nomeadas que
                                  tambem estao aqui, como as sete do OAK)
-lang/dialogue_gen2recomped.lua  7443 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
+lang/dialogue_gen2recomped.lua  7453 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
                                  do Gen2Recomped -- so as chaves que a extracao
                                  do Gold usa (o Crystal tem repositorio proprio)
 lang/strings.lua                645 textos do motor: batalha, menus, opcoes,

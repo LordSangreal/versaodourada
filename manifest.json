@@ -1,7 +1,7 @@
 {
   "id": "versaodourada",
   "name": "Versao Dourada",
-  "version": "0.46.1",
+  "version": "0.46.2",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
