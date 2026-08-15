@@ -1,19 +1,22 @@
-# Versao Dourada/Cristal
+# Versao Dourada
 
-Pokemon Gold e Crystal em portugues brasileiro, para dois motores a partir
-de um unico download: `gen1recomp` (so Gold) e Gen2Recomped (Gold e
-Crystal).
+Pokemon Gold em portugues brasileiro, para dois motores a partir de um
+unico download: `gen1recomp` e Gen2Recomped.
+
+**Joga Crystal?** A traducao do Crystal e outro mod:
+[versaocristal-ptbr](https://github.com/LordSangreal/versaocristal-ptbr).
+Os dois foram separados porque centenas de rotulos existem nos dois jogos
+com texto diferente -- um catalogo unico mostrava a fala do jogo errado.
 
 | | |
 |---|---|
 | Falas do jogo (`gen1recomp`, ponteiro de ROM) | 3074 |
-| Falas do jogo (Gen2Recomped, rotulo nomeado) | 7614 |
+| Falas do jogo (Gen2Recomped, rotulo nomeado) | 7324 |
 | Rotulos de menu e batalha | 645 |
 | Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
 
-Cobertura real por jogo/motor: Crystal (Gen2Recomped) 99,4% -- Gold
-(Gen2Recomped) 99,4% -- Gold (`gen1recomp`) 99,3%.
+Cobertura real: `gen1recomp` 99,3% -- Gen2Recomped 98,3%.
 
 Acentuacao completa: a fonte da ROM so tem tres caracteres acentuados, entao
 o mod acrescenta uma pagina propria de glifos.
@@ -55,4 +58,4 @@ quer o mod fora do ar, abra uma issue.
 ## Aviso
 
 Nenhum byte de ROM acompanha este mod. Voce precisa da sua propria copia de
-Pokemon Gold ou Crystal.
+Pokemon Gold.
