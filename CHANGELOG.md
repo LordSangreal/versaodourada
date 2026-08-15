@@ -7,6 +7,34 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.45.1
+
+**Fecha a lacuna do `gen1recomp`/Gold que a 0.45.0 deixou** (88,0% de
+cobertura -- ver seção "Estado" do README daquela versão). Todo o trabalho
+da 0.45.0 foi no catálogo do Gen2Recomped; esta versão traz o mesmo
+conteúdo pro catálogo próprio do `gen1recomp` (`lang/dialogue.lua`,
+indexado por ponteiro de ROM).
+
+- **259 falas novas em `lang/dialogue.lua`** (2815 -> 3074 chaves).
+  Metodologia em duas etapas:
+  - **156 por crosswalk** (142 comparando o `text.lua` do Gold extraído
+    pelos dois motores por texto em inglês idêntico -- mesma técnica que
+    gerou `dialogue_gen2recomped.lua` na 0.44.0 -- mais 14 que já tinham
+    tradução em `strings.lua` mas nunca tinham sido copiadas pro ponteiro
+    exato: o texto da ROM tem prioridade sobre o `Strings()` fallback no
+    código do motor, então a chave por ponteiro precisa existir mesmo
+    quando o texto já existia em outro catálogo).
+  - **103 traduzidas do zero**: HM de campo (STRENGTH/ROCK SMASH), os
+    cartazes do Celadon Mansion, telefone (números errados/fora de área),
+    créditos do Hall of Fame, e o Day Care/MAILBOX/loja de ervas do
+    Gold -- textos mais simples que a versão do Crystal (sem o ODD EGG),
+    então não bateram no crosswalk. Também o discurso do OAK liberando o
+    MT.SILVER depois das 8 BADGES de KANTO (12 páginas).
+- **Cobertura do `gen1recomp`/Gold sobe de 88,0% para 99,3%** -- praticamente
+  no mesmo nível do Crystal e do Gold no Gen2Recomped agora. O que resta
+  é grito de espécie e o placeholder genérico "Object event.", que não
+  precisam de tradução.
+
 ## 0.45.0
 
 **O Crystal deixa de ser só "roda no mesmo motor" e passa a ter tradução

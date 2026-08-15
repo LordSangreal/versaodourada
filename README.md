@@ -24,19 +24,21 @@ motor, grito de especie e afins) por jogo e motor:
 |---|---|
 | Crystal, Gen2Recomped | **99,4%** |
 | Gold, Gen2Recomped | **99,4%** |
-| Gold, `gen1recomp` | **88,0%** |
+| Gold, `gen1recomp` | **99,3%** |
 
-O Crystal recebeu uma passada completa "na ordem do jogo" nesta versao
-(0.45.0): do inicio em New Bark Town ate o Hall of Fame, mais Ruins of
-Alph, Day Care, Battle Tower e as 170 falas de treinador que faltavam.
-O `gen1recomp` fica pra tras porque usa um catalogo proprio, indexado por
-ponteiro de ROM (`lang/dialogue.lua`) -- o trabalho desta versao foi todo
-no catalogo do Gen2Recomped (`lang/dialogue_gen2recomped.lua`), que serve
-Gold e Crystal nesse motor mas nao alimenta o `gen1recomp` de volta.
+O Crystal recebeu uma passada completa "na ordem do jogo" na 0.45.0: do
+inicio em New Bark Town ate o Hall of Fame, mais Ruins of Alph, Day Care,
+Battle Tower e as 170 falas de treinador que faltavam. Esse trabalho foi
+todo no catalogo do Gen2Recomped (`lang/dialogue_gen2recomped.lua`), que
+nao alimenta o `gen1recomp` de volta -- o `gen1recomp` usa um catalogo
+proprio, indexado por ponteiro de ROM (`lang/dialogue.lua`). A 0.45.1
+fechou essa lacuna: 156 falas por crosswalk (mesmo texto em ingles,
+traducao ja existia em outro catalogo) e 103 traduzidas do zero
+(conteudo que so existe no Gold, sem equivalente no Crystal).
 
 | O que | Quanto |
 |---|---|
-| Falas do jogo (`gen1recomp`, ponteiro de ROM) | 2815 |
+| Falas do jogo (`gen1recomp`, ponteiro de ROM) | 3074 |
 | Falas do jogo (Gen2Recomped, rotulo nomeado) | 7614 |
 | Rotulos de menu e batalha (inclui 65 de rota/cidade) | 645 |
 | Descricoes de golpe | 251 |
@@ -340,7 +342,7 @@ que torna varios dos ganchos deste mod possiveis.
 main.lua                        registra os overrides quando o jogo abre
 manifest.json                   quem o mod e e para qual jogo
 
-lang/dialogue.lua               2815 falas; chave = ponteiro da ROM USA ("bb:aaaa"),
+lang/dialogue.lua               3074 falas; chave = ponteiro da ROM USA ("bb:aaaa"),
                                  le nos dois motores (gen1recomp por definicao;
                                  Gen2Recomped so nas poucas chaves nomeadas que
                                  tambem estao aqui, como as sete do OAK)
