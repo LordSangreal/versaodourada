@@ -2908,7 +2908,7 @@ return {
   ["TEXT_S5E_6757"] = "Se você descer a\nCYCLING ROAD,\fvocê vai parar\nem CIDADE DE\vFUCHSIA.",
   ["TEXT_S5E_67E6"] = "A CYCLING ROAD\ncomeça aqui. É\ftudo ladeira\nabaixo, e bem\vemocionante!\fUma sensação\nque só se sente\fem navio\nou trem.",
   ["TEXT_S5E_6874"] = "Ei! Pare!\fVocê não pode ir\npara a CYCLING\fROAD sem\nBICYCLE.",
-  ["TEXT_S5E_690A"] = "Você soube do\nacidente na USINA\vDE ENERGIA?\fFica a leste,\nperto da CIDADE DE\vLAVANDA.",
+  ["TEXT_S5E_690A"] = "Você soube do\nacidente na USINA\vDE ENERGIA?\fFica a leste,\nperto da CIDADE DE\vLAVENDER.",
   ["TEXT_S5E_6970"] = "Levo meu trabalho\nde GUARDA a sério\fEi! Você tem uma\nPOKéDEX.\fCerto. Você pode\npassar.",
   ["TEXT_S5E_6A0A"] = "CYCLING ROAD\na subida começa",
   ["TEXT_S5E_6A2B"] = "Espera! Você não\ntem BICYCLE?\fA CYCLING ROAD\nfica aqui.\fVocê precisa de\nBICYCLE pra ir",

@@ -2583,7 +2583,7 @@ return {
   ["5e:6757"] = "Se você descer a\nCYCLING ROAD,\fvocê vai parar\nem CIDADE DE\vFUCHSIA.",
   ["5e:67e6"] = "A CYCLING ROAD\ncomeça aqui. É\ftudo ladeira\nabaixo, e bem\vemocionante!\fUma sensação\nque só se sente\fem navio\nou trem.",
   ["5e:6874"] = "Ei! Pare!\fVocê não pode ir\npara a CYCLING\fROAD sem\nBICYCLE.",
-  ["5e:690a"] = "Você soube do\nacidente na USINA\vDE ENERGIA?\fFica a leste,\nperto da CIDADE DE\vLAVANDA.",
+  ["5e:690a"] = "Você soube do\nacidente na USINA\vDE ENERGIA?\fFica a leste,\nperto da CIDADE DE\vLAVENDER.",
   ["5e:6970"] = "Levo meu trabalho\nde GUARDA a sério\fEi! Você tem uma\nPOKéDEX.\fCerto. Você pode\npassar.",
   ["5e:6a0a"] = "CYCLING ROAD\na subida começa",
   ["5e:6a2b"] = "Espera! Você não\ntem BICYCLE?\fA CYCLING ROAD\nfica aqui.\fVocê precisa de\nBICYCLE pra ir",

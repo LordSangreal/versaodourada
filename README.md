@@ -174,21 +174,32 @@ porque o Gen2Recomped reescreveu a peca que travava no `gen1recomp`.
 **As entradas da POKéDEX (251), so no `gen1recomp`.** A tela le
 `data.gen2Pokedex`, uma tabela carregada direto do cache do importador, e
 nenhum registro de mod faz merge nela. **No Gen2Recomped isso ja nao e
-limite** -- ver secao seguinte.
-
-**O prefixo "Enemy " antes do nome do POKéMON adversario.** Cinco lugares
-no Gen2Recomped fazem `"Enemy " .. nome`, concatenacao crua, sem passar
-pelo catalogo `Strings`: `BattleState.lua:452,462`,
-`EffectRegistry.lua:31`, `MoveEffects.lua:25`, `StatusRegistry.lua:15`.
-O `gen1recomp` tem o mesmo problema em Gen 1.
-
-**A barra de baixo da tela de POKéDEX.** `PAGE`/`AREA`/`CRY`/`PRNT`
-(`DexEntryMenu.lua:105`) e `SEL`/`OPTION`/`ST`/`SEARCH` sao tabelas de
-string cru, sem `Strings()` em volta.
+limite pra descricao** -- ver secao seguinte -- **mas o rotulo curto da
+especie continua sendo** ("BIG JAW", "SEED"...): o extrator grava
+`kind = table.concat(...)` como string literal
+(`RomExtractorGen2.lua`), e a tela desenha com
+`Font.draw(e.kind or "?", ...)` (`DexEntryMenu.lua:148,214`), sem chave.
+So a descricao (o paragrafo) tem registro pra sobrescrever.
 
 **`BILL'S PC`.** Rotulo do PC depois de conhecer o BILL
 (`OverworldController.lua`, os dois motores) -- concatenacao direta, sem
 gancho.
+
+### So no Gen2Recomped
+
+**O prefixo "Enemy " antes do nome do POKéMON adversario.** Cinco lugares
+fazem `"Enemy " .. nome`, concatenacao crua, sem passar pelo catalogo
+`Strings`: `BattleState.lua:452,462`, `EffectRegistry.lua:31`,
+`MoveEffects.lua:25`, `StatusRegistry.lua:15`. **O `gen1recomp` ja
+corrigiu isso** nos quatro arquivos equivalentes -- cada um tem
+`Strings("Enemy %s", b.name)` com o comentario `-- #779` apontando pra
+issue que resolveu. O Gen2Recomped parece ter reimplementado esse trecho
+sem herdar o fix.
+
+**A barra de baixo da tela de POKéDEX.** `PAGE`/`AREA`/`CRY`/`PRNT`
+(`DexEntryMenu.lua:105`) e uma tabela de string cru, sem `Strings()` em
+volta. (`SEL`/`OPTION`/`SEARCH`, no `ListMenu.lua` da mesma tela, ja usam
+`Strings()` certinho -- so essa tabela ficou de fora.)
 
 ### So no `gen1recomp`
 

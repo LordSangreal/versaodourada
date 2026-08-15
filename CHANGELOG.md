@@ -7,6 +7,21 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.44.1
+
+- `["5e:690a"]` tinha "LAVANDA" em vez de "LAVENDER" -- nome proprio
+  traduzido por engano, escapou da regra de manter nome de lugar em
+  ingles. Corrigido nos dois catalogos (`dialogue.lua` e o gerado
+  `dialogue_gen2recomped.lua`).
+- README: a secao "o que o motor nao deixa traduzir" tinha uma alegacao
+  errada de que o `gen1recomp` compartilha o bug do prefixo "Enemy " com
+  o Gen2Recomped. Conferido no codigo: o `gen1recomp` ja corrigiu isso
+  (`Strings("Enemy %s", ...)`, comentado `-- #779` nos quatro arquivos) --
+  o problema e exclusivo do Gen2Recomped, que parece ter reimplementado o
+  trecho sem herdar o fix. Secao reorganizada com um bloco "so no
+  Gen2Recomped" e a nota de que o rotulo curto da especie na POKéDEX
+  (nao a descricao) tambem so tem gancho la.
+
 ## 0.44.0
 
 **O mod passa a rodar em dois motores a partir de um unico download:**
