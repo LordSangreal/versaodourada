@@ -7,6 +7,50 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.46.0
+
+**Gold e Crystal viram mods separados.** O Crystal sai daqui e passa a ter
+repositorio proprio:
+[LordSangreal/versaocristal-ptbr](https://github.com/LordSangreal/versaocristal-ptbr).
+
+O motivo e um bug de conteudo que so aparece com os dois jogos no mesmo
+catalogo. O Gen2Recomped indexa dialogo por rotulo nomeado
+(`MomGivesPokegearText`), nao por endereco de ROM -- entao a mesma chave
+serve Gold e Crystal. So que **582 rotulos existem nos dois jogos com texto
+em ingles diferente**: o Crystal reescreveu falas inteiras reaproveitando o
+mesmo nome. Como o catalogo tinha sido gerado por crosswalk em cima do
+**Gold**, quem jogava Crystal via a fala do Gold traduzida em 555 lugares
+(o inverso valia para as 27 escritas a mao a partir do Crystal na 0.45.0).
+Nao da para resolver num arquivo so -- a chave e a mesma, o texto e que
+muda.
+
+- **`lang/dialogue_gen2recomped.lua` filtrado para o Gold**: 7614 -> 7324
+  chaves. Saem as 261 que so o Crystal usa (peso morto aqui) e as 27 que
+  tinham sido escritas com o texto do Crystal -- essas voltam a aparecer em
+  ingles ate serem reescritas com o texto do Gold. Melhor ingles do que a
+  fala do jogo errado.
+- **`games` no `manifest.json` volta a ser so `gold`**, e o nome do mod
+  volta a ser "Versao Dourada". Quem usava este mod para jogar Crystal deve
+  instalar o `versaocristal-ptbr` no lugar; os dois convivem instalados,
+  tem id diferente e cada um so ativa no jogo dele.
+- Cobertura do Gold no Gen2Recomped cai de 99,4% para **98,3%** por causa
+  das 27 removidas; no `gen1recomp` segue em **99,3%**, intocada.
+
+### Corrigido: o catalogo inteiro sumia no Crystal
+
+Um erro de sintaxe (string sem fechar, herdada de um script de lote da
+0.45.0) fazia o `loadstring` do `main.lua` falhar. Como o `main.lua`
+devolve tabela vazia quando o catalogo nao compila, os 7614 dialogos
+sumiam de uma vez -- sobravam so os menus (`strings.lua`, que compilava
+normal) e a fala de abertura do OAK (que vem do `dialogue.lua`). Era
+exatamente o sintoma relatado: mae e NPCs iniciais em ingles, menus e
+Prof. OAK em portugues. Corrigido ainda na 0.45.0, mas so agora
+diagnosticado como causa daquele relato.
+
+Entrou tambem um validador estrito de sintaxe no fluxo de trabalho, que le
+o arquivo token a token em vez de so procurar aspas sem fechar -- um erro
+desses nao passa de novo silenciosamente.
+
 ## 0.45.1
 
 **Fecha a lacuna do `gen1recomp`/Gold que a 0.45.0 deixou** (88,0% de
