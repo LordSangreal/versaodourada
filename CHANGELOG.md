@@ -7,6 +7,24 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.46.1
+
+**Mesma correcao da `versaocristal-ptbr` 0.46.1, do lado do Gold.**
+
+`Data:resolveText` busca `data.text[entry.text]`, e `entry.text` muitas
+vezes e a constante do mapa (`TEXT_<MAPA>_OBJ_NNN`), nao o rotulo nomeado.
+O catalogo do Gen2Recomped so tinha os rotulos, entao NPCs e placas caiam
+no ingles mesmo com a fala ja traduzida.
+
+- **+119 chaves de alias** em `lang/dialogue_gen2recomped.lua` (7324 ->
+  7443), casadas pelo texto em ingles, com prefixo de codigo de controle
+  preservado.
+- **Cobertura real no Gen2Recomped: 92,7% -> 96,9%.** As 89 que sobram
+  precisam de traducao nova (texto que so existe no Gold, sem equivalente
+  ja traduzido para casar) -- ficam para a proxima.
+- A auditoria de cobertura foi refeita com a logica do `resolveText`; os
+  numeros anteriores mediam so o campo `label` e eram otimistas demais.
+
 ## 0.46.0
 
 **Gold e Crystal viram mods separados.** O Crystal sai daqui e passa a ter
