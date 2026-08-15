@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T20:15:18Z",
+  "generated_at": "2026-08-15T20:31:46Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada/Cristal",
       "author": "LordSangreal",
-      "version": "0.45.0",
+      "version": "0.45.1",
       "categories": [
         "LANGUAGE"
       ],
@@ -35,15 +35,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.45.0",
-        "tag": "v0.45.0",
-        "name": "Versao Dourada/Cristal 0.45.0 -- Crystal na ordem do jogo",
+        "version": "0.45.1",
+        "tag": "v0.45.1",
+        "name": "Versao Dourada/Cristal 0.45.1 -- fecha a lacuna do gen1recomp/Gold",
         "prerelease": false,
-        "published_at": "2026-08-15T20:15:18Z",
+        "published_at": "2026-08-15T20:31:46Z",
         "zip": {
-          "name": "versaodourada-0.45.0.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.45.0/versaodourada-0.45.0.zip",
-          "size": 428061
+          "name": "versaodourada-0.45.1.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.45.1/versaodourada-0.45.1.zip",
+          "size": 433784
         }
       },
       "update_check": "ok"

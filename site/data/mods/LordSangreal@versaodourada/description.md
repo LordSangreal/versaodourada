@@ -6,14 +6,14 @@ Crystal).
 
 | | |
 |---|---|
-| Falas do jogo (`gen1recomp`, ponteiro de ROM) | 2815 |
+| Falas do jogo (`gen1recomp`, ponteiro de ROM) | 3074 |
 | Falas do jogo (Gen2Recomped, rotulo nomeado) | 7614 |
 | Rotulos de menu e batalha | 645 |
 | Nomes de item | ficam em ingles |
 | Glifos acentuados | 25 |
 
 Cobertura real por jogo/motor: Crystal (Gen2Recomped) 99,4% -- Gold
-(Gen2Recomped) 99,4% -- Gold (`gen1recomp`) 88,0%.
+(Gen2Recomped) 99,4% -- Gold (`gen1recomp`) 99,3%.
 
 Acentuacao completa: a fonte da ROM so tem tres caracteres acentuados, entao
 o mod acrescenta uma pagina propria de glifos.
