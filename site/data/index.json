@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T21:13:44Z",
+  "generated_at": "2026-08-15T21:28:39Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.46.1",
+      "version": "0.46.2",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.46.1",
-        "tag": "v0.46.1",
-        "name": "Versao Dourada 0.46.1 -- alias de mapa",
+        "version": "0.46.2",
+        "tag": "v0.46.2",
+        "name": "Versao Dourada 0.46.2 -- alias TEXT_S",
         "prerelease": false,
-        "published_at": "2026-08-15T21:13:44Z",
+        "published_at": "2026-08-15T21:28:39Z",
         "zip": {
-          "name": "versaodourada-0.46.1.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.46.1/versaodourada-0.46.1.zip",
-          "size": 424266
+          "name": "versaodourada-0.46.2.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.46.2/versaodourada-0.46.2.zip",
+          "size": 424797
         }
       },
       "update_check": "ok"
