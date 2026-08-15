@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T05:11:57Z",
+  "generated_at": "2026-08-15T20:15:18Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -9,19 +9,20 @@
     {
       "folder": "LordSangreal@versaodourada",
       "id": "versaodourada",
-      "title": "VersaoDourada",
+      "title": "Versao Dourada/Cristal",
       "author": "LordSangreal",
-      "version": "0.44.1",
+      "version": "0.45.0",
       "categories": [
         "LANGUAGE"
       ],
       "repo": "https://github.com/LordSangreal/versaodourada",
-      "summary": "Pokemon Gold em portugues brasileiro. Traducao de R_Lopes e Night_Shadown; nomes de golpes no original.",
+      "summary": "Pokemon Gold e Crystal em portugues brasileiro. Traducao propria; nomes de golpes no original.",
       "tags": [
         "portuguese",
         "brazilian",
         "translation",
         "gold",
+        "crystal",
         "gen2"
       ],
       "github": "LordSangreal/versaodourada",
@@ -29,19 +30,20 @@
       "api": 2,
       "profile": "content",
       "games": [
-        "gold"
+        "gold",
+        "crystal"
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.44.1",
-        "tag": "v0.44.1",
-        "name": "VersaoDourada 0.44.1 -- LAVANDA -> LAVENDER",
+        "version": "0.45.0",
+        "tag": "v0.45.0",
+        "name": "Versao Dourada/Cristal 0.45.0 -- Crystal na ordem do jogo",
         "prerelease": false,
-        "published_at": "2026-08-15T05:11:57Z",
+        "published_at": "2026-08-15T20:15:18Z",
         "zip": {
-          "name": "versaodourada-0.44.1.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.44.1/versaodourada-0.44.1.zip",
-          "size": 260033
+          "name": "versaodourada-0.45.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.45.0/versaodourada-0.45.0.zip",
+          "size": 428061
         }
       },
       "update_check": "ok"
