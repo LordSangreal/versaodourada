@@ -7,6 +7,24 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.47.1
+
+Correcao de medicao, nao de traducao: o README dizia **87% / 94%** e os numeros
+certos sao **89% / 96%**.
+
+A regua contava so `Strings("literal")`. Onde o sitio de desenho embrulha uma
+VARIAVEL -- `Chrome.print(Strings(row.label), 2, ty)` -- o literal fica cru na
+tabela do modulo, e nenhuma das duas formas casa com aquele padrao: chaves que
+em execucao sao traduzidas normalmente ("A to Z MODE", "ATTACH MAIL",
+" OPTION ") entravam na conta como nao alcancadas. Agora conta o literal em
+qualquer posicao do codigo.
+
+E o mesmo ponto cego que o gen1recomp documenta no commit 9423337b: argumento
+dinamico e invisivel para quem varre o codigo atras de texto.
+
+**+2 chaves rechaveadas** que o motor pedia com outra quebra de linha
+(BLACKTHORN CITY, "What do you want to do?").
+
 ## 0.47.0
 
 A rodada que fechou a POKeDEX, os itens e as classes de treinador -- e a

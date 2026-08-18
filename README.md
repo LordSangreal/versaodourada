@@ -27,12 +27,12 @@ esta cravada no codigo.
 
 | | sem o patch de motor | com o patch |
 |---|---|---|
-| **Total** | **87%** | **94%** |
+| **Total** | **89%** | **96%** |
 
 | categoria | total | sem patch | com patch |
 |---|---|---|---|
 | Falas de NPC | 2994 | 2994 | 2994 |
-| Menus e batalha | 990 | 539 | 696 |
+| Menus e batalha | 990 | 691 | 795 |
 | POKeDEX | 251 | **0** | 251 |
 | Nomes de golpe | 252 | 252 | 252 |
 | Descricoes de golpe | 252 | 252 | 252 |
@@ -44,7 +44,7 @@ esta cravada no codigo.
 
 Medido contra o `gen1recomp` **0.2.6** de fabrica.
 
-### Sem o patch: 87%
+### Sem o patch: 89%
 
 Instale so o mod e o jogo fica **jogavel e majoritariamente em portugues**.
 Falas de NPC, golpes, itens, tipos, classes de treinador, nomes de lugar e
@@ -54,7 +54,7 @@ mais da metade dos menus.
 registro sem rota e pulado -- o `main.lua` testa antes de aplicar. O que nao
 chega **aparece em ingles**, nunca em branco nem cortado.
 
-### Com o patch: 94%
+### Com o patch: 96%
 
 O que falta sao **a POKeDEX inteira** e cerca de 300 chaves de menu e batalha.
 Essas dependem de uma alteracao no motor, nao do mod:
@@ -65,11 +65,17 @@ Essas dependem de uma alteracao no motor, nao do mod:
 
 Isso e um **PR pendente** no gen1recomp -- ver [Sobre o PR](#sobre-o-pr).
 
-### E os 6% restantes?
+### E os 4% restantes?
 
-294 chaves do catalogo que nenhum dos dois motores pede. A maior parte serve o
-**Gen2Recomped**, que tem literais proprios; um resto e historico de versoes
-anteriores. Nao atrapalham nada: chave que ninguem procura fica inerte.
+195 chaves do catalogo que o motor nao pede -- na maior parte sobra das
+primeiras versoes, quando o alvo ainda era a interface de Red/Blue/Yellow.
+Nao atrapalham nada: chave que ninguem procura fica inerte.
+
+> **Como isto e medido.** Uma chave conta quando o literal aparece no codigo
+> do motor. Contar so `Strings("literal")` subestimaria: onde o desenho
+> embrulha uma variavel -- `Chrome.print(Strings(row.label), ...)` -- o
+> literal fica cru na tabela do modulo e nenhuma das duas formas casa. Ate a
+> 0.47.0 o README dizia 87% e 94% por causa disso.
 
 Fora da conta, de proposito: nome de POKeMON, de personagem e de cidade (so a
 palavra generica traduz -- "CIDADE DE VIOLET"), simbolos, `POKeDEX`,
