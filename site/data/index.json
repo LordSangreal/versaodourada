@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T21:28:39Z",
+  "generated_at": "2026-08-18T20:25:15Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,12 +11,12 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.46.2",
+      "version": "0.47.0",
       "categories": [
         "LANGUAGE"
       ],
       "repo": "https://github.com/LordSangreal/versaodourada",
-      "summary": "Pokemon Gold em portugues brasileiro. Traducao propria; nomes de golpes no original. Para Crystal, veja versaocristal-ptbr.",
+      "summary": "Pokemon Gold em portugues brasileiro. Traducao propria: falas, POKeDEX, golpes, itens e tipos. A POKeDEX exige um gen1recomp com a rota de catalogo do Gold. Para Crystal, veja versaocristal-ptbr.",
       "tags": [
         "portuguese",
         "brazilian",
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.46.2",
-        "tag": "v0.46.2",
-        "name": "Versao Dourada 0.46.2 -- alias TEXT_S",
+        "version": "0.47.0",
+        "tag": "v0.47.0",
+        "name": "Versao Dourada 0.47.0 -- POKeDEX completa",
         "prerelease": false,
-        "published_at": "2026-08-15T21:28:39Z",
+        "published_at": "2026-08-18T20:25:15Z",
         "zip": {
-          "name": "versaodourada-0.46.2.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.46.2/versaodourada-0.46.2.zip",
-          "size": 424797
+          "name": "versaodourada-0.47.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.47.0/versaodourada-0.47.0.zip",
+          "size": 460123
         }
       },
       "update_check": "ok"
