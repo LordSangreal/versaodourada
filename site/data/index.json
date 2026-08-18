@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-18T20:25:15Z",
+  "generated_at": "2026-08-18T22:11:55Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.47.0",
+      "version": "0.47.1",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.47.0",
-        "tag": "v0.47.0",
-        "name": "Versao Dourada 0.47.0 -- POKeDEX completa",
+        "version": "0.47.1",
+        "tag": "v0.47.1",
+        "name": "Versao Dourada 0.47.1 -- cobertura 89% / 96%",
         "prerelease": false,
-        "published_at": "2026-08-18T20:25:15Z",
+        "published_at": "2026-08-18T22:11:55Z",
         "zip": {
-          "name": "versaodourada-0.47.0.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.47.0/versaodourada-0.47.0.zip",
-          "size": 460123
+          "name": "versaodourada-0.47.1.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.47.1/versaodourada-0.47.1.zip",
+          "size": 460635
         }
       },
       "update_check": "ok"
