@@ -19,28 +19,81 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 
 ---
 
-## Estado
+## Cobertura
 
-Cobertura real (falas com conteudo de fato -- fora placeholder generico do
-motor, grito de especie e afins):
+O mod carrega **5217 entradas**. Quanto delas chega a tela depende do motor,
+porque parte do texto do Gold ainda nao passa pelo catalogo de traducoes --
+esta cravada no codigo.
 
-| Motor | Cobertura |
-|---|---|
-| `gen1recomp` | **99,3%** |
-| Gen2Recomped | **96,9%** |
+| | sem o patch de motor | com o patch |
+|---|---|---|
+| **Total** | **87%** | **94%** |
 
-| O que | Quanto |
-|---|---|
-| Falas do jogo (`gen1recomp`, ponteiro de ROM) | 3074 |
-| Falas do jogo (Gen2Recomped, rotulo nomeado) | 7453 |
-| Rotulos de menu e batalha (inclui 65 de rota/cidade) | 645 |
-| Descricoes de golpe | 251 |
-| Descricoes de item | 161 |
-| Glifos acentuados desenhados | 25 |
+| categoria | total | sem patch | com patch |
+|---|---|---|---|
+| Falas de NPC | 2994 | 2994 | 2994 |
+| Menus e batalha | 990 | 539 | 696 |
+| POKeDEX | 251 | **0** | 251 |
+| Nomes de golpe | 252 | 252 | 252 |
+| Descricoes de golpe | 252 | 252 | 252 |
+| Nomes de item | 161 | 161 | 161 |
+| Descricoes de item | 164 | 164 | 164 |
+| Classes de treinador | 66 | 66 | 66 |
+| Nomes de lugar | 70 | 70 | 70 |
+| Nomes de tipo | 17 | 17 | 17 |
 
-O que ainda nao foi traduzido **aparece em ingles**, nunca em branco nem
-cortado: o mod so substitui o que tem traducao pronta, entao o jogo e
-sempre jogavel.
+Medido contra o `gen1recomp` **0.2.6** de fabrica.
+
+### Sem o patch: 87%
+
+Instale so o mod e o jogo fica **jogavel e majoritariamente em portugues**.
+Falas de NPC, golpes, itens, tipos, classes de treinador, nomes de lugar e
+mais da metade dos menus.
+
+**Nada quebra.** Uma chave que o motor nao pede simplesmente nao e usada, e um
+registro sem rota e pulado -- o `main.lua` testa antes de aplicar. O que nao
+chega **aparece em ingles**, nunca em branco nem cortado.
+
+### Com o patch: 94%
+
+O que falta sao **a POKeDEX inteira** e cerca de 300 chaves de menu e batalha.
+Essas dependem de uma alteracao no motor, nao do mod:
+
+- a rota `pokedex` no registro de conteudo do Gold, que ainda nao existe;
+- as telas e mensagens do Gold que desenham texto cravado em vez de passar
+  por `Strings()`.
+
+Isso e um **PR pendente** no gen1recomp -- ver [Sobre o PR](#sobre-o-pr).
+
+### E os 6% restantes?
+
+294 chaves do catalogo que nenhum dos dois motores pede. A maior parte serve o
+**Gen2Recomped**, que tem literais proprios; um resto e historico de versoes
+anteriores. Nao atrapalham nada: chave que ninguem procura fica inerte.
+
+Fora da conta, de proposito: nome de POKeMON, de personagem e de cidade (so a
+palavra generica traduz -- "CIDADE DE VIOLET"), simbolos, `POKeDEX`,
+`POKeMON`, `PP`, e as 50 falas que sao grito de especie e reticencias.
+
+---
+
+## Sobre o PR
+
+A parte que falta esta escrita, testada e **nao enviada**.
+
+Sao 37 arquivos no `gen1recomp`: a rota da POKeDEX, a persistencia de opcao de
+mod no Gold, e o texto das telas e da batalha do Gold passando a resolver pelo
+catalogo. Nenhuma alteracao muda o que um jogo **sem mod** imprime -- as
+palavras e ate a quebra de linha ficam identicas.
+
+**Por que ainda nao foi enviado:** o gen1recomp lanca rapido demais. So em
+17/08/2026 sairam quatro versoes; em 18/08, mais duas. Cada release apaga o
+motor remendado e exige rebase, e quando o teste termina ja existe versao nova
+mudando alguma coisa. Enviar um PR sem ter testado direito seria pedir revisao
+de um trabalho que eu mesmo nao conferi.
+
+Entao o PR sai **quando estiver testado de verdade**, nao quando estiver
+pronto.
 
 ---
 
@@ -132,13 +185,15 @@ ser traduzido tecnicamente; escolhemos que nao fosse.
 no mundo inteiro, inclusive nos jogos em portugues. Traduzi-los quebraria
 a comunicacao com qualquer guia, video ou amigo.
 
-**Nomes de golpe.** THUNDERBOLT, SURF, EARTHQUAKE. Mesma razao, e com um
-agravante: o nome do golpe aparece em dezenas de lugares (batalha, resumo,
-TM, tutor), e uma traducao inconsistente entre eles seria pior que o
-ingles.
-
 **Nomes de personagem.** LANCE, JANINE, WHITNEY. Sao elenco -- o jogador
 precisa deles pra se achar num guia.
+
+> **Golpes saem desta lista na 0.47.0.** Ate a 0.46.2 ficavam em ingles pelo
+> mesmo argumento dos nomes de POKéMON. A regra foi revertida com a
+> terminologia de carta de TCG pt-BR, e o risco de inconsistencia entre telas
+> e tratado por conferidor: uma entrada de POKeDEX ou descricao que cite um
+> golpe tem de usar exatamente a forma de `lang/move_names.lua`, e o
+> `dex_verificar.py` recusa o lote quando nao usa. Cabem 11 colunas.
 
 ### Cidade, Rota e Vila -- a palavra generica traduz, o nome nao
 
@@ -159,14 +214,18 @@ Pontos de interesse que nao sao cidade, vila ou rota -- SPROUT TOWER,
 UNION CAVE, LAKE OF RAGE, RADIO TOWER -- ficam inteiros em ingles. A regra
 e so sobre esses tres sufixos.
 
-### Nomes de item
+### Nomes de item -- traduzidos desde a 0.47.0
 
-**Todos** ficam em ingles: POKé BALL, POTION, BERRY, REPEL, SUPER ROD.
+POKé BOLA, POÇÃO, FRUTA, REPELENTE, VARA SUPER.
 
-Esta foi uma decisao tomada **em jogo**, na 0.17.0. A versao anterior
-traduzia os nomes, e ver aquilo funcionando mostrou o problema: item entra
-na mesma categoria dos golpes e dos POKéMON -- e vocabulario compartilhado
-da franquia, nao prosa.
+Ate a 0.46.2 ficavam em ingles, junto dos golpes. A regra foi **revertida**
+com a terminologia de carta de TCG pt-BR como fonte primaria -- GRANDE BOLA e
+nao "Otima Bola", que e do Pokemon GO.
+
+Cabem 12 colunas. As sete APRICORN levam a cor abreviada na frente
+(PRT APRICORN, AZL APRICORN) porque e o que o ingles faz e o que mantem a
+lista alinhada. As frutas que curam status usam a **mesma sigla da batalha**:
+FRUTA PAR., FRUTA VEN.
 
 **A descricao do item, essa esta em portugues.** "POTION / Restaura 20 de
 PS do POKéMON." E o padrao que a franquia usa: o nome identifica, a
@@ -174,14 +233,13 @@ descricao explica.
 
 ### TM e HM
 
-A sigla fica. Traduzir so ela produziria **"MT29 contem o PSYCHIC"** --
-duas linguas no mesmo item, no mesmo folego. Como o nome do golpe fica em
-ingles por decisao anterior, a sigla o acompanha.
+A sigla fica. E o identificador que o jogador ve no numero (TM29), e o nome
+do golpe que ela ensina ja aparece traduzido na tela de uso.
 
-### Rotulos de status na caixa de vida
+### Rotulos de status na caixa de vida -- traduzidos desde a 0.47.0
 
-PSN, BRN, PAR, SLP, FRZ ficam. Sao tres caracteres numa caixinha de tres
-caracteres, e a sigla da franquia e lida sem pensar em qualquer idioma.
+VEN, QMD, PAR, SON, GEL, DES. Continuam com tres caracteres, porque a caixinha
+tem tres. Elas ecoam de proposito nos nomes de fruta: FRUTA VEN. cura VEN.
 
 O que de fato **informa** o jogador e a mensagem na caixa de texto -- "O
 veneno fere BULBASAUR!" -- e essa esta em portugues.

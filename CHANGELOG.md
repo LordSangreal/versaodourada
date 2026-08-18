@@ -7,6 +7,53 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.47.0
+
+A rodada que fechou a POKeDEX, os itens e as classes de treinador -- e a
+primeira em que parte do mod depende de uma alteracao no motor.
+
+**POKeDEX: 251 de 251.** Escrita do zero: a ROM brasileira nunca traduziu a
+POKeDEX, entao nao havia de onde copiar. Sao 753 campos (`kind` mais duas
+telas de tres linhas). `kind` tem 10 colunas e a descricao tem 3 linhas de 18
+por tela -- uma quarta e jogada fora sem aviso.
+
+**+111 nomes de item** (53 -> 161). As sete APRICORN levam a cor abreviada na
+frente, como o ingles faz. As frutas que curam status usam a mesma sigla da
+batalha: FRUTA PAR., FRUTA VEN.
+
+**+66 classes de treinador.** "BUG CATCHER BENNY" virou "CAÇA-INSETOS BENNY".
+
+**+17 nomes de tipo** e a roda de busca da POKeDEX.
+
+**~350 chaves novas** de menu e batalha (645 -> 990): mensagens de status,
+mudanca de atributo, clima, fuga, sala de premios do GAME CORNER, impressora
+de UNOWN, redemoinho, e os rotulos de OPCOES, POKeGEAR, CAIXA DE ITENS e
+cartas.
+
+**Decisao revertida:** golpes, itens, tipos e siglas de status agora SE
+TRADUZEM, com terminologia de carta de TCG pt-BR. Ate a 0.46.2 a regra era o
+oposto. Ver as secoes "O que fica no original".
+
+### Consertos que so a tela mostrou
+
+- **DINHEIRO** (8 colunas) invadia o valor no cartao de treinador, que tem 5;
+  **INSIGNIAS** (9) passava por baixo do cursor, que tem 6. Viraram DINH. e
+  INSIG.
+- **ALT** e **PESO** na POKeDEX ficavam por cima do numero: aquele rotulo tem
+  DUAS colunas. Viraram AL e PS.
+- Uma fala de treinador nunca aparecia: a traducao tinha DOIS `%s` onde a
+  fonte tem TRES, e `Strings.get` descarta a traducao inteira quando a
+  contagem de diretivas nao bate -- sem sinal nenhum na tela.
+- Nove falas mandavam procurar item pelo nome antigo (CARD KEY, COIN CASE,
+  ITEMFINDER, BICYCLE) depois que os nomes mudaram.
+- Descricoes de golpe e item citavam DEFENSE, SPCL.ATK e SPEED em ingles.
+
+### Precisa do motor remendado
+
+POKeDEX e ~300 chaves de menu e batalha dependem de um `gen1recomp` com a
+rota de catalogo do Gold. Sem ele **nada quebra**: o registro sem rota e
+pulado e o texto sai em ingles. Ver "Cobertura" no README.
+
 ## 0.46.2
 
 **+10 alias `TEXT_S<banco>_<endereco>`** que faltavam

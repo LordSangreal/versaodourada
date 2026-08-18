@@ -1,7 +1,7 @@
 {
   "id": "versaodourada",
   "name": "Versao Dourada",
-  "version": "0.46.2",
+  "version": "0.47.0",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
@@ -16,5 +16,5 @@
   "optional_dependencies": [],
   "conflicts": [],
   "github": "LordSangreal/versaodourada",
-  "description": "Portugues brasileiro para Pokemon Gold. Traducao propria, escrita do ingles original. Golpes, Pokemon, itens, TM e HM ficam no original. Para Crystal, veja o mod Versao Cristal."
+  "description": "Portugues brasileiro para Pokemon Gold. Traducao propria, escrita do ingles original. Falas, POKeDEX, golpes, itens, tipos, classes de treinador e lugares. Nome de POKeMON, de personagem e de cidade ficam no original. A POKeDEX e parte dos menus e da batalha exigem um gen1recomp com a rota de catalogo do Gold (PR pendente); sem ele o resto funciona normalmente. Para Crystal, veja o mod Versao Cristal."
 }
