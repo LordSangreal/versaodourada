@@ -1,7 +1,11 @@
 -- VersaoDourada: Pokemon Gold em portugues brasileiro.
 --
--- Nomes de golpes e de Pokemon ficam no original em ingles, de proposito:
--- nao ha lang/move_names.lua nem lang/species_names.lua neste mod.
+-- Nome de POKeMON, de personagem e de cidade ficam no original em ingles, de
+-- proposito -- so a palavra generica de lugar traduz ("CIDADE DE VIOLET").
+-- Golpe, item, tipo e classe de treinador SE traduzem desde a 0.47.0, com a
+-- terminologia das cartas de TCG pt-BR; por isso existem lang/move_names.lua
+-- e lang/item_names.lua, que a regra anterior proibia.  Nao ha
+-- lang/species_names.lua e nao deve haver.
 
 -- Ligar quando o conserto de persistencia de opcao entrar no gen1recomp.
 --
@@ -199,9 +203,10 @@ return function(mod)
   -- teste de existencia antes: num motor sem a rota, `mod.content.pokedex`
   -- e nil e o catalogo fica inerte em vez de derrubar o mod inteiro (com
   -- `api = 2` um erro de registro e erro duro, nao aviso).
+  local dex = catalog("pokedex")
   if mod.content.pokedex then
     local dexOk, dexErro = 0, nil
-    for id, entrada in pairs(catalog("pokedex")) do
+    for id, entrada in pairs(dex) do
       if type(entrada) == "table" then
         local ok, err = pcall(function()
           mod.content.pokedex:patch(id, entrada)
@@ -212,6 +217,41 @@ return function(mod)
     n = n + dexOk
     if dexErro then
       mod.log:warn("POKéDEX nao aplicada: %s", tostring(dexErro))
+    end
+  end
+
+  -- As mesmas medidas, pelo caminho do Gen2Recomped.  La a POKéDEX nao tem
+  -- registro proprio: categoria, altura e peso moram no campo `dexEntry` do
+  -- registro `pokemon`, e a altura vem repartida em dois numeros em vez do
+  -- inteiro unico do gen1recomp -- `heightFt` e `heightIn`, que aqui levam
+  -- metro e decimo de metro.  A virgula e a unidade nao saem daqui: a tela
+  -- monta a linha com Strings("%2d′%02d″", ...) e Strings("%4d.%dlb", ...),
+  -- entao quem troca pe por metro e libra por quilo e lang/strings.lua.
+  --
+  -- No gen1recomp o campo `dexEntry` nao existe no esquema do Gen 2
+  -- (gen2Fields, src/mods/Schemas.lua): a chave passa como campo extra,
+  -- ninguem a le e fica inerte -- mesmo arranjo dos dois catalogos de
+  -- dialogo.  Dentro de pcall como os outros: com `api = 2` um registro
+  -- recusado derrubaria o mod inteiro.
+  local medidas = 0
+  if mod.content.pokemon then
+    local medErro = nil
+    for id, entrada in pairs(dex) do
+      if type(entrada) == "table" and entrada.height and entrada.weight then
+        local ok, err = pcall(function()
+          mod.content.pokemon:patch(id, {
+            dexEntry = {
+              heightFt = math.floor(entrada.height / 100),
+              heightIn = entrada.height % 100,
+              weight = entrada.weight,
+            },
+          })
+        end)
+        if ok then medidas = medidas + 1 elseif not medErro then medErro = err end
+      end
+    end
+    if medErro then
+      mod.log:warn("medida metrica nao aplicada: %s", tostring(medErro))
     end
   end
 
@@ -246,6 +286,7 @@ return function(mod)
   end
 
   mod.events:on("game.ready", function()
-    mod.log:info("VersaoDourada: %d textos aplicados", n)
+    mod.log:info("VersaoDourada: %d textos aplicados, %d medidas metricas",
+      n, medidas)
   end)
 end

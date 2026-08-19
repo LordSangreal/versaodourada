@@ -21,18 +21,18 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 
 ## Cobertura
 
-O mod carrega **5217 entradas**. Quanto delas chega a tela depende do motor,
+O mod carrega **5221 entradas**. Quanto delas chega a tela depende do motor,
 porque parte do texto do Gold ainda nao passa pelo catalogo de traducoes --
 esta cravada no codigo.
 
 | | sem o patch de motor | com o patch |
 |---|---|---|
-| **Total** | **89%** | **96%** |
+| **Total** | **91%** | **97%** |
 
 | categoria | total | sem patch | com patch |
 |---|---|---|---|
 | Falas de NPC | 2994 | 2994 | 2994 |
-| Menus e batalha | 990 | 691 | 795 |
+| Menus e batalha | 994 | 754 | 860 |
 | POKeDEX | 251 | **0** | 251 |
 | Nomes de golpe | 252 | 252 | 252 |
 | Descricoes de golpe | 252 | 252 | 252 |
@@ -42,21 +42,22 @@ esta cravada no codigo.
 | Nomes de lugar | 70 | 70 | 70 |
 | Nomes de tipo | 17 | 17 | 17 |
 
-Medido contra o `gen1recomp` **0.2.6** de fabrica.
+Medido por `ferramentas/cobertura.py` contra o `gen1recomp` **0.2.6** de
+fabrica.
 
-### Sem o patch: 89%
+### Sem o patch: 91%
 
 Instale so o mod e o jogo fica **jogavel e majoritariamente em portugues**.
 Falas de NPC, golpes, itens, tipos, classes de treinador, nomes de lugar e
-mais da metade dos menus.
+mais de tres quartos dos menus.
 
 **Nada quebra.** Uma chave que o motor nao pede simplesmente nao e usada, e um
 registro sem rota e pulado -- o `main.lua` testa antes de aplicar. O que nao
 chega **aparece em ingles**, nunca em branco nem cortado.
 
-### Com o patch: 96%
+### Com o patch: 97%
 
-O que falta sao **a POKeDEX inteira** e cerca de 300 chaves de menu e batalha.
+O que falta sao **a POKeDEX inteira** e cerca de 106 chaves de menu e batalha.
 Essas dependem de uma alteracao no motor, nao do mod:
 
 - a rota `pokedex` no registro de conteudo do Gold, que ainda nao existe;
@@ -65,17 +66,68 @@ Essas dependem de uma alteracao no motor, nao do mod:
 
 Isso e um **PR pendente** no gen1recomp -- ver [Sobre o PR](#sobre-o-pr).
 
-### E os 4% restantes?
+### E os 3% restantes?
 
-195 chaves do catalogo que o motor nao pede -- na maior parte sobra das
-primeiras versoes, quando o alvo ainda era a interface de Red/Blue/Yellow.
-Nao atrapalham nada: chave que ninguem procura fica inerte.
+Sao **134 chaves de `lang/strings.lua`** que o `gen1recomp` remendado nunca
+pede. Ate a 0.47.1 este paragrafo dizia so "sobra das primeiras versoes"; a
+0.48.0 abriu a conta, e a maior parte **nao e sobra**:
+
+| o que sao | quantas | chegam a tela? |
+|---|---|---|
+| chave que so o Gen2Recomped pede | 31 | sim, no outro motor |
+| nome de lugar | 65 | sim, por outra rota |
+| chave com contexto | 5 | sim |
+| fala que na verdade e texto da ROM | 11 | nao -- catalogo errado |
+| orfa: nao existe em motor nenhum | 22 | nao |
+
+**As 31 do Gen2Recomped.** O fork poe sob `Strings()` coisas que o
+`gen1recomp` deixou cravadas: as perguntas de SURF e CUT, a sala de maquinas
+do GAME CORNER, "%s quer batalhar!", a escolha de menino ou menina. Uma chave
+que o motor rodando nao reconhece fica parada no registro, sem custo -- e o
+mesmo arranjo dos dois catalogos de dialogo. Cada uma dessas **e** um texto em
+portugues na tela de quem joga no fork.
+
+**Os 65 nomes de lugar.** ROTA 1 a ROTA 46, CIDADE DE VIOLET e companhia. No
+`gen1recomp` o TOWN MAP le `row.name` direto do registro `landmarks`, sem
+passar por `Strings()` -- por isso existe `lang/landmarks.lua` com as mesmas
+70 entradas, e e ele que serve essa tela. No Gen2Recomped o cartaz de area
+passa por `Strings()`, mas o texto-fonte vem do cache da ROM e nao de um
+literal do codigo. A regua varre **codigo**; uma chave cuja fonte e **dado**
+ela nao tem como ver. Aparecem na tela nos dois motores.
+
+**As 5 com contexto.** `Strings("FIGHT", "battle")` guarda em
+`battle|FIGHT`, para o mesmo "FIGHT" poder ser uma coisa na batalha e outra
+noutra tela. O codigo tem `"FIGHT"` e `"battle"` como literais separados: a
+chave composta nao existe em lugar nenhum para a regua achar. Sao LUTAR,
+ITEM, FUG, DESL e FORA -- todas na tela.
+
+**As 11 que sao texto da ROM.** As falas do troco de fichas e da sala de
+premios do GAME CORNER. Elas existem, com essas mesmas palavras, no texto que
+o extrator tira da ROM -- ou seja, o lugar delas e `lang/dialogue.lua`, com
+chave de ponteiro, e nao `strings.lua`. Estao no catalogo errado; sao
+trabalho perdido ate serem mudadas de arquivo.
+
+**As 22 orfas.** Essas sim sao a sobra que o README antigo citava: a fala da
+mae, o NAME RATER, o MOVE DELETER, os avisos de STRENGTH e WHIRLPOOL, quatro
+linhas de batalha. Nao batem com o `gen1recomp`, nem com o Gen2Recomped, nem
+com o texto da ROM -- vieram de quando o alvo ainda era a interface de
+Red/Blue/Yellow, onde essas frases eram literais do motor. Nao atrapalham
+nada: chave que ninguem procura fica inerte.
 
 > **Como isto e medido.** Uma chave conta quando o literal aparece no codigo
-> do motor. Contar so `Strings("literal")` subestimaria: onde o desenho
-> embrulha uma variavel -- `Chrome.print(Strings(row.label), ...)` -- o
-> literal fica cru na tabela do modulo e nenhuma das duas formas casa. Ate a
-> 0.47.0 o README dizia 87% e 94% por causa disso.
+> do motor, em qualquer posicao. Contar so `Strings("literal")` subestimaria:
+> onde o desenho embrulha uma variavel -- `Chrome.print(Strings(row.label))`
+> -- o literal fica cru na tabela do modulo e nenhuma das duas formas casa.
+> Foi por isso que ate a 0.47.0 o README dizia 87% e 94%.
+>
+> A 0.47.1 corrigiu aquilo e chegou a 89% e 96%, mas com um script de sessao
+> que nao ficou no projeto: o numero dela nao da para reconferir, e a regua
+> desta versao nao o reproduz. A desta versao **e** um arquivo do projeto --
+> `ferramentas/cobertura.py` -- e faz o que esta escrito acima: varre todo
+> literal de string das tres arvores (gen1recomp de fabrica, gen1recomp
+> remendado, Gen2Recomped), resolve as escapadas (`\n`, `\011`) e
+> compara com a chave do catalogo. Onde os dois numeros discordam,
+> vale o que da para rodar de novo.
 
 Fora da conta, de proposito: nome de POKeMON, de personagem e de cidade (so a
 palavra generica traduz -- "CIDADE DE VIOLET"), simbolos, `POKeDEX`,
@@ -88,8 +140,8 @@ palavra generica traduz -- "CIDADE DE VIOLET"), simbolos, `POKeDEX`,
 A parte que falta esta escrita, testada e **nao enviada**.
 
 Sao 37 arquivos no `gen1recomp`: a rota da POKeDEX, a persistencia de opcao de
-mod no Gold, e o texto das telas e da batalha do Gold passando a resolver pelo
-catalogo. Nenhuma alteracao muda o que um jogo **sem mod** imprime -- as
+mod no Gold, o texto das telas e da batalha do Gold passando a resolver pelo
+catalogo, e as unidades da ficha do #DEX (ver [Altura e peso](#altura-e-peso-da-pokedex----metro-e-quilo)). Nenhuma alteracao muda o que um jogo **sem mod** imprime -- as
 palavras e ate a quebra de linha ficam identicas.
 
 **Por que ainda nao foi enviado:** o gen1recomp lanca rapido demais. So em
@@ -266,6 +318,31 @@ folga.
 
 **HP e a excecao:** vira **PS**, que e a sigla oficial em portugues do
 Brasil. PP fica, porque nao tem sigla consagrada em portugues.
+
+### Altura e peso da POKeDEX -- metro e quilo
+
+A ficha de cada especie no #DEX vem em **pe, polegada e libra**, porque a
+versao americana do cartucho converteu o que o jogo japones media em metro e
+quilo. Aqui volta ao metrico: `AL 0,9m` e `PS 19,5kg`.
+
+**O numero nao sai de converter a libra de volta.** A altura ate sobreviveria
+-- a polegada e mais fina que o decimo de metro, e as 251 conferem --, mas o
+peso nao: o cartucho gravou 15,0 libras onde o original diz 6,9 kg, e a volta
+da 6,8. Sao 196 das 251 erradas por um decimo se a fonte for a libra. Entao a
+fonte e a tabela canonica da franquia, cruzada pelo numero da POKeDEX, e o
+resultado bate com o que qualquer guia em portugues mostra.
+
+**Onde isso aparece em cada motor.** No Gen2Recomped, so no mod: a tela ja
+monta a linha com `Strings("%2d′%02d″", ...)` e `Strings("%4d.%dlb", ...)`,
+entao trocar a pontuacao e a unidade e uma linha de catalogo cada. No
+`gen1recomp` era impossivel: `lb` estava no catalogo, mas as marcas de pe e
+polegada sao **tiles** da folha do #DEX, nao letras -- metade da linha em uma
+unidade e metade na outra. O patch de motor poe a linha inteira sob uma forma
+de catalogo e mantem o caminho dos tiles enquanto ninguem pedir outra coisa,
+entao um jogo sem mod imprime o mesmo de sempre.
+
+O `kind` -- "RATO", "CHAMA" -- e as descricoes ja estavam em portugues desde a
+0.47.0; era a ficha de medidas que ficava em ingles no meio delas.
 
 ### A interface do aplicativo
 
@@ -446,23 +523,33 @@ lang/dialogue.lua               3074 falas; chave = ponteiro da ROM USA ("bb:aaa
                                  le nos dois motores (gen1recomp por definicao;
                                  Gen2Recomped so nas poucas chaves nomeadas que
                                  tambem estao aqui, como as sete do OAK)
-lang/dialogue_gen2recomped.lua  7453 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
+lang/dialogue_gen2recomped.lua  7459 chaves; rotulo nomeado ou TEXT_S<banco>_<endereco>
                                  do Gen2Recomped -- so as chaves que a extracao
                                  do Gold usa (o Crystal tem repositorio proprio)
-lang/strings.lua                645 textos do motor: batalha, menus, opcoes,
-                                 os avisos de entrada em rota/cidade, e os
-                                 rotulos de atributo da tela de status
-lang/move_descriptions.lua      251 descricoes de golpe; chave = id do golpe
-lang/item_descriptions.lua      161 descricoes de item; chave = id do item
+lang/strings.lua                 994 textos do motor: batalha, menus, opcoes,
+                                 os avisos de entrada em rota/cidade, os rotulos
+                                 de atributo da tela de status e as unidades de
+                                 altura e peso do #DEX
+lang/pokedex.lua                 251 entradas de POKeDEX: categoria, as duas
+                                 telas de descricao e as medidas em metro e quilo
+lang/move_names.lua              252 nomes de golpe
+lang/move_descriptions.lua       252 descricoes de golpe; chave = id do golpe
+lang/item_names.lua              161 nomes de item
+lang/item_descriptions.lua       164 descricoes de item; chave = id do item
+lang/trainer_classes.lua          66 classes de treinador ("CACA-INSETOS BENNY")
+lang/landmarks.lua                70 nomes de lugar para o TOWN MAP do POKeGEAR,
+                                 que le do registro `landmarks` e nao de Strings()
+lang/type_names.lua               17 nomes de tipo
+lang/status_labels.lua             6 siglas de status da caixa de vida (VEN, QMD...)
 lang/font.lua                        a pagina de glifos que o mod acrescenta
 lang/charmap.lua                  25 que sequencia de bytes desenha qual glifo
-lang/item_names.lua                  vazio: nome de item fica em ingles
-lang/status_labels.lua               vazio: PSN/BRN/PAR/SLP/FRZ ficam
 
 assets/font/latin.png             os glifos acentuados, desenhados do zero;
                                    128x64 -- a altura extra e so espaco vazio,
                                    exigencia minima do Gen2Recomped
 ```
 
-Um catalogo vazio nao e um catalogo faltando: e a decisao registrada de
-deixar aquilo no original.
+Um catalogo so chega a tela onde o motor tem rota para ele: `pokedex.lua`
+exige o patch do `gen1recomp`, `landmarks.lua` so existe no `gen1recomp`, e as
+descricoes de golpe e item so o `gen1recomp` desenha. Onde nao ha rota, o
+registro e pulado e o texto sai em ingles -- ver [Cobertura](#cobertura).

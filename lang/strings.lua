@@ -2,6 +2,10 @@
 -- Chave = a string em ingles exatamente como o codigo a escreve.
 return {
   [" ALPH RUINS STAMP"] = " SELO RUÍNAS ALPH",
+  ["%2d′%02d″"] = "%2d,%dm",
+  ["%4d.%dlb"] = "%4d,%dkg",
+  ["%d'%d\""] = "%d,%dm",
+  ["%d.%dlb"] = "%d,%dkg",
   ["%s is afflicted!"] = "%s foi\natingido!",
   ["%s\nis hit with recoil!"] = "%s sofreu\ndano de recuo!",
   ["%s\nwas dragged out!"] = "%s foi\narrastado!",
@@ -807,7 +811,7 @@ return {
   ["You don't have a\n#MON!"] = "Você não tem\nnenhum POKéMON!",
   ["You don't have a\nCOIN CASE."] = "Você não tem um\nPORTA-FICHAS.",
   ["You don't want to\ntrade? Aww…"] = "Não quer trocar?\nAh, que pena…",
-  ["You have no more\nPOKéMON that can\\011fight!"] = "Você não tem mais\nPOKéMON que possa\\011lutar!",
+  ["You have no more\nPOKéMON that can\vfight!"] = "Você não tem mais\nPOKéMON que possa\vlutar!",
   ["You have no more POKéMON!"] = "Você não tem mais\nPOKéMON!",
   ["You have no room\nfor it."] = "Você não tem\nespaço para isso.",
   ["You haven't saved\nthat much."] = "Você não guardou\ntudo isso.",
