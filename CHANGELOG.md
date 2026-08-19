@@ -50,6 +50,39 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.48.3
+
+**Ensinar golpe pela bolsa estava todo em ingles.** Nove caixas -- `QUILAVA is
+trying to learn`, `But QUILAVA can't learn more than four moves.`, `Delete an
+older move to make room`, `Which move should be forgotten?`, `QUILAVA learned
+CORTAR!` e mais quatro -- e o mesmo bug de sempre: o sitio monta a frase com
+`:format()` e nunca pergunta ao catalogo.
+
+**Cinco das nove ja tinham traducao esperando**, sem nunca serem usadas: a
+chave existia e o sitio nao pedia. Isso e o que faz este bug ser invisivel numa
+conferencia de catalogo -- a linha esta la, certinha, e a tela mostra ingles.
+
+O arquivo e `src/core/Game2.lua`, que estava **fora de todas as varreduras**:
+as passadas anteriores andaram por `src/ui/gen2` e `src/battle/gen2`. Foi por
+isso que este fluxo sobreviveu a tres rodadas do mesmo conserto.
+
+**Relogio do POKeGEAR traduzido.** Os sete dias da semana e as tres faixas do
+dia (MANHÃ / DIA / NOITE), mais `%s o'clock` e a fala do PIKACHU contente.
+Todos os nomes em portugues sao mais curtos que `WEDNESDAY`, entao nao ha como
+estourar onde o ingles cabia.
+
+### Ferramenta nova: `faltando.py`
+
+`cobertura.py` responde "quantas das minhas chaves o motor usa". Esta responde
+a pergunta que o teste na tela vinha fazendo uma tela de cada vez: **"que texto
+ainda sai em ingles porque nunca foi traduzido"**. Varre os literais que estao
+num sitio de `Strings()` e subtrai o catalogo.
+
+Resultado: dos 1143 literais que o motor pede, **735 estao no catalogo e 408
+nao**. Mas 385 desses 408 sao launcher, telas de link e telas de Red/Blue/
+Yellow, que o Gold nunca mostra. **Restam 35 no Gold**, e a maioria e simbolo
+(`▶ ♀ ♂ №`, `lb`, `<LV>`) que fica no original de proposito.
+
 ## 0.48.2
 
 **A terceira linha caia fora da caixa.** `CACA-INSETOS JOSH quer` e nada mais:
