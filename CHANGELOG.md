@@ -116,6 +116,18 @@ uma linha cada, viraram uma so.
 860). Os 134 que faltam continuam os mesmos do README -- e 101 deles chegam a
 tela por rota que a regua nao ve.
 
+### Consertos que so a tela mostrou
+
+- **Quatro falas ainda diziam BALL em ingles** no meio do portugues, sobra de
+  antes da 0.47.0, quando o nome das bolas nao se traduzia: a do OAK sobre
+  saber usar as `# BALLS`, a do KURT, `Ele desviou da BALL!` e
+  `O treinador bloqueou a BALL!`. Agora leem BOLAS/BOLA, como o resto. A do
+  KURT foi rearranjada de quebra: a linha do meio ja estourava as 18 colunas,
+  porque `#` vale QUATRO glifos (vira `POKé`) e ninguem tinha contado assim.
+- As falas do SAFARI ficam como estao: `SAFARI BALL` nao esta em
+  `lang/item_names.lua`, e uma fala nao pode citar item por um nome que a
+  bolsa nao usa.
+
 ### Limpeza
 
 - **Uma chave morta a menos.** `"You have no more\nPOKéMON that can\011fight!"`
