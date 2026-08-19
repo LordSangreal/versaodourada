@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-19T18:39:55Z",
+  "generated_at": "2026-08-19T18:50:15Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.48.3",
+      "version": "0.48.4",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.48.3",
-        "tag": "v0.48.3",
-        "name": "Versao Dourada 0.48.3 -- ensinar golpe pela bolsa, e o relogio",
+        "version": "0.48.4",
+        "tag": "v0.48.4",
+        "name": "Versao Dourada 0.48.4 -- os golpes usam as 12 colunas",
         "prerelease": false,
-        "published_at": "2026-08-19T18:39:55Z",
+        "published_at": "2026-08-19T18:50:15Z",
         "zip": {
-          "name": "versaodourada-0.48.3.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.3/versaodourada-0.48.3.zip",
-          "size": 472496
+          "name": "versaodourada-0.48.4.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.4/versaodourada-0.48.4.zip",
+          "size": 473062
         }
       },
       "update_check": "ok"
