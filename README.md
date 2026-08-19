@@ -344,6 +344,15 @@ entao um jogo sem mod imprime o mesmo de sempre.
 O `kind` -- "RATO", "CHAMA" -- e as descricoes ja estavam em portugues desde a
 0.47.0; era a ficha de medidas que ficava em ingles no meio delas.
 
+> **Um aviso para quem ja roda o motor remendado.** Num `gen1recomp` **de
+> fabrica** nada disto aparece e nada quebra: sem a rota `pokedex` o mod nao
+> chega a escrever medida nenhuma, e a ficha continua a do cartucho. Mas um
+> motor remendado **anterior a esta versao** e o pior dos dois mundos -- ja tem
+> a rota da POKeDEX, entao recebe o numero metrico, e ainda desenha no molde de
+> pe e libra: o `0,5 m` do CYNDAQUIL sai como `0'05"` e o `7,9 kg` como
+> `7.9lb`. Nao e o valor original, e o valor novo no molde velho. Atualize o
+> payload junto com o mod.
+
 ### A interface do aplicativo
 
 Launcher, importacao de ROM, espacos de save, gerenciador de mods: tudo em
