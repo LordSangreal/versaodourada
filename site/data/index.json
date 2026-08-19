@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-19T14:19:02Z",
+  "generated_at": "2026-08-19T18:22:30Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.48.1",
+      "version": "0.48.2",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.48.1",
-        "tag": "v0.48.1",
-        "name": "Versao Dourada 0.48.1 -- PC, CAIXA, save, evolucao e captura",
+        "version": "0.48.2",
+        "tag": "v0.48.2",
+        "name": "Versao Dourada 0.48.2 -- a terceira linha caia fora da caixa",
         "prerelease": false,
-        "published_at": "2026-08-19T14:19:02Z",
+        "published_at": "2026-08-19T18:22:30Z",
         "zip": {
-          "name": "versaodourada-0.48.1.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.1/versaodourada-0.48.1.zip",
-          "size": 470936
+          "name": "versaodourada-0.48.2.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.2/versaodourada-0.48.2.zip",
+          "size": 471534
         }
       },
       "update_check": "ok"
