@@ -50,6 +50,40 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.48.2
+
+**A terceira linha caia fora da caixa.** `CACA-INSETOS JOSH quer` e nada mais:
+a quebra estava DEPOIS do rotulo do treinador (`%s quer` / `batalhar!`), e o
+rotulo e classe + nome. Com 17 glifos a primeira linha vira 22, o motor a
+reparte sozinho, e o que sobra e uma TERCEIRA linha numa caixa de duas -- que
+o jogador nunca ve. Com nome curto (`LIDER BUGSY`) cabia, e foi por isso que
+passou no teste.
+
+Agora o rotulo tem a linha inteira, como o proprio cartucho faz
+(WantsToBattleText quebra depois do `<TRAINER>`):
+
+| | antes | agora |
+|---|---|---|
+| desafio | `%s quer` / `batalhar!` | `%s` / `quer batalhar!` |
+| envio | `%s manda` / `%s!` | `%s` / `manda %s!` |
+
+**Tres classes de treinador encurtadas**, porque a linha so cabe se o rotulo
+couber: medido contra os 496 pares classe+nome que a ROM tem, 23 passavam de
+18 colunas.
+
+| id | antes | agora | por que |
+|---|---|---|---|
+| `COOLTRAINERF/M` | TREINADOR TOP | **TREINADOR ÁS** | 19 col com TYLER/STEVE/REENA |
+| `BOARDER` | SNOWBOARDER | **SNOWBOARD** | 19 col com DOUGLAS; o ingles e `BOARDER`, mais curto |
+| `GUITARIST` | GUITARRISTA | **ROQUEIRO** | 19 col com VINCENT; o ingles e `GUITARIST` |
+
+Depois disso, **0 dos 496** rotulos passa de 18.
+
+**E uma mensagem de atributo no mesmo erro.** `%s teve %s / aumentado!` punha
+especie E atributo na primeira linha (23 col com ESP.ATQ). As outras quinze
+mensagens de atributo ja usavam o molde `%s:` + quebra; esta ficou para tras.
+Agora e `%s:` / `%s subiu!`, como as irmas.
+
 ## 0.48.1
 
 A rodada que o teste na tela abriu: a **sequencia de captura** estava quase toda
