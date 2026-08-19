@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-18T22:11:55Z",
+  "generated_at": "2026-08-19T04:44:25Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,12 +11,12 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.47.1",
+      "version": "0.48.0",
       "categories": [
         "LANGUAGE"
       ],
       "repo": "https://github.com/LordSangreal/versaodourada",
-      "summary": "Pokemon Gold em portugues brasileiro. Traducao propria: falas, POKeDEX, golpes, itens e tipos. A POKeDEX exige um gen1recomp com a rota de catalogo do Gold. Para Crystal, veja versaocristal-ptbr.",
+      "summary": "Pokemon Gold em portugues brasileiro. Traducao propria: falas, POKeDEX (com altura e peso em metro e quilo), golpes, itens e tipos. A POKeDEX exige um gen1recomp com a rota de catalogo do Gold. Para Crystal, veja versaocristal-ptbr.",
       "tags": [
         "portuguese",
         "brazilian",
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.47.1",
-        "tag": "v0.47.1",
-        "name": "Versao Dourada 0.47.1 -- cobertura 89% / 96%",
+        "version": "0.48.0",
+        "tag": "v0.48.0",
+        "name": "Versao Dourada 0.48.0 -- altura e peso em metro e quilo",
         "prerelease": false,
-        "published_at": "2026-08-18T22:11:55Z",
+        "published_at": "2026-08-19T04:44:25Z",
         "zip": {
-          "name": "versaodourada-0.47.1.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.47.1/versaodourada-0.47.1.zip",
-          "size": 460635
+          "name": "versaodourada-0.48.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.0/versaodourada-0.48.0.zip",
+          "size": 467657
         }
       },
       "update_check": "ok"
