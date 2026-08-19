@@ -50,6 +50,40 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.48.4
+
+**Os golpes ganharam a coluna que sempre tiveram.** O teto medido em
+`BattleState.lua:3412` sempre foi **12** -- o cabecalho de `move_names.lua` ja
+dizia isso --, mas o lote original parou em 11 por precaucao e deixou uma
+coluna sobrando em 65 dos 66 nomes abreviados. Voce conferiu na tela e liberou:
+o ponto final encostar no PP nao atrapalha.
+
+**Vinte e cinco deixam de ser abreviacao e viram palavra inteira:**
+
+| antes | agora |
+|---|---|
+| `ATAQUE ARE.` | **ATAQUE AREIA** |
+| `LUFADA VEN.` | **LUFADA VENTO** |
+| `ATAQUE VEL.` | **ATAQUE VELOZ** |
+| `LANÇA-CHAM.` | **LANÇA-CHAMAS** |
+| `SOCO TROVO.` | **SOCO TROVÃO** |
+| `DANÇA ESPA.` | **DANÇA ESPADA** |
+| `PODER OCUL.` | **PODER OCULTO** |
+| `BOLA SOMBR.` | **BOLA SOMBRIA** |
+| `CHIFRE BRO.` | **CHIFRE BROCA** |
+| `AGULHA DUP.` | **AGULHA DUPLA** |
+| `GOLPE CARA.` | **GOLPE CARATÊ** |
+| `POLVO-CANH.` | **POLVO-CANHÃO** |
+
+...e mais treze. Os outros 41 continuam abreviados, mas com uma letra a mais:
+`ATAQUE RÁP.` virou `ATAQUE RÁPI.`, `RAIO CONGE.` virou `RAIO CONGEL.`.
+
+**As duas citacoes foram trocadas junto** (`SEMENTE SG.` e `VISÃO FUTU.`, em
+`strings.lua`): uma frase que cite um golpe tem de usar a forma exata de
+`move_names.lua`, senao a tela diz um nome e a bolsa diz outro.
+
+So catalogo -- nao precisa trocar o motor.
+
 ## 0.48.3
 
 **Ensinar golpe pela bolsa estava todo em ingles.** Nove caixas -- `QUILAVA is
