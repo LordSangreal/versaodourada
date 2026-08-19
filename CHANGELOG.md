@@ -50,12 +50,81 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
-### Conserto
+## 0.48.1
 
-- **Uma chave de batalha nunca chegava:** `"You have no more\nPOKéMON that
-  can\011fight!"` estava gravada com a barra invertida escapada, entao a chave
-  do catalogo tinha o texto `\011` e a do motor tem o caractere 11. `\v` no
-  lugar.
+A rodada que o teste na tela abriu: a **sequencia de captura** estava quase toda
+em ingles, e o motivo era sempre o mesmo -- o sitio de desenho monta a frase com
+`..` em vez de passar pelo catalogo, entao nenhuma traducao alcanca.
+
+**+15 chaves**, todas em `src/ui/gen2/BattleState.lua` e `src/script/gen2/Vm.lua`
+(exigem o motor remendado):
+
+- `GOLDEEN's data was newly added to the #DEX.`
+- `Give a nickname to GOLDEEN?` -- agora divide a chave com o caminho do
+  overworld, que ja era traduzido
+- `GOLDEEN was sent to BILL's PC.`
+- `FIRE BREATHER RAY sent out VULPIX!` -- a classe do treinador ja saia em
+  portugues e o verbo nao, na mesma linha
+- as quatro falas da bola que balanca e escapa
+- `Choose a POKéMON.`, `Can't escape!`, `%s is already out.`,
+  `%s can't be recalled!`, `%s came to its senses.`,
+  `That isn't going to help here.`, `The POKéMON BOX is full.`
+
+**Os quatro nomes de bolso da bolsa.** `ITEM POCKET`, `KEY POCKET`,
+`BALL POCKET` e `TM POCKET` viraram `BOLSO DE ITENS`, `BOLSO DE CHAVES`,
+`BOLSO DE BOLAS` e `BOLSO DE TM`. Eles entram DENTRO de duas frases que ja
+estavam traduzidas, e por isso o box saia metade em cada lingua.
+
+**Duas frases reescritas junto**, porque BOLSO e masculino e elas estavam no
+feminino -- sobra de quando o nome do bolso vinha em ingles e nao concordava com
+nada:
+
+| | antes | agora |
+|---|---|---|
+| guardar item | `{PLAYER} pos o POCAO na ITEM POCKET.` | `{PLAYER} guardou POCAO no BOLSO DE ITENS.` |
+| bolso cheio | `A ITEM POCKET esta cheia…` | `O BOLSO DE ITENS esta cheio…` |
+
+O artigo do item saiu junto: `o POCAO` estaria errado do mesmo jeito, e nenhum
+formato de string resolve genero em portugues.
+
+**+48 chaves do PC, da CAIXA, do save e da evolucao.** Mesmo bug, outras telas:
+o sitio monta a linha com `..` ou guarda a pagina como lista de linhas soltas,
+e nenhuma traducao alcanca.
+
+| tela | o que estava em ingles |
+|---|---|
+| PC do CENTRO | `turned on the PC`, `BILL's PC accessed`, `#MON Storage System opened`, `Accessed own PC`, `Item Storage System opened`, `PROF.OAK's PC accessed`, `#DEX Rating System opened`, `Want to get your #DEX rated?`, `The link to PROF.OAK's PC closed`, `Link closed…` |
+| PC de itens | `What do you want to do?`, `How many do you want to withdraw/deposit?`, `Withdrew/Deposited N`, `There's no room…`, `No items here!`, `Toss out how many`, `Throw away N` |
+| CAIXA | `What's up?`, `Choose a PKMN.`, `Move to where?`, `It's your last PKMN!`, `No more usable PKMN!`, `Remove MAIL.`, `There's no room!`, `%s was released.`, `No releasing EGGS!`, `Saving… Leave ON!` |
+| equipe | os sete prompts (`Use on which PKMN?`, `Teach which PKMN?`…) |
+| save | `There is already a save file.`, `SAVING… DON'T TURN OFF THE POWER.`, `%s saved the game.`, `Could not save.` |
+| evolucao | `What? %s is evolving!`, `Congratulations! Your %s`, `evolved into %s!`, `Huh? %s stopped evolving!`, `%s wants to learn %s!` |
+
+**`Strings.lines` no motor.** As telas do Gold guardam uma pagina como LISTA de
+linhas, uma string por linha, e um catalogo com chave por linha poe a traducao
+numa camisa de forca: a frase nao quebra nos mesmos lugares em outra lingua, e
+uma chave de linha nao consegue mover palavra de uma para a outra. `Strings.lines`
+recebe a pagina inteira numa chave so, com as quebras dentro, traduz e reparte.
+Sem catalogo devolve exatamente as linhas da fonte.
+
+Foi por isso que `Would you like to` e `save the game?`, que eram DUAS chaves de
+uma linha cada, viraram uma so.
+
+### Cobertura
+
+1053 chaves em `lang/strings.lua`, 919 alcancadas com o patch (eram 994 e
+860). Os 134 que faltam continuam os mesmos do README -- e 101 deles chegam a
+tela por rota que a regua nao ve.
+
+### Limpeza
+
+- **Uma chave morta a menos.** `"You have no more\nPOKéMON that can\011fight!"`
+  estava gravada com a barra invertida escapada -- a chave do catalogo tinha o
+  texto `\011` e o motor pede o caractere 11. Ninguem via isso na tela: a chave
+  certa ja existia no fim do arquivo, e era ela que valia. A errada saiu.
+- **Ferramenta nova:** `ferramentas/sitios_crus.py` lista os literais de tela
+  que ainda nao passam por `Strings()` num arquivo do motor. Foi ela que achou
+  os 20 sitios desta versao.
 
 ## 0.47.1
 

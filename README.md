@@ -21,18 +21,18 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 
 ## Cobertura
 
-O mod carrega **5221 entradas**. Quanto delas chega a tela depende do motor,
+O mod carrega **5280 entradas**. Quanto delas chega a tela depende do motor,
 porque parte do texto do Gold ainda nao passa pelo catalogo de traducoes --
 esta cravada no codigo.
 
 | | sem o patch de motor | com o patch |
 |---|---|---|
-| **Total** | **91%** | **97%** |
+| **Total** | **90%** | **97%** |
 
 | categoria | total | sem patch | com patch |
 |---|---|---|---|
 | Falas de NPC | 2994 | 2994 | 2994 |
-| Menus e batalha | 994 | 754 | 860 |
+| Menus e batalha | 1053 | 780 | 919 |
 | POKeDEX | 251 | **0** | 251 |
 | Nomes de golpe | 252 | 252 | 252 |
 | Descricoes de golpe | 252 | 252 | 252 |
@@ -45,11 +45,11 @@ esta cravada no codigo.
 Medido por `ferramentas/cobertura.py` contra o `gen1recomp` **0.2.6** de
 fabrica.
 
-### Sem o patch: 91%
+### Sem o patch: 90%
 
 Instale so o mod e o jogo fica **jogavel e majoritariamente em portugues**.
 Falas de NPC, golpes, itens, tipos, classes de treinador, nomes de lugar e
-mais de tres quartos dos menus.
+tres quartos dos menus.
 
 **Nada quebra.** Uma chave que o motor nao pede simplesmente nao e usada, e um
 registro sem rota e pulado -- o `main.lua` testa antes de aplicar. O que nao
@@ -57,7 +57,7 @@ chega **aparece em ingles**, nunca em branco nem cortado.
 
 ### Com o patch: 97%
 
-O que falta sao **a POKeDEX inteira** e cerca de 106 chaves de menu e batalha.
+O que falta sao **a POKeDEX inteira** e cerca de 139 chaves de menu e batalha.
 Essas dependem de uma alteracao no motor, nao do mod:
 
 - a rota `pokedex` no registro de conteudo do Gold, que ainda nao existe;
