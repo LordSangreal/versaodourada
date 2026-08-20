@@ -50,6 +50,57 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.50.0
+
+**A POKeDEX do Silver, 251 de 251.** As 502 descricoes escritas do zero, a
+partir do ingles do SILVER -- nao do Gold.
+
+A 0.49.0 montou o mecanismo: o mod pergunta em qual jogo esta e carrega
+`lang/pokedex.lua` ou `lang/pokedex_silver.lua`. Faltava o segundo arquivo.
+Agora cada jogo mostra a ficha da propria ROM.
+
+```
+CYNDAQUIL / gold  : Ele é tímido e sempre se enrola como uma bolinha.
+CYNDAQUIL / silver: Ele costuma ficar encolhido. Se leva um susto ou fica…
+```
+
+**O `kind` nao foi retraduzido.** A categoria e identica nas duas ROMs, entao
+as 251 vem prontas do catalogo do Gold, palavra por palavra -- zero retrabalho
+e zero risco de as duas divergirem.
+
+**Altura e peso vem do Gold, e isso conserta um defeito da ROM.** O Silver traz
+ENTEI e TYRANITAR com a altura TROCADA. Como o mod ja substitui a medida
+imperial do cartucho pela tabela canonica desde a 0.48.0, manter o canone nos
+dois jogos e coerente -- e desfaz a troca.
+
+### Medidas convertidas junto
+
+O ingles do Silver cita distancia, velocidade e temperatura em unidade
+imperial. Como a ficha ja mostra metro e quilo, seria estranho o resto ficar em
+milha e Fahrenheit:
+
+| especie | ingles | portugues |
+|---|---|---|
+| MAGBY | 1100 graus (F) | 600 graus |
+| FLAREON | 1650 graus (F) | 900 graus |
+| ONIX | 50 mph | 80 km por hora |
+| RAPIDASH | 150 mph | 240 km por hora |
+| PIDGEOTTO | 60 milhas | 100 km |
+| GOLBAT | 10 oncas | 300 mililitros |
+| WEEDLE | duas polegadas | 5 cm |
+
+### Uma citacao evitada de proposito
+
+O ingles do WIGGLYTUFF cita BODY SLAM. A forma do catalogo e `PANCADA COR`,
+uma abreviacao que le mal no meio de uma frase, entao o golpe foi **descrito**
+em vez de nomeado ("se jogar em cima"). Citar golpe pelo nome errado quebraria
+a regra; descrever nao quebra nada.
+
+### Conferido
+
+`dex_verificar.py` passou a aceitar os dois jogos e aprova os dois catalogos:
+251 entradas, largura, linhas e alfabeto dentro, medidas na forma certa.
+
 ## 0.49.0
 
 **O mod passa a rodar tambem no Pokemon Silver, no mesmo download.**
