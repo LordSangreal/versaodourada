@@ -50,6 +50,32 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.48.6
+
+**O dano por turno do status saia em ingles.** `GYARADOS is hurt by poison!` --
+e o mesmo para a queimadura.
+
+O rotulo `VEN` do HUD ja estava em portugues, e a fala de quando o status pega
+(`foi envenenado!`) tambem. So a chiadeira de cada turno ficava em ingles, o
+que le pior do que se nada estivesse traduzido.
+
+A causa: cada status guarda uma funcao `residual` que devolvia o **sufixo** da
+frase -- o pedaco `" is hurt by poison!"`, sem o nome -- e o sitio colava no
+nome do POKeMON. Uma frase montada assim nunca vira chave. Agora o `residual`
+devolve o formato inteiro e o sitio resolve pelo catalogo.
+
+**Congelado e paralisado ja funcionavam:** essas duas moram no campo
+`inflictText`, que o sitio ja passava por `Strings()`.
+
+### Correcao de documentacao
+
+Ate hoje o README dizia que restavam **zero** literais crus em
+`src/battle/gen2/Battle.lua`. Nao restavam: a varredura da epoca contava
+`Strings("literal")` e nao via nem concatenacao nem campo de tabela de modulo.
+O `sitios_crus.py` conta **34** ali. Tres sairam nesta versao; as outras 31 sao
+a proxima rodada, junto com os 81 do `Pokegear.lua` -- que e onde moram os
+**programas de radio**, ainda em ingles.
+
 ## 0.48.5
 
 Rodada de conferencia contra o **gen1recomp 0.2.11** (91 commits acima da nossa

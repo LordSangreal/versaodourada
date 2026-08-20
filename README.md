@@ -423,6 +423,14 @@ nao tem esse caminho.
 `lang/dialogue.lua` ja carrega as sete (chave = rotulo, tipo `_OakText1`,
 nao ponteiro); funcionam nos dois motores quando o motor deixa.
 
+> **Correcao de 19/08/2026.** Ate esta data o README (e o
+> `patch-gen1recomp/README.md`) diziam que restavam **zero** literais crus em
+> `src/battle/gen2/Battle.lua`. Nao restavam: a varredura da epoca contava
+> `Strings("literal")` e nao via nem concatenacao (`nome .. " is hurt by
+> poison!"`) nem campo de tabela de modulo. O `ferramentas/sitios_crus.py`
+> conta **34** ali. O dano por turno de veneno e queimadura ja saiu na 0.48.6;
+> os outros 33 sao a proxima rodada.
+
 ### 109 frases da batalha e dos menus (levantamento do `gen1recomp`)
 
 "A critical hit!", "It's super effective!", as mensagens de clima, as de
