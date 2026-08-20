@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T16:31:26Z",
+  "generated_at": "2026-08-20T16:41:25Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.48.5",
+      "version": "0.48.6",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.48.5",
-        "tag": "v0.48.5",
-        "name": "Versao Dourada 0.48.5 -- conferencia contra o 0.2.11",
+        "version": "0.48.6",
+        "tag": "v0.48.6",
+        "name": "Versao Dourada 0.48.6 -- o dano por turno do status",
         "prerelease": false,
-        "published_at": "2026-08-20T16:31:26Z",
+        "published_at": "2026-08-20T16:41:25Z",
         "zip": {
-          "name": "versaodourada-0.48.5.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.5/versaodourada-0.48.5.zip",
-          "size": 473642
+          "name": "versaodourada-0.48.6.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.6/versaodourada-0.48.6.zip",
+          "size": 474360
         }
       },
       "update_check": "ok"
