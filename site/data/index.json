@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T17:10:42Z",
+  "generated_at": "2026-08-20T17:36:25Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,12 +11,12 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.49.0",
+      "version": "0.50.0",
       "categories": [
         "LANGUAGE"
       ],
       "repo": "https://github.com/LordSangreal/versaodourada",
-      "summary": "Pokemon Gold e Silver em portugues brasileiro, num download so. Traducao propria: falas, POKeDEX, golpes, itens e tipos. A POKeDEX do Silver ainda sai em ingles. Para Crystal, veja versaocristal-ptbr.",
+      "summary": "Pokemon Gold e Silver em portugues brasileiro, num download so. A POKeDEX troca sozinha conforme o jogo: as 251 fichas de cada versao sao outro texto, e as duas estao traduzidas. Para Crystal, veja versaocristal-ptbr.",
       "tags": [
         "portuguese",
         "brazilian",
@@ -34,15 +34,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.49.0",
-        "tag": "v0.49.0",
-        "name": "Versao Dourada 0.49.0 -- Gold e Silver no mesmo mod",
+        "version": "0.50.0",
+        "tag": "v0.50.0",
+        "name": "Versao Dourada 0.50.0 -- a POKeDEX do Silver, 251 de 251",
         "prerelease": false,
-        "published_at": "2026-08-20T17:10:42Z",
+        "published_at": "2026-08-20T17:36:25Z",
         "zip": {
-          "name": "versaodourada-0.49.0.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.49.0/versaodourada-0.49.0.zip",
-          "size": 476384
+          "name": "versaodourada-0.50.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.50.0/versaodourada-0.50.0.zip",
+          "size": 495942
         }
       },
       "update_check": "ok"

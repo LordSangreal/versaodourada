@@ -50,9 +50,18 @@ versoes -- ENTEI 6'11" no Gold, 6'07" no Silver. E a unica diferenca
 decodificar texto. E lida ANTES de o mod escrever qualquer coisa: depois, o
 valor seria o nosso.
 
-`lang/pokedex_silver.lua` **ainda nao existe**. Sao 502 textos escritos do
-zero, a partir do ingles do Silver, e e uma rodada propria. Ate la a POKeDEX
-sai em ingles nesse jogo e o resto sai em portugues.
+Desde a **0.50.0** os dois arquivos existem: as 502 descricoes do Silver
+foram escritas do zero, a partir do ingles **daquela** ROM.
+
+```
+CYNDAQUIL / gold  : Ele é tímido e sempre se enrola como uma bolinha.
+CYNDAQUIL / silver: Ele costuma ficar encolhido. Se leva um susto ou fica…
+```
+
+O `kind` NAO foi retraduzido -- a categoria e identica nas duas ROMs, entao as
+251 vem prontas do catalogo do Gold. E `height`/`weight` tambem vem de la, o
+que de quebra desfaz um defeito da ROM: o Silver traz ENTEI e TYRANITAR com a
+altura trocada.
 
 ---
 
