@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-19T18:50:15Z",
+  "generated_at": "2026-08-20T16:31:26Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.48.4",
+      "version": "0.48.5",
       "categories": [
         "LANGUAGE"
       ],
@@ -33,15 +33,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.48.4",
-        "tag": "v0.48.4",
-        "name": "Versao Dourada 0.48.4 -- os golpes usam as 12 colunas",
+        "version": "0.48.5",
+        "tag": "v0.48.5",
+        "name": "Versao Dourada 0.48.5 -- conferencia contra o 0.2.11",
         "prerelease": false,
-        "published_at": "2026-08-19T18:50:15Z",
+        "published_at": "2026-08-20T16:31:26Z",
         "zip": {
-          "name": "versaodourada-0.48.4.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.4/versaodourada-0.48.4.zip",
-          "size": 473062
+          "name": "versaodourada-0.48.5.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.5/versaodourada-0.48.5.zip",
+          "size": 473642
         }
       },
       "update_check": "ok"
