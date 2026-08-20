@@ -50,6 +50,44 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.49.0
+
+**O mod passa a rodar tambem no Pokemon Silver, no mesmo download.**
+
+A comparacao das duas extracoes (ver `GOLD-x-SILVER.md`) deu um resultado
+claro: **onze dos doze catalogos servem os dois jogos sem tocar em nada.** O
+texto de dialogo e IDENTICO -- 3134 falas, zero diferentes -- e itens, golpes,
+lugares e treinadores tambem.
+
+| catalogo | linhas | diferentes |
+|---|---|---|
+| `text.lua` (dialogo) | 3134 | **0** |
+| `items` / `moves` / `landmarks` / `trainers` | 14561 | **0** |
+| `pokedex` | 2261 | **504** |
+
+**Oito ponteiros de dialogo foram duplicados.** As falas de STRENGTH e ROCK
+SMASH moram dois bytes antes no Silver; a mesma traducao passa a existir sob as
+duas chaves. Chave que o jogo rodando nao pede fica inerte -- o mesmo arranjo
+que ja faz um catalogo so servir gen1recomp e Gen2Recomped.
+
+### A POKeDEX troca sozinha conforme a versao
+
+As 251 especies tem ficha PROPRIA em cada jogo, e o registro e indexado por id
+de especie -- um catalogo unico mostraria a ficha do Gold para quem joga
+Silver. Entao o `main.lua` pergunta em qual jogo esta e carrega
+`lang/pokedex.lua` ou `lang/pokedex_silver.lua`.
+
+**Quem responde e a propria ROM.** ENTEI e TYRANITAR tem a altura TROCADA entre
+as versoes (ENTEI 6'11" no Gold, 6'07" no Silver) -- a unica diferenca
+NUMERICA que serve de identidade, entao nao depende de decodificar texto. Lida
+ANTES de qualquer patch nosso: depois, o valor lido seria o que nos mesmos
+escrevemos.
+
+**O `pokedex_silver.lua` ainda nao existe**, e e de proposito: sao 502 textos
+escritos do zero, a partir do ingles do SILVER, e isso e uma rodada propria. Ate
+la a POKeDEX sai em ingles no Silver e nada quebra -- `catalog()` devolve uma
+tabela vazia em silencio. Todo o resto do jogo sai em portugues.
+
 ## 0.48.6
 
 **O dano por turno do status saia em ingles.** `GYARADOS is hurt by poison!` --

@@ -203,7 +203,37 @@ return function(mod)
   -- teste de existencia antes: num motor sem a rota, `mod.content.pokedex`
   -- e nil e o catalogo fica inerte em vez de derrubar o mod inteiro (com
   -- `api = 2` um erro de registro e erro duro, nao aviso).
-  local dex = catalog("pokedex")
+  -- QUAL JOGO ESTA RODANDO.  Onze dos doze catalogos servem Gold e Silver sem
+  -- tocar em nada: o texto de dialogo e IDENTICO nas duas ROMs -- 3134 falas,
+  -- zero diferentes -- e itens, golpes, lugares e treinadores tambem.  Ver
+  -- GOLD-x-SILVER.md.
+  --
+  -- A POKeDEX e a excecao, e e a grande: as 251 especies tem ficha propria em
+  -- cada versao, e o registro e indexado por ID DE ESPECIE, nao por endereco.
+  -- Um catalogo so mostraria a ficha do Gold para quem joga Silver -- que e o
+  -- mesmo defeito que separou o Crystal em repositorio proprio na 0.46.0.
+  --
+  -- Quem responde qual jogo e a propria ROM: ENTEI e TYRANITAR tem a altura
+  -- TROCADA entre as versoes (ENTEI 6'11" no Gold, 6'07" no Silver).  E a
+  -- unica diferenca NUMERICA que serve de identidade, e por isso nao depende
+  -- de decodificar texto.  Lida ANTES de qualquer patch nosso: depois, o valor
+  -- lido seria o que nos mesmos escrevemos.
+  --
+  -- Sem a rota `pokedex` (motor de fabrica) a pergunta nao tem resposta -- e
+  -- nem precisa ter, porque ali nenhuma ficha e escrita de qualquer jeito.
+  local jogo
+  if mod.content.pokedex then
+    local ok, entei = pcall(function()
+      return mod.content.pokedex:get("ENTEI")
+    end)
+    if ok and type(entei) == "table" and entei.height then
+      jogo = entei.height == 607 and "silver" or "gold"
+    end
+  end
+
+  -- No Silver o arquivo ainda nao existe, e `catalog` devolve {} em silencio:
+  -- a POKeDEX sai em ingles, como saia no Gold antes da 0.47.0, e nada quebra.
+  local dex = catalog(jogo == "silver" and "pokedex_silver" or "pokedex")
   if mod.content.pokedex then
     local dexOk, dexErro = 0, nil
     for id, entrada in pairs(dex) do
@@ -286,7 +316,7 @@ return function(mod)
   end
 
   mod.events:on("game.ready", function()
-    mod.log:info("VersaoDourada: %d textos aplicados, %d medidas metricas",
-      n, medidas)
+    mod.log:info("VersaoDourada: %d textos aplicados, %d medidas metricas"
+      .. " (jogo: %s)", n, medidas, jogo or "nao identificado")
   end)
 end

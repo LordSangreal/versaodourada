@@ -1,7 +1,7 @@
 # Versao Dourada
 
-**Pokemon Gold em portugues brasileiro**, para dois motores a partir de um
-unico download: o [gen1recomp](https://github.com/bryanthaboi/gen1recomp)
+**Pokemon Gold e Silver em portugues brasileiro**, para dois motores a partir
+de um unico download: o [gen1recomp](https://github.com/bryanthaboi/gen1recomp)
 oficial e o [Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped),
 fork de UNDERdecodedHD com suporte a Gen 2 mais maduro. Os dois sao
 recriacoes nativas dos jogos em Lua/LOVE2D -- nao emuladores.
@@ -16,6 +16,43 @@ Nao ha uma unica linha derivada de outra traducao no pacote.
 > **[LordSangreal/versaocristal-ptbr](https://github.com/LordSangreal/versaocristal-ptbr)**.
 > Ate a 0.45.1 os dois jogos dividiam este mod; a 0.46.0 separou. Veja
 > [Por que dois repositorios](#por-que-dois-repositorios) abaixo.
+
+---
+
+## Gold e Silver no mesmo mod
+
+Desde a 0.49.0 o mod declara `games: ["gold", "silver"]` e roda nos dois.
+Nao ha duas versoes do pacote: e o mesmo arquivo.
+
+Isso e possivel porque as duas ROMs dividem quase tudo. Medido catalogo por
+catalogo (`ferramentas/comparar.py`, relatorio em `GOLD-x-SILVER.md`):
+
+| catalogo | linhas | diferentes |
+|---|---|---|
+| dialogo | 3134 | **0** |
+| itens, golpes, lugares, treinadores | 14561 | **0** |
+| POKeDEX | 2261 | **504** |
+
+O texto de NPC e **identico**, palavra por palavra. So oito falas mudam de
+endereco (STRENGTH e ROCK SMASH, dois bytes antes no Silver), e o catalogo
+carrega as duas chaves -- a que o jogo rodando nao pede fica inerte.
+
+### A POKeDEX troca sozinha
+
+As 251 especies tem ficha **propria** em cada versao, e o registro e indexado
+por id de especie: um catalogo unico mostraria a ficha do Gold para quem joga
+Silver. Entao o `main.lua` pergunta em qual jogo esta e carrega
+`lang/pokedex.lua` ou `lang/pokedex_silver.lua`.
+
+**Quem responde e a ROM.** ENTEI e TYRANITAR tem a altura TROCADA entre as
+versoes -- ENTEI 6'11" no Gold, 6'07" no Silver. E a unica diferenca
+**numerica** entre as duas fichas, entao a identidade nao depende de
+decodificar texto. E lida ANTES de o mod escrever qualquer coisa: depois, o
+valor seria o nosso.
+
+`lang/pokedex_silver.lua` **ainda nao existe**. Sao 502 textos escritos do
+zero, a partir do ingles do Silver, e e uma rodada propria. Ate la a POKeDEX
+sai em ingles nesse jogo e o resto sai em portugues.
 
 ---
 

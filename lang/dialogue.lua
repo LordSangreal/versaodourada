@@ -2976,8 +2976,11 @@ return {
   -- ingles) mas o ponteiro da ROM tem prioridade sobre o Strings()
   -- fallback no codigo do motor -- precisa da chave exata aqui tambem.
   ["03:4d44"] = "{STRBUF} usou\nSTRENGTH!",
+  ["03:4d42"] = "{STRBUF} usou\nSTRENGTH!",
   ["03:4d49"] = "{STRBUF} move\npedregulhos.",
+  ["03:4d47"] = "{STRBUF} move\npedregulhos.",
   ["03:4d71"] = "Agora dá para\nmover pedregulhos!",
+  ["03:4d6f"] = "Agora dá para\nmover pedregulhos!",
   ["46:61cc"] = "O pedregulho caiu\nno buraco.",
   ["65:480f"] = "Não tem interesse\nno {STRBUF}.",
   ["65:482d"] = "Parece gostar\ndo {STRBUF}.",
@@ -2996,10 +2999,15 @@ return {
   -- simples que a do Crystal), e o discurso do OAK liberando o
   -- MT.SILVER.
   ["03:4d6c"] = "Um POKéMON pode\nconseguir mover\visso.\fQuer usar\nSTRENGTH?",
+  ["03:4d6a"] = "Um POKéMON pode\nconseguir mover\visso.\fQuer usar\nSTRENGTH?",
   ["03:4d76"] = "Um POKéMON pode\nconseguir mover\visso.",
+  ["03:4d74"] = "Um POKéMON pode\nconseguir mover\visso.",
   ["03:4f5b"] = "{STRBUF} usou\nROCK SMASH!",
+  ["03:4f59"] = "{STRBUF} usou\nROCK SMASH!",
   ["03:4f75"] = "Um POKéMON pode\nconseguir\vquebrar isso.",
+  ["03:4f73"] = "Um POKéMON pode\nconseguir\vquebrar isso.",
   ["03:4f7a"] = "Essa pedra parece\nquebrável.\fQuer usar ROCK\nSMASH?",
+  ["03:4f78"] = "Essa pedra parece\nquebrável.\fQuer usar ROCK\nSMASH?",
   ["09:7176"] = "É um pôster de um\nPIKACHU fofo.",
   ["09:717e"] = "É um pôster de\numa CLEFAIRY\vfofa.",
   ["09:7186"] = "É um pôster de um\nJIGGLYPUFF fofo.",
