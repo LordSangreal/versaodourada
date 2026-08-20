@@ -10,6 +10,7 @@ return {
   ["%d'%d\""] = "%d,%dm",
   ["%d.%dlb"] = "%d,%dkg",
   ["%s\ndid not learn\v%s."] = "%s não\naprendeu\v%s.",
+  ["%s\nfainted!"] = "%s\ndesmaiou!",
   ["%s already knows %s!"] = "%s já sabe\n%s!",
   ["%s came to its senses."] = "%s caiu\nem si.",
   ["%s can't be recalled!"] = "%s não\npode ser trocado!",

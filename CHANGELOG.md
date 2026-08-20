@@ -50,6 +50,36 @@ chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
 a interface de Red/Blue/Yellow.
 
+## 0.48.5
+
+Rodada de conferencia contra o **gen1recomp 0.2.11** (91 commits acima da nossa
+base 0.2.6), para ver o que o upstream mudou por baixo da traducao.
+
+**Nada quebrou, e o patch continua necessario:** o upstream ainda nao tem a
+rota `pokedex` no registro de conteudo, e a distancia entre o motor de fabrica
+e o remendado ficou igual -- 790 chaves contra 935.
+
+**Seis chaves pararam de ser pedidas**, todas pelo PR do `thibautbus` que
+manda mais mensagens pelo texto da ROM em vez do catalogo. Quatro delas
+(`transferred to`, `dodged the thrown BALL`, `can't be caught`, `someone's PC`)
+vivem em `src/battle/BattleState.lua`, que e o motor de Red/Blue/Yellow -- o
+Gold nunca as mostrou. As outras duas sao da maquina cacaniqueis, que a 0.2.11
+reescreveu inteira.
+
+**Zero chaves novas** que o Gold peca e o catalogo nao tenha por causa do
+update: medido contra a 0.2.11 de fabrica, faltam 16 no Gold e 12 delas sao
+simbolo (`▶ ♀ ♂ № ⁂ <LV>`) que fica no original de proposito.
+
+### Conserto
+
+- **A chamada dos desmaiados nunca chegava.** Quando o jogador apaga, o jogo
+  lista os POKeMON que cairam com `Strings("%s
+fainted!", ...)`
+  (`world/gen2/World.lua:9234`). A chave do catalogo era `"%s fainted!"`, com
+  ESPACO -- parecida o bastante para ninguem desconfiar, e diferente o
+  bastante para nunca casar. Nao tem a ver com o update: e gap antigo, achado
+  pelo `faltando.py` nesta conferencia.
+
 ## 0.48.4
 
 **Os golpes ganharam a coluna que sempre tiveram.** O teto medido em
