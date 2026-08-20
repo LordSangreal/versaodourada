@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T16:41:25Z",
+  "generated_at": "2026-08-20T17:10:42Z",
   "count": 1,
   "categories": [
     "LANGUAGE"
@@ -11,12 +11,12 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.48.6",
+      "version": "0.49.0",
       "categories": [
         "LANGUAGE"
       ],
       "repo": "https://github.com/LordSangreal/versaodourada",
-      "summary": "Pokemon Gold em portugues brasileiro. Traducao propria: falas, POKeDEX (com altura e peso em metro e quilo), golpes, itens e tipos. A POKeDEX exige um gen1recomp com a rota de catalogo do Gold. Para Crystal, veja versaocristal-ptbr.",
+      "summary": "Pokemon Gold e Silver em portugues brasileiro, num download so. Traducao propria: falas, POKeDEX, golpes, itens e tipos. A POKeDEX do Silver ainda sai em ingles. Para Crystal, veja versaocristal-ptbr.",
       "tags": [
         "portuguese",
         "brazilian",
@@ -29,19 +29,20 @@
       "api": 2,
       "profile": "content",
       "games": [
-        "gold"
+        "gold",
+        "silver"
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.48.6",
-        "tag": "v0.48.6",
-        "name": "Versao Dourada 0.48.6 -- o dano por turno do status",
+        "version": "0.49.0",
+        "tag": "v0.49.0",
+        "name": "Versao Dourada 0.49.0 -- Gold e Silver no mesmo mod",
         "prerelease": false,
-        "published_at": "2026-08-20T16:41:25Z",
+        "published_at": "2026-08-20T17:10:42Z",
         "zip": {
-          "name": "versaodourada-0.48.6.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.48.6/versaodourada-0.48.6.zip",
-          "size": 474360
+          "name": "versaodourada-0.49.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.49.0/versaodourada-0.49.0.zip",
+          "size": 476384
         }
       },
       "update_check": "ok"
