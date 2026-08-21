@@ -7,48 +7,73 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
-## 0.48.0
+## 0.51.0
 
-**Altura e peso da POKeDEX em metro e quilo.** A ficha de cada especie vinha em
-pe, polegada e libra, porque foi a versao americana do cartucho que converteu o
-que o jogo japones media em metrico. Agora le `AL 0,9m` e `PS 19,5kg`.
+**A conversa das trocas com NPC, que saia inteira em ingles.** O rapaz da
+CIDADE DE VIOLET abria com "Hi, I'm looking for this POKeMON." com a caixa de
+SIM/NAO ao lado ja em portugues -- e sao cinco falas por personalidade de
+treinador, mais a linha do cabo e as legendas da animacao da troca.
 
-O numero **nao** sai de converter a libra de volta. A altura ate sobreviveria a
-ida e volta -- a polegada e mais fina que o decimo de metro, e as 251 conferem
---, mas o peso nao: o cartucho gravou 15,0 libras onde o original diz 6,9 kg, e
-a volta da 6,8. Seriam 196 das 251 erradas por um decimo. A fonte e a tabela
-canonica da franquia, cruzada pelo numero da POKeDEX.
+**Nao era descuido de catalogo.** Estas falas nao estao no `text.lua`, o dump
+de dialogo indexado por ponteiro de ROM: elas moram em `events.tradeTexts`,
+que o extrator escreve a partir de `TradeTexts`. Sao **dado de cache**, e
+`events` nao tem rota em `Schemas.GEN2` -- nao havia registro de mod que as
+alcancasse. Uma parte ja estava traduzida no catalogo desde antes, mas sob a
+forma de FALLBACK que o motor transcreve (com `#MON` e sem o marcador de
+rolagem); o que chega a tela e a do cache, com `POKeMON` por extenso. Sao
+strings diferentes byte a byte.
 
-**Em cada motor:**
+O remendo passa o corpo resolvido por `Strings()` em
+`src/ui/gen2/TradeMenu.lua` (`lineFor` e as duas linhas cruas de `chose`) e em
+`src/ui/gen2/TradeAnim.lua` (`TradeAnimView:lines`). Sem traducao a chamada
+devolve a fonte, entao um jogo sem mod imprime o mesmo de sempre.
 
-- **Gen2Recomped:** so mod. A tela ja montava a linha com
-  `Strings("%2d′%02d″", ...)` e `Strings("%4d.%dlb", ...)`; as medidas chegam
-  la pelo campo `dexEntry` do registro `pokemon`, montado no `main.lua`.
-- **gen1recomp:** exige o patch de motor. `lb` estava no catalogo, mas as
-  marcas de pe e polegada sao **tiles** da folha do #DEX, nao letras -- daria
-  metade da linha em uma unidade e metade na outra. O patch poe a linha
-  inteira sob uma forma de catalogo (`%d'%d"`, `%d.%dlb`) e mantem o caminho
-  dos tiles enquanto ninguem pedir outra coisa, entao um jogo sem mod imprime
-  o mesmo de sempre.
+**Gold e Silver tem `tradeTexts` identico** -- conferido bloco a bloco nos dois
+`data/generated/events.lua` --, entao as 12 chaves novas servem os dois jogos,
+como o resto do catalogo de dialogo.
 
-### Cobertura remedida: 91% / 97%
+### Duas linhas de opcao: NOME DOS GOLPES e NOME DOS ITENS
 
-Nao e traducao nova, e regua nova -- e desta vez ela **fica no projeto**
-(`ferramentas/cobertura.py`), entao o numero da para reconferir. A da 0.47.1
-era um script de sessao que se perdeu, e esta nao reproduz o 89% / 96% dela.
+Cada uma escolhe entre **PORTUGUES** e **ENGLISH**, em MODS -> Versao Dourada
+-> OPTIONS. Sao os **nomes**: a descricao do golpe, da TM e do item continua em
+portugues nos dois modos, porque ela explica o efeito e ninguem procura guia
+por ela.
 
-A regua varre todo literal de string de **tres** arvores (gen1recomp de
-fabrica, gen1recomp remendado, Gen2Recomped), resolve as escapadas (`\n`,
-`\011`) e compara com a chave do catalogo.
+O motivo de existirem e o argumento que segurou a traducao de golpe e item ate
+a 0.47.0 -- quem joga com guia aberto quer o nome que o guia usa. A regra virou
+na 0.47.0, mas o argumento nao evaporou; agora e escolha em vez de discussao.
 
-**E o README agora abre a conta do que falta:** das 134
-chaves que o gen1recomp remendado nao pede, 101 **chegam a tela** -- 31 sao do
-Gen2Recomped, 65 sao nome de lugar (que no gen1recomp vem pelo registro
-`landmarks` e no fork vem do cache da ROM, e a regua so ve codigo) e 5 sao
-chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
-33 as que de fato nao chegam: 11 falas do GAME CORNER que estao no catalogo
-errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
-a interface de Red/Blue/Yellow.
+**Precisa reiniciar, e a tela diz isso.** O mod decide no CARREGAMENTO o que
+registrar, e registro aplicado nao se desfaz. O rodape do gerenciador promete
+`B:DONE (NO RESTART)`, que aqui seria mentira: o remendo acrescenta o campo
+opcional `requires_restart` a uma linha de esquema, e com ele a tela mostra
+`B:DONE - RESTART` e avisa `RESTART TO APPLY` a cada mudanca. Num motor que
+nao conheca o campo ele e ignorado sem erro, como a RFC 0008 permite.
+
+**O que destravou isto**: a opcao de mod agora sobrevive ao reinicio no Gold.
+`modOptions` esta em `SHARED_KEYS` (`src/core/gen2/Save.lua`), entao
+`Save.saveOptions` a grava no TOPO do `options.lua` -- nao dentro do bloco
+`gold` --, que e de onde o carregador de mods a le no boot seguinte. O
+comentario que segurava `OPCAO_IDIOMA` no `main.lua` descrevia o defeito
+antigo (`game:writeOptions()` ausente no `Game2`) e ficou velho; foi
+reescrito. Um controle que o jogador muda e que volta sozinho no reinicio
+seria pior do que nao ter controle nenhum, e era isso que segurava a linha.
+
+### Cobertura remedida: 90% / 97%
+
+Mesmos percentuais da 0.50.0, com a conta refeita sobre 1085 chaves de
+`lang/strings.lua` (eram 1073) e as tres arvores remedidas na mesma passada.
+
+A regua ganhou um balde: **texto de cache (trocas com NPC)**. As 12 chaves
+novas chegam a tela pelo remendo, mas a fonte delas e **dado**, nao literal de
+codigo -- uma varredura de codigo nao tem como ve-las, exatamente como ja
+acontecia com os 65 nomes de lugar. Sem o balde elas apareceriam como orfas, e
+o numero de orfas de verdade continua **22**.
+
+| | sem patch | com patch |
+|---|---|---|
+| `lang/strings.lua` | 791 de 1085 | 933 de 1085 |
+| Total medido | 90% | 97% |
 
 ## 0.50.0
 
@@ -383,6 +408,49 @@ tela por rota que a regua nao ve.
 - **Ferramenta nova:** `ferramentas/sitios_crus.py` lista os literais de tela
   que ainda nao passam por `Strings()` num arquivo do motor. Foi ela que achou
   os 20 sitios desta versao.
+
+## 0.48.0
+
+**Altura e peso da POKeDEX em metro e quilo.** A ficha de cada especie vinha em
+pe, polegada e libra, porque foi a versao americana do cartucho que converteu o
+que o jogo japones media em metrico. Agora le `AL 0,9m` e `PS 19,5kg`.
+
+O numero **nao** sai de converter a libra de volta. A altura ate sobreviveria a
+ida e volta -- a polegada e mais fina que o decimo de metro, e as 251 conferem
+--, mas o peso nao: o cartucho gravou 15,0 libras onde o original diz 6,9 kg, e
+a volta da 6,8. Seriam 196 das 251 erradas por um decimo. A fonte e a tabela
+canonica da franquia, cruzada pelo numero da POKeDEX.
+
+**Em cada motor:**
+
+- **Gen2Recomped:** so mod. A tela ja montava a linha com
+  `Strings("%2d′%02d″", ...)` e `Strings("%4d.%dlb", ...)`; as medidas chegam
+  la pelo campo `dexEntry` do registro `pokemon`, montado no `main.lua`.
+- **gen1recomp:** exige o patch de motor. `lb` estava no catalogo, mas as
+  marcas de pe e polegada sao **tiles** da folha do #DEX, nao letras -- daria
+  metade da linha em uma unidade e metade na outra. O patch poe a linha
+  inteira sob uma forma de catalogo (`%d'%d"`, `%d.%dlb`) e mantem o caminho
+  dos tiles enquanto ninguem pedir outra coisa, entao um jogo sem mod imprime
+  o mesmo de sempre.
+
+### Cobertura remedida: 91% / 97%
+
+Nao e traducao nova, e regua nova -- e desta vez ela **fica no projeto**
+(`ferramentas/cobertura.py`), entao o numero da para reconferir. A da 0.47.1
+era um script de sessao que se perdeu, e esta nao reproduz o 89% / 96% dela.
+
+A regua varre todo literal de string de **tres** arvores (gen1recomp de
+fabrica, gen1recomp remendado, Gen2Recomped), resolve as escapadas (`\n`,
+`\011`) e compara com a chave do catalogo.
+
+**E o README agora abre a conta do que falta:** das 134
+chaves que o gen1recomp remendado nao pede, 101 **chegam a tela** -- 31 sao do
+Gen2Recomped, 65 sao nome de lugar (que no gen1recomp vem pelo registro
+`landmarks` e no fork vem do cache da ROM, e a regua so ve codigo) e 5 sao
+chaves com contexto (`battle|FIGHT`), que o codigo nunca escreve inteiras. Sao
+33 as que de fato nao chegam: 11 falas do GAME CORNER que estao no catalogo
+errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo era
+a interface de Red/Blue/Yellow.
 
 ## 0.47.1
 

@@ -7,20 +7,17 @@
 -- e lang/item_names.lua, que a regra anterior proibia.  Nao ha
 -- lang/species_names.lua e nao deve haver.
 
--- Ligar quando o conserto de persistencia de opcao entrar no gen1recomp.
+-- Opcao de mod SOBREVIVE ao reinicio no Gold: `modOptions` esta em
+-- SHARED_KEYS (src/core/gen2/Save.lua), entao `Save.saveOptions` a grava no
+-- TOPO do options.lua -- nao dentro do bloco `gold` --, que e de onde o
+-- carregador de mods a le no boot seguinte.  Por isso as duas linhas de
+-- idioma abaixo (GOLPES e ITENS) existem: um controle que volta sozinho no
+-- reinicio seria pior do que nao ter controle nenhum.
 --
--- A linha IDIOMA funciona, mas depende de o motor GRAVAR a escolha: no Gold,
--- `ManagerState:persistOptions` chama `game:writeOptions()`, que o `Game2`
--- nao define -- a guarda passa reto em silencio e o valor se perde no
--- reinicio.  (Pior: `save.options` no Game2 e o sub-bloco "gold", nao a
--- tabela de topo de onde o Loader le `modOptions`.)  Num motor sem o
--- conserto o jogador VE a opcao, muda, e ela volta sozinha -- controle morto,
--- pior que nao ter.
---
--- Enquanto isso, o botao documentado e MODS -> desligar o mod ->
--- APPLY & RESTART, que persiste em `modsByVersion` e funciona em build
--- qualquer.  Quando o conserto sair, ligar isto e exigir a versao pelo
--- `game_version` do manifest.
+-- Esta aqui continua desligada, e nao por defeito: um interruptor "IDIOMA:
+-- ENGLISH" que apaga o mod inteiro repete o que MODS -> desligar o mod ->
+-- APPLY & RESTART ja faz, e em duplicidade a segunda copia so cria pergunta
+-- sobre qual manda.
 local OPCAO_IDIOMA = false
 
 return function(mod)
@@ -51,6 +48,54 @@ return function(mod)
       mod.log:info("VersaoDourada: idioma ENGLISH, nada aplicado")
     end)
     return
+  end
+
+  -- ---- idioma de GOLPE e de ITEM --------------------------------------
+  -- Nome de golpe e nome de item so passaram a traduzir na 0.47.0; ate ali a
+  -- regra do projeto era a mesma dos nomes de POKeMON -- o jogador procura
+  -- "THUNDERBOLT" num guia, nao "CHOQUE DO TROVAO".  A regra virou, mas o
+  -- argumento nao evaporou: quem joga com guia aberto ainda quer o nome que
+  -- o guia usa.  Entao vira escolha, em vez de virar discussao.
+  --
+  -- Sao NOMES, nao as descricoes: a descricao do golpe e da TM continua em
+  -- portugues nos dois modos, porque ela explica o efeito e ninguem procura
+  -- guia por ela.
+  --
+  -- PRECISA REINICIAR.  O mod decide no CARREGAMENTO o que registrar, e
+  -- registro aplicado nao se desfaz -- entao mudar a linha com o jogo aberto
+  -- nao teria efeito nenhum ate o proximo boot.  `requires_restart` faz o
+  -- gerenciador dizer isso na tela (o rodape dele promete "(NO RESTART)",
+  -- que aqui seria mentira); num motor que nao conheca o campo ele e
+  -- ignorado sem erro, e o aviso fica por conta do README.
+  local idioma = { golpes = "pt", itens = "pt" }
+  local temOpcoes = pcall(function()
+    mod.options:define({
+      {
+        key = "golpes",
+        type = "choice",
+        label = "NOME DOS GOLPES",
+        choices = { { "PORTUGUES", "pt" }, { "ENGLISH", "en" } },
+        default = "pt",
+        requires_restart = true,
+      },
+      {
+        key = "itens",
+        type = "choice",
+        label = "NOME DOS ITENS",
+        choices = { { "PORTUGUES", "pt" }, { "ENGLISH", "en" } },
+        default = "pt",
+        requires_restart = true,
+      },
+    })
+  end)
+  if temOpcoes then
+    for chave in pairs(idioma) do
+      -- `:get` devolve o default quando o jogador nunca mexeu, e nil num
+      -- motor sem a rota; qualquer coisa fora do par conhecido cai no
+      -- portugues, que e o motivo de o mod existir.
+      local ok, valor = pcall(function() return mod.options:get(chave) end)
+      if ok and valor == "en" then idioma[chave] = "en" end
+    end
   end
 
   local function catalog(name)
@@ -117,20 +162,24 @@ return function(mod)
   n = n + each("strings", function(src, value)
     mod.content.strings:override(src, value)
   end)
-  n = n + each("item_names", function(id, value)
-    mod.content.items:patch(id, { name = value })
-  end)
+  if idioma.itens == "pt" then
+    n = n + each("item_names", function(id, value)
+      mod.content.items:patch(id, { name = value })
+    end)
+  end
   -- Nome de golpe.  A regra antiga do projeto era manter em ingles; o
   -- usuario inverteu em 16/08/2026, pedindo a terminologia das cartas de TCG
   -- pt-BR (com o Pokemon GO como desempate).  Doze colunas -- ver o cabecalho
   -- de lang/move_names.lua para a medida dos dois layouts de batalha.
   local mnOk, mnErro = 0, nil
-  each("move_names", function(id, value)
-    local ok, err = pcall(function()
-      mod.content.moves:patch(id, { name = value })
+  if idioma.golpes == "pt" then
+    each("move_names", function(id, value)
+      local ok, err = pcall(function()
+        mod.content.moves:patch(id, { name = value })
+      end)
+      if ok then mnOk = mnOk + 1 elseif not mnErro then mnErro = err end
     end)
-    if ok then mnOk = mnOk + 1 elseif not mnErro then mnErro = err end
-  end)
+  end
   n = n + mnOk
   if mnErro then
     mod.log:warn("nome de golpe nao aplicado: %s", tostring(mnErro))
@@ -317,6 +366,7 @@ return function(mod)
 
   mod.events:on("game.ready", function()
     mod.log:info("VersaoDourada: %d textos aplicados, %d medidas metricas"
-      .. " (jogo: %s)", n, medidas, jogo or "nao identificado")
+      .. " (jogo: %s, golpes: %s, itens: %s)", n, medidas,
+      jogo or "nao identificado", idioma.golpes, idioma.itens)
   end)
 end

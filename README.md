@@ -27,13 +27,13 @@ uma unica linha derivada de outra traducao no pacote.
 |---|---|---|
 | **Total** | **90%** | **97%** |
 
-Sao **5300 entradas medidas por jogo** (o pacote carrega 5551, porque a POKeDEX
+Sao **5312 entradas medidas por jogo** (o pacote carrega 5563, porque a POKeDEX
 tem uma versao para cada jogo).
 
 | categoria | total | sem patch | com patch |
 |---|---|---|---|
 | Falas de NPC | 2994 | 2994 | 2994 |
-| Menus e batalha | 1073 | 797 | 933 |
+| Menus e batalha | 1085 | 791 | 933 |
 | POKeDEX | 251 | **0** | 251 |
 | Nomes de golpe | 252 | 252 | 252 |
 | Descricoes de golpe | 252 | 252 | 252 |
@@ -57,7 +57,7 @@ chega **aparece em ingles**, nunca em branco nem cortado.
 
 ### Com o patch: 97%
 
-Faltam a **POKeDEX inteira** e cerca de 136 chaves de menu e batalha. As duas
+Faltam a **POKeDEX inteira** e 152 chaves de menu e batalha. As duas
 dependem de uma alteracao no **motor**, nao do mod:
 
 - a rota `pokedex` no registro de conteudo do Gold, que o upstream ainda nao
@@ -69,16 +69,17 @@ Isso e um **PR pendente** — ver [Sobre o PR](#sobre-o-pr).
 
 ### E os 3% restantes?
 
-Sao **140 chaves de `lang/strings.lua`** que o motor remendado nunca pede. A
-maior parte **nao e desperdicio**: duas categorias chegam a tela e a regua e que
+Sao **152 chaves de `lang/strings.lua`** que o motor remendado nunca pede. A
+maior parte **nao e desperdicio**: tres categorias chegam a tela e a regua e que
 nao as enxerga.
 
 | o que sao | quantas | chega a tela? |
 |---|---|---|
-| chave que so o Gen2Recomped pede | 37 | sim, no outro motor |
+| chave que so o Gen2Recomped pede | 38 | sim, no outro motor |
 | nome de lugar | 65 | sim, por outra rota |
+| texto de cache (trocas com NPC) | 12 | sim, com o patch |
 | chave com contexto | 5 | sim |
-| fala que e texto da ROM | 11 | **nao** — catalogo errado |
+| fala que e texto da ROM | 10 | **nao** — catalogo errado |
 | orfa: nao existe em motor nenhum | 22 | **nao** |
 
 **Nome de lugar** e o caso mais instrutivo: no gen1recomp o TOWN MAP le
@@ -87,11 +88,18 @@ e no Gen2Recomped o cartaz de area passa por `Strings()` — mas o texto-fonte v
 do **cache da ROM**, nao de um literal do codigo. A regua varre codigo; uma
 chave cuja fonte e **dado** ela nao tem como ver.
 
+**Texto de cache** e o caso que entrou na 0.51.0, e e o mesmo defeito de regua
+visto de outro angulo: a conversa das trocas com NPC nao esta no dump de
+dialogo indexado por ponteiro -- ela mora em `events.tradeTexts`, escrita pelo
+extrator a partir da ROM. O patch passa o corpo por `Strings()`, entao a fala
+chega traduzida a tela; mas a **fonte** dela continua sendo dado, e por isso a
+varredura de codigo nao a encontra.
+
 **Chave com contexto**: `Strings("FIGHT", "battle")` guarda sob uma chave
 composta. O codigo escreve as duas metades separadas, e a chave inteira nao
 existe em lugar nenhum para a regua achar. Sao LUTAR, ITEM, FUG, DESL e FORA.
 
-So **33 de fato nao chegam**: 11 falas do GAME CORNER que estao no catalogo
+So **32 de fato nao chegam**: 10 falas do GAME CORNER que estao no catalogo
 errado (o lugar delas e `dialogue.lua`) e 22 orfas da epoca em que o alvo ainda
 era a interface de Red/Blue/Yellow.
 
@@ -146,6 +154,47 @@ TYRANITAR.
 
 ---
 
+## Duas coisas voce escolhe
+
+Em **MODS -> Versao Dourada -> OPTIONS** ha duas linhas:
+
+| linha | escolhas | o que muda |
+|---|---|---|
+| NOME DOS GOLPES | PORTUGUES / ENGLISH | so o **nome** do golpe |
+| NOME DOS ITENS | PORTUGUES / ENGLISH | so o **nome** do item |
+
+Sao os nomes, e so eles: a **descricao** do golpe, da TM e do item continua em
+portugues nos dois modos. Ela explica o efeito, e ninguem procura guia por ela.
+
+As duas existem porque o argumento que segurou essa traducao ate a 0.47.0 nao
+evaporou quando a regra virou: **quem joga com guia aberto quer o nome que o
+guia usa**. Agora e escolha em vez de discussao.
+
+### Precisa reiniciar — e a tela avisa
+
+O mod decide **no carregamento** o que registrar, e registro aplicado nao se
+desfaz. Mudar a linha com o jogo aberto nao teria efeito nenhum ate o proximo
+boot.
+
+O gerenciador de mods promete `B:DONE (NO RESTART)` no rodape, o que e verdade
+para um mod que le a opcao em tempo real e mentira para este. O patch
+acrescenta o campo opcional `requires_restart` a uma linha de esquema: com ele
+a tela mostra `B:DONE - RESTART` e avisa `RESTART TO APPLY` a cada mudanca.
+
+**Sem o patch a escolha funciona do mesmo jeito** — o campo e ignorado por um
+motor que nao o conheca, como a RFC 0008 permite; o que se perde e so o aviso
+na tela.
+
+E ela **sobrevive ao reinicio no motor de fabrica**: `modOptions` e uma das
+chaves compartilhadas de `options.lua` (`SHARED_KEYS`, em
+`src/core/gen2/Save.lua`), gravada no topo do arquivo e nao dentro do bloco
+`gold`, que e exatamente onde o carregador de mods a procura no boot
+seguinte. Foi por isso que estas duas linhas puderam existir: um controle que
+o jogador muda e que volta sozinho no reinicio seria pior do que nao ter
+controle nenhum.
+
+---
+
 ## O que fica no original — e por que
 
 Isto e **decisao de traducao**, nao falta dela.
@@ -181,6 +230,7 @@ ingles: a regra e so sobre esses tres sufixos.
 | 0.45.0 | rotulos de atributo (ATAQUE, DEFESA, ESP.ATQ, VELOC.) |
 | 0.47.0 | golpes, itens, tipos, classes de treinador e siglas de status |
 | 0.48.0 | altura e peso da POKeDEX, em metro e quilo |
+| 0.51.0 | a conversa das trocas com NPC |
 
 Golpes e itens ficavam em ingles pelo mesmo argumento dos nomes de POKeMON. A
 regra foi revertida com a terminologia de **carta de TCG pt-BR** como fonte
@@ -231,17 +281,23 @@ catalogo num arquivo do motor. Restam bolsoes conhecidos: `Pokegear.lua` (81 —
 e onde moram os **programas de radio**, ainda em ingles), `PrizeMenu.lua` (46),
 `PackMenu.lua` (18) e 31 em `battle/gen2/Battle.lua`.
 
+A conversa das **trocas com NPC** saiu dessa lista na 0.51.0, e por um caminho
+diferente: ela nao era literal de codigo nenhum: as falas vinham de
+`events.tradeTexts`, cache escrito a partir da ROM, sem registro de mod que as
+alcancasse. O patch passa o corpo por `Strings()` em `TradeMenu.lua` e
+`TradeAnim.lua`, e o catalogo faz o resto.
+
 ---
 
 ## Sobre o PR
 
 A parte que falta esta escrita, testada e **nao enviada**.
 
-Sao 41 arquivos no `gen1recomp`, sobre a base **0.2.11**: a rota da POKeDEX, a
-persistencia de opcao de mod no Gold, e o texto das telas, da batalha, do PC, do
-save e da evolucao passando a resolver pelo catalogo. Nenhuma alteracao muda o
-que um jogo **sem mod** imprime — as palavras e ate a quebra de linha ficam
-identicas.
+Sao 42 arquivos no `gen1recomp`, sobre a base **0.2.11**: a rota da POKeDEX, a
+conversa das trocas com NPC, o campo `requires_restart` na linha de opcao, e o
+texto das telas, da batalha, do PC, do save e da evolucao passando a resolver
+pelo catalogo. Nenhuma alteracao muda o que um jogo **sem mod** imprime — as
+palavras e ate a quebra de linha ficam identicas.
 
 Comparado com o `origin/dev` limpo, o patch acrescenta **+27 verificacoes e zero
 falhas novas**: as 227 do `gate_gen2_mod_api` e os quatro tiers vermelhos
