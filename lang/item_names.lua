@@ -1,4 +1,4 @@
--- Nomes de item.  Chave = id do motor (data/generated/items.lua).
+-- Nomes de item.  Chave = id do motor (o `items` do cache gerado).
 --
 -- A regra antiga do projeto (0.17.0) era manter TODO nome de item no
 -- original; o usuario inverteu em 16/08/2026 junto com golpes e status,

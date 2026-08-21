@@ -1,5 +1,5 @@
 -- Nome de CLASSE de treinador.  Chave = id da classe
--- (data/generated/trainers.lua, tabela `classes`).
+-- (o `trainers` do cache gerado, tabela `classes`).
 --
 -- E o que a tela de batalha junta com o nome proprio para formar
 -- "BUG CATCHER BENNY": `World:startScriptedBattle` monta

@@ -1,4 +1,4 @@
--- Nomes de golpe.  Chave = id do motor (data/generated/moves.lua).
+-- Nomes de golpe.  Chave = id do motor (o `moves` do cache gerado).
 --
 -- Fonte: a lista de localizacao por geracao do sircharizard.blogspot.com
 -- (indicada pelo usuario), que consolida anime, manga, TCG e jogos e diz
