@@ -67,7 +67,13 @@ return function(mod)
   -- gerenciador dizer isso na tela (o rodape dele promete "(NO RESTART)",
   -- que aqui seria mentira); num motor que nao conheca o campo ele e
   -- ignorado sem erro, e o aviso fica por conta do README.
-  local idioma = { golpes = "pt", itens = "pt" }
+  --
+  -- A terceira linha, NOME DOS NPCS, e a CLASSE do treinador -- o rotulo que
+  -- vem colado no nome dele ("CACADOR DE INSETOS BENNY").  O nome proprio
+  -- (BENNY, LANCE, WHITNEY) nao esta em jogo aqui: nome de personagem nunca
+  -- se traduz neste mod, com opcao ou sem ela.  Nao ha catalogo para isso e
+  -- nao deve haver -- ver o cabecalho deste arquivo.
+  local idioma = { golpes = "pt", itens = "pt", npcs = "pt" }
   local temOpcoes = pcall(function()
     mod.options:define({
       {
@@ -82,6 +88,14 @@ return function(mod)
         key = "itens",
         type = "choice",
         label = "NOME DOS ITENS",
+        choices = { { "PORTUGUES", "pt" }, { "ENGLISH", "en" } },
+        default = "pt",
+        requires_restart = true,
+      },
+      {
+        key = "npcs",
+        type = "choice",
+        label = "NOME DOS NPCS",
         choices = { { "PORTUGUES", "pt" }, { "ENGLISH", "en" } },
         default = "pt",
         requires_restart = true,
@@ -201,16 +215,20 @@ return function(mod)
   -- em lugar nenhum.
   -- Dentro de pcall como os outros: com `api = 2` um id que o motor nao
   -- tenha e erro duro e derrubaria o mod inteiro.
-  local tcOk, tcErro = 0, nil
-  each("trainer_classes", function(id, value)
-    local ok, err = pcall(function()
-      mod.content.trainers:patch(id, { name = value })
+  -- Em ENGLISH o catalogo nao e percorrido: sem patch, `className` continua
+  -- sendo o da ROM e a batalha anuncia "BUG CATCHER BENNY".
+  if idioma.npcs == "pt" then
+    local tcOk, tcErro = 0, nil
+    each("trainer_classes", function(id, value)
+      local ok, err = pcall(function()
+        mod.content.trainers:patch(id, { name = value })
+      end)
+      if ok then tcOk = tcOk + 1 elseif not tcErro then tcErro = err end
     end)
-    if ok then tcOk = tcOk + 1 elseif not tcErro then tcErro = err end
-  end)
-  n = n + tcOk
-  if tcErro then
-    mod.log:warn("classe de treinador nao aplicada: %s", tostring(tcErro))
+    n = n + tcOk
+    if tcErro then
+      mod.log:warn("classe de treinador nao aplicada: %s", tostring(tcErro))
+    end
   end
   -- O status tem dois rotulos: o do texto e o de tres letras que cabe na
   -- caixinha ao lado da barra de vida.  Trocar so o primeiro deixaria o HUD
@@ -366,7 +384,7 @@ return function(mod)
 
   mod.events:on("game.ready", function()
     mod.log:info("VersaoDourada: %d textos aplicados, %d medidas metricas"
-      .. " (jogo: %s, golpes: %s, itens: %s)", n, medidas,
-      jogo or "nao identificado", idioma.golpes, idioma.itens)
+      .. " (jogo: %s, golpes: %s, itens: %s, npcs: %s)", n, medidas,
+      jogo or "nao identificado", idioma.golpes, idioma.itens, idioma.npcs)
   end)
 end

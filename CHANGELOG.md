@@ -7,6 +7,48 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.52.0
+
+**Terceira linha em OPTIONS: NOME DOS NPCS.** Escolhe entre PORTUGUES e
+ENGLISH a **classe** do treinador -- o rotulo colado no nome dele, que a
+batalha anuncia como "CACADOR DE INSETOS BENNY". Em ENGLISH o catalogo
+`lang/trainer_classes.lua` simplesmente nao e percorrido e `className` fica
+sendo o da ROM.
+
+O **nome proprio nao entra nisso**. BENNY, LANCE, WHITNEY continuam iguais nos
+dois modos: nome de personagem nunca se traduz neste mod e nao ha catalogo
+para isso. A linha muda a classe, e so.
+
+Como as outras duas, ela carrega `requires_restart` -- o mod decide no
+carregamento o que registrar, entao a troca vale no proximo boot.
+
+**Consertado: as linhas do gerenciador escrevendo por cima do rodape.** Um mod
+que declara opcoes tem cinco linhas na tela de detalhe (DISABLE, OPTIONS..,
+FOR .., GH .., BACK). Desenhadas de cima para baixo a partir de uma linha 11
+fixa, a quinta caia na linha 15 -- exatamente onde o rodape escreve
+`A:CHOOSE B:BACK` -- e as duas se sobrepunham. Este mod passou a ter opcoes na
+0.51.0, entao passou a exibir o defeito.
+
+O conserto e de motor: o bloco de linhas passa a ser ancorado no rodape em vez
+de no topo, a descricao (que ja rolava) cede a altura, e acima do que o bloco
+comporta as linhas rolam para manter o cursor visivel. A aritmetica saiu para
+`ManagerState.detailLayout`, com teste que percorre de 1 a 12 linhas contra
+todas as posicoes de cursor.
+
+**A descricao que o jogo mostra foi reescrita.** Ela ja nao citava o Crystal
+desde a 0.49.0, mas dizia "duas linhas" em OPTIONS e nao deixava explicito que
+o pacote serve **so** Gold e Silver. Agora abre com GOLD e SILVER em caixa
+alta e fecha com as tres linhas.
+
+**Base do patch: gen1recomp 0.2.15** (era 0.2.11). A 0.2.15 acrescentou campos
+ao `emit` da batalha (`hp`, `status`, `level`, `experience`) e a chamada de
+`printWinLossText` nos mesmos sete pontos onde o nosso remendo troca a
+expressao de `text` -- conflito de vizinhanca, nao de intencao. Resolvidos um a
+um mantendo a estrutura nova e o `Strings()` nosso.
+
+Recontagem contra a base nova: **1085 chaves**, 787 alcancadas pelo motor de
+fabrica, 929 com o patch. Os totais nao mudam: **90% sem o patch, 97% com**.
+
 ## 0.51.0
 
 **A conversa das trocas com NPC, que saia inteira em ingles.** O rapaz da

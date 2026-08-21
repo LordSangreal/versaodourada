@@ -33,7 +33,7 @@ tem uma versao para cada jogo).
 | categoria | total | sem patch | com patch |
 |---|---|---|---|
 | Falas de NPC | 2994 | 2994 | 2994 |
-| Menus e batalha | 1085 | 791 | 933 |
+| Menus e batalha | 1085 | 787 | 929 |
 | POKeDEX | 251 | **0** | 251 |
 | Nomes de golpe | 252 | 252 | 252 |
 | Descricoes de golpe | 252 | 252 | 252 |
@@ -43,7 +43,7 @@ tem uma versao para cada jogo).
 | Nomes de lugar | 70 | 70 | 70 |
 | Nomes de tipo | 17 | 17 | 17 |
 
-Medido por `ferramentas/cobertura.py` contra o `gen1recomp` **0.2.11**.
+Medido por `ferramentas/cobertura.py` contra o `gen1recomp` **0.2.15**.
 
 ### Sem o patch: 90%
 
@@ -57,7 +57,7 @@ chega **aparece em ingles**, nunca em branco nem cortado.
 
 ### Com o patch: 97%
 
-Faltam a **POKeDEX inteira** e 152 chaves de menu e batalha. As duas
+Faltam a **POKeDEX inteira** e 156 chaves de menu e batalha. As duas
 dependem de uma alteracao no **motor**, nao do mod:
 
 - a rota `pokedex` no registro de conteudo do Gold, que o upstream ainda nao
@@ -154,21 +154,31 @@ TYRANITAR.
 
 ---
 
-## Duas coisas voce escolhe
+## Tres coisas voce escolhe
 
-Em **MODS -> Versao Dourada -> OPTIONS** ha duas linhas:
+Em **MODS -> Versao Dourada -> OPTIONS** ha tres linhas:
 
 | linha | escolhas | o que muda |
 |---|---|---|
 | NOME DOS GOLPES | PORTUGUES / ENGLISH | so o **nome** do golpe |
 | NOME DOS ITENS | PORTUGUES / ENGLISH | so o **nome** do item |
+| NOME DOS NPCS | PORTUGUES / ENGLISH | a **classe** do treinador |
 
 Sao os nomes, e so eles: a **descricao** do golpe, da TM e do item continua em
 portugues nos dois modos. Ela explica o efeito, e ninguem procura guia por ela.
 
-As duas existem porque o argumento que segurou essa traducao ate a 0.47.0 nao
+As tres existem porque o argumento que segurou essa traducao ate a 0.47.0 nao
 evaporou quando a regra virou: **quem joga com guia aberto quer o nome que o
 guia usa**. Agora e escolha em vez de discussao.
+
+### NOME DOS NPCS e a CLASSE, nao o nome proprio
+
+A linha troca o rotulo que vem colado no nome do treinador:
+**CACADOR DE INSETOS BENNY** vira **BUG CATCHER BENNY**.
+
+O nome proprio nao entra nisso. BENNY, LANCE, WHITNEY e JANINE ficam como
+estao nos dois modos — nome de personagem **nunca** se traduz neste mod, e nao
+existe catalogo para isso. Ver [O que fica no original](#o-que-fica-no-original--e-por-que).
 
 ### Precisa reiniciar — e a tela avisa
 
@@ -189,7 +199,7 @@ E ela **sobrevive ao reinicio no motor de fabrica**: `modOptions` e uma das
 chaves compartilhadas de `options.lua` (`SHARED_KEYS`, em
 `src/core/gen2/Save.lua`), gravada no topo do arquivo e nao dentro do bloco
 `gold`, que e exatamente onde o carregador de mods a procura no boot
-seguinte. Foi por isso que estas duas linhas puderam existir: um controle que
+seguinte. Foi por isso que estas linhas puderam existir: um controle que
 o jogador muda e que volta sozinho no reinicio seria pior do que nao ter
 controle nenhum.
 

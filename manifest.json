@@ -1,7 +1,7 @@
 {
   "id": "versaodourada",
   "name": "Versao Dourada",
-  "version": "0.51.0",
+  "version": "0.52.0",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
@@ -17,5 +17,5 @@
   "optional_dependencies": [],
   "conflicts": [],
   "github": "LordSangreal/versaodourada",
-  "description": "Portugues brasileiro para Pokemon Gold e Silver, num download so. Traducao propria, escrita do ingles original de CADA versao. Falas, POKeDEX, golpes, itens, tipos, classes de treinador e lugares. A POKeDEX troca sozinha conforme o jogo: as 251 fichas de cada versao sao outro texto. Nome de POKeMON, de personagem e de cidade ficam no original. A POKeDEX e parte dos menus e da batalha exigem um gen1recomp com a rota de catalogo do Gold (PR pendente); sem ele o resto funciona normalmente. Em OPTIONS, duas linhas escolhem o idioma dos NOMES de golpe e de item entre PORTUGUES e ENGLISH; a troca vale no proximo boot."
+  "description": "Portugues brasileiro para Pokemon GOLD e SILVER, num download so -- estes dois jogos, e so eles. Traducao propria, escrita do ingles original de CADA versao. Falas, POKeDEX, golpes, itens, tipos, classes de treinador e lugares. A POKeDEX troca sozinha conforme o jogo: as 251 fichas de cada versao sao outro texto. Nome de POKeMON, de personagem e de cidade ficam no original. A POKeDEX e parte dos menus e da batalha exigem um gen1recomp com a rota de catalogo do Gold (PR pendente); sem ele o resto funciona normalmente. Em OPTIONS, tres linhas escolhem o idioma dos NOMES de golpe, de item e de classe de NPC entre PORTUGUES e ENGLISH; a troca vale no proximo boot."
 }
