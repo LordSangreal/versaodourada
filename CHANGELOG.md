@@ -7,6 +7,19 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.53.0
+
+**GUST passa a se chamar RAJADA VENTO** (era LUFADA VENTO). Decisao do usuario
+em 21/08/2026.
+
+As duas formas tem respaldo oficial: "Rajada de Vento" e o nome da carta de
+Treinador *Gust of Wind* publicada pela Copag na Colecao Basica (93/102) e no
+Base Set 2 (120/130).
+
+Doze colunas, como antes -- o "DE" sai pela regra da casa de cortar preposicao
+em vez de abreviar. Nenhum outro catalogo citava o nome antigo, entao a troca
+fica contida em lang/move_names.lua.
+
 ## 0.52.0
 
 **Terceira linha em OPTIONS: NOME DOS NPCS.** Escolhe entre PORTUGUES e

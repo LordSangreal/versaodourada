@@ -110,7 +110,7 @@ return {
   ["GROWL"] = "ROSNADURA",
   ["GROWTH"] = "CRESCIMENTO",
   ["GUILLOTINE"] = "GUILHOTINA",
-  ["GUST"] = "LUFADA VENTO",
+  ["GUST"] = "RAJADA VENTO",
   ["HARDEN"] = "ENDURECER",
   ["HAZE"] = "NEVOEIRO",
   ["HEADBUTT"] = "CABEÇADA",
