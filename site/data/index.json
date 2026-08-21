@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.51.0",
+      "version": "0.52.0",
       "categories": [
         "LANGUAGE"
       ],
@@ -34,15 +34,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.51.0",
-        "tag": "v0.51.0",
-        "name": "Versao Dourada 0.51.0 -- as trocas com NPC, e o idioma de golpe e item viram escolha",
+        "version": "0.52.0",
+        "tag": "v0.52.0",
+        "name": "Versao Dourada 0.52.0 -- NOME DOS NPCS, e o rodape limpo",
         "prerelease": false,
         "published_at": "2026-08-21T02:51:05Z",
         "zip": {
-          "name": "versaodourada-0.51.0.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.51.0/versaodourada-0.51.0.zip",
-          "size": 494860
+          "name": "versaodourada-0.52.0.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.52.0/versaodourada-0.52.0.zip",
+          "size": 496207
         }
       },
       "update_check": "ok"
