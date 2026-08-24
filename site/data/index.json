@@ -11,7 +11,7 @@
       "id": "versaodourada",
       "title": "Versao Dourada",
       "author": "LordSangreal",
-      "version": "0.54.0",
+      "version": "0.54.1",
       "categories": [
         "LANGUAGE"
       ],
@@ -34,15 +34,15 @@
       ],
       "description_url": "data/mods/LordSangreal@versaodourada/description.md",
       "latest": {
-        "version": "0.54.0",
-        "tag": "v0.54.0",
-        "name": "Versao Dourada 0.54.0 -- padronizacao de cidades e rotas",
+        "version": "0.54.1",
+        "tag": "v0.54.1",
+        "name": "Versao Dourada 0.54.1 -- traducao completa de pontos de referencia",
         "prerelease": false,
-        "published_at": "2026-08-24T17:38:00Z",
+        "published_at": "2026-08-24T18:08:00Z",
         "zip": {
-          "name": "versaodourada-0.54.0.zip",
-          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.54.0/versaodourada-0.54.0.zip",
-          "size": 496594
+          "name": "versaodourada-0.54.1.zip",
+          "url": "https://github.com/LordSangreal/versaodourada/releases/download/v0.54.1/versaodourada-0.54.1.zip",
+          "size": 497487
         }
       },
       "update_check": "ok"
