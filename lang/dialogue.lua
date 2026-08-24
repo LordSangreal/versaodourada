@@ -1261,7 +1261,7 @@ return {
   ["4e:4931"] = "Vou voltar a\npescar…",
   ["4e:49a7"] = "Quem é você?\fBem, é óbvio\nque você é um\vtreinador…\fMeu nome é BLUE.\fEu já fui o\nCAMPEÃO, embora\ftenha sido por\npouco tempo…\fAquele RED\nme venceu…\fEnfim, o que\nvocê quer? Quer\fme desafiar ou\no quê?\f…Detesto dizer,\nmas não estou a\ffim de lutar\nagora.\fOlhe ao seu\nredor…\fUm vulcão entra\nem erupção, e de\frepente, uma\ncidade some.\fPodemos ganhar\ne perder em lutas\fde POKéMON. Mas\nse a natureza se\fmexer, morremos\nnum segundo.\f…\fÉ assim que as\ncoisas são…\fMas, enfim, ainda\nsou treinador.\fSe vejo um\nadversário bom,\vme dá vontade de\flutar.\nSe quiser,\vvá ao GINÁSIO de\fVIRIDIAN. Vou te\nenfrentar.",
   ["4e:4c48"] = "Há um aviso…\naqui…\fO GINÁSIO de\nCINNABAR mudou\vpara as ILHAS\vSEAFOAM.\fBLAINE",
-  ["4e:4c97"] = "CINNABAR ISLAND\fA Cidade Fogo de\nDesejo Ardente",
+  ["4e:4c97"] = "ILHA DE CINNABAR\fA Cidade Fogo de\nDesejo Ardente",
   ["4e:4d68"] = "Nadar exercita\no corpo inteiro.\fFaz muito bem\npara você.",
   ["4e:4da5"] = "Que coleção de\nBADGES\fimpressionante.\nVamos batalhar!",
   ["4e:4dea"] = "SURF já não é o\núnico golpe de HM\vque serve na água",

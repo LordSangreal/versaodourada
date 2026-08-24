@@ -7,6 +7,14 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.54.0
+
+**Padronizacao de cidades e rotas.**
+
+- **ILHA DE CINNABAR**: a placa de boas-vindas da ilha agora exibe `ILHA DE CINNABAR` (estava em ingles como `CINNABAR ISLAND`).
+- **BLACKTHORN CITY**: adicionada a chave direta sem quebra de linha no catalogo de strings.
+- Verificacao e validacao estrutural dos limites de largura das placas de cidades e rotas no Town Map e menus.
+
 ## 0.53.0
 
 **GUST passa a se chamar RAJADA VENTO** (era LUFADA VENTO). Decisao do usuario

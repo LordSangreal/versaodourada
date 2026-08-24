@@ -406,6 +406,7 @@ return {
   ["BATTLE"] = "BATALHAR",
   ["BEGIN SEARCH!!"] = "BUSCAR AGORA!!",
   ["BLACKTHORN\nCITY"] = "CIDADE DE BLACKTHORN",
+  ["BLACKTHORN CITY"] = "CIDADE DE BLACKTHORN",
   ["BOX %d (RELEASE)"] = "BOX %d (SOLTAR)",
   ["BOX %d (WITHDRAW)"] = "BOX %d (RETIRAR)",
   ["BOX %d is full!"] = "BOX %d está cheio!",
