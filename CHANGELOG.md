@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.54.1
+
+**Pontos de referencia do Mapa e Banners.**
+
+- Traduzidos todos os locais de Johto e Kanto no Town Map do Pokégear e banners de área (ex: `TORRE SPROUT`, `TORRE DE RÁDIO`, `TORRE QUEIMADA`, `TORRE TIN`, `CAVERNA UNION`, `POÇO SLOWPOKE`, `FLORESTA ILEX`, `PARQUE NACIONAL`, `RUÍNAS DE ALPH`, `MONTE MORTAR`, `CAVERNA ESCURA`, `LAGO DA FÚRIA`, `CATARATAS TOHJO`, `ESTRADA DA VITÓRIA`, `MONTE MOON`, `TÚNEL DE PEDRA`, `ILHAS REDEMOINHO`, `CAMINHO DE GELO`, `COVIL DO DRAGÃO`, `USINA DE ENERGIA`, `FAROL`, `NAVIO S.S. AQUA`, `CAVERNA DE SILVER`).
+
 ## 0.54.0
 
 **Padronizacao de cidades e rotas.**
@@ -1525,9 +1531,11 @@ disso.
 - Pagina de glifos: os acentos voltam.  Ate aqui tudo era dobrado para
   ASCII ("mae", "coracao").
 
-## 0.5.0
+## [0.54.1] - 2026-08-24
+### Modificações
+- **Pontos de referência (Town Map e banners)**: traduzidos e registrados todos os locais restantes de Johto e Kanto (TORRE SPROUT, TORRE DE RÁDIO, TORRE QUEIMADA, TORRE TIN, CAVERNA UNION, POÇO SLOWPOKE, FLORESTA ILEX, PARQUE NACIONAL, RUÍNAS DE ALPH, MONTE MORTAR, CAVERNA ESCURA, LAGO DA FÚRIA, CATARATAS TOHJO, ESTRADA DA VITÓRIA, MONTE MOON, TÚNEL DE PEDRA, ILHAS REDEMOINHO, CAMINHO DE GELO, COVIL DO DRAGÃO, USINA DE ENERGIA, FAROL, NAVIO S.S. AQUA, CAVERNA DE SILVER).
 
-- 68 nomes de item.  Status fica no original.
+## [0.54.0] - 2026-08-24 nomes de item.  Status fica no original.
 
 ## 0.4.0
 
