@@ -1,23 +1,16 @@
 # Versao Dourada
 
-**Pokemon Gold e Silver em portugues brasileiro — 90% da traducao chega a tela
-sem tocar no motor, 97% com o patch — rodando no gen1recomp e no Gen2Recomped,
-num unico download.**
+**Pokemon Gold e Silver em portugues brasileiro — rodando no [gen1recomp](https://github.com/bryanthaboi/gen1recomp) e no [Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped), num unico download.**
 
-Os dois sao recriacoes nativas dos jogos em Lua/LOVE2D, nao emuladores:
-[gen1recomp](https://github.com/bryanthaboi/gen1recomp), de bryanthaboi, e
-[Gen2Recomped](https://github.com/UNDERdecoded/Gen2Recomped), o fork de
-UNDERdecodedHD com suporte a Gen 2 mais maduro.
+Os dois sao recriacoes nativas dos jogos em Lua/LOVE2D, nao emuladores. **Todos os testes de textos, menus, dialogos, placas e jogabilidade estao sendo realizados e validados ativamente de forma continua diretamente no `gen1recomp` (PC e Android).**
 
 Nao acompanha nenhum byte de ROM. Voce precisa da sua propria copia.
 
-**Todo o texto e traducao propria, escrita a partir do ingles original.** Nao ha
-uma unica linha derivada de outra traducao no pacote.
+**Todo o texto e traducao propria, escrita a partir do ingles original.** Nao ha uma unica linha derivada de outra traducao no pacote.
 
 > **Joga Pokemon Crystal?** Vive noutro repositorio:
 > **[LordSangreal/versaocristal-ptbr](https://github.com/LordSangreal/versaocristal-ptbr)**.
-> Ate a 0.45.1 o Crystal dividia este mod; a 0.46.0 separou, e a razao esta em
-> [Por que o Crystal se separou](#por-que-o-crystal-se-separou).
+> Suporta nativamente o `gen1recomp` e o Gen2Recomped.
 
 ---
 
