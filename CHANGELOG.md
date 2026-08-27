@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.55.0
+
+**Abreviação das opções do menu do mod e melhorias de UI.**
+
+- Abreviadas as opções `DESC. GOLPES` e `DESC. ITENS` no menu de opções do mod para garantir visibilidade perfeita na tela do Game Boy.
+
 ## 0.54.1
 
 **Pontos de referencia do Mapa e Banners.**
