@@ -7,6 +7,17 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.56.0
+
+**Correções visuais de HUD de combate, traduções de batalha, Pokégear e sincronização de sistema.**
+
+- **Menu de Combate 2x2**: Caixa de opções expandida no motor compartilhado para 14 blocos com espaçamento uniforme de colunas, acomodando `LUTAR`, `<PK><MN>`, `MOCH.` e `FUGIR` sem truncar nem sobrepor letras.
+- **Caixa de Atributos do Level Up**: Alinhamento de números e largura da caixa corrigidos no motor para não vazar nem encostar nas bordas.
+- **Mensagens de Combate no Motor**: Integração completa ao tradutor para frases de ganho de EXP, subida de nível, acerto crítico, desmaios, ataques errados/falhos, fugas e vitória contra treinadores.
+- **Pokégear (Telefone)**: Tradução do submenu de ligações (`LIGAR` / `CANCELAR` / `APAGAR`), pergunta de destino da chamada e nomes de contatos (`MÃE:`, `PROF. ELM:`).
+- **Recebimento de Itens e Apelidos**: Correção da rolagem de texto de recebimento de itens e tradução da pergunta de apelido.
+- **Sincronização de Chaves**: Atualizado `strings.lua` com 1.117 chaves completas.
+
 ## 0.55.0
 
 **Abreviação das opções do menu do mod e melhorias de UI.**

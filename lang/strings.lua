@@ -1,7 +1,7 @@
 -- Texto do motor: batalha, menus, opcoes.
 -- Chave = a string em ingles exatamente como o codigo a escreve.
 return {
-  ["\fWould you like to\nSAVE the game?"] = "\fQuer SALVAR\no jogo?",
+  ["Would you like to\nSAVE the game?"] = "\fQuer SALVAR\no jogo?",
   [" ALPH RUINS STAMP"] = " SELO RUÃÂÃÂNAS ALPH",
   [" OPTION "] = " OPÃÂÃÂÃÂÃÂO ",
   [" PAGE AREA CRY PRNT"] = " PÃÂÃÂG. ÃÂÃÂREA SOM IMPR",
@@ -16,11 +16,11 @@ return {
   ["%d'%d\""] = "%d,%dm",
   ["%d.%dlb"] = "%d,%dkg",
   ["%s\ncan't move!"] = "%s nÃÂÃÂ£o\npode se mexer!",
-  ["%s\ndid not learn\v%s."] = "%s nÃÂÃÂ£o\naprendeu\v%s.",
+  ["%s\ndid not learn%s."] = "%s nÃÂÃÂ£o\naprendeu\v%s.",
   ["%s\nfainted!"] = "%s\ndesmaiou!",
   ["%s\ngained armor!"] = "%s ganhou\narmadura!",
   ["%s\nhas a SUBSTITUTE!"] = "%s tem um\nSUBSTITUTE!",
-  ["%s\nis about to use\v%s.\fWill %s\nchange POKÃÂÃÂ©MON?"] = "%s vai\nusar\v%s.\f%s quer\ntrocar de\vPOKÃÂÃÂ©MON?",
+  ["%s\nis about to use%s.Will %s\nchange POKÃÂÃÂ©MON?"] = "%s vai\nusar\v%s.\f%s quer\ntrocar de\vPOKÃÂÃÂ©MON?",
   ["%s\nis fast asleep!"] = "%s dorme\nprofundamente!",
   ["%s\nis frozen solid!"] = "%s estÃÂÃÂ¡\ncongelado!",
   ["%s\nis hit with recoil!"] = "%s sofreu\ndano de recuo!",
@@ -70,7 +70,7 @@ return {
   ["%s found\n%d coins!"] = "%s achou\n%d fichas!",
   ["%s found\n%s!"] = "%s achou\n%s!",
   ["%s gained\n%d EXP. Points!"] = "%s ganhou\n%d pontos de EXP.!",
-  ["%s gained\na boosted\v%d EXP. Points!"] = "%s ganhou um bÃÂ´nus\nde %d pontos EXP.!",
+  ["%s gained\na boosted%d EXP. Points!"] = "%s ganhou um bÃÂ´nus\nde %d pontos EXP.!",
   ["%s gained %d EXP. Points!"] = "%s ganhou\n%d pontos de EXP.!",
   ["%s gained a boosted %d EXP. Points!"] = "%s ganhou\n%d PTS. EXP\nextra!",
   ["%s got %s%d for winning!"] = "%s ganhou %s%d por vencer!",
@@ -86,11 +86,11 @@ return {
   ["%s has no move to use!"] = "%s nÃÂÃÂ£o tem\ngolpe para usar!",
   ["%s has no moves left!"] = "%s nÃÂÃÂ£o tem\nmais golpes!",
   ["%s hung on with %s!"] = "%s\naguentou com\v%s!",
-  ["%s is\nabout to use\v%s!"] = "%s vai\nusar %s!",
+  ["%s is\nabout to use%s!"] = "%s vai\nusar %s!",
   ["%s is\nalready out!"] = "%s jÃÂÃÂ¡\nestÃÂÃÂ¡ em campo!",
   ["%s is\nprotected by MIST!"] = "%s estÃÂÃÂ¡\nprotegido pelo MIST!",
-  ["%s is\ntaken out.\vGot %s."] = "%s foi\nretirado.\vPegou %s.",
-  ["%s is\ntrying to learn\v%s.\fBut %s\ncan't learn more\vthan four moves.\fDelete an older\nmove to make room\vfor %s?"] = "%s estÃÂÃÂ¡\ntentando aprender\v%s.\fMas %s\nnÃÂÃÂ£o pode aprender\vmais de 4 golpes.\fApagar um golpe\nvelho para caber\vo %s?",
+  ["%s is\ntaken out.Got %s."] = "%s foi\nretirado.\vPegou %s.",
+  ["%s is\ntrying to learn%s.But %s\ncan't learn morethan four moves.Delete an older\nmove to make roomfor %s?"] = "%s estÃÂÃÂ¡\ntentando aprender\v%s.\fMas %s\nnÃÂÃÂ£o pode aprender\vmais de 4 golpes.\fApagar um golpe\nvelho para caber\vo %s?",
   ["%s is afflicted!"] = "%s foi\natingido!",
   ["%s is already out."] = "%s jÃÂÃÂ¡\nestÃÂÃÂ¡ em campo.",
   ["%s is buffeted by the sandstorm!"] = "%s sofre\ncom a tempestade\vde areia!",
@@ -104,7 +104,7 @@ return {
   ["%s is hurt by poison!"] = "O veneno fere\n%s!",
   ["%s is hurt!"] = "%s\nse feriu!",
   ["%s is missing.\nRe-import the Gold ROM."] = "%s nÃÂÃÂ£o existe.\nImporte a ROM do Gold de novo.",
-  ["%s is out of\nPOKÃÂÃÂ©MON!\f%s wins!"] = "%s estÃÂÃÂ¡ sem\nPOKÃÂÃÂ©MON!\f%s venceu!",
+  ["%s is out of\nPOKÃÂÃÂ©MON!%s wins!"] = "%s estÃÂÃÂ¡ sem\nPOKÃÂÃÂ©MON!\f%s venceu!",
   ["%s is out of\nuseable POKÃÂÃÂ©MON!"] = "%s nÃÂÃÂ£o tem\nmais POKÃÂÃÂ©MON!",
   ["%s is paralyzed! It may be unable to move!"] = "%s estÃÂÃÂ¡\nparalisado!\vPode nÃÂÃÂ£o se mexer",
   ["%s is protected by SAFEGUARD!"] = "%s estÃÂÃÂ¡\nprotegido pela\vSALVAGUARDA!",
@@ -146,7 +146,7 @@ return {
   ["%s wants to\nbattle!"] = "%s quer\nbatalhar!",
   ["%s wants to\nlearn %s!"] = "%s quer o\ngolpe %s!",
   ["%s wants to battle!"] = "%s quer\nbatalhar!",
-  ["%s was\nreleased outside.\fBye %s!"] = "%s foi\nsolto lÃÂÃÂ¡ fora.\fTchau %s!",
+  ["%s was\nreleased outside.Bye %s!"] = "%s foi\nsolto lÃÂÃÂ¡ fora.\fTchau %s!",
   ["%s was\nstored in Box %s."] = "%s foi para\na Box %s.",
   ["%s was\nstored via PC."] = "%s foi\nguardado no PC.",
   ["%s was\ntransferred to\n%s!"] = "%s foi\nenviado para\n%s!",
@@ -236,20 +236,20 @@ return {
   ["%s?\nThat will be\nÃÂÃÂ¥%d. OK?"] = "%s?\nSÃÂÃÂ£o\nÃÂÃÂ¥%d. Tudo bem?",
   ["(organizing --"] = "(organizando --",
   ["1, 2 andÃÂ¢ÃÂÃÂ¦ %s forgot %s!"] = "1, 2 eÃÂ¢ÃÂÃÂ¦ %s\nesqueceu\v%s!",
-  ["1, 2 andÃÂ¢ÃÂÃÂ¦ Poof!\f%s forgot\n%s.\fAndÃÂ¢ÃÂÃÂ¦\f%s learned\n%s!"] = "1, 2 eÃÂ¢ÃÂÃÂ¦ PouÃÂÃÂ¡s!\f%s\nesqueceu\v%s.\fEÃÂ¢ÃÂÃÂ¦\f%s\naprendeu\v%s!",
+  ["1, 2 andÃÂ¢ÃÂÃÂ¦ Poof!%s forgot\n%s.AndÃÂ¢ÃÂÃÂ¦%s learned\n%s!"] = "1, 2 eÃÂ¢ÃÂÃÂ¦ PouÃÂÃÂ¡s!\f%s\nesqueceu\v%s.\fEÃÂ¢ÃÂÃÂ¦\f%s\naprendeu\v%s!",
   [":TYPE"] = ":TIPO",
   ["<PK><MN>"] = "<PK><MN>",
   ["A #MON may be\nable to move this."] = "Um #MON talvez\nmova isto.",
-  ["A #MON may be\nable to move this.\fWant to use\nSTRENGTH?"] = "Um #MON talvez\nmova isto.\fQuer usar\nSTRENGTH?",
+  ["A #MON may be\nable to move this.Want to use\nSTRENGTH?"] = "Um #MON talvez\nmova isto.\fQuer usar\nSTRENGTH?",
   ["A COIN CASE is\nrequired!"] = "ÃÂÃÂ necessÃÂÃÂ¡rio um\nPORTA-FICHAS!",
-  ["A POKÃÂÃÂ©MON could be\nin this tree.\fWant to HEADBUTT\nit?"] = "Pode haver um\nPOKÃÂÃÂ©MON na ÃÂÃÂ¡rvore.\fUsar HEADBUTT\nnela?",
+  ["A POKÃÂÃÂ©MON could be\nin this tree.Want to HEADBUTT\nit?"] = "Pode haver um\nPOKÃÂÃÂ©MON na ÃÂÃÂ¡rvore.\fUsar HEADBUTT\nnela?",
   ["A blinding FLASH\nlights the area!"] = "Um FLASH forte\nilumina a ÃÂÃÂ¡rea!",
   ["A critical hit!"] = "Um acerto crítico!",
   ["A sandstorm brewed!"] = "Formou-se uma\ntempestade\vde areia!",
   ["A to Z"] = "A a Z",
   ["A to Z MODE"] = "MODO A a Z",
   ["A whirlpool is in\nthe way."] = "Um redemoinho\nestÃÂÃÂ¡ no caminho.",
-  ["A whirlpool is in\nthe way.\fWant to use\nWHIRLPOOL?"] = "Um redemoinho\nfecha o caminho.\fQuer usar\nWHIRLPOOL?",
+  ["A whirlpool is in\nthe way.Want to use\nWHIRLPOOL?"] = "Um redemoinho\nfecha o caminho.\fQuer usar\nWHIRLPOOL?",
   ["A: START  B: cancel"] = "A: START  B: cancelar",
   ["A: connect  B: back"] = "A: conectar  B: voltar",
   ["A: continue"] = "A: seguir",
@@ -259,7 +259,7 @@ return {
   ["A: trade anyway"] = "A: trocar mesmo assim",
   ["ABLE"] = "PODE",
   ["ACCURACY"] = "PRECISÃÂÃÂO",
-  ["ANNOUNCER: BEEEP!\fTime's up!"] = "LOCUTOR: BIIIP!\fAcabou o tempo!",
+  ["ANNOUNCER: BEEEP!Time's up!"] = "LOCUTOR: BIIIP!\fAcabou o tempo!",
   ["ANNOUNCER: The\nContest is over!"] = "LOCUTOR: O\nConcurso acabou!",
   ["AREA"] = "ÃÂÃÂREA",
   ["AREA UNKNOWN"] = "ÃÂÃÂREA INCERTA",
@@ -269,7 +269,7 @@ return {
   ["AZALEA TOWN"] = "CIDADE DE AZALEA",
   ["Aargh! Almost had it!"] = "Aaah! Quase\npeguei!",
   ["Access whose PC?"] = "Acessar qual PC?",
-  ["Accessed PROF.\nOAK's PC.\fAccessed POKÃÂÃÂ©DEX\nRating System."] = "Acessou o PC do\nPROF.OAK.\fAcessou o sistema\nde avaliaÃÂÃÂ§ÃÂÃÂ£o do\vPOKÃÂÃÂ©DEX.",
+  ["Accessed PROF.\nOAK's PC.Accessed POKÃÂÃÂ©DEX\nRating System."] = "Acessou o PC do\nPROF.OAK.\fAcessou o sistema\nde avaliaÃÂÃÂ§ÃÂÃÂ£o do\vPOKÃÂÃÂ©DEX.",
   ["Accessed own PC."] = "PC prÃÂÃÂ³prio\nacessado.",
   ["All POKÃÂÃÂ©MON hearing the song will faint in three turns!"] = "Quem ouviu o canto\ndesmaia em\vtrÃÂÃÂªs turnos!",
   ["All STATUS changes\nare eliminated!"] = "Todas as mudanÃÂÃÂ§as\nde STATUS somem!",
@@ -283,7 +283,7 @@ return {
   ["An EGG doesn't\nknow any moves!"] = "Um EGG nÃÂÃÂ£o sabe\ngolpe nenhum!",
   ["An EGG? My talent\nis worth moreÃÂ¢ÃÂÃÂ¦"] = "Um EGG? Meu dom\nvale bem maisÃÂ¢ÃÂÃÂ¦",
   ["An elevator!"] = "Um elevador!",
-  ["An item in your\nPACK may be\fregistered for use\non SELECT Button."] = "Um item da BOLSA\npode ser ligado\fao botÃÂÃÂ£o SELECT\npara uso rÃÂÃÂ¡pido.",
+  ["An item in your\nPACK may beregistered for use\non SELECT Button."] = "Um item da BOLSA\npode ser ligado\fao botÃÂÃÂ£o SELECT\npara uso rÃÂÃÂ¡pido.",
   ["Are you a boy?\nOr are you a girl?"] = "VocÃÂÃÂª ÃÂÃÂ© menino?\nOu ÃÂÃÂ© menina?",
   ["Are you trading\nyour #MON?\n\nIt's tough to do\nthis alone!"] = "VocÃÂÃÂª estÃÂÃÂ¡ trocando\nseus #MON?\n\nÃÂÃÂ difÃÂÃÂ­cil fazer\nisso sozinho!",
   ["Aww! It appeared to be caught!"] = "Poxa! Parecia que\nestava capturado!",
@@ -315,7 +315,7 @@ return {
   ["BRN"] = "QMD",
   ["BUG"] = "INSETO",
   ["BUY"] = "COMPRAR",
-  ["Be careful.\f#MON are your\nfriends. You need\vto work as a team.\fNow, go on!"] = "Tome cuidado.\f#MON sÃÂÃÂ£o seus\namigos. VocÃÂÃÂªs tÃÂÃÂªm\vque agir em time.\fVÃÂÃÂ¡ lÃÂÃÂ¡!",
+  ["Be careful.#MON are your\nfriends. You needto work as a team.Now, go on!"] = "Tome cuidado.\f#MON sÃÂÃÂ£o seus\namigos. VocÃÂÃÂªs tÃÂÃÂªm\vque agir em time.\fVÃÂÃÂ¡ lÃÂÃÂ¡!",
   ["Bet how many\ncoins?"] = "Apostar quantas\nfichas?",
   ["Bingo!"] = "Bingo!",
   ["Booted up a TM!"] = "Ligou uma TM!",
@@ -325,8 +325,8 @@ return {
   ["But it failed!"] = "Mas falhou!",
   ["But nothing\nhappened."] = "Mas nada\naconteceu.",
   ["But the PACK is\nfullÃÂ¢ÃÂÃÂ¦"] = "Mas a BOLSA estÃÂÃÂ¡\ncheiaÃÂ¢ÃÂÃÂ¦",
-  ["But we don't know\neverything about\vPOKÃÂÃÂ©MON yet.\fThere are still\nmany mysteries to\vsolve.\fThat's why I study\nPOKÃÂÃÂ©MON every day."] = "Mas ainda nÃÂÃÂ£o\nsabemos tudo sobre\vos POKÃÂÃÂ©MON.\fAinda hÃÂÃÂ¡ muitos\nmistÃÂÃÂ©rios para\vresolver.\fPor isso estudo\nPOKÃÂÃÂ©MON todo dia.",
-  ["But {PLAYER} can't\ncarry any more\vitems!"] = "Mas {PLAYER} nÃÂÃÂ£o\npode levar mais\vitens!",
+  ["But we don't know\neverything aboutPOKÃÂÃÂ©MON yet.There are still\nmany mysteries tosolve.That's why I study\nPOKÃÂÃÂ©MON every day."] = "Mas ainda nÃÂÃÂ£o\nsabemos tudo sobre\vos POKÃÂÃÂ©MON.\fAinda hÃÂÃÂ¡ muitos\nmistÃÂÃÂ©rios para\vresolver.\fPor isso estudo\nPOKÃÂÃÂ©MON todo dia.",
+  ["But {PLAYER} can't\ncarry any moreitems!"] = "Mas {PLAYER} nÃÂÃÂ£o\npode levar mais\vitens!",
   ["But {PLAYER} has\nno space leftÃÂ¢ÃÂÃÂ¦"] = "Mas {PLAYER} estÃÂÃÂ¡\nsem espaÃÂÃÂ§oÃÂ¢ÃÂÃÂ¦",
   ["But, it failed!"] = "Mas falhou!",
   ["Bzzzzt! You must\nhave a #MON to\nuse this!"] = "Bzzzt! Precisa de\num #MON para\nusar isto!",
@@ -443,7 +443,7 @@ return {
   ["Got away safely!"] = "Fugiu em seguranÃ§a!",
   ["Gotcha! %s\nwas caught!"] = "Pegou! %s foi\ncapturado!",
   ["Gotcha! %s was caught!"] = "Peguei!\n%s foi\ncapturado!",
-  ["Great! Thank you!\fI finally got\n{STRBUF}."] = "ÃÂÃÂtimo! Obrigado!\fConsegui\n{STRBUF}, enfim.",
+  ["Great! Thank you!I finally got\n{STRBUF}."] = "ÃÂÃÂtimo! Obrigado!\fConsegui\n{STRBUF}, enfim.",
   ["HALL OF FAME"] = "SALÃÂÃÂO DA FAMA",
   ["HIS NAME?"] = "NOME DELE?",
   ["HM moves can't be\nforgotten now."] = "Golpe de HM nÃÂÃÂ£o\npode ser esquecido",
@@ -459,16 +459,16 @@ return {
   ["Happiness (night)"] = "Felicidade (noite)",
   ["Have you gotten a\nfishing ROD? You\n\ncan catch #MON\nby fishing."] = "VocÃÂÃÂª jÃÂÃÂ¡ pegou uma\nROD? DÃÂÃÂ¡ para\n\npegar #MON\npescando.",
   ["Have you met KURT?\nHis custom #\nBALLS should help."] = "JÃÂÃÂ¡ viu o KURT? As\n# BOLAS dele\najudam.",
-  ["Hello! Sorry to\nkeep you waiting!\fWelcome to the\nworld of POKÃÂÃÂ©MON!\fMy name is OAK.\fPeople call me the\nPOKÃÂÃÂ©MON PROF."] = "OlÃÂÃÂ¡! Desculpe a\ndemora!\fBem-vindo ao mundo\ndos POKÃÂÃÂ©MON!\fMeu nome ÃÂÃÂ© OAK.\fMe chamam de\nPROF. POKÃÂÃÂ©MON.",
+  ["Hello! Sorry to\nkeep you waiting!Welcome to the\nworld of POKÃÂÃÂ©MON!My name is OAK.People call me the\nPOKÃÂÃÂ©MON PROF."] = "OlÃÂÃÂ¡! Desculpe a\ndemora!\fBem-vindo ao mundo\ndos POKÃÂÃÂ©MON!\fMeu nome ÃÂÃÂ© OAK.\fMe chamam de\nPROF. POKÃÂÃÂ©MON.",
   ["Hello, hello! I'm\nthe NAME RATER.\n\nI rate the names\nof #MON.\n\nWould you like me\nto rate names?"] = "OlÃÂÃÂ¡, olÃÂÃÂ¡! Eu sou\no NAME RATER.\n\nEu avalio nomes\nde #MON.\n\nQuer que eu avalie\num nome?",
   ["Here you are!\nThank you!"] = "Aqui estÃÂÃÂ¡!\nObrigado!",
   ["Here you go!"] = "Aqui estÃÂÃÂ¡!",
   ["Hey! It's\n%s!"] = "Ei! ÃÂÃÂ\n%s!",
-  ["Hey! There's a\nswitch under the\ntrash!\fThe 1st electric\nlock opened!"] = "Ei! Tem um\ninterruptor\vembaixo do\vlixo!\fA 1ÃÂÃÂª trava\nelÃÂÃÂ©trica abriu!",
+  ["Hey! There's a\nswitch under the\ntrash!The 1st electric\nlock opened!"] = "Ei! Tem um\ninterruptor\vembaixo do\vlixo!\fA 1ÃÂÃÂª trava\nelÃÂÃÂ©trica abriu!",
   ["Hi there!\nMay I help you?"] = "OlÃÂÃÂ¡!\nPosso ajudar?",
-  ["Hi! The {STRBUF}\nyou traded me is\vdoing great!"] = "Oi! O {STRBUF}\nque vocÃÂÃÂª me deu\vestÃÂÃÂ¡ ÃÂÃÂ³timo!",
-  ["Hi! Welcome home!\nYou're trying very\vhard, I see.\fI've kept your\nroom tidy.\fOr is this about\nyour money?"] = "Oi! Bem-vindo!\nVocÃÂÃÂª estÃÂÃÂ¡ se\vesforÃÂÃÂ§ando muito.\fDeixei seu quarto\narrumado.\fOu isto ÃÂÃÂ© sobre o\nseu dinheiro?",
-  ["Hi, I'm looking\nfor this POKÃÂÃÂ©MON.\fIf you have\n{STRBUF}, would\fyou trade it for\nmy {STRBUF}?"] = "Oi, estou atrÃÂÃÂ¡s\ndeste POKÃÂÃÂ©MON.\fSe vocÃÂÃÂª tiver\n{STRBUF}, quer\ftrocÃÂÃÂ¡-lo pelo meu\n{STRBUF}?",
+  ["Hi! The {STRBUF}\nyou traded me isdoing great!"] = "Oi! O {STRBUF}\nque vocÃÂÃÂª me deu\vestÃÂÃÂ¡ ÃÂÃÂ³timo!",
+  ["Hi! Welcome home!\nYou're trying veryhard, I see.I've kept your\nroom tidy.Or is this about\nyour money?"] = "Oi! Bem-vindo!\nVocÃÂÃÂª estÃÂÃÂ¡ se\vesforÃÂÃÂ§ando muito.\fDeixei seu quarto\narrumado.\fOu isto ÃÂÃÂ© sobre o\nseu dinheiro?",
+  ["Hi, I'm looking\nfor this POKÃÂÃÂ©MON.If you have\n{STRBUF}, wouldyou trade it for\nmy {STRBUF}?"] = "Oi, estou atrÃÂÃÂ¡s\ndeste POKÃÂÃÂ©MON.\fSe vocÃÂÃÂª tiver\n{STRBUF}, quer\ftrocÃÂÃÂ¡-lo pelo meu\n{STRBUF}?",
   ["Hi, how's my old\n{STRBUF} doing?"] = "Oi, como vai meu\n{STRBUF}?",
   ["Hi, {PLAYER}!\nHow are you?"] = "Oi, {PLAYER}!\nComo vocÃÂÃÂª estÃÂÃÂ¡?",
   ["Hit %d time(s)!"] = "%d acerto(s)!",
@@ -476,7 +476,7 @@ return {
   ["Hit the enemy\n%d times!"] = "Acertou o inimigo\n%d vezes!",
   ["HmÃÂ¢ÃÂÃÂ¦ {STRBUF}?\nWhat a great name!\nIt's perfect.\n\nTreat {STRBUF}\nwith loving care."] = "HumÃÂ¢ÃÂÃÂ¦ {STRBUF}?\nQue nome ÃÂÃÂ³timo!\nEstÃÂÃÂ¡ perfeito.\n\nCuide bem do\n{STRBUF}.",
   ["HmÃÂ¢ÃÂÃÂ¦ {STRBUF}ÃÂ¢ÃÂÃÂ¦\nThat's a fairly\ndecent name.\n\nBut, how about a\nslightly better\nnickname?\n\nWant me to give it\na better name?"] = "HumÃÂ¢ÃÂÃÂ¦ {STRBUF}ÃÂ¢ÃÂÃÂ¦\nÃÂÃÂ um nome bem\nrazoÃÂÃÂ¡vel.\n\nMas que tal um\napelido um pouco\nmelhor?\n\nQuer que eu dÃÂÃÂª um\nnome melhor?",
-  ["How is that\n{STRBUF} I\vtraded you doing?\fYour {STRBUF}'s\nso cute!"] = "Como estÃÂÃÂ¡ aquele\n{STRBUF} que\veu te dei?\fSeu {STRBUF} ÃÂÃÂ©\ntÃÂÃÂ£o fofo!",
+  ["How is that\n{STRBUF} Itraded you doing?Your {STRBUF}'s\nso cute!"] = "Como estÃÂÃÂ¡ aquele\n{STRBUF} que\veu te dei?\fSeu {STRBUF} ÃÂÃÂ©\ntÃÂÃÂ£o fofo!",
   ["How many do you\nwant to deposit?"] = "Quantos vocÃÂÃÂª quer\nguardar?",
   ["How many do you\nwant to withdraw?"] = "Quantos vocÃÂÃÂª quer\nretirar?",
   ["How many minutes?"] = "Quantos minutos?",
@@ -484,13 +484,13 @@ return {
   ["How much do you\nwant to save?"] = "Quanto quer\nguardar?",
   ["How much do you\nwant to take?"] = "Quanto quer\ntirar?",
   ["Huh? %s\nstopped evolving!"] = "HÃÂÃÂ£? %s\nparou de evoluir!",
-  ["Huh? That's not\n{STRBUF}. \vWhat a letdownÃÂ¢ÃÂÃÂ¦"] = "UÃÂÃÂª? Isso nÃÂÃÂ£o ÃÂÃÂ©\n{STRBUF}. \vQue decepÃÂÃÂ§ÃÂÃÂ£oÃÂ¢ÃÂÃÂ¦",
+  ["Huh? That's not\n{STRBUF}. What a letdownÃÂ¢ÃÂÃÂ¦"] = "UÃÂÃÂª? Isso nÃÂÃÂ£o ÃÂÃÂ©\n{STRBUF}. \vQue decepÃÂÃÂ§ÃÂÃÂ£oÃÂ¢ÃÂÃÂ¦",
   ["Huh? That's not\n{STRBUF}. What a letdownÃÂ¢ÃÂÃÂ¦"] = "UÃÂÃÂ©? Isso nÃÂÃÂ£o ÃÂÃÂ©\n{STRBUF}. Que decepÃÂÃÂ§ÃÂÃÂ£oÃÂ¢ÃÂÃÂ¦",
   ["I bought it with\nyour money. Sorry!"] = "comprei com o seu\ndinheiro. Foi mal!",
   ["I can pay you\nÃÂÃÂ¥%d for that."] = "Posso pagar\nÃÂÃÂ¥%d por isso.",
   ["I can't put a\nprice on that."] = "NÃÂÃÂ£o posso dar\npreÃÂÃÂ§o nisso.",
-  ["I collect #MON.\nDo you have\v{STRBUF}?\fWant to trade it\nfor my {STRBUF}?"] = "Eu coleciono #MON.\nVocÃÂÃÂª tem um\v{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
-  ["I collect POKÃÂÃÂ©MON.\nDo you have\v{STRBUF}?\fWant to trade it\nfor my {STRBUF}?"] = "Eu coleciono\nPOKÃÂÃÂ©MON. VocÃÂÃÂª tem\v{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
+  ["I collect #MON.\nDo you have{STRBUF}?Want to trade it\nfor my {STRBUF}?"] = "Eu coleciono #MON.\nVocÃÂÃÂª tem um\v{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
+  ["I collect POKÃÂÃÂ©MON.\nDo you have{STRBUF}?Want to trade it\nfor my {STRBUF}?"] = "Eu coleciono\nPOKÃÂÃÂ©MON. VocÃÂÃÂª tem\v{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
   ["I found a useful\nitem shopping, so"] = "Achei um item ÃÂÃÂºtil\nnas compras, entÃÂÃÂ£o",
   ["I like shorts!\nThey're comfy and\neasy to wear!"] = "Adoro shorts!\nSÃÂÃÂ£o confortÃÂÃÂ¡veis\ne fÃÂÃÂ¡ceis de usar!",
   ["I'm impressed.\nYou're evolving\n\n#MON, not just\ncatching them."] = "Muito bom. VocÃÂÃÂª\nestÃÂÃÂ¡ evoluindo\n\n#MON, nÃÂÃÂ£o sÃÂÃÂ³\npegando eles.",
@@ -524,7 +524,7 @@ return {
   ["It's a one-hit KO!"] = "Nocaute de um\ngolpe sÃÂÃÂ³!",
   ["It's a sculpture\nof DIGLETT."] = "ÃÂÃÂ uma escultura\nde DIGLETT.",
   ["It's a vicious\nwhirlpool!"] = "ÃÂÃÂ um redemoinho\nviolento!",
-  ["It's a vicious\nwhirlpool!\fA #MON may be\nable to pass it."] = "ÃÂÃÂ um redemoinho\nviolento!\fUm #MON talvez\nconsiga passar.",
+  ["It's a vicious\nwhirlpool!A #MON may be\nable to pass it."] = "ÃÂÃÂ um redemoinho\nviolento!\fUm #MON talvez\nconsiga passar.",
   ["It's all over!"] = "Acabou tudo!",
   ["It's brimming with\nenergy."] = "EstÃÂÃÂ¡ transbordando\nde energia.",
   ["It's friendly with\n{STRBUF}."] = "ÃÂÃÂ amigo do\n{STRBUF}.",
@@ -611,11 +611,11 @@ return {
   ["No releasing EGGS!"] = "NÃÂÃÂ£o solte EGGS!",
   ["No room left to\nstore items."] = "Sem espaÃÂÃÂ§o para\nguardar itens.",
   ["No! A new BADGE\nis required."] = "NÃÂÃÂ£o! ÃÂÃÂ preciso\numa nova BADGE.",
-  ["No! There's no\nrunning from a\vtrainer battle!"] = "NÃÂÃÂ£o dÃÂÃÂ¡ para fugir\nde uma batalha\vde treinador!",
+  ["No! There's no\nrunning from atrainer battle!"] = "NÃÂÃÂ£o dÃÂÃÂ¡ para fugir\nde uma batalha\vde treinador!",
   ["No! There's no running from a trainer battle!"] = "NÃÂÃÂ£o! NÃÂÃÂ£o dÃÂÃÂ¡ para\nfugir de batalha\vde treinador!",
   ["No? Come visit me\nagain."] = "NÃÂÃÂ£o? Volte outra\nhora.",
   ["Nope! ITEMFINDER\nisn't responding."] = "Nada! O ACHA-ITENS\nnÃÂÃÂ£o responde.",
-  ["Nope! There's\nonly trash here.\fHey! The electric\nlocks were reset!"] = "NÃÂÃÂ£o! SÃÂÃÂ³ tem\nlixo aqui.\fEi! As travas\nelÃÂÃÂ©tricas\vresetaram!",
+  ["Nope! There's\nonly trash here.Hey! The electric\nlocks were reset!"] = "NÃÂÃÂ£o! SÃÂÃÂ³ tem\nlixo aqui.\fEi! As travas\nelÃÂÃÂ©tricas\vresetaram!",
   ["Nope, there's\nonly trash here."] = "NÃÂÃÂ£o, sÃÂÃÂ³ tem\nlixo aqui.",
   ["Nope. NothingÃÂ¢ÃÂÃÂ¦"] = "Nada. NadinhaÃÂ¢ÃÂÃÂ¦",
   ["Not enough\ncoins!"] = "Fichas\ninsuficientes!",
@@ -629,10 +629,10 @@ return {
   ["Now saving..."] = "Salvando...",
   ["Now, what did you\nsay your name was?"] = "Agora, como vocÃÂÃÂª\ndisse se chamar?",
   ["OAK: %s!\nThis isn't the\ntime to use that!"] = "OAK: %s!\nNÃÂÃÂ£o ÃÂÃÂ© hora de\nusar isso!",
-  ["OAK: {PLAYER}!\nThis isn't the\vtime to use that!"] = "OAK: {PLAYER}!\nNÃÂÃÂ£o ÃÂÃÂ© hora de\vusar isso!",
+  ["OAK: {PLAYER}!\nThis isn't thetime to use that!"] = "OAK: {PLAYER}!\nNÃÂÃÂ£o ÃÂÃÂ© hora de\vusar isso!",
   ["OFF"] = "NÃÂÃÂO",
-  ["OK, I'll save your\nmoney. Trust me!\f{PLAYER}, stick\nwith it!"] = "Certo, guardo seu\ndinheiro. Confie!\f{PLAYER}, nÃÂÃÂ£o\ndesista!",
-  ["OK, I'll take care\nof your money.\fÃÂ¢ÃÂÃÂ¦"] = "Certo, cuido do\nseu dinheiro.\fÃÂ¢ÃÂÃÂ¦",
+  ["OK, I'll save your\nmoney. Trust me!{PLAYER}, stick\nwith it!"] = "Certo, guardo seu\ndinheiro. Confie!\f{PLAYER}, nÃÂÃÂ£o\ndesista!",
+  ["OK, I'll take care\nof your money.ÃÂ¢ÃÂÃÂ¦"] = "Certo, cuido do\nseu dinheiro.\fÃÂ¢ÃÂÃÂ¦",
   ["OK, connect the\nGame Link Cable."] = "Certo, conecte o\nGame Link Cable.",
   ["OK, so you wanted\na %s?"] = "Certo, vocÃÂÃÂª queria\num %s?",
   ["OK, then. Come\nagain sometime."] = "Certo. Volte\noutra hora.",
@@ -689,18 +689,18 @@ return {
   ["PSN"] = "VEN",
   ["PSYCHIC"] = "PSÃÂÃÂQUICO",
   ["PUT IN PACK"] = "GUARDAR",
-  ["People and POKÃÂÃÂ©MON\nlive together by\fsupporting each\nother.\fSome people play\nwith POKÃÂÃÂ©MON, some\vbattle with them."] = "Pessoas e POKÃÂÃÂ©MON\nvivem juntos se\fapoiando uns aos\noutros.\fUns brincam com\nPOKÃÂÃÂ©MON, outros\vbatalham com eles",
-  ["Placing second was\n%s,\fwho caught a\n%s!"] = "Em segundo veio\n%s,\fque pegou um\n%s!",
-  ["Placing third was\n%s,\fwho caught a\n%s!"] = "Em terceiro veio\n%s,\fque pegou um\n%s!",
+  ["People and POKÃÂÃÂ©MON\nlive together bysupporting each\nother.Some people play\nwith POKÃÂÃÂ©MON, somebattle with them."] = "Pessoas e POKÃÂÃÂ©MON\nvivem juntos se\fapoiando uns aos\noutros.\fUns brincam com\nPOKÃÂÃÂ©MON, outros\vbatalham com eles",
+  ["Placing second was\n%s,who caught a\n%s!"] = "Em segundo veio\n%s,\fque pegou um\n%s!",
+  ["Placing third was\n%s,who caught a\n%s!"] = "Em terceiro veio\n%s,\fque pegou um\n%s!",
   ["Play again?"] = "Jogar de novo?",
   ["Play with three\ncoins?"] = "Jogar com trÃÂÃÂªs\nfichas?",
-  ["Played the POKÃÂÃÂ©\nFLUTE.\fNow, that's a\ncatchy tune!"] = "Tocou a POKÃÂÃÂ©\nFLUTE.\fQue mÃÂÃÂºsica\ncontagiante!",
+  ["Played the POKÃÂÃÂ©\nFLUTE.Now, that's a\ncatchy tune!"] = "Tocou a POKÃÂÃÂ©\nFLUTE.\fQue mÃÂÃÂºsica\ncontagiante!",
   ["Player"] = "Jogador",
-  ["Please apply here.\fBefore opening\nthe link, we have\vto save the game."] = "Fique aqui.\fAntes de abrir\no link, temos que\vsalvar o jogo.",
+  ["Please apply here.Before opening\nthe link, we haveto save the game."] = "Fique aqui.\fAntes de abrir\no link, temos que\vsalvar o jogo.",
   ["Please come\nagain!"] = "Volte\nsempre!",
   ["Please remove the\nMAIL."] = "Por favor, tire\na MAIL.",
   ["Port: %s"] = "Porta: %s",
-  ["Printed %s's\ndata!\fSaved as\n%s\vin the save\nfolder."] = "Imprimiu os dados\nde %s!\fSalvo como\n%s\vna pasta de\nsaves.",
+  ["Printed %s's\ndata!Saved as\n%sin the save\nfolder."] = "Imprimiu os dados\nde %s!\fSalvo como\n%s\vna pasta de\nsaves.",
   ["Printer error!\n%s"] = "Erro de impressÃÂÃÂ£o!\n%s",
   ["Put away the\n%s"] = "Guardou o\n%s",
   ["Put away the\n%s."] = "Guardou o\n%s.",
@@ -785,7 +785,7 @@ return {
   ["SET  "] = "FIXO ",
   ["SFX VOL"] = "VOL. EFEITOS",
   ["SHIFT"] = "TROCA",
-  ["SILPH SCOPE\nunveiled the\vGHOST's identity!"] = "A SILPH SCOPE\nrevelou quem era\vo FANTASMA!",
+  ["SILPH SCOPE\nunveiled theGHOST's identity!"] = "A SILPH SCOPE\nrevelou quem era\vo FANTASMA!",
   ["SLOT MACHINE"] = "CAÃÂÃÂA-NÃÂÃÂQUEIS",
   ["SLOW"] = "LENTO ",
   ["SLP"] = "SON",
@@ -856,17 +856,17 @@ return {
   ["That isn't going to help here."] = "Isso nÃÂÃÂ£o vai\najudar aqui.",
   ["That's a better\nname than before!\n\nWell done!"] = "Esse nome ÃÂÃÂ© melhor\nque o de antes!\n\nMuito bem!",
   ["That's already set\nup."] = "Isso jÃÂÃÂ¡ estÃÂÃÂ¡\nmontado.",
-  ["That's not\n{STRBUF}.\fPlease trade with\nme if you get one."] = "Isso nÃÂÃÂ£o ÃÂÃÂ©\n{STRBUF}.\fSe conseguir um,\ntroque comigo.",
+  ["That's not\n{STRBUF}.Please trade with\nme if you get one."] = "Isso nÃÂÃÂ£o ÃÂÃÂ©\n{STRBUF}.\fSe conseguir um,\ntroque comigo.",
   ["That's too impor-\ntant to toss out!"] = "Importante demais\npara descartar!",
   ["That's too impor-\ntant to toss!"] = "Importante demais\npara jogar fora!",
   ["The %s\nis fullÃÂ¢ÃÂÃÂ¦"] = "O %s\nestÃÂÃÂ¡ cheioÃÂ¢ÃÂÃÂ¦",
   ["The %s\nis fullÃ¢ÂÂ¦"] = "O %s\nestÃÂ¡ cheioÃ¢ÂÂ¦",
-  ["The 2nd electric\nlock opened!\fThe motorized door\nopened!"] = "A 2ÃÂÃÂª trava\nelÃÂÃÂ©trica abriu!\fA porta\nmotorizada abriu!",
+  ["The 2nd electric\nlock opened!The motorized door\nopened!"] = "A 2ÃÂÃÂª trava\nelÃÂÃÂ©trica abriu!\fA porta\nmotorizada abriu!",
   ["The GHOST\nappeared!"] = "O FANTASMA\napareceu!",
   ["The MIRROR MOVE\nfailed!"] = "O MIRROR MOVE\nfalhou!",
   ["The PACK is full."] = "A PACK estÃÂÃÂ¡\ncheia.",
   ["The POKÃÂÃÂ©MON BOX is full. That can't be used now."] = "A POKÃÂÃÂ©MON BOX estÃÂÃÂ¡\ncheia. NÃÂÃÂ£o dÃÂÃÂ¡ para\vusar isso agora.",
-  ["The REPEL used\nearlier is still\vin effect."] = "O REPELENTE de\nantes ainda estÃÂÃÂ¡\vfazendo efeito.",
+  ["The REPEL used\nearlier is stillin effect."] = "O REPELENTE de\nantes ainda estÃÂÃÂ¡\vfazendo efeito.",
   ["The SUBSTITUTE took damage for %s!"] = "O SUBSTITUTO levou\no dano\vpor %s!",
   ["The TOWN MAP is\nunreadable here."] = "O TOWN MAP nÃÂÃÂ£o\nfunciona aqui.",
   ["The boulder fell\nthrough the hole!"] = "A pedra caiu\nno buraco!",
@@ -892,10 +892,10 @@ return {
   ["There is a POKÃÂÃÂ©MON\nholding MAIL."] = "HÃÂÃÂ¡ um POKÃÂÃÂ©MON\nsegurando MAIL.",
   ["There is already a\nsave file. Is it"] = "JÃÂÃÂ¡ existe um jogo\nsalvo. Tudo bem",
   ["There isn't any\nresponse..."] = "NÃÂÃÂ£o teve\nresposta...",
-  ["There was a trophy\ninside!\fThe trophy was\nsent home."] = "Havia um trofÃÂÃÂ©u\ndentro!\fO trofÃÂÃÂ©u foi\nmandado para casa.",
+  ["There was a trophy\ninside!The trophy was\nsent home."] = "Havia um trofÃÂÃÂ©u\ndentro!\fO trofÃÂÃÂ©u foi\nmandado para casa.",
   ["There's a slew of\nPOKÃÂÃÂ©MON stuff!"] = "Um monte de coisa\nde POKÃÂÃÂ©MON!",
   ["There's no PP left for this move!"] = "Sem PP para\neste golpe!",
-  ["There's no more\nroom for POKÃÂÃÂ©MON!\v%s was\vsent to POKÃÂÃÂ©MON\vBOX %s on PC!"] = "Sem espaÃÂÃÂ§o para\nPOKÃÂÃÂ©MON!\v%s foi\vpara a POKÃÂÃÂ©MON\vBOX %s do PC!",
+  ["There's no more\nroom for POKÃÂÃÂ©MON!%s wassent to POKÃÂÃÂ©MONBOX %s on PC!"] = "Sem espaÃÂÃÂ§o para\nPOKÃÂÃÂ©MON!\v%s foi\vpara a POKÃÂÃÂ©MON\vBOX %s do PC!",
   ["There's no room\nfor more items."] = "NÃÂÃÂ£o hÃÂÃÂ¡ espaÃÂÃÂ§o\npara mais itens.",
   ["There's no room to\nstore items."] = "NÃÂÃÂ£o hÃÂÃÂ¡ espaÃÂÃÂ§o para\nguardar itens.",
   ["There's no room!"] = "NÃÂÃÂ£o hÃÂÃÂ¡ espaÃÂÃÂ§o!",
@@ -905,12 +905,12 @@ return {
   ["There's nothing to\nCUT here."] = "NÃÂÃÂ£o hÃÂÃÂ¡ nada para\nusar CUT aqui.",
   ["There's nothing to\nchoose."] = "NÃÂÃÂ£o hÃÂÃÂ¡ nada para\nescolher.",
   ["There's nothing to\nput away."] = "NÃÂÃÂ£o hÃÂÃÂ¡ nada para\nguardar.",
-  ["This Bug-Catching\nContest winner is\f%s,\nwho caught a\n%s!"] = "O campeÃÂÃÂ£o deste\nConcurso ÃÂÃÂ©\f%s,\nque pegou um\n%s!",
+  ["This Bug-Catching\nContest winner is%s,\nwho caught a\n%s!"] = "O campeÃÂÃÂ£o deste\nConcurso ÃÂÃÂ©\f%s,\nque pegou um\n%s!",
   ["This POKÃÂÃÂ©MON\ncan't be caught!"] = "Este POKÃÂÃÂ©MON\nnÃÂÃÂ£o pode ser pego!",
   ["This certifies"] = "Isto certifica",
   ["This tree can be\nCUT!"] = "Esta ÃÂÃÂ¡rvore pode\nlevar CUT!",
-  ["This tree can be\nCUT!\fWant to use CUT?"] = "Esta ÃÂÃÂ¡rvore pode\nlevar CUT!\fUsar CUT?",
-  ["This world is in-\nhabited by crea-\vtures that we call\vPOKÃÂÃÂ©MON."] = "Este mundo ÃÂÃÂ©\nhabitado por\vcriaturas que\vchamamos POKÃÂÃÂ©MON.",
+  ["This tree can be\nCUT!Want to use CUT?"] = "Esta ÃÂÃÂ¡rvore pode\nlevar CUT!\fUsar CUT?",
+  ["This world is in-\nhabited by crea-tures that we callPOKÃÂÃÂ©MON."] = "Este mundo ÃÂÃÂ©\nhabitado por\vcriaturas que\vchamamos POKÃÂÃÂ©MON.",
   ["Threw away\n%s."] = "Jogou fora\n%s.",
   ["Threw away %s."] = "Jogou %s fora.",
   ["Throw away %d\n%s(S)?"] = "Jogar fora %d\n%s(S)?",
@@ -952,7 +952,7 @@ return {
   ["We exchange your\ncoins for fabulous"] = "Trocamos suas\nfichas por prÃÂÃÂªmios",
   ["We exchange your\ngame coins for"] = "Trocamos suas\nfichas de jogo por",
   ["We hope to see\nyou again!"] = "Esperamos te\nver de novo!",
-  ["We're making\npreparations.\vPlease wait."] = "Estamos nos\npreparando.\vEspere.",
+  ["We're making\npreparations.Please wait."] = "Estamos nos\npreparando.\vEspere.",
   ["Welcome to our\nPOKÃÂÃÂ©MON CENTER!"] = "Bem-vindo ao nosso\nCENTRO POKÃÂÃÂ©MON!",
   ["Welcome to the\nCable Club!"] = "Bem-vindo ao\nCable Club!",
   ["Welcome to the\nGAME CORNER."] = "Bem-vindo ao\nGAME CORNER.",
@@ -997,16 +997,16 @@ return {
   ["Withdrew %d\n%s(S)."] = "Retirou %d\n%s(S).",
   ["Would you like to\nend the Contest?"] = "Quer encerrar o\nConcurso?",
   ["Would you like to\nsave the game?"] = "Quer salvar\no jogo?",
-  ["Wow! Thank you!\nI always wanted\v{STRBUF}!"] = "Uau! Obrigado!\nEu sempre quis\v{STRBUF}!",
+  ["Wow! Thank you!\nI always wanted{STRBUF}!"] = "Uau! Obrigado!\nEu sempre quis\v{STRBUF}!",
   ["Wow! You've hit\n200! Your #DEX\nis looking great!"] = "Uau! Chegou a 200!\nSua #DEX estÃÂÃÂ¡\nÃÂÃÂ³tima!",
   ["Wow, it's a huge\nwaterfall."] = "Nossa, que queda\nd'ÃÂÃÂ¡gua enorme.",
-  ["Wow, that's a cute\n#MON.\fWhere did you get\nit?\fÃÂ¢ÃÂÃÂ¦\fSo, you're leaving\non an adventureÃÂ¢ÃÂÃÂ¦\fOK!\nI'll help too.\fBut what can I do\nfor you?\fI know! I'll save\nmoney for you.\fOn a long journey,\nmoney's important.\fDo you want me to\nsave your money?"] = "Nossa, que #MON\nfofinho.\fOnde vocÃÂÃÂª pegou\nele?\fÃÂ¢ÃÂÃÂ¦\fEntÃÂÃÂ£o vocÃÂÃÂª vai\nsair em aventuraÃÂ¢ÃÂÃÂ¦\fCerto!\nEu tambÃÂÃÂ©m ajudo.\fMas o que posso\nfazer por vocÃÂÃÂª?\fJÃÂÃÂ¡ sei! Vou\nguardar dinheiro.\fEm viagem longa,\ndinheiro importa.\fQuer que eu guarde\no seu dinheiro?",
+  ["Wow, that's a cute\n#MON.Where did you get\nit?ÃÂ¢ÃÂÃÂ¦So, you're leaving\non an adventureÃÂ¢ÃÂÃÂ¦OK!\nI'll help too.But what can I do\nfor you?I know! I'll save\nmoney for you.On a long journey,\nmoney's important.Do you want me to\nsave your money?"] = "Nossa, que #MON\nfofinho.\fOnde vocÃÂÃÂª pegou\nele?\fÃÂ¢ÃÂÃÂ¦\fEntÃÂÃÂ£o vocÃÂÃÂª vai\nsair em aventuraÃÂ¢ÃÂÃÂ¦\fCerto!\nEu tambÃÂÃÂ©m ajudo.\fMas o que posso\nfazer por vocÃÂÃÂª?\fJÃÂÃÂ¡ sei! Vou\nguardar dinheiro.\fEm viagem longa,\ndinheiro importa.\fQuer que eu guarde\no seu dinheiro?",
   ["Wow. You've found\nmore #MON than\n\nthe last #DEX\nresearch project."] = "Uau. VocÃÂÃÂª achou\nmais #MON que\n\na ÃÂÃÂºltima pesquisa\nda #DEX.",
   ["X: not on theirs"] = "X: nÃÂÃÂ£o estÃÂÃÂ¡ no dele",
   ["YES"] = "SIM",
   ["YOUR NAME?"] = "SEU NOME?",
   ["YOURS"] = "SEU",
-  ["Yay! I got myself\n{STRBUF}!\vThanks!"] = "Oba! Consegui um\n{STRBUF}!\vValeu!",
+  ["Yay! I got myself\n{STRBUF}!Thanks!"] = "Oba! Consegui um\n{STRBUF}!\vValeu!",
   ["Yes! ITEMFINDER\nindicates there's\nan item nearby."] = "Sim! O ACHA-ITENS\nacusa um item\naqui perto.",
   ["You already caught a %s."] = "VocÃÂÃÂª jÃÂÃÂ¡ pegou\num %s.",
   ["You can't SURF\nhere."] = "NÃÂÃÂ£o dÃÂÃÂ¡ para usar\nSURF aqui.",
@@ -1017,15 +1017,15 @@ return {
   ["You can't get off\nhere."] = "NÃÂÃÂ£o dÃÂÃÂ¡ para\ndescer aqui.",
   ["You can't register"] = "NÃÂÃÂ£o ÃÂÃÂ© possÃÂÃÂ­vel",
   ["You can't save\nthat much."] = "NÃÂÃÂ£o dÃÂÃÂ¡ para\nguardar tudo isso.",
-  ["You can't take\nany more POKÃÂÃÂ©MON.\fDeposit POKÃÂÃÂ©MON\nfirst."] = "NÃÂÃÂ£o dÃÂÃÂ¡ para levar\nmais POKÃÂÃÂ©MON.\fGuarde algum\nprimeiro.",
+  ["You can't take\nany more POKÃÂÃÂ©MON.Deposit POKÃÂÃÂ©MON\nfirst."] = "NÃÂÃÂ£o dÃÂÃÂ¡ para levar\nmais POKÃÂÃÂ©MON.\fGuarde algum\nprimeiro.",
   ["You can't take\nthat much."] = "NÃÂÃÂ£o dÃÂÃÂ¡ para tirar\ntudo isso.",
   ["You can't use that\nhere."] = "NÃÂÃÂ£o pode usar\nisso aqui.",
   ["You don't have\nany coins!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem\nfichas!",
   ["You don't have\nenough coins."] = "Suas fichas\nnÃÂÃÂ£o dÃÂÃÂ£o.",
   ["You don't have\nenough money."] = "VocÃÂÃÂª nÃÂÃÂ£o tem\ndinheiro.",
-  ["You don't have\none either?\fGee, that's really\ndisappointingÃÂ¢ÃÂÃÂ¦"] = "VocÃÂÃÂª tambÃÂÃÂ©m nÃÂÃÂ£o\ntem um?\fNossa, que\ndecepÃÂÃÂ§ÃÂÃÂ£oÃÂ¢ÃÂÃÂ¦",
+  ["You don't have\none either?Gee, that's really\ndisappointingÃÂ¢ÃÂÃÂ¦"] = "VocÃÂÃÂª tambÃÂÃÂ©m nÃÂÃÂ£o\ntem um?\fNossa, que\ndecepÃÂÃÂ§ÃÂÃÂ£oÃÂ¢ÃÂÃÂ¦",
   ["You don't have\nthat much."] = "VocÃÂÃÂª nÃÂÃÂ£o tem\ntudo isso.",
-  ["You don't have\n{STRBUF}? That's\vtoo bad, then."] = "VocÃÂÃÂª nÃÂÃÂ£o tem\n{STRBUF}? Que\vpena, entÃÂÃÂ£o.",
+  ["You don't have\n{STRBUF}? That'stoo bad, then."] = "VocÃÂÃÂª nÃÂÃÂ£o tem\n{STRBUF}? Que\vpena, entÃÂÃÂ£o.",
   ["You don't have a\n#MON!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem\nnenhum POKÃÂÃÂ©MON!",
   ["You don't have a\nCOIN CASE."] = "VocÃÂÃÂª nÃÂÃÂ£o tem um\nPORTA-FICHAS.",
   ["You don't have the\nBOULDERBADGE yet!"] = "VocÃÂÃÂª ainda nÃÂÃÂ£o\ntem a\vBOULDERBADGE!",
@@ -1033,7 +1033,7 @@ return {
   ["You don't want to\ntrade? AwwÃÂ¢ÃÂÃÂ¦"] = "NÃÂÃÂ£o quer trocar?\nAh, que penaÃÂ¢ÃÂÃÂ¦",
   ["You don't want to\ntrade? Oh, darnÃÂ¢ÃÂÃÂ¦"] = "NÃÂÃÂ£o quer trocar?\nAh, que drogaÃÂ¢ÃÂÃÂ¦",
   ["You have no <PK><MN>!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem <PK><MN>!",
-  ["You have no more\nPOKÃÂÃÂ©MON that can\vfight!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem mais\nPOKÃÂÃÂ©MON que\vpossam lutar!",
+  ["You have no more\nPOKÃÂÃÂ©MON that canfight!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem mais\nPOKÃÂÃÂ©MON que\vpossam lutar!",
   ["You have no more\nPOKÃÂÃÂ©MON that can\\011fight!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem mais\nPOKÃÂÃÂ©MON que possa\\011lutar!",
   ["You have no more POKÃÂÃÂ©MON!"] = "VocÃÂÃÂª nÃÂÃÂ£o tem mais\nPOKÃÂÃÂ©MON!",
   ["You have no room\nfor it."] = "VocÃÂÃÂª nÃÂÃÂ£o tem\nespaÃÂÃÂ§o para isso.",
@@ -1050,7 +1050,7 @@ return {
   ["Your #DEX is\nfilling up. Keep\nup the good work!"] = "Sua #DEX estÃÂÃÂ¡\nenchendo. Continue\nassim!",
   ["Your POKÃÂÃÂ©MON are\nfighting fit!"] = "Seus POKÃÂÃÂ©MON estÃÂÃÂ£o\nem forma!",
   ["Your money's safe\nhere! Get going!"] = "Seu dinheiro estÃÂÃÂ¡\nseguro! VÃÂÃÂ¡ lÃÂÃÂ¡!",
-  ["Zzz... Hm? Wha...?\nYou woke me up!\fWill you check the\nclock for me?"] = "ZzzÃÂ¢ÃÂÃÂ¦ HÃÂÃÂ£? QuÃÂÃÂªÃÂ¢ÃÂÃÂ¦?\nVocÃÂÃÂª me acordou!\fPode ver o\nrelÃÂÃÂ³gio para mim?",
+  ["Zzz... Hm? Wha...?\nYou woke me up!Will you check the\nclock for me?"] = "ZzzÃÂ¢ÃÂÃÂ¦ HÃÂÃÂ£? QuÃÂÃÂªÃÂ¢ÃÂÃÂ¦?\nVocÃÂÃÂª me acordou!\fPode ver o\nrelÃÂÃÂ³gio para mim?",
   ["and set up the\n%s."] = "e montou o\n%s.",
   ["battle|FIGHT"] = "LUTAR",
   ["battle|ITEM"] = "ITEM",
@@ -1085,16 +1085,16 @@ return {
   ["{PLAYER} got on the\n{STRBUF}."] = "{PLAYER} subiu na\n{STRBUF}.",
   ["{PLAYER} played the\nPOKÃÂÃÂ© FLUTE."] = "{PLAYER} tocou a\nPOKÃÂÃÂ© FLUTE.",
   ["{PLAYER} put the\n%s in\nthe %s."] = "{PLAYER} colocou o\n%s no\v%s.",
-  ["{PLAYER} put the\n%s in\vthe %s."] = "{PLAYER} colocou o\n%s no\v%s.",
+  ["{PLAYER} put the\n%s inthe %s."] = "{PLAYER} colocou o\n%s no\v%s.",
   ["{PLAYER} received\n%s."] = "{PLAYER} recebeu\n%s.",
-  ["{PLAYER} sprinkled\nwater.\fBut nothing\nhappenedÃÂ¢ÃÂÃÂ¦"] = "{PLAYER} regou a\nplanta.\fMas nada\naconteceuÃÂ¢ÃÂÃÂ¦",
-  ["{PLAYER} traded\n{STRBUF} for\v{STRBUF}."] = "{PLAYER} trocou\n{STRBUF} por\v{STRBUF}.",
+  ["{PLAYER} sprinkled\nwater.But nothing\nhappenedÃÂ¢ÃÂÃÂ¦"] = "{PLAYER} regou a\nplanta.\fMas nada\naconteceuÃÂ¢ÃÂÃÂ¦",
+  ["{PLAYER} traded\n{STRBUF} for{STRBUF}."] = "{PLAYER} trocou\n{STRBUF} por\v{STRBUF}.",
   ["{PLAYER} turned on\nthe PC."] = "{PLAYER} ligou\no PC.",
   ["{PLAYER} used an\nESCAPE ROPE."] = "{PLAYER} usou uma\nCORDA FUGA.",
   ["{PLAYER} used the"] = "{PLAYER} usou o",
   ["{PLAYER} used the\n%s."] = "{PLAYER} usou\no %s.",
   ["{PLAYER}'s POKÃÂÃÂ©MON\nwere all healed!"] = "Os POKÃÂÃÂ©MON de\n{PLAYER} sararam!",
-  ["{PLAYER}, are you\nready?\fYour very own\nPOKÃÂÃÂ©MON story is\vabout to unfold.\fYou'll face fun\ntimes and tough\vchallenges.\fA world of dreams\nand adventures\fwith POKÃÂÃÂ©MON\nawaits! Let's go!\fI'll be seeing you\nlater!"] = "{PLAYER}, vocÃÂÃÂª estÃÂÃÂ¡\npronto?\fSua prÃÂÃÂ³pria\nhistÃÂÃÂ³ria POKÃÂÃÂ©MON\vestÃÂÃÂ¡ comeÃÂÃÂ§ando.\fVocÃÂÃÂª vai viver\nmomentos bons e\vdesafios duros.\fUm mundo de sonhos\ne aventuras\fcom POKÃÂÃÂ©MON\nespera! Vamos lÃÂÃÂ¡!\fA gente se vÃÂÃÂª\npor aÃÂÃÂ­!",
+  ["{PLAYER}, are you\nready?Your very own\nPOKÃÂÃÂ©MON story isabout to unfold.You'll face fun\ntimes and toughchallenges.A world of dreams\nand adventureswith POKÃÂÃÂ©MON\nawaits! Let's go!I'll be seeing you\nlater!"] = "{PLAYER}, vocÃÂÃÂª estÃÂÃÂ¡\npronto?\fSua prÃÂÃÂ³pria\nhistÃÂÃÂ³ria POKÃÂÃÂ©MON\vestÃÂÃÂ¡ comeÃÂÃÂ§ando.\fVocÃÂÃÂª vai viver\nmomentos bons e\vdesafios duros.\fUm mundo de sonhos\ne aventuras\fcom POKÃÂÃÂ©MON\nespera! Vamos lÃÂÃÂ¡!\fA gente se vÃÂÃÂª\npor aÃÂÃÂ­!",
   ["{PLAYER}, don't\ngive up!"] = "{PLAYER}, nÃÂÃÂ£o\ndesista!",
   ["{RAM:wNameBuffer} can\nmove boulders."] = "{RAM:wNameBuffer} pode\nmover pedras.",
   ["{RAM:wNameBuffer} can't\nFLY here."] = "{RAM:wNameBuffer}\nnÃÂÃÂ£o pode voar\vaqui.",
@@ -1115,7 +1115,7 @@ return {
   ["{STRBUF} used\nWATERFALL!"] = "{STRBUF} usou\nWATERFALL!",
   ["{STRBUF} used\nWHIRLPOOL!"] = "{STRBUF} usou\nWHIRLPOOL!",
   ["{STRBUF} was\nsent to {STRBUF}."] = "{STRBUF} foi\npara {STRBUF}.",
-  ["{STRBUF}'s cute,\nbut I don't have\fit. Do you have\n{STRBUF}?\fWant to trade it\nfor my {STRBUF}?"] = "{STRBUF} ÃÂÃÂ© fofo,\nmas eu nÃÂÃÂ£o tenho.\fVocÃÂÃÂª tem\n{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
+  ["{STRBUF}'s cute,\nbut I don't haveit. Do you have\n{STRBUF}?Want to trade it\nfor my {STRBUF}?"] = "{STRBUF} ÃÂÃÂ© fofo,\nmas eu nÃÂÃÂ£o tenho.\fVocÃÂÃÂª tem\n{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
   ["ÃÂ¢ÃÂÃÂ¦\nLink closedÃÂ¢ÃÂÃÂ¦"] = "ÃÂ¢ÃÂÃÂ¦\nLigaÃÂÃÂ§ÃÂÃÂ£o encerradaÃÂ¢ÃÂÃÂ¦",
   ["ÃÂ¢ÃÂÃÂTYPE/ÃÂ¢ÃÂÃÂ"] = "ÃÂ¢ÃÂÃÂTIPO/ÃÂ¢ÃÂÃÂ",
 }
