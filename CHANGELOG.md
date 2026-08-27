@@ -7,6 +7,14 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.58.0
+
+**Correção de codificação de caracteres (UTF-8 puro), mensagens de desmaio em batalha e layout de menus.**
+
+- Restaurado catálogo `strings.lua` em UTF-8 limpo corrigindo todos os caracteres acentuados corrompidos em menus e opções.
+- Corrigida a tradução de desmaio de Pokémon selvagem/inimigo (`SENTRET selvagem desmaiou!`).
+- Ajustado layout da caixa de opções de batalha 2x2 e alinhamento do menu de salvamento.
+
 ## 0.57.0
 
 **Atualização geral de compatibilidade, HUD e Pokégear para dispositivo móvel.**
