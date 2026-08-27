@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.57.0
+
+**Atualização geral de compatibilidade, HUD e Pokégear para dispositivo móvel.**
+
+- Sincronização completa de strings de combate, Pokégear e novos recursos do motor 0.2.133.
+
 ## 0.56.0
 
 **Correções visuais de HUD de combate, traduções de batalha, Pokégear e sincronização de sistema.**
