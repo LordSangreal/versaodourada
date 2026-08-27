@@ -1562,11 +1562,15 @@ disso.
 - Pagina de glifos: os acentos voltam.  Ate aqui tudo era dobrado para
   ASCII ("mae", "coracao").
 
-## [0.54.1] - 2026-08-24
-### Modificações
-- **Pontos de referência (Town Map e banners)**: traduzidos e registrados todos os locais restantes de Johto e Kanto (TORRE SPROUT, TORRE DE RÁDIO, TORRE QUEIMADA, TORRE TIN, CAVERNA UNION, POÇO SLOWPOKE, FLORESTA ILEX, PARQUE NACIONAL, RUÍNAS DE ALPH, MONTE MORTAR, CAVERNA ESCURA, LAGO DA FÚRIA, CATARATAS TOHJO, ESTRADA DA VITÓRIA, MONTE MOON, TÚNEL DE PEDRA, ILHAS REDEMOINHO, CAMINHO DE GELO, COVIL DO DRAGÃO, USINA DE ENERGIA, FAROL, NAVIO S.S. AQUA, CAVERNA DE SILVER).
+# Changelog
 
-## [0.54.0] - 2026-08-24 nomes de item.  Status fica no original.
+## 0.59.0 (2026-08-27)
+- Tradução do menu do Pokégear (MÃE, PROF. ELM, BICICLETARIA, chamadas e prompts).
+- Tradução de mensagens de batalha (ganho de EXP, subida de nível, aprendizado de golpes e recuperação).
+- Expansão do menu 2x2 de batalha (LUTAR, MOCHILA, POKéMON, FUGIR) com espaçamento limpo e sem abreviações desnecessárias.
+- Ajuste das margens do menu Salvar para evitar sobreposição da caixa SIM/NÃO com TEMPO.
+
+## 0.58.0 (2026-08-27)4 nomes de item.  Status fica no original.
 
 ## 0.4.0
 
