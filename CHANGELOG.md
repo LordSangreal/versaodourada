@@ -1564,6 +1564,14 @@ disso.
 
 # Changelog
 
+## 0.60.0 (2026-08-28)
+- Tradução da sequência de captura (`Pegou! %s foi capturado!`) e novo registro de Pokédex (`%s foi adicionado à #DEX.`).
+- Tradução de mensagens de efetividade de golpes (`É superefetivo!`, `Não é muito efetivo…`) e ataques que erraram (`%s errou o ataque!`).
+- Tradução do desafio inicial de treinadores (`%s quer batalhar!`), trocas e envio de Pokémon (`%s enviou %s!`, `%s recolheu %s!`, `%s usou %s!`).
+- Tradução do prêmio de batalha e envio de economias para a mãe (`%s ganhou %s%d por vencer! Enviou para a MÃE!`).
+- Tradução da notificação de itens encontrados e guardados nas bolsas (`{PLAYER} guardou %s no %s.`, `BOLSO DE ITENS`, `BOLSO DE CHAVES`, `BOLSO DE BOLAS`, `BOLSO DE TMs`).
+- Tradução de status e efeitos residuais de batalha (`LEECH SEED`, `CURSE`, `PERISH`, `SAFEGUARD`, `ENCORE`, itens segurados e tempestade de areia).
+
 ## 0.59.0 (2026-08-27)
 - Tradução do menu do Pokégear (MÃE, PROF. ELM, BICICLETARIA, chamadas e prompts).
 - Tradução de mensagens de batalha (ganho de EXP, subida de nível, aprendizado de golpes e recuperação).
