@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.4
+
+**Ajuste de texto do aviso policial do Underground Path.**
+
+- Substituído "foi lacrado" por "foi interditado" no aviso da Polícia de Celadon na Rota 7.
+
 ## 0.63.3
 
 **Correção de concordância de gênero em diálogos.**

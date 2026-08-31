@@ -1322,7 +1322,7 @@ return {
   ["4e:5ee6"] = "CELADON MANSION",
   ["4e:5ef7"] = "A diversão de\ntodos,CELADON GAME\vCORNER",
   ["4e:5f2a"] = "DICAS de TREINO\fGUARD SPEC.\nprotege POKéMON\fcontra ataques\nSPECIAL, como\vfogo e água.\fCompre seus itens\nna LOJA de DEP.\vde CELADON!",
-  ["4e:6081"] = "Que aviso é esse?\f…Os treinadores\nmal-educados têm\fbatalhado no\nUNDERGROUND PATH.\fPor causa das\nreclamações dos\vmoradores locais,\vo UNDERGROUND PATH\vfoi lacrado\vindefinidamente.\fPOLÍCIA DE\nCELADON",
+  ["4e:6081"] = "Que aviso é esse?\f…Os treinadores\nmal-educados têm\fbatalhado no\nUNDERGROUND PATH.\fPor causa das\nreclamações dos\vmoradores locais,\vo UNDERGROUND PATH\vfoi interditado\vindefinidamente.\fPOLÍCIA DE\nCELADON",
   ["4e:614f"] = "Está trancado…",
   ["4f:40a6"] = "Antes de virar\nprofessor, eu\fesquecia muita\ncoisa.",
   ["4f:40e4"] = "Nos dias de sol,\nacho que\fas crianças\nprefeririam\vbrincar no pátio\fa estudar na sala\nde aula.",
