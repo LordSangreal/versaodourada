@@ -7,6 +7,14 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.1
+
+**Padronização de placas de Ginásio ('GINÁSIO POKéMON DE [CIDADE]') e estabelecimentos.**
+
+- Padronizadas todas as 16 placas de Ginásios de Kanto e Johto para o formato natural `GINÁSIO POKéMON DE [CIDADE]`.
+- Corrigidas placas de polícia (`POLÍCIA DE CELADON`, etc.), lojas e cassino (`CASSINO DE GOLDENROD`).
+- Ajustado título do Lt. Surge para `O Relâmpago Americano` e ortografia de `sem graça`.
+
 ## 0.63.0
 
 **Tipografia aprimorada (alinhamento de acentos e redesenho de maiúsculas acentuadas), correção de rolagem de diálogos e padronização de verbos de HM/Field Moves.**
