@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.6
+
+**Ajuste de fala do Designer do Jogo (Mansão de Celadon).**
+
+- Ajustada a frase da Pokédex para "Completar a sua POKéDEX é difícil, mas não desista!".
+
 ## 0.63.5
 
 **Ajuste de texto e fluidez no e-mail do PC da Mansão de Celadon.**

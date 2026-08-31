@@ -2505,7 +2505,7 @@ return {
   ["5e:4ac7"] = "SUÍTE DO GERENTE\nDA MANSÃO CELADON",
   ["5e:4b55"] = "{PLAYER} ligou o\nPC.\f…\fAlguém estava no\nmeio de escrever\vum e-mail.\f…Espero que\nvisite KANTO.\fVai se surpreender\ncom quanta coisa\fmudou por aqui.\fTambém verá\nvários POKéMON\fque não existem\nem JOHTO.\fAo PRODUTOR\f…",
   ["5e:4c48"] = "GAME FREAK\nSALA DE ENCONTROS",
-  ["5e:4cea"] = "Isso mesmo!\fSou o DESIGNER\ndo JOGO!\fCompletar sua\nPOKéDEX é duro,\vmas não desista!",
+  ["5e:4cea"] = "Isso mesmo!\fSou o DESIGNER\ndo JOGO!\fCompletar a sua\nPOKéDEX\vé difícil, mas\nnão desista!",
   ["5e:4d41"] = "Uau! Excelente!\nVocê completou sua\vPOKéDEX!\fParabéns!",
   ["5e:4d7f"] = "O ARTISTA GRÁFICO\nvai imprimir um\vDIPLOMA pra você.\fDeve mostrá-lo por\naí.",
   ["5e:4dd0"] = "Sou o ARTISTA\nGRÁFICO.\fEu te desenhei!",
