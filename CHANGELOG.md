@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.2
+
+**Padronização de Lojas de Departamento ('LOJA de DEP. de [CIDADE]').**
+
+- Padronizadas todas as placas, falas e referências a lojas de departamento para `LOJA de DEP. de [CIDADE]` (Celadon, Goldenrod, etc.).
+
 ## 0.63.1
 
 **Padronização de placas de Ginásio ('GINÁSIO POKéMON DE [CIDADE]') e estabelecimentos.**
