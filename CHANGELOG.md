@@ -7,6 +7,12 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.5
+
+**Ajuste de texto e fluidez no e-mail do PC da Mansão de Celadon.**
+
+- Removida repetição/redundância de "muita coisa" na frase sobre Kanto.
+
 ## 0.63.4
 
 **Ajuste de texto do aviso policial do Underground Path.**
