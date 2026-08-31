@@ -7,6 +7,13 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.3
+
+**Correção de concordância de gênero em diálogos.**
+
+- Ajustada a fala da administradora da Mansão de Celadon para o feminino (`nunca me sinto sozinha`).
+- Ajustada a fala da treinadora Gwen após a batalha (`Vou treinar sozinha até eu melhorar`).
+
 ## 0.63.2
 
 **Padronização de Lojas de Departamento ('LOJA de DEP. de [CIDADE]').**
