@@ -7,7 +7,16 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
-## 0.58.0
+## 0.63.0
+
+**Tipografia aprimorada (alinhamento de acentos e redesenho de maiúsculas acentuadas), correção de rolagem de diálogos e padronização de verbos de HM/Field Moves.**
+
+- **Acentos e Linha de Base da Fonte**: Elevada a linha de base de todas as letras acentuadas (minúsculas e maiúsculas) para a linha 6 em `assets/font/latin.png`, eliminando o desalinhamento vertical (degrau de 1px) em relação às letras originais.
+- **Redesenho do `Ã` e Maiúsculas Acentuadas**: Glifos `Ã`, `Á`, `Â`, `À`, `É`, `Ê`, `Í`, `Ó`, `Ô`, `Õ`, `Ú` e `Ç` redesenhados preservando o design, proporções e silhueta clássica do Game Boy.
+- **Correção do Cursor Piscante (▼)**: Ajustadas quebras de linha em diálogos de 18 caracteres imediatamente anteriores a `\v` (como no Centro Pokémon), evitando que a seta de rolagem cubra a última letra.
+- **Padronização de HMs e Field Moves em Português**: Traduzidas e padronizadas todas as mensagens de interação de campo e diálogos de entrega para português (`CORTAR`, `SURFAR`, `FORÇA`, `CLARÃO`, `REDEMOINHO`, `CACHOEIRA`, `VOAR`, `CAVAR`, `CABEÇADA`).
+
+## 0.62.0
 
 **Correção de codificação de caracteres (UTF-8 puro), mensagens de desmaio em batalha e layout de menus.**
 

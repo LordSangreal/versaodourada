@@ -268,10 +268,10 @@ return {
   [":TYPE"] = ":TIPO",
   ["<PK><MN>"] = "<PK><MN>",
   ["A #MON may be\nable to move this."] = "Um #MON talvez\nmova isto.",
-  ["A #MON may be\nable to move this.Want to use\nSTRENGTH?"] = "Um #MON talvez\nmova isto.\fQuer usar\nSTRENGTH?",
+  ["A #MON may be\nable to move this.Want to use\nSTRENGTH?"] = "Um #MON talvez\npossa mover isto.\fUsar FORÇA?",
   ["A COIN CASE is\nrequired!"] = "É necessário um\nPORTA-FICHAS!",
-  ["A POKéMON could be\nin this tree.Want to HEADBUTT\nit?"] = "Pode haver um\nPOKéMON na árvore.\fUsar HEADBUTT\nnela?",
-  ["A blinding FLASH\nlights the area!"] = "Um FLASH forte\nilumina a área!",
+  ["A POKéMON could be\nin this tree.Want to HEADBUTT\nit?"] = "Pode haver um\nPOKéMON na árvore.\fDar CABEÇADA\nnela?",
+  ["A blinding FLASH\nlights the area!"] = "Um CLARÃO forte\nilumina a área!",
   ["A critical hit!"] = "Um golpe crítico!",
   ["A party POKéMON\ntops this level."] = "Um POKéMON do time\nsupere este nível.",
   ["A sandstorm brewed!"] = "Formou-se uma\ntempestade\vde areia!",
@@ -1011,14 +1011,14 @@ return {
   ["There's no will\nto fight!"] = "Não há vontade\nde lutar!",
   ["There's no will to battle!"] = "Não há vontade\nde lutar!",
   ["There's nothing\nhere…"] = "Não tem nada\naqui…",
-  ["There's nothing to\nCUT here."] = "Não há nada para\nusar CUT aqui.",
+  ["There's nothing to\nCUT here."] = "Não há nada para\nCORTAR aqui.",
   ["There's nothing to\nchoose."] = "Não há nada para\nescolher.",
   ["There's nothing to\nput away."] = "Não há nada para\nguardar.",
   ["This Bug-Catching\nContest winner is%s,\nwho caught a\n%s!"] = "O campeão deste\nConcurso é\f%s,\nque pegou um\n%s!",
   ["This POKéMON\ncan't be caught!"] = "Este POKéMON\nnão pode ser pego!",
   ["This certifies"] = "Isto certifica",
-  ["This tree can be\nCUT!"] = "Esta árvore pode\nlevar CUT!",
-  ["This tree can be\nCUT!Want to use CUT?"] = "Esta árvore pode\nlevar CUT!\fUsar CUT?",
+  ["This tree can be\nCUT!"] = "Esta árvore pode\nser cortada!",
+  ["This tree can be\nCUT!Want to use CUT?"] = "Esta árvore pode\nser cortada!\fUsar CORTAR?",
   ["This world is in-\nhabited by crea-tures that we callPOKéMON."] = "Este mundo é\nhabitado por\vcriaturas que\vchamamos POKéMON.",
   ["Threw away\n%s."] = "Jogou fora\n%s.",
   ["Threw away %s."] = "Jogou %s fora.",
@@ -1238,15 +1238,15 @@ return {
   ["{RIVAL}: Yeah! Am\nI great or what?"] = "{RIVAL}: Isso! Eu\nsou bom ou não sou?",
   ["{STRBUF} bids\nfarewell to"] = "{STRBUF} se\ndespede de",
   ["{STRBUF} can\nmove boulders."] = "{STRBUF} move\npedregulhos.",
-  ["{STRBUF} did a\nHEADBUTT!"] = "{STRBUF} deu um\nHEADBUTT!",
+  ["{STRBUF} did a\nHEADBUTT!"] = "{STRBUF} deu uma\nCABEÇADA!",
   ["{STRBUF} sends\n{STRBUF}."] = "{STRBUF} manda\n{STRBUF}.",
-  ["{STRBUF} used\nCUT!"] = "{STRBUF} usou\nCUT!",
-  ["{STRBUF} used\nDIG!"] = "{STRBUF} usou\nDIG!",
-  ["{STRBUF} used\nSTRENGTH!"] = "{STRBUF} usou\nSTRENGTH!",
-  ["{STRBUF} used\nSURF!"] = "{STRBUF} usou\nSURF!",
-  ["{STRBUF} used\nSWEET SCENT!"] = "{STRBUF} usou\nSWEET SCENT!",
-  ["{STRBUF} used\nWATERFALL!"] = "{STRBUF} usou\nWATERFALL!",
-  ["{STRBUF} used\nWHIRLPOOL!"] = "{STRBUF} usou\nWHIRLPOOL!",
+  ["{STRBUF} used\nCUT!"] = "{STRBUF} usou\nCORTAR!",
+  ["{STRBUF} used\nDIG!"] = "{STRBUF} usou\nCAVAR!",
+  ["{STRBUF} used\nSTRENGTH!"] = "{STRBUF} usou\nFORÇA!",
+  ["{STRBUF} used\nSURF!"] = "{STRBUF} usou\nSURFAR!",
+  ["{STRBUF} used\nSWEET SCENT!"] = "{STRBUF} usou\nDOCE AROMA!",
+  ["{STRBUF} used\nWATERFALL!"] = "{STRBUF} usou\nCACHOEIRA!",
+  ["{STRBUF} used\nWHIRLPOOL!"] = "{STRBUF} usou\nREDEMOINHO!",
   ["{STRBUF} was\nsent to {STRBUF}."] = "{STRBUF} foi\npara {STRBUF}.",
   ["{STRBUF}'s cute,\nbut I don't haveit. Do you have\n{STRBUF}?Want to trade it\nfor my {STRBUF}?"] = "{STRBUF} é fofo,\nmas eu não tenho.\fVocê tem\n{STRBUF}?\fQuer trocar pelo\nmeu {STRBUF}?",
   ["{STRBUF}."] = "{STRBUF}.",
