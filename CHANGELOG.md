@@ -7,6 +7,13 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.63.7
+
+**Correções pontuais de gênero e pontuação em diálogos.**
+
+- Ajustado gênero de fala da professora em Celadon ("uma vendedora de loja") e de garotas/treinadoras ("fiquei tonta").
+- Corrigida pontuação em diálogos e placas de Lavender/Celadon (restaurante, rádio, Mr. Fuji e Soul House).
+
 ## 0.63.6
 
 **Ajuste de fala do Designer do Jogo (Mansão de Celadon).**
