@@ -9,7 +9,7 @@ Nao acompanha nenhum byte de ROM. Voce precisa da sua propria copia.
 **Todo o texto e traducao propria, escrita a partir do ingles original.** Nao ha uma unica linha derivada de outra traducao no pacote.
 
 > **Joga Pokemon Crystal?** Vive noutro repositorio:
-> **[LordSangreal/versaocristal-ptbr](https://github.com/LordSangreal/versaocristal-ptbr)**.
+> **[LordSangreal/versaocristal](https://github.com/LordSangreal/versaocristal)**.
 > Suporta nativamente o `gen1recomp` e o Gen2Recomped.
 
 ---
