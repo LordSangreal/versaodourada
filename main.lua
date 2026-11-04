@@ -173,8 +173,101 @@ return function(mod)
   n = n + each("dialogue_gen2recomped", function(k, v)
     mod.content.text:override(k, v)
   end)
+local catalog_strings = catalog("strings")
   n = n + each("strings", function(src, value)
     mod.content.strings:override(src, value)
+  end)
+
+  -- Hook do Pokegear / Radio para garantir traducao das falas e estacoes
+  pcall(function()
+    local Pokegear = require("src.ui.gen2.Pokegear")
+    local Strings = require("src.core.Strings")
+    if not Pokegear then return end
+
+    local function translateRadioText(s)
+      if type(s) ~= "string" or s == "" then return s end
+
+      local oak_mon = s:match("^OAK: (.+)$")
+      if oak_mon then
+        local tpl = catalog_strings["OAK: %s"] or "OAK: %s"
+        return string.format(tpl, oak_mon)
+      end
+
+      local mary_mon = s:match("^MARY: (.+)'s$")
+      if mary_mon then
+        local tpl = catalog_strings["MARY: %s's"] or "MARY: O %s é"
+        return string.format(tpl, mary_mon)
+      end
+
+      local num = s:match("^Number is (%d+)!$")
+      if num then
+        local tpl = catalog_strings["Number is %05d!"] or "é o %05d!"
+        return string.format(tpl, tonumber(num))
+      end
+
+      local day = s:match("^Today's ([A-Z]+),$")
+      if day then
+        local full_match = catalog_strings[s]
+        if full_match then return full_match end
+        local day_trans = catalog_strings[day] or day
+        local tpl = catalog_strings["Today's %s,"] or "Hoje é %s,"
+        return string.format(tpl, day_trans)
+      end
+
+      if catalog_strings[s] then
+        return catalog_strings[s]
+      end
+
+      if Strings then
+        return Strings(s)
+      end
+
+      return s
+    end
+
+    if Pokegear.text then
+      local orig_text = Pokegear.text
+      Pokegear.text = function(self, str, tx, ty)
+        return orig_text(self, translateRadioText(str), tx, ty)
+      end
+    end
+
+    if Pokegear.Radio and Pokegear.Radio.printLine then
+      local orig_print = Pokegear.Radio.printLine
+      Pokegear.Radio.printLine = function(self, text, nextLine)
+        return orig_print(self, translateRadioText(text), nextLine)
+      end
+      Pokegear.Radio.nextLine = Pokegear.Radio.printLine
+    end
+
+    if Pokegear.STATION_NAMES then
+      for k, name in pairs(Pokegear.STATION_NAMES) do
+        Pokegear.STATION_NAMES[k] = translateRadioText(name)
+      end
+    end
+
+    local catalog_landmarks = catalog("landmarks")
+    if Pokegear.mapLandmark then
+      local orig_map = Pokegear.mapLandmark
+      Pokegear.mapLandmark = function(self)
+        local entry = orig_map(self)
+        if entry and entry.id and catalog_landmarks[entry.id] then
+          entry.name = catalog_landmarks[entry.id]
+        end
+        return entry
+      end
+    end
+
+    if Pokegear.playerLandmark then
+      local orig_player = Pokegear.playerLandmark
+      Pokegear.playerLandmark = function(self)
+        local entry = orig_player(self)
+        if entry and entry.id and catalog_landmarks[entry.id] then
+          entry.name = catalog_landmarks[entry.id]
+        end
+        return entry
+      end
+    end
   end)
   if idioma.itens == "pt" then
     n = n + each("item_names", function(id, value)
