@@ -7,6 +7,16 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.64.0
+
+**Opcao NOME DAS RADIOS: nomes das estacoes do POKeGEAR em PORTUGUES ou ENGLISH.**
+
+- Nova linha em OPTIONS, no grupo de NOME DOS GOLPES / ITENS / NPCS: troca
+  so os nomes dos canais (Lucky Channel, POKeDEX Show, Rocket Radio...). As
+  falas dos programas continuam em portugues.
+- Pede reinicio, como as outras tres linhas.
+- TUNING (SINTONIA) traduzido no lang/strings.lua.
+
 ## 0.63.9
 
 **Tradução em tempo de execução para Rádio e Town Map do Pokégear.**

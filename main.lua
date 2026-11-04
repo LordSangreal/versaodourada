@@ -73,7 +73,21 @@ return function(mod)
   -- (BENNY, LANCE, WHITNEY) nao esta em jogo aqui: nome de personagem nunca
   -- se traduz neste mod, com opcao ou sem ela.  Nao ha catalogo para isso e
   -- nao deve haver -- ver o cabecalho deste arquivo.
-  local idioma = { golpes = "pt", itens = "pt", npcs = "pt" }
+  -- A quarta linha, NOME DAS RADIOS, troca so os nomes das ESTACOES do
+  -- POKeGEAR (Lucky Channel, POKeDEX Show, Rocket Radio...).  As falas dos
+  -- programas continuam em portugues nos dois modos -- so o nome do canal
+  -- muda, porque e ele que o jogador procura no dial.
+  local idioma = { golpes = "pt", itens = "pt", npcs = "pt", radios = "pt" }
+  -- Chaves de lang/strings.lua que sao NOMES de estacao, e nao falas.
+  local ESTACOES = {
+    ["Lucky Channel"] = true, ["POKéDEX Show"] = true,
+    ["POKéMON Music"] = true, ["POKÉMON Music"] = true,
+    ["POKéMON Channel"] = true, ["Places & People"] = true,
+    ["Places and People"] = true, ["Let's All Sing!"] = true,
+    ["OAK's <PK><MN> Talk"] = true, ["OAK's PKMN Talk"] = true,
+    ["POKé FLUTE"] = true, ["POKÉ FLUTE"] = true,
+    ["Rocket Radio"] = true, ["Unown Radio"] = true,
+  }
   local temOpcoes = pcall(function()
     mod.options:define({
       {
@@ -96,6 +110,14 @@ return function(mod)
         key = "npcs",
         type = "choice",
         label = "NOME DOS NPCS",
+        choices = { { "PORTUGUES", "pt" }, { "ENGLISH", "en" } },
+        default = "pt",
+        requires_restart = true,
+      },
+      {
+        key = "radios",
+        type = "choice",
+        label = "NOME DAS RADIOS",
         choices = { { "PORTUGUES", "pt" }, { "ENGLISH", "en" } },
         default = "pt",
         requires_restart = true,
@@ -175,6 +197,8 @@ return function(mod)
   end)
 local catalog_strings = catalog("strings")
   n = n + each("strings", function(src, value)
+    -- Nome de estacao em ENGLISH: nao sobrescreve, o motor mostra o original.
+    if idioma.radios == "en" and ESTACOES[src] then return end
     mod.content.strings:override(src, value)
   end)
 
@@ -186,6 +210,8 @@ local catalog_strings = catalog("strings")
 
     local function translateRadioText(s)
       if type(s) ~= "string" or s == "" then return s end
+      -- Estacao em ENGLISH: o hook tambem nao pode traduzir o nome do canal.
+      if idioma.radios == "en" and ESTACOES[s] then return s end
 
       local oak_mon = s:match("^OAK: (.+)$")
       if oak_mon then

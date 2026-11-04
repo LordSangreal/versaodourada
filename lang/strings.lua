@@ -629,6 +629,7 @@ return {
   ["Look for #MON\nin grassy areas!"] = "Procure #MON\nno mato alto!",
   ["Looks like there's\nnothing here…"] = "Parece que não tem\nnada aqui…",
   ["Lucky Channel"] = "Canal da Sorte",
+  ["TUNING"] = "SINTONIA",
   ["L▶BEFORE"] = "L▶ANTES",
   ["MAHOGANY TOWN"] = "CIDADE DE MAHOGANY",
   ["MAIL"] = "CARTA",
