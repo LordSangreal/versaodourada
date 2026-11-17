@@ -306,10 +306,13 @@ local catalog_strings = catalog("strings")
         local menu = orig_start_new(game, opts)
         if menu and menu.items then
           for _, item in ipairs(menu.items) do
-            if item.desc and type(item.desc) == "table" then
-              local joined = table.concat(item.desc, "\n")
-              if catalog_strings[joined] then
-                local t = catalog_strings[joined]
+            local raw = type(item.desc) == "table" and table.concat(item.desc, "\n") or (type(item.desc) == "string" and item.desc or nil)
+            if raw then
+              local t = catalog_strings[raw] or catalog_strings[raw:gsub("\n", " ")]
+              if not t and type(item.desc) == "table" and #item.desc == 2 then
+                t = catalog_strings[item.desc[1] .. " " .. item.desc[2]]
+              end
+              if t then
                 item.desc = {}
                 for l in (t .. "\n"):gmatch("(.-)\n") do
                   item.desc[#item.desc + 1] = l
