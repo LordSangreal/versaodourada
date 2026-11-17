@@ -543,8 +543,12 @@ local catalog_strings = catalog("strings")
     for id, entrada in pairs(dex) do
       if type(entrada) == "table" and entrada.height and entrada.weight then
         local ok, err = pcall(function()
+          local hM = (math.floor(entrada.height / 100) * 10 + (entrada.height % 100)) / 10
+          local wKg = entrada.weight / 10
           mod.content.pokemon:patch(id, {
             dexEntry = {
+              heightM = hM,
+              weightKg = wKg,
               heightFt = math.floor(entrada.height / 100),
               heightIn = entrada.height % 100,
               weight = entrada.weight,
