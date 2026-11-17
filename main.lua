@@ -204,7 +204,8 @@ local catalog_strings = catalog("strings")
 
   -- Hook do Pokegear / Radio para garantir traducao das falas e estacoes
   pcall(function()
-    local Pokegear = require("src.ui.gen2.Pokegear")
+    local Screens = require("src.ui.Screens")
+      local Pokegear = Screens.get(mod.game, "Gen2Pokegear")
     local Strings = require("src.core.Strings")
     if not Pokegear then return end
 
