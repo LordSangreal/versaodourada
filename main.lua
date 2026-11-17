@@ -295,6 +295,36 @@ local catalog_strings = catalog("strings")
       end
     end
   end)
+-- Hook do StartMenu para garantir traducao das descricoes dos itens do menu
+  pcall(function()
+    local StartMenu = require("src.ui.gen2.StartMenu")
+    if not StartMenu then return end
+
+    if StartMenu.new then
+      local orig_start_new = StartMenu.new
+      StartMenu.new = function(game, opts)
+        local menu = orig_start_new(game, opts)
+        if menu and menu.items then
+          for _, item in ipairs(menu.items) do
+            if item.desc and type(item.desc) == "table" then
+              local joined = table.concat(item.desc, "\n")
+              if catalog_strings[joined] then
+                local t = catalog_strings[joined]
+                item.desc = {}
+                for l in (t .. "\n"):gmatch("(.-)\n") do
+                  item.desc[#item.desc + 1] = l
+                end
+              end
+            end
+            if item.label and catalog_strings[item.label] then
+              item.label = catalog_strings[item.label]
+            end
+          end
+        end
+        return menu
+      end
+    end
+  end)
   if idioma.itens == "pt" then
     n = n + each("item_names", function(id, value)
       mod.content.items:patch(id, { name = value })

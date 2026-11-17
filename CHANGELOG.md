@@ -7,6 +7,15 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.64.1
+
+**Tradução das descrições do menu START (Menu Account) e do rótulo BOXES.**
+
+- Traduzidas as caixas de ajuda da lateral do menu START (POKéDEX, POKéMON, MOCHILA, POKéGEAR, Cartão de Treinador, SALVAR, OPÇÃO, MODS, SAIR, Concurso).
+- Quebras ajustadas para até 10 colunas por linha (limite da caixa lateral).
+- Rótulo BOXES traduzido para CAIXAS.
+- Hook de runtime do StartMenu adicionado no `main.lua`.
+
 ## 0.64.0
 
 **Opcao NOME DAS RADIOS: nomes das estacoes do POKeGEAR em PORTUGUES ou ENGLISH.**
