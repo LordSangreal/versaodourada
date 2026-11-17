@@ -7,6 +7,16 @@ publicada dizia "Primeira versao" com a contagem de falas do dia -- o
 historico se apagava sozinho a cada build. E o mesmo defeito que o README
 tinha ate a 0.8.2. As entradas abaixo foram reconstruidas do git.
 
+## 0.64.2
+
+**Correção da colisão no Menu de Combate (MOCHILFUGI) e remoção da abreviação.**
+
+- Caixa de batalha expandida de 12 para 18 blocos de largura (`boxX = 2`), com espaçamento uniforme de 8 blocos entre colunas.
+- Substituída a abreviação `<PK><MN>` pelo nome completo `POKéMON`.
+- Todas as 4 opções (`LUTAR`, `POKéMON`, `MOCHILA`, `FUGIR`) agora cabem perfeitamente sem sobreposição de letras e com espaçamento correto de cursor.
+- Aplicado tanto no motor compartilhado (`BattleState.lua`) quanto via hook dinâmico em `main.lua` para compatibilidade retroativa em APKs existentes.
+- Adicionadas traduções de fallback para livros ilustrados de POKéMON.
+
 ## 0.64.1
 
 **Tradução das descrições do menu START (Menu Account) e do rótulo BOXES.**

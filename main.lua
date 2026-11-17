@@ -325,6 +325,61 @@ local catalog_strings = catalog("strings")
       end
     end
   end)
+
+  -- Hook do Menu de Batalha (BattleState): expande caixa e usa POKéMON sem abreviação
+  pcall(function()
+    local BattleState = require("src.ui.gen2.BattleState")
+    local Chrome = require("src.ui.gen2.Chrome")
+    if not BattleState then return end
+
+    BattleState.MENU_BOX_X = 2
+    BattleState.MENU_COL_SPACING = 8
+    if BattleState.MENU_ACTION then
+      BattleState.MENU_ACTION["POKéMON"] = "party"
+      BattleState.MENU_ACTION["POKEMON"] = "party"
+    end
+
+    local orig_menuLabels = BattleState.menuLabels
+    if orig_menuLabels then
+      BattleState.menuLabels = function(self)
+        local labels = orig_menuLabels(self)
+        if labels and (labels[2] == "<PK><MN>" or labels[2] == "PKMN") then
+          labels[2] = "POKéMON"
+        end
+        return labels
+      end
+    end
+
+    local orig_drawBottom = BattleState.drawBottom
+    if orig_drawBottom then
+      BattleState.drawBottom = function(self, ox)
+        if self.phase == "menu" and not self.contest then
+          ox = ox or 0
+          if not self:bottomUIVisible() then
+            love.graphics.setColor(1, 1, 1, 1)
+            return
+          end
+          Chrome.box(0, 12, 20 + ox, 6)
+          self:printMessage(ox)
+          local boxX = 2 + ox
+          local spacing = 8
+          Chrome.box(boxX, 12, 20 + ox - boxX, 6)
+          local labels = self:menuLabels()
+          for i, label in ipairs(labels) do
+            local col = ((i - 1) % 2) * spacing
+            local row = math.floor((i - 1) / 2) * 2
+            local tx, ty = boxX + 2 + col, 14 + row
+            if i == self.menuIndex then
+              Chrome.cursorThrough(tx - 1, ty, Chrome.DEFAULT_BOX_PALETTE)
+            end
+            Chrome.printThrough(label, tx, ty, Chrome.DEFAULT_BOX_PALETTE)
+          end
+          return
+        end
+        return orig_drawBottom(self, ox)
+      end
+    end
+  end)
   if idioma.itens == "pt" then
     n = n + each("item_names", function(id, value)
       mod.content.items:patch(id, { name = value })

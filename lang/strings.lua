@@ -1399,4 +1399,7 @@ return {
   ["y'all doin' now?"] = "vão vocês aí?",
   ["… …Ahem, we are"] = "… Cof, nós somos a",
   ["…Repeating myself"] = "…Ficar repetindo",
+  ["A whole collection\nof POKéMON picture\vbooks!"] = "Uma coleção\ninteira de livros\vde POKéMON!",
+  ["A whole collection\nof POKéMON picture\nbooks!"] = "Uma coleção\ninteira de livros\nde POKéMON!",
+  ["A whole collection of POKéMON picture books!"] = "Uma coleção inteira de livros de POKéMON!",
 }
